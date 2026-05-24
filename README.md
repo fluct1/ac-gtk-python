@@ -3,7 +3,7 @@
 
 <p align="center">
   <img width="256" height="256" alt="logo-acgtk" src="https://github.com/user-attachments/assets/eb148824-b4fa-4435-a03a-f9bc677f2660" />
-  <br> <img width="500" alt="output" src="https://github.com/user-attachments/assets/ba924a49-3a92-420f-89a8-1b02e23bd745" />
+  <br> <img width="500" alt="output" loading="eager" src="https://github.com/user-attachments/assets/ba924a49-3a92-420f-89a8-1b02e23bd745" />
 </p>
 
 A vscode Extension that simplifies writing code in the GTK library for Linux application development.
