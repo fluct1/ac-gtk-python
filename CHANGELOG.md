@@ -19,7 +19,7 @@
 ## Special:
 - Finished my Exam i can focus now on extension.
 - Finaly Added The Sadly `Entry` :)
-- small random fix for UX if type `show_all()` text cursor don't go to in the Parentheses.
+- small random fix for UX if type `show_all()` text cursor don't go between the Parentheses.
 
 # [0.0.3]
 ## Added:

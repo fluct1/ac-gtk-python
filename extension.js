@@ -461,6 +461,18 @@ function activate(context) {
                             detail: 'Gtk.Window().add()',
                             docs: 'DOC?',
                             insert: 'add($1)'
+                        },
+                        {
+                        label: 'set_default_size',
+                        detail: 'self.set_default_size(width, height)',
+                        docs: 'To control the window size.',
+                        insert: 'set_default_size($1)'
+                        },
+                        {
+                            label: 'set_position',
+                            detail: 'set_position()',
+                            docs: 'DOC?',
+                            insert: 'set_position($1)'
                         }
                     ].map(s => createItem(s, vscode.CompletionItemKind.Method));
                     results.push(...windowGtk);
