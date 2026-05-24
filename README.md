@@ -1,5 +1,5 @@
 # AC-GTK-Python Extension
-### Advanced Autocomplete & Snippets for GTK Development in VS Code
+### Advanced Autocomplete & Snippets for GTK Development in VSCode
 
 <img width="256" height="256" alt="logo-acgtk" src="https://github.com/user-attachments/assets/eb148824-b4fa-4435-a03a-f9bc677f2660" />
 
@@ -24,12 +24,12 @@ The AutoComplete & Auto Detective Functions connected:
 
 https://github.com/user-attachments/assets/b4bfec6e-eb5d-4a90-89fe-8010a6c2c5d1
 
-> **Note**: You need `PyGObject` installed to Run ac-gtk Extension and `Python Extensions` to python autocomplete and python runner button.
+> **Note**: You need `PyGObject` installed to Run ac-gtk Extension and `Python Extensions` to python autocomplete and python runner button. (not important for 'ac-gtk' the extension work anywhere but it's important for run the code).
 
 ---
 
  ## Contributions are welcome! If you'd like to help improve this extension, feel free to open a pull request.
 
-> > Note: You can access the extension.js file and search (using ctrl + f or g) for the word "DOC?" and there you can add the definition you want in the pull request.
+> > Note: You can access the `extension.js` file and search (using `ctrl + f` or `g`) for the word "`DOC?`" and there you can add the definition you want in the pull request.
 
 > Made By: Fluct For Linux Community.

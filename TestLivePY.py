@@ -43,7 +43,7 @@ class MyAPP(Gtk.Window):
 
         Gtk.Window.__init__(self, title=self.app_tit) # err404: __init__ and title= not suggest.
 
-        self.set_default_size(400, 200) # err: halighn is suggest in wrong place.
+        self.set_default_size(400, 300) # err: halighn is suggest in wrong place.
 
         self.main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10) #warning: spacing is suggest in all spaces and with '.' or ','.
         

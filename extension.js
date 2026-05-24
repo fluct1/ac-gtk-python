@@ -108,8 +108,119 @@ function activate(context) {
                         detail: 'AC-GTK',
                         docs: 'DOC?',
                         insert: 'AboutDialog()'
+                    },
+                    {
+                        label: 'WindowPosition',
+                        detail: 'Gtk.WindowPosition.[Align]',
+                        docs: 'DOC?',
+                        insert: 'WindowPosition'
                     }
                 ].map(s => createItem(s, vscode.CompletionItemKind.Class));
+            }
+
+            // import suggests
+            const giMatch = linePrefix.match(/from\s+gi\.repository\s+import\s+([^]*)$/);
+
+            if (giMatch) {
+                const alreadyImported = giMatch[1];
+                let importRes = [];
+
+                const allLib = [
+                    {
+                        label: 'Gtk',
+                        detail: 'Lib',
+                        docs: 'DOC?',
+                        insert: 'Gtk'
+                    },
+                    {
+                        label: 'Gdk',
+                        detail: 'Lib',
+                        docs: 'DOC?',
+                        insert: 'Gdk'
+                    },
+                    {
+                        label: 'GdkPixbuf',
+                        detail: 'Lib',
+                        docs: 'DOC?',
+                        insert: 'GdkPixbuf'
+                    }
+                ];
+                allLib.forEach(lib => {
+                    const isAlready = new RegExp(`\\b${lib.label}\\b`).test(alreadyImported);
+
+                    if (!isAlready){
+                        importRes.push(createItem(lib, vscode.CompletionItemKind.Module));
+                    }
+                });
+                return importRes;
+            }
+
+            if (linePrefix.match(/Window\.\w*$/)){
+                return [
+                    {
+                        label: '__init__',
+                        detail: '__init__()',
+                        docs: 'DOC?',
+                        insert: '__init__($1)'
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+            }
+
+            if (linePrefix.match(/Window\.__init__\(\w*$/)){
+                return [
+                    {
+                        label: 'title',
+                        detail: 'title=""',
+                        docs: 'DOC?',
+                        insert: 'title="$1"'
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Property));
+            }
+
+            if (linePrefix.match(/Window\.__init__\(\s*self\s*,\s{0,1}\w*$/)){
+                return [
+                    {
+                        label: 'title',
+                        detail: 'title=""',
+                        docs: 'DOC?',
+                        insert: 'title="$1"'
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Property));
+            }
+
+            if (linePrefix.match(/WindowPosition\.\w*$/)){
+                return [
+                    {
+                        label: 'NONE',
+                        detail: 'NONE',
+                        docs: 'DOC?',
+                        insert: 'NONE'
+                    },
+                    {
+                        label: 'CENTER',
+                        detail: 'CENTER',
+                        docs: 'DOC?',
+                        insert: 'CENTER'
+                    },
+                    {
+                        label: 'MOUSE',
+                        detail: 'MOUSE',
+                        docs: 'DOC?',
+                        insert: 'MOUSE'
+                    },
+                    {
+                        label: 'CENTER_ALWAYS',
+                        detail: 'CENTER_ALWAYS',
+                        docs: 'DOC?',
+                        insert: 'CENTER_ALWAYS'
+                    },
+                    {
+                        label: 'CENTER_ON_PARENT',
+                        detail: 'CENTER_ON_PARENT',
+                        docs: 'DOC?',
+                        insert: 'CENTER_ON_PARENT'
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.EnumMember))
             }
 
             if (linePrefix.match(/Orientation\.\w*$/)) {
@@ -129,28 +240,6 @@ function activate(context) {
                 ].map(s => createItem(s, vscode.CompletionItemKind.Property))
             }
 
-            if (linePrefix.match(/VERTICAL|HORIZONTAL\,\s*$/)) {
-                return [
-                    {
-                        label: 'spacing',
-                        detail: 'spacing=',
-                        docs: 'DOC?',
-                        insert: 'spacing=$1'
-                    }
-                ].map(s => createItem(s, vscode.CompletionItemKind.Property))
-            }
-
-            if (linePrefix.match(/Label\(\w*$/)) {
-                return [
-                    {
-                        label: 'label',
-                        detail: 'Gtk.Label(label="")',
-                        docs: 'DOC?',
-                        insert: 'label="$1"'
-                    }
-                ].map(s => createItem(s, vscode.CompletionItemKind.Property))
-            }
-
             if (linePrefix.match(/Align\.\w*$/)) {
                 return [
                     {
@@ -160,29 +249,29 @@ function activate(context) {
                         insert: 'CENTER'
                     },
                     {
-                        label: 'RIGHT',
+                        label: 'BASELINE',
                         detail: 'AC-GTK',
                         docs: 'DOC?',
-                        insert: 'RIGHT'
+                        insert: 'BASELINE'
                     },
                     {
-                        label: 'LEFT',
+                        label: 'FILL',
                         detail: 'AC-GTK',
                         docs: 'DOC?',
-                        insert: 'LEFT'
+                        insert: 'FILL'
                     },
                     {
-                        label: 'TOP',
+                        label: 'START',
                         detail: 'AC-GTK',
                         docs: 'DOC?',
-                        insert: 'TOP'
+                        insert: 'START'
                     },
                     {
-                        label: 'BUTTOM',
+                        label: 'END',
                         detail: 'AC-GTK',
                         docs: 'DOC?',
-                        insert: 'BUTTOM'
-                    }
+                        insert: 'END'
+                    },
                 ].map(s => createItem(s, vscode.CompletionItemKind.Property))
             }
 
@@ -194,17 +283,6 @@ function activate(context) {
                         docs: 'DOC?',
                         insert: 'angle='
                     },
-                ].map(s => createItem(s, vscode.CompletionItemKind.Property))
-            }
-
-            if (linePrefix.match(/\d+\,\s*$/)) {
-                return [
-                    {
-                        label: 'halign',
-                        detail: 'halign=',
-                        docs: 'DOC?',
-                        insert: 'halign='
-                    }
                 ].map(s => createItem(s, vscode.CompletionItemKind.Property))
             }
 
@@ -227,6 +305,12 @@ function activate(context) {
                         detail: 'show_all()',
                         docs: 'DOC?',
                         insert: 'show_all()'
+                    },
+                    {
+                        label: 'set_position',
+                        detail: 'set_position()',
+                        docs: 'DOC?',
+                        insert: 'set_position($1)'
                     }
                 ].map(s => createItem(s, vscode.CompletionItemKind.Method));
             }
@@ -297,12 +381,30 @@ function activate(context) {
 
                 // Gtk
                 if (isGtk) {
-                    results.push(...[
+                    const commonGtkMethods = [
                         {
                             label: 'props',
                             detail: 'props.propertie_name',
                             docs: 'DOC?',
                             insert: 'props'
+                        },
+                        {
+                            label: 'set_halign',
+                            detail: 'set_halign()',
+                            docs: 'DOC?',
+                            insert: 'set_halign($1)'
+                        },
+                        {
+                            label: 'set_valign',
+                            detail: 'set_valign()',
+                            docs: 'DOC?',
+                            insert: 'set_valign($1)'
+                        },
+                        {
+                            label: 'set_sensitive',
+                            detail: 'set_sensitive(bool)',
+                            docs: 'DOC?',
+                            insert: 'set_sensitive($1)'
                         },
                         {
                             label: 'set_property',
@@ -316,12 +418,13 @@ function activate(context) {
                             docs: 'DOC?',
                             insert: 'get_property($1)'
                         }
-                    ].map(s => createItem(s, vscode.CompletionItemKind.Method)));
+                    ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+                    results.push(...commonGtkMethods);
                 }
 
                 // Label
                 if (getVarable(document, varName, 'Label')) {
-                    results.push(...[
+                    const labelGtk = [
                         {
                             label: 'set_text',
                             detail: 'set_text({varable_text_name})',
@@ -334,12 +437,13 @@ function activate(context) {
                             docs: 'DOC?',
                             insert: 'get_text()'
                         }
-                    ].map(s => createItem(s, vscode.CompletionItemKind.Method)));
+                    ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+                    results.push(...labelGtk);
                 }
 
                 // Window
                 if (getVarable(document, varName, 'Window')) {
-                    results.push(...[
+                    const windowGtk = [
                         {
                             label: 'connect',
                             detail: 'Gtk.Window.connect() or your class or varable.',
@@ -350,7 +454,7 @@ function activate(context) {
                             label: 'show_all',
                             detail: 'Gtk.Window.show_all() or your class or varable.',
                             docs: 'DOC?',
-                            insert: 'show_all($1)'
+                            insert: 'show_all()'
                         },
                         {
                             label: 'add',
@@ -358,48 +462,94 @@ function activate(context) {
                             docs: 'DOC?',
                             insert: 'add($1)'
                         }
-                    ].map(s => createItem(s, vscode.CompletionItemKind.Method)));
+                    ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+                    results.push(...windowGtk);
                 }
 
                 // Button
                 if (getVarable(document, varName, 'Button')) {
-                    results.push(...[
+                    const buttonGtk = [
                         {
                             label: 'connect',
                             detail: 'Gtk.Button.connect() or your class or varable.',
                             docs: 'DOC?',
                             insert: 'connect($1)'
                         }
-                    ].map(s => createItem(s, vscode.CompletionItemKind.Method)));
+                    ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+                    results.push(...buttonGtk);
                 }
 
                 // Box
                 if (getVarable(document, varName, 'Box')) {
-                    results.push(...[
+                    const boxGtk = [
                         {
                             label: 'pack_start',
                             detail: 'pack_start(widget:Object, expand:Bool, fill:Bool, padding:int)',
                             docs: 'DOC?',
                             insert: 'pack_start($1)'
-                        }
-                    ].map(s => createItem(s, vscode.CompletionItemKind.Method)));
+                        },
+                        {
+                            label: 'set_margin_start',
+                            detail: 'set_margin_start(int)',
+                            docs: 'DOC?',
+                            insert: 'set_margin_start($1)'
+                        },
+                        {
+                            label: 'set_margin_end',
+                            detail: 'set_margin_end(int)',
+                            docs: 'DOC?',
+                            insert: 'set_margin_end($1)'
+                        },
+                        {
+                            label: 'set_margin_top',
+                            detail: 'set_margin_top(int)',
+                            docs: 'DOC?',
+                            insert: 'set_margin_top($1)'
+                        },
+                        {
+                            label: 'set_margin_bottom',
+                            detail: 'set_margin_bottom(int)',
+                            docs: 'DOC?',
+                            insert: 'set_margin_bottom($1)'
+                        },
+                    ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+                    results.push(...boxGtk);
                 }
 
                 // Entry
                 if (getVarable(document, varName, 'Entry')) {
-                    results.push(...[
+                    const entryGtk = [
                         {
-                            label: 'in next update [0.0.4]',
-                            detail: 'in next update [0.0.4] i have exam..',
-                            docs: 'in next update [0.0.4] i have exam..',
-                            insert: 'in next update [0.0.4] i have exam..'
+                            label: 'set_placeholder_text',
+                            detail: 'set_placeholder_text(str)',
+                            docs: 'DOC?',
+                            insert: 'set_placeholder_text("$1")'
+                        },
+                        {
+                            label: 'set_visibility',
+                            detail: 'set_visibility(bool)',
+                            docs: 'DOC?',
+                            insert: 'set_visibility($1)'
+                        },
+                        {
+                            label: 'set_text',
+                            detail: 'set_text({varable_text_name})',
+                            docs: 'DOC?',
+                            insert: 'set_text($1)'
+                        },
+                        {
+                            label: 'get_text',
+                            detail: 'get_text()',
+                            docs: 'DOC?',
+                            insert: 'get_text()'
                         }
-                    ].map(s => createItem(s, vscode.CompletionItemKind.Method)));
+                    ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+                    results.push(...entryGtk);
                 }
 
                 // AboutDialog
                 if (getVarable(document, varName, 'AboutDialog')) {
-                    results.push(...[
+                    const aboutDialogGtk = [
                         {
                             label: 'set_program_name',
                             detail: 'AC-GTK',
@@ -447,14 +597,124 @@ function activate(context) {
                             detail: 'AC-GTK',
                             docs: 'DOC?',
                             insert: 'destroy()'
+                        },
+                        {
+                            label: 'set_logo',
+                            detail: 'set_logo()',
+                            docs: 'DOC?',
+                            insert: 'set_logo($1)'
                         }
-                    ].map(s => createItem(s, vscode.CompletionItemKind.Method)));
+                    ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+                    results.push(...aboutDialogGtk);
                 }
 
                 // All Suggests
                 if (results.length > 0) {
                     return results;
                 }
+            }
+
+            if (linePrefix.match(/GdkPixbuf\.\w*$/)){
+                return [
+                    {
+                        label: 'Pixbuf',
+                        detail: 'Pixbuf',
+                        docs: 'DOC?',
+                        insert: 'Pixbuf'
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+            }
+
+            if (linePrefix.match(/Pixbuf\.\w*$/)){
+                return [
+                    {
+                        label: 'new_from_file',
+                        detail: 'new_from_file',
+                        docs: 'DOC?',
+                        insert: 'new_from_file($1)'
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+            }
+
+            // Auto Pics From the Project ---
+            if (linePrefix.match(/new_from_file\(\s*["']?$/)){
+                return vscode.workspace.findFiles('**/*.{png,jpg,jpeg,svg}', '**/node_modules/**').then(files => {
+                    return files.map(file => {
+                        const relativePath = vscode.workspace.asRelativePath(file);
+                        const item = new vscode.CompletionItem(relativePath, vscode.CompletionItemKind.File);
+                        item.detail = "ac | File Path";
+                        item.documentation = new vscode.MarkdownString(`**AC-GTK:** \n\n File Path. \`${relativePath}\``);
+
+                        if (linePrefix.endsWith('"') || linePrefix.endsWith("'")) {
+                            item.insertText = new vscode.SnippetString(`${relativePath})$1`);
+                        } else {
+                            item.insertText = new vscode.SnippetString(`"${relativePath}")$1`);
+                        }
+                        return item;
+                    });
+                });
+            }
+            // -----
+            
+            // props for widgets
+            const ctorMatch = linePrefix.match(/(Window|Button|Box|Label|Entry)\((?:[^,]*,\s{0,1})*(\w*)$/);
+
+            if (ctorMatch) {
+                const widgetType = ctorMatch[1];
+                const insideArgs = ctorMatch[2];
+                let argsRes = [];
+
+                const commonGtkArgs = [
+                    {
+                        label: 'halign',
+                        detail: 'halign=[Gtk.Align]',
+                        docs: 'DOC?',
+                        insert: 'halign=$1'
+                    },
+                    {
+                        label: 'valign',
+                        detail: 'valign=[Gtk.Align]',
+                        docs: 'DOC?',
+                        insert: 'valign=$1'
+                    },
+                    {
+                        label: 'sensitive',
+                        detail: 'sensitive=[bool]',
+                        docs: 'DOC?',
+                        insert: 'sensitive=$1'
+                    },
+                ].map(s => createItem(s, vscode.CompletionItemKind.Property));
+                argsRes.push(...commonGtkArgs);
+
+                // Label args
+                if (widgetType === 'Label') {
+                    argsRes.push(...[
+                        {
+                            label: 'label',
+                            detail: 'label="[str]"',
+                            docs: 'DOC?',
+                            insert: 'label="$1"'
+                        }
+                    ].map(s => createItem(s, vscode.CompletionItemKind.Property)));
+                }
+                if (widgetType === 'Box') {
+                argsRes.push(...[
+                    {
+                        label: 'orientation',
+                        detail: 'orientation=',
+                        docs: 'DOC?',
+                        insert: 'orientation='
+                    },
+                    {
+                        label: 'spacing',
+                        detail: 'spacing=',
+                        docs: 'DOC?',
+                        insert: 'spacing=$1'
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Property)))
+            }
+                
+                return argsRes;
             }
 
             if (linePrefix.match(/set_property\("?$/)) {
@@ -548,17 +808,6 @@ function activate(context) {
                         insert: 'label="$1"'
                     }
                 ].map(s => createItem(s, vscode.CompletionItemKind.Property));
-            }
-
-            if (linePrefix.match(/Box\(\w*$/i)) {
-                return [
-                    {
-                        label: 'orientation',
-                        detail: 'orientation=',
-                        docs: 'DOC?',
-                        insert: 'orientation='
-                    }
-                ].map(s => createItem(s, vscode.CompletionItemKind.Property))
             }
 
             return undefined;
