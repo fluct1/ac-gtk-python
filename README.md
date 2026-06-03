@@ -15,6 +15,7 @@ A vscode Extension that simplifies writing code in the GTK library for Linux app
 - Accurate Code Completion.
 - Auto Suggest Functions connected.
 - docs (i dont add it but you can source code is here..)
+- and more i update it.
 
 for example:
 

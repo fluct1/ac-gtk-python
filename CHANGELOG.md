@@ -1,3 +1,29 @@
+# [0.0.5]
+## Added:
+- Add `set_border_width`.
+- Add `disconnect`.
+- Add `disconnect_by_func`.
+- Add `set_label` & `get_label`.
+- Add `set_angle`.
+- Add `set_icon`.
+- Add suggest `"__main__"` in code `if __name__ == "__main__"`.
+- Add `set_documenters`.
+- Add `set_website`.
+- Add `set_website_label`.
+- Add `set_transient_for`.
+- Add `set_modal`.
+- Add `set_icon_name`.
+- Add `set_default_icon_name`.
+- Add `get_child`.
+## Fixed:
+- Fix `connect` to global widget method.
+- Fix Make `title` suggestion inside `Gtk.Window()` flexible with spaces and partial typing.
+- Fix `set_margin_start` & `set_margin_end` & `set_margin_top` & `set_margin_bottom` to global suggests.
+- Fix import pic from project and auto-complete writes Bracket with pic name.
+## Special:
+- Add options to donate and support ongoing project development.
+- small fix remove `import os` from the `!G` snippet.
+
 # [0.0.4]
 ## Added:
 - Add `Entry` Properties.
@@ -10,7 +36,7 @@
 - Add `set_logo`.
 - Add `pixbuf = GdkPixbuf.Pixbuf.new_from_file("logo.png")` Auto Complete.
 - Add Auto Suggests Pics Paths With GdkPixbuf Method `new_from_file()`.
-- Add `set_margen_start` & `set_margin_end` & `set_margin_top` & `set_margin_bottom`.
+- Add `set_margin_start` & `set_margin_end` & `set_margin_top` & `set_margin_bottom`.
 ## Fixed:
 - Fix `Gtk.Window.[no suggest __init__()]`.
 - Fix `__init__([no suggest {label=""}])`
