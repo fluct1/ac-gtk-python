@@ -36,6 +36,10 @@
     "color": "#121314",
     "theme": "dark"
   },
+  "funding": {
+    "type": "ko-fi",
+    "url": "https://ko-fi.com/mohamedahmedzaky"
+  },
   "main": "./extension.js",
   "contributes": {
     "snippets": [
