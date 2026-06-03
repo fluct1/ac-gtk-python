@@ -4,6 +4,9 @@
   "description": "Professional Autocomplete & Snippets for Python GTK (PyGObject) development. Includes built-in documentation and \"!G\" shortcut for rapid boilerplate generation.",
   "version": "0.0.5",
   "publisher": "fluct1",
+  "sponsor": {
+    "url": "https://ko-fi.com/mohamedahmedzaky"
+  },
   "license":"GPL-3.0-or-later",
   "repository": "https://github.com/fluct1/ac-gtk-python",
   "icon": "icons/logo-acgtk.png",
@@ -35,10 +38,6 @@
   "galleryBanner": {
     "color": "#121314",
     "theme": "dark"
-  },
-  "funding": {
-    "type": "ko-fi",
-    "url": "https://ko-fi.com/mohamedahmedzaky"
   },
   "main": "./extension.js",
   "contributes": {
