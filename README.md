@@ -10,7 +10,7 @@
 
 If you find this extension helpful, consider buying me a coffee to support ongoing development!
 
-[![Support me on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/mohamedahmedzaky)
+<a href="https://ko-fi.com/mohamedahmedzaky" target="_blank"><img src="https://storage.ko-fi.com/cdn/brandasset/kofi_button_blue.png" alt="Support me on Ko-fi" width="300" /></a>
 
 A vscode Extension that simplifies writing code in the GTK library for Linux application development.
 
