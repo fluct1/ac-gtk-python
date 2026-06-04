@@ -979,9 +979,11 @@ function activate(context) {
             const trimmedText = lineText.trim();
 
             if (trimmedText.startsWith('!') && !lineText.includes('#')) {
-                if (trimmedText === '!' || trimmedText === '!G' || trimmedText === '!ج') {
+                if (trimmedText === '!' || trimmedText === '!G') {
+                    const range = new vscode.Range(position.translate(0, -trimmedText.length), position);
                     const boilerplate = new vscode.CompletionItem('!G', vscode.CompletionItemKind.Snippet);
                     boilerplate.detail = "Creating structure";
+                    boilerplate.range = range;
                     boilerplate.documentation = new vscode.MarkdownString("Creating the complete basic structure of the application.");
 
                     boilerplate.insertText = new vscode.SnippetString([
