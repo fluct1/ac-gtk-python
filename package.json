@@ -2,7 +2,7 @@
   "name": "ac-gtk-python",
   "displayName": "AC-GTK: AutoComplete GTK Python",
   "description": "Professional Autocomplete & Snippets for Python GTK (PyGObject) development. Includes built-in documentation and \"!G\" shortcut for rapid boilerplate generation.",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "publisher": "fluct1",
   "sponsor": {
     "url": "https://ko-fi.com/mohamedahmedzaky"

@@ -1,6 +1,15 @@
+# [0.0.7]
+## Added:
+- Nothing.
+## Fixed:
+- Fix `!` don't removed after write `!G` snippet.
+## Special:
+- small fix because i am human not ai or computer! xD.
+- it's all no more fixes for this update i add more things and fix more in next updates.
+
 # [0.0.6]
 ## Added:
-- Nothing
+- Nothing.
 ## Fixed:
 - Fix `!G` syntax.
 - Fix `Window` Widget problem `title` suggests spaceing only. **(Again!)**
