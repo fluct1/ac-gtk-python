@@ -346,6 +346,18 @@ function activate(context) {
                         detail: 'set_icon_name("")',
                         docs: 'DOC?',
                         insert: 'set_icon_name("$1")'
+                    },
+                    {
+                        label: 'set_transient_for',
+                        detail: 'set_transient_for()',
+                        docs: 'DOC?',
+                        insert: 'set_transient_for($1)'
+                    },
+                    {
+                        label: 'set_modal',
+                        detail: 'set_modal(bool)',
+                        docs: 'DOC?',
+                        insert: 'set_modal($1)'
                     }
                 ].map(s => createItem(s, vscode.CompletionItemKind.Method));
             }
@@ -552,10 +564,10 @@ function activate(context) {
                             insert: 'add($1)'
                         },
                         {
-                        label: 'set_default_size',
-                        detail: 'self.set_default_size(width, height)',
-                        docs: 'To control the window size.',
-                        insert: 'set_default_size($1)'
+                            label: 'set_default_size',
+                            detail: 'self.set_default_size(width, height)',
+                            docs: 'To control the window size.',
+                            insert: 'set_default_size($1)'
                         },
                         {
                             label: 'set_position',
@@ -586,6 +598,18 @@ function activate(context) {
                             detail: 'get_child()',
                             docs: 'DOC?',
                             insert: 'get_child()'
+                        },
+                        {
+                            label: 'set_transient_for',
+                            detail: 'set_transient_for()',
+                            docs: 'DOC?',
+                            insert: 'set_transient_for($1)'
+                        },
+                        {
+                            label: 'set_modal',
+                            detail: 'set_modal(bool)',
+                            docs: 'DOC?',
+                            insert: 'set_modal($1)'
                         }
                     ].map(s => createItem(s, vscode.CompletionItemKind.Method));
                     results.push(...windowGtk);
@@ -783,9 +807,9 @@ function activate(context) {
                         item.documentation = new vscode.MarkdownString(`**AC-GTK:** \n\n File Path. \`${relativePath}\``);
 
                         if (linePrefix.endsWith('"') || linePrefix.endsWith("'")) {
-                            item.insertText = new vscode.SnippetString(`${relativePath}")$1`);
+                            item.insertText = new vscode.SnippetString(`${relativePath}$1`);
                         } else {
-                            item.insertText = new vscode.SnippetString(`"${relativePath}")$1`);
+                            item.insertText = new vscode.SnippetString(`${relativePath}$1`);
                         }
                         return item;
                     });
@@ -794,7 +818,7 @@ function activate(context) {
             // -----
             
             // props for widgets
-            const ctorMatch = linePrefix.match(/(Window|Button|Box|Label|Entry)\((?:[^,]*,\s{0,1})*(\w*)$/);
+            const ctorMatch = linePrefix.match(/(Window|Button|Box|Label|Entry)\((?:[^,]*,\s{0,2})*(\w*)$/);
 
             if (ctorMatch) {
                 const widgetType = ctorMatch[1];
@@ -823,6 +847,18 @@ function activate(context) {
                 ].map(s => createItem(s, vscode.CompletionItemKind.Property));
                 argsRes.push(...commonGtkArgs);
 
+                // Window args
+                if (widgetType == 'Window') {
+                    argsRes.push(...[
+                        {
+                            label: 'title',
+                            detail: 'Gtk.Window(title="")',
+                            docs: 'DOC?',
+                            insert: 'title="$1"'
+                        }
+                    ].map(s => createItem(s, vscode.CompletionItemKind.Property)));
+                }
+
                 // Label args
                 if (widgetType === 'Label') {
                     argsRes.push(...[
@@ -834,6 +870,8 @@ function activate(context) {
                         }
                     ].map(s => createItem(s, vscode.CompletionItemKind.Property)));
                 }
+
+                // Box args
                 if (widgetType === 'Box') {
                 argsRes.push(...[
                     {
@@ -925,17 +963,6 @@ function activate(context) {
                 ].map(s => createItem(s, vscode.CompletionItemKind.Method));
             }
 
-            if (linePrefix.match(/Window\([\w\s]*$/i)) {
-                return [
-                    {
-                        label: 'title',
-                        detail: 'Gtk.Window(title="")',
-                        docs: 'DOC?',
-                        insert: 'title="$1"'
-                    }
-                ].map(s => createItem(s, vscode.CompletionItemKind.Property));
-            }
-
             if (linePrefix.match(/Button\(\w*$/i)) {
                 return [
                     {
@@ -945,6 +972,38 @@ function activate(context) {
                         insert: 'label="$1"'
                     }
                 ].map(s => createItem(s, vscode.CompletionItemKind.Property));
+            }
+
+            // Advanced !G
+            const lineText = document.lineAt(position.line).text;
+            const trimmedText = lineText.trim();
+
+            if (trimmedText.startsWith('!') && !lineText.includes('#')) {
+                if (trimmedText === '!' || trimmedText === '!G' || trimmedText === '!ج') {
+                    const boilerplate = new vscode.CompletionItem('!G', vscode.CompletionItemKind.Snippet);
+                    boilerplate.detail = "Creating structure";
+                    boilerplate.documentation = new vscode.MarkdownString("Creating the complete basic structure of the application.");
+
+                    boilerplate.insertText = new vscode.SnippetString([
+                        "import gi",
+                        "gi.require_version('Gtk', '3.0')",
+                        "from gi.repository import Gtk${1}",
+                        "",
+                        "class CLASS_NAME(Gtk.Window):",
+                        "    def __init__(self):",
+                        "       super().__init__(title=\"${2:APP NAME}\")",
+                        "       self.set_default_size(${3:800}, ${4:600})",
+                        "       ",
+                        "       ${5}",
+                        "       ",
+                        "win = CLASS_NAME()",
+                        "win.connect(\"destroy\", Gtk.main_quit)",
+                        "win.show_all()",
+                        "Gtk.main()"
+                    ].join('\n'));
+
+                    return [boilerplate]
+                }
             }
 
             return undefined;

@@ -35,12 +35,12 @@ The AutoComplete & Auto Detective Functions connected:
 
 https://github.com/user-attachments/assets/b4bfec6e-eb5d-4a90-89fe-8010a6c2c5d1
 
-> **Note**: You need `PyGObject` installed to Run ac-gtk Extension and `Python Extensions` to python autocomplete and python runner button. (not important for 'ac-gtk' the extension work anywhere but it's important for run the code).
+> **⚠️ Important Note!**: You need `PyGObject` installed to Run ac-gtk Extension its work now **based** on python extension and `Gtk3` and you will need `Python Extensions` to python autocomplete and python runner button (It can run without it but you need it because without it you will lose many features that I didn't add because they are already present in the Python extension).
 
 ---
 
  ## Contributions are welcome! If you'd like to help improve this extension, feel free to open a pull request.
 
-> > Note: You can access the `extension.js` file and search (using `ctrl + f` or `g`) for the word "`DOC?`" and there you can add the definition you want in the pull request.
+ **Fun Fact:** You can access the `extension.js` file and search (using `ctrl + f` or `g`) for the word "`DOC?`" and there you can add the definition you want in the pull request.
 
 > Made By: Fluct For Linux Community.

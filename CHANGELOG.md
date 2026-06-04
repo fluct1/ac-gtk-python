@@ -1,3 +1,13 @@
+# [0.0.6]
+## Added:
+- Nothing
+## Fixed:
+- Fix `!G` syntax.
+- Fix `Window` Widget problem `title` suggests spaceing only. **(Again!)**
+- Fix error `("download.jpeg")")` in suggests auto-suggest pics from project files `new_from_file()`.
+- Fix `set_modal()` & `set_transient_for()` to `self` and `Window`.
+- Fix Random Suggests `!G` in all places in the code.
+
 # [0.0.5]
 ## Added:
 - Add `set_border_width`.
