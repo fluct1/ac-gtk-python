@@ -1,3 +1,7 @@
+# [1.0.7]
+## This Time..i just do restructuring for allthings and add all basics to auto complete.
+- No ChangeLog it's about add all i can't added here.
+
 # [0.0.7]
 ## Added:
 - Nothing.
