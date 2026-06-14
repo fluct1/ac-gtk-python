@@ -3432,6 +3432,90 @@ function activate(context) {
                 }
             ].map(s => createItem(s, vscode.CompletionItemKind.Method));
 
+            const GtkAccelLabel = [
+                {
+                    label: 'new',
+                    detail: 'new(string)',
+                    docs: 'DOC?',
+                    insert: 'new($1)'
+                },
+                {
+                    label: 'get_accel',
+                    detail: 'get_accel()',
+                    docs: 'DOC?',
+                    insert: 'get_accel()'
+                },
+                {
+                    label: 'get_accel_widget',
+                    detail: 'get_accel_widget()',
+                    docs: 'DOC?',
+                    insert: 'get_accel_widget()'
+                },
+                {
+                    label: 'get_accel_width',
+                    detail: 'get_accel_width()',
+                    docs: 'DOC?',
+                    insert: 'get_accel_width()'
+                },
+                {
+                    label: 'refetch',
+                    detail: 'refetch()',
+                    docs: 'DOC?',
+                    insert: 'refetch()'
+                },
+                {
+                    label: 'set_accel',
+                    detail: 'set_accel(accelerator_key, accelerator_mods)',
+                    docs: 'DOC?',
+                    insert: 'set_accel($1)'
+                },
+                {
+                    label: 'set_accel_closure',
+                    detail: 'set_accel_closure(accel_closure)',
+                    docs: 'DOC?',
+                    insert: 'set_accel_closure($1)'
+                },
+                {
+                    label: 'set_accel_widget',
+                    detail: 'set_accel_widget(accel_widget)',
+                    docs: 'DOC?',
+                    insert: 'set_accel_widget($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkActionBar = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'get_center_widget',
+                    detail: 'get_center_widget()',
+                    docs: 'DOC?',
+                    insert: 'get_center_widget()'
+                },
+                {
+                    label: 'pack_end',
+                    detail: 'pack_end(child)',
+                    docs: 'DOC?',
+                    insert: 'pack_end($1)'
+                },
+                {
+                    label: 'pack_start',
+                    detail: 'pack_start(child)',
+                    docs: 'DOC?',
+                    insert: 'pack_start($1)'
+                },
+                {
+                    label: 'set_center_widget',
+                    detail: 'set_center_widget(center_widget)',
+                    docs: 'DOC?',
+                    insert: 'set_center_widget($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
             // -----------*-----------
 
 
@@ -3491,7 +3575,7 @@ function activate(context) {
                         label: 'Entry',
                         detail: 'AC-GTK',
                         docs: 'DOC?',
-                        insert: 'Entry($1)'
+                        insert: 'Entry()'
                     },
                     {
                         label: 'AboutDialog',
@@ -3504,7 +3588,25 @@ function activate(context) {
                         detail: 'Gtk.WindowPosition.[Align]',
                         docs: 'DOC?',
                         insert: 'WindowPosition'
-                    }
+                    },
+                    {
+                        label: 'AccelLabel',
+                        detail: 'AccelLabel(*args, **kwargs)',
+                        docs: 'DOC?',
+                        insert: 'AccelLabel($1)'
+                    },
+                    {
+                        label: 'ActionBar',
+                        detail: 'ActionBar(**kwargs)',
+                        docs: 'DOC?',
+                        insert: 'ActionBar()'
+                    },
+                    {
+                        label: 'AccelGroup',
+                        detail: 'AccelGroup()',
+                        docs: 'DOC?',
+                        insert: 'AccelGroup()'
+                    },
                 ].map(s => createItem(s, vscode.CompletionItemKind.Class));
             }
             // * ------------------------------------------------------------ *
@@ -3579,6 +3681,11 @@ function activate(context) {
                     results.push(...GtkLabel);
                 }
 
+                // AccelLabel
+                if (getVarable(document, varName, 'AccelLabel')) {
+                    results.push(...GtkMisk, ...GtkLabel, ...GtkAccelLabel, ...GtkWidget)
+                }
+
                 // self
                 if (linePrefix.match(/self\.\w*$/)) {
                     results.push(...GtkWindow, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkWidget, ...GtkContainer, ...GtkBin)
@@ -3587,6 +3694,11 @@ function activate(context) {
                 // Window
                 if (getVarable(document, varName, 'Window')) {
                     results.push(...GtkWindow, ...GtkContainer, ...GtkBin)
+                }
+
+                // ActionBar
+                if (getVarable(document, varName, 'ActionBar')) {
+                    results.push(...GtkContainer, ...GtkBin, ...GtkActionBar)
                 }
 
                 // Button
