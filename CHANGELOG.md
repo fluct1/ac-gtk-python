@@ -2,6 +2,7 @@
 ## This Time..i just do restructuring for allthings and add all basics to auto complete.
 - No ChangeLog it's about add all i can added here.
 - wait more update later i continue in next update (i don't know when but i know i back) :)
+- it's early version i add more later i am so busy :D
 
 # [0.0.7]
 ## Added:
