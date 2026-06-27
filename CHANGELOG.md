@@ -1,3 +1,12 @@
+# [1.1.7]
+## Added:
+- Add `Gtk.AppChooserButton` & `Gtk.AppChooserDialog` & `Gtk.Assistant` & `Gtk.CheckButton` New Widgets.
+- Add All inheritance of `Gtk.Button` widget.
+## Fixed:
+- Fix Double Suggests sometimes.
+- Fix Some Bugs and Trash Code.
+- Fix Missing Inhertance Widgets in `Gtk.ActionBar` widget.
+
 # [1.0.7]
 ## This Time..i just do restructuring for allthings and add all basics to auto complete.
 - No ChangeLog it's about add all i can added here.

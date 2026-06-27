@@ -3516,6 +3516,744 @@ function activate(context) {
                 }
             ].map(s => createItem(s, vscode.CompletionItemKind.Method));
 
+            const GtkAppChooserButton = [
+                {
+                    label: 'new',
+                    detail: 'new(content_type)',
+                    docs: 'DOC?',
+                    insert: 'new($1)'
+                },
+                {
+                    label: 'append_custom_item',
+                    detail: 'append_custom_item(name, label, icon)',
+                    docs: 'DOC?',
+                    insert: 'append_custom_item($1)'
+                },
+                {
+                    label: 'append_separator',
+                    detail: 'append_separator()',
+                    docs: 'DOC?',
+                    insert: 'append_separator()'
+                },
+                {
+                    label: 'get_heading',
+                    detail: 'get_heading()',
+                    docs: 'DOC?',
+                    insert: 'get_heading()'
+                },
+                {
+                    label: 'get_show_default_item',
+                    detail: 'get_show_default_item()',
+                    docs: 'DOC?',
+                    insert: 'get_show_default_item()'
+                },
+                {
+                    label: 'get_show_dialog_item',
+                    detail: 'get_show_dialog_item()',
+                    docs: 'DOC?',
+                    insert: 'get_show_dialog_item()'
+                },
+                {
+                    label: 'set_active_custom_item',
+                    detail: 'set_active_custom_item(name)',
+                    docs: 'DOC?',
+                    insert: 'set_active_custom_item($1)'
+                },
+                {
+                    label: 'set_heading',
+                    detail: 'set_heading(heading)',
+                    docs: 'DOC?',
+                    insert: 'set_heading($1)'
+                },
+                {
+                    label: 'set_show_default_item',
+                    detail: 'set_show_default_item(setting)',
+                    docs: 'DOC?',
+                    insert: 'set_show_default_item($1)'
+                },
+                {
+                    label: 'set_show_dialog_item',
+                    detail: 'set_show_dialog_item(setting)',
+                    docs: 'DOC?',
+                    insert: 'set_show_dialog_item($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkComboBox = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'new_with_area',
+                    detail: 'new_with_area(area)',
+                    docs: 'DOC?',
+                    insert: 'new_with_area($1)'
+                },
+                {
+                    label: 'new_with_area_and_entry',
+                    detail: 'new_with_area_and_entry(area)',
+                    docs: 'DOC?',
+                    insert: 'new_with_area_and_entry($1)'
+                },
+                {
+                    label: 'new_with_entry',
+                    detail: 'new_with_entry()',
+                    docs: 'DOC?',
+                    insert: 'new_with_entry()'
+                },
+                {
+                    label: 'new_with_model',
+                    detail: 'new_with_model(model)',
+                    docs: 'DOC?',
+                    insert: 'new_with_model($1)'
+                },
+                {
+                    label: 'new_with_model_and_entry',
+                    detail: 'new_with_model_and_entry(model)',
+                    docs: 'DOC?',
+                    insert: 'new_with_model_and_entry($1)'
+                },
+                {
+                    label: 'get_active',
+                    detail: 'get_active()',
+                    docs: 'DOC?',
+                    insert: 'get_active()'
+                },
+                {
+                    label: 'get_active_id',
+                    detail: 'get_active_id()',
+                    docs: 'DOC?',
+                    insert: 'get_active_id()'
+                },
+                {
+                    label: 'get_active_iter',
+                    detail: 'get_active_iter()',
+                    docs: 'DOC?',
+                    insert: 'get_active_iter()'
+                },
+                {
+                    label: 'get_add_tearoffs',
+                    detail: 'get_add_tearoffs()',
+                    docs: 'DOC?',
+                    insert: 'get_add_tearoffs()'
+                },
+                {
+                    label: 'get_button_sensitivity',
+                    detail: 'get_button_sensitivity()',
+                    docs: 'DOC?',
+                    insert: 'get_button_sensitivity()'
+                },
+                {
+                    label: 'get_column_span_column',
+                    detail: 'get_column_span_column()',
+                    docs: 'DOC?',
+                    insert: 'get_column_span_column()'
+                },
+                {
+                    label: 'get_entry_text_column',
+                    detail: 'get_entry_text_column()',
+                    docs: 'DOC?',
+                    insert: 'get_entry_text_column()'
+                },
+                {
+                    label: 'get_focus_on_click',
+                    detail: 'get_focus_on_click()',
+                    docs: 'DOC?',
+                    insert: 'get_focus_on_click()'
+                },
+                {
+                    label: 'get_has_entry',
+                    detail: 'get_has_entry()',
+                    docs: 'DOC?',
+                    insert: 'get_has_entry()'
+                },
+                {
+                    label: 'get_id_column',
+                    detail: 'get_id_column()',
+                    docs: 'DOC?',
+                    insert: 'get_id_column()'
+                },
+                {
+                    label: 'get_model',
+                    detail: 'get_model()',
+                    docs: 'DOC?',
+                    insert: 'get_model()'
+                },
+                {
+                    label: 'get_popup_accessible',
+                    detail: 'get_popup_accessible()',
+                    docs: 'DOC?',
+                    insert: 'get_popup_accessible()'
+                },
+                {
+                    label: 'get_popup_fixed_width',
+                    detail: 'get_popup_fixed_width()',
+                    docs: 'DOC?',
+                    insert: 'get_popup_fixed_width()'
+                },
+                {
+                    label: 'get_row_span_column',
+                    detail: 'get_row_span_column()',
+                    docs: 'DOC?',
+                    insert: 'get_row_span_column()'
+                },
+                {
+                    label: 'get_title',
+                    detail: 'get_title()',
+                    docs: 'DOC?',
+                    insert: 'get_title()'
+                },
+                {
+                    label: 'get_wrap_width',
+                    detail: 'get_wrap_width()',
+                    docs: 'DOC?',
+                    insert: 'get_wrap_width()'
+                },
+                {
+                    label: 'popdown',
+                    detail: 'popdown()',
+                    docs: 'DOC?',
+                    insert: 'popdown()'
+                },
+                {
+                    label: 'popup',
+                    detail: 'popup()',
+                    docs: 'DOC?',
+                    insert: 'popup()'
+                },
+                {
+                    label: 'popup_for_device',
+                    detail: 'popup_for_device(device)',
+                    docs: 'DOC?',
+                    insert: 'popup_for_device($1)'
+                },
+                {
+                    label: 'set_active',
+                    detail: 'set_active(index_)',
+                    docs: 'DOC?',
+                    insert: 'set_active($1)'
+                },
+                {
+                    label: 'set_active_id',
+                    detail: 'set_active_id(active_id)',
+                    docs: 'DOC?',
+                    insert: 'set_active_id($1)'
+                },
+                {
+                    label: 'set_active_iter',
+                    detail: 'set_active_iter(iter)',
+                    docs: 'DOC?',
+                    insert: 'set_active_iter($1)'
+                },
+                {
+                    label: 'set_add_tearoffs',
+                    detail: 'set_add_tearoffs(add_tearoffs)',
+                    docs: 'DOC?',
+                    insert: 'set_add_tearoffs($1)'
+                },
+                {
+                    label: 'set_button_sensitivity',
+                    detail: 'set_button_sensitivity(sensitivity)',
+                    docs: 'DOC?',
+                    insert: 'set_button_sensitivity($1)'
+                },
+                {
+                    label: 'set_column_span_column',
+                    detail: 'set_column_span_column(column_span)',
+                    docs: 'DOC?',
+                    insert: 'set_column_span_column($1)'
+                },
+                {
+                    label: 'set_entry_text_column',
+                    detail: 'set_entry_text_column(text_column)',
+                    docs: 'DOC?',
+                    insert: 'set_entry_text_column($1)'
+                },
+                {
+                    label: 'set_focus_on_click',
+                    detail: 'set_focus_on_click(focus_on_click)',
+                    docs: 'DOC?',
+                    insert: 'set_focus_on_click($1)'
+                },
+                {
+                    label: 'set_id_column',
+                    detail: 'set_id_column(id_column)',
+                    docs: 'DOC?',
+                    insert: 'set_id_column($1)'
+                },
+                {
+                    label: 'set_model',
+                    detail: 'set_model(model)',
+                    docs: 'DOC?',
+                    insert: 'set_model($1)'
+                },
+                {
+                    label: 'set_popup_fixed_width',
+                    detail: 'set_popup_fixed_width(fixed)',
+                    docs: 'DOC?',
+                    insert: 'set_popup_fixed_width($1)'
+                },
+                {
+                    label: 'set_row_separator_func',
+                    detail: 'set_row_separator_func(func, *data)',
+                    docs: 'DOC?',
+                    insert: 'set_row_separator_func($1)'
+                },
+                {
+                    label: 'set_row_span_column',
+                    detail: 'set_row_span_column(row_span)',
+                    docs: 'DOC?',
+                    insert: 'set_row_span_column($1)'
+                },
+                {
+                    label: 'set_title',
+                    detail: 'set_title(title)',
+                    docs: 'DOC?',
+                    insert: 'set_title($1)'
+                },
+                {
+                    label: 'set_wrap_width',
+                    detail: 'set_wrap_width(width)',
+                    docs: 'DOC?',
+                    insert: 'set_wrap_width($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkCellEditable = [
+                {
+                    label: 'editing_done',
+                    detail: 'editing_done()',
+                    docs: 'DOC?',
+                    insert: 'editing_done()'
+                },
+                {
+                    label: 'remove_widget',
+                    detail: 'remove_widget()',
+                    docs: 'DOC?',
+                    insert: 'remove_widget()'
+                },
+                {
+                    label: 'start_editing',
+                    detail: 'start_editing(event)',
+                    docs: 'DOC?',
+                    insert: 'start_editing($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkCellLayout = [
+                {
+                    label: 'add_attribute',
+                    detail: 'add_attribute(cell, attribute, column)',
+                    docs: 'DOC?',
+                    insert: 'add_attribute($1)'
+                },
+                {
+                    label: 'clear',
+                    detail: 'clear()',
+                    docs: 'DOC?',
+                    insert: 'clear()'
+                },
+                {
+                    label: 'clear_attributes',
+                    detail: 'clear_attributes(cell)',
+                    docs: 'DOC?',
+                    insert: 'clear_attributes($1)'
+                },
+                {
+                    label: 'get_area',
+                    detail: 'get_area()',
+                    docs: 'DOC?',
+                    insert: 'get_area()'
+                },
+                {
+                    label: 'get_cells',
+                    detail: 'get_cells()',
+                    docs: 'DOC?',
+                    insert: 'get_cells()'
+                },
+                {
+                    label: 'pack_end',
+                    detail: 'pack_end(cell, expand)',
+                    docs: 'DOC?',
+                    insert: 'pack_end($1)'
+                },
+                {
+                    label: 'pack_start',
+                    detail: 'pack_start(cell, expand)',
+                    docs: 'DOC?',
+                    insert: 'pack_start($1)'
+                },
+                {
+                    label: 'reorder',
+                    detail: 'reorder(cell, position)',
+                    docs: 'DOC?',
+                    insert: 'reorder($1)'
+                },
+                {
+                    label: 'set_cell_data_func',
+                    detail: 'set_cell_data_func(cell, func, *func_data)',
+                    docs: 'DOC?',
+                    insert: 'set_cell_data_func($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkAppChooser = [
+                {
+                    label: 'get_app_info',
+                    detail: 'get_app_info()',
+                    docs: 'DOC?',
+                    insert: 'get_app_info()'
+                },
+                {
+                    label: 'get_content_type',
+                    detail: 'get_content_type()',
+                    docs: 'DOC?',
+                    insert: 'get_content_type()'
+                },
+                {
+                    label: 'refresh',
+                    detail: 'refresh()',
+                    docs: 'DOC?',
+                    insert: 'refresh()'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkButton = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'new_from_icon_name',
+                    detail: 'new_from_icon_name(icon_name, size)',
+                    docs: 'DOC?',
+                    insert: 'new_from_icon_name($1)'
+                },
+                {
+                    label: 'new_from_stock',
+                    detail: 'new_from_stock(stock_id)',
+                    docs: 'DOC?',
+                    insert: 'new_from_stock($1)'
+                },
+                {
+                    label: 'new_with_label',
+                    detail: 'new_with_label(label)',
+                    docs: 'DOC?',
+                    insert: 'new_with_label($1)'
+                },
+                {
+                    label: 'new_with_mnemonic',
+                    detail: 'new_with_mnemonic(label)',
+                    docs: 'DOC?',
+                    insert: 'new_with_mnemonic($1)'
+                },
+                {
+                    label: 'clicked',
+                    detail: 'clicked()',
+                    docs: 'DOC?',
+                    insert: 'clicked()'
+                },
+                {
+                    label: 'enter',
+                    detail: 'enter()',
+                    docs: 'DOC?',
+                    insert: 'enter()'
+                },
+                {
+                    label: 'get_alignment',
+                    detail: 'get_alignment()',
+                    docs: 'DOC?',
+                    insert: 'get_alignment()'
+                },
+                {
+                    label: 'get_always_show_image',
+                    detail: 'get_always_show_image()',
+                    docs: 'DOC?',
+                    insert: 'get_always_show_image()'
+                },
+                {
+                    label: 'get_event_window',
+                    detail: 'get_event_window()',
+                    docs: 'DOC?',
+                    insert: 'get_event_window()'
+                },
+                {
+                    label: 'get_focus_on_click',
+                    detail: 'get_focus_on_click()',
+                    docs: 'DOC?',
+                    insert: 'get_focus_on_click()'
+                },
+                {
+                    label: 'get_image',
+                    detail: 'get_image()',
+                    docs: 'DOC?',
+                    insert: 'get_image()'
+                },
+                {
+                    label: 'get_image_position',
+                    detail: 'get_image_position()',
+                    docs: 'DOC?',
+                    insert: 'get_image_position()'
+                },
+                {
+                    label: 'get_label',
+                    detail: 'get_label()',
+                    docs: 'DOC?',
+                    insert: 'get_label()'
+                },
+                {
+                    label: 'get_relief',
+                    detail: 'get_relief()',
+                    docs: 'DOC?',
+                    insert: 'get_relief()'
+                },
+                {
+                    label: 'get_use_stock',
+                    detail: 'get_use_stock()',
+                    docs: 'DOC?',
+                    insert: 'get_use_stock()'
+                },
+                {
+                    label: 'get_use_underline',
+                    detail: 'get_use_underline()',
+                    docs: 'DOC?',
+                    insert: 'get_use_underline()'
+                },
+                {
+                    label: 'leave',
+                    detail: 'leave()',
+                    docs: 'DOC?',
+                    insert: 'leave()'
+                },
+                {
+                    label: 'pressed',
+                    detail: 'pressed()',
+                    docs: 'DOC?',
+                    insert: 'pressed()'
+                },
+                {
+                    label: 'released',
+                    detail: 'released()',
+                    docs: 'DOC?',
+                    insert: 'released()'
+                },
+                {
+                    label: 'set_alignment',
+                    detail: 'set_alignment(xalign, yalign)',
+                    docs: 'DOC?',
+                    insert: 'set_alignment($1)'
+                },
+                {
+                    label: 'set_always_show_image',
+                    detail: 'set_always_show_image(always_show)',
+                    docs: 'DOC?',
+                    insert: 'set_always_show_image($1)'
+                },
+                {
+                    label: 'set_focus_on_click',
+                    detail: 'set_focus_on_click(focus_on_click)',
+                    docs: 'DOC?',
+                    insert: 'set_focus_on_click($1)'
+                },
+                {
+                    label: 'set_image',
+                    detail: 'set_image(image)',
+                    docs: 'DOC?',
+                    insert: 'set_image($1)'
+                },
+                {
+                    label: 'set_image_position',
+                    detail: 'set_image_position(position)',
+                    docs: 'DOC?',
+                    insert: 'set_image_position($1)'
+                },
+                {
+                    label: 'set_label',
+                    detail: 'set_label(label)',
+                    docs: 'DOC?',
+                    insert: 'set_label($1)'
+                },
+                {
+                    label: 'set_relief',
+                    detail: 'set_relief(relief)',
+                    docs: 'DOC?',
+                    insert: 'set_relief($1)'
+                },
+                {
+                    label: 'set_use_stock',
+                    detail: 'set_use_stock(use_stock)',
+                    docs: 'DOC?',
+                    insert: 'set_use_stock($1)'
+                },
+                {
+                    label: 'set_use_underline',
+                    detail: 'set_use_underline(use_underline)',
+                    docs: 'DOC?',
+                    insert: 'set_use_underline($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkActionable = [
+                {
+                    label: 'get_action_name',
+                    detail: 'get_action_name()',
+                    docs: 'DOC?',
+                    insert: 'get_action_name()'
+                },
+                {
+                    label: 'get_action_target_value',
+                    detail: 'get_action_target_value()',
+                    docs: 'DOC?',
+                    insert: 'get_action_target_value()'
+                },
+                {
+                    label: 'set_action_name',
+                    detail: 'set_action_name(action_name)',
+                    docs: 'DOC?',
+                    insert: 'set_action_name($1)'
+                },
+                {
+                    label: 'set_action_target_value',
+                    detail: 'set_action_target_value(target_value)',
+                    docs: 'DOC?',
+                    insert: 'set_action_target_value($1)'
+                },
+                {
+                    label: 'set_detailed_action_name',
+                    detail: 'set_detailed_action_name(detailed_action_name)',
+                    docs: 'DOC?',
+                    insert: 'set_detailed_action_name($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkActivatable = [
+                {
+                    label: 'do_set_related_action',
+                    detail: 'do_set_related_action(action)',
+                    docs: 'DOC?',
+                    insert: 'do_set_related_action($1)'
+                },
+                {
+                    label: 'get_related_action',
+                    detail: 'get_related_action()',
+                    docs: 'DOC?',
+                    insert: 'get_related_action()'
+                },
+                {
+                    label: 'get_use_action_appearance',
+                    detail: 'get_use_action_appearance()',
+                    docs: 'DOC?',
+                    insert: 'get_use_action_appearance()'
+                },
+                {
+                    label: 'set_related_action',
+                    detail: 'set_related_action(action)',
+                    docs: 'DOC?',
+                    insert: 'set_related_action($1)'
+                },
+                {
+                    label: 'set_use_action_appearance',
+                    detail: 'set_use_action_appearance(use_appearance)',
+                    docs: 'DOC?',
+                    insert: 'set_use_action_appearance($1)'
+                },
+                {
+                    label: 'sync_action_properties',
+                    detail: 'sync_action_properties(action)',
+                    docs: 'DOC?',
+                    insert: 'sync_action_properties($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkCheckButton = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'new_with_label',
+                    detail: 'new_with_label(label)',
+                    docs: 'DOC?',
+                    insert: 'new_with_label($1)'
+                },
+                {
+                    label: 'new_with_mnemonic',
+                    detail: 'new_with_mnemonic(label)',
+                    docs: 'DOC?',
+                    insert: 'new_with_mnemonic($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkToggleButton = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'new_with_label',
+                    detail: 'new_with_label(label)',
+                    docs: 'DOC?',
+                    insert: 'new_with_label($1)'
+                },
+                {
+                    label: 'new_with_mnemonic',
+                    detail: 'new_with_mnemonic(label)',
+                    docs: 'DOC?',
+                    insert: 'new_with_mnemonic($1)'
+                },
+                {
+                    label: 'get_active',
+                    detail: 'get_active()',
+                    docs: 'DOC?',
+                    insert: 'get_active()'
+                },
+                {
+                    label: 'get_inconsistent',
+                    detail: 'get_inconsistent()',
+                    docs: 'DOC?',
+                    insert: 'get_inconsistent()'
+                },
+                {
+                    label: 'get_mode',
+                    detail: 'get_mode()',
+                    docs: 'DOC?',
+                    insert: 'get_mode()'
+                },
+                {
+                    label: 'set_active',
+                    detail: 'set_active(is_active)',
+                    docs: 'DOC?',
+                    insert: 'set_active($1)'
+                },
+                {
+                    label: 'set_inconsistent',
+                    detail: 'set_inconsistent(setting)',
+                    docs: 'DOC?',
+                    insert: 'set_inconsistent($1)'
+                },
+                {
+                    label: 'set_mode',
+                    detail: 'set_mode(draw_indicator)',
+                    docs: 'DOC?',
+                    insert: 'set_mode($1)'
+                },
+                {
+                    label: 'toggled',
+                    detail: 'toggled()',
+                    docs: 'DOC?',
+                    insert: 'toggled()'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
             // -----------*-----------
 
 
@@ -3607,6 +4345,42 @@ function activate(context) {
                         docs: 'DOC?',
                         insert: 'AccelGroup()'
                     },
+                    {
+                        label: 'AppChooserButton',
+                        detail: 'AppChooserButton()',
+                        docs: 'DOC?',
+                        insert: 'AppChooserButton($1)'
+                    },
+                    {
+                        label: 'ComboBox',
+                        detail: 'ComboBox()',
+                        docs: 'DOC?',
+                        insert: 'ComboBox()'
+                    },
+                    {
+                        label: 'AppChooserDialog',
+                        detail: 'AppChooserDialog()',
+                        docs: 'DOC?',
+                        insert: 'AppChooserDialog()'
+                    },
+                    {
+                        label: 'Assistant',
+                        detail: 'Assistant()',
+                        docs: 'DOC?',
+                        insert: 'Assistant()'
+                    },
+                    {
+                        label: 'CheckButton',
+                        detail: 'CheckButton()',
+                        docs: 'DOC?',
+                        insert: 'CheckButton($1)'
+                    },
+                    {
+                        label: 'AssistantPageType',
+                        detail: 'AssistantPageType',
+                        docs: 'DOC?',
+                        insert: 'AssistantPageType'
+                    }
                 ].map(s => createItem(s, vscode.CompletionItemKind.Class));
             }
             // * ------------------------------------------------------------ *
@@ -3621,69 +4395,14 @@ function activate(context) {
                 const gtkTypes = ['Window', 'Button', 'Box', 'Label', 'Entry'];
                 const isGtk = gtkTypes.some(type => getVarable(document, varName, type));
 
-                // Gtk
-                if (isGtk) {
-                    const commonGtkMethods = [
-                        {
-                            label: 'set_halign',
-                            detail: 'set_halign()',
-                            docs: 'DOC?',
-                            insert: 'set_halign($1)'
-                        },
-                        {
-                            label: 'set_valign',
-                            detail: 'set_valign()',
-                            docs: 'DOC?',
-                            insert: 'set_valign($1)'
-                        },
-                        {
-                            label: 'set_sensitive',
-                            detail: 'set_sensitive(bool)',
-                            docs: 'DOC?',
-                            insert: 'set_sensitive($1)'
-                        },
-                        {
-                            label: 'set_margin_start',
-                            detail: 'set_margin_start(int)',
-                            docs: 'DOC?',
-                            insert: 'set_margin_start($1)'
-                        },
-                        {
-                            label: 'set_margin_end',
-                            detail: 'set_margin_end(int)',
-                            docs: 'DOC?',
-                            insert: 'set_margin_end($1)'
-                        },
-                        {
-                            label: 'set_margin_top',
-                            detail: 'set_margin_top(int)',
-                            docs: 'DOC?',
-                            insert: 'set_margin_top($1)'
-                        },
-                        {
-                            label: 'set_margin_bottom',
-                            detail: 'set_margin_bottom(int)',
-                            docs: 'DOC?',
-                            insert: 'set_margin_bottom($1)'
-                        },
-                        {
-                            label: 'disconnect_by_func',
-                            detail: 'Widget.disconnect_by_func()',
-                            docs: 'DOC?',
-                            insert: 'disconnect_by_func($1)'
-                        }
-                    ].map(s => createItem(s, vscode.CompletionItemKind.Method));
-                    results.push(...commonGtkMethods, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkWidget);
-                }
-
                 // Label
                 if (getVarable(document, varName, 'Label')) {
-                    results.push(...GtkLabel);
+                    results.push(...GtkLabel, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkWidget);
                 }
 
                 // AccelLabel
                 if (getVarable(document, varName, 'AccelLabel')) {
-                    results.push(...GtkMisk, ...GtkLabel, ...GtkAccelLabel, ...GtkWidget)
+                    results.push(...GtkAccelLabel, ...GtkLabel, ...GtkMisk, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence);
                 }
 
                 // self
@@ -3693,37 +4412,17 @@ function activate(context) {
 
                 // Window
                 if (getVarable(document, varName, 'Window')) {
-                    results.push(...GtkWindow, ...GtkContainer, ...GtkBin)
+                    results.push(...GtkWindow, ...GtkBin, ...GtkContainer, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkWidget)
                 }
 
                 // ActionBar
                 if (getVarable(document, varName, 'ActionBar')) {
-                    results.push(...GtkContainer, ...GtkBin, ...GtkActionBar)
+                    results.push(...GtkActionBar ,...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence)
                 }
 
                 // Button
                 if (getVarable(document, varName, 'Button')) {
-                    const buttonGtk = [
-                        {
-                            label: 'set_label',
-                            detail: 'set_label()',
-                            docs: 'DOC?',
-                            insert: 'set_label($1)'
-                        },
-                        {
-                            label: 'get_label',
-                            detail: 'get_label()',
-                            docs: 'DOC?',
-                            insert: 'get_label($1)'
-                        },
-                        {
-                            label: 'get_child',
-                            detail: 'get_child()',
-                            docs: 'DOC?',
-                            insert: 'get_child()'
-                        }
-                    ].map(s => createItem(s, vscode.CompletionItemKind.Method));
-                    results.push(...buttonGtk);
+                    results.push(...GtkButton, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkActionable, ...GtkActivatable);
                 }
 
                 // Box
@@ -3966,25 +4665,230 @@ function activate(context) {
                             insert: 'set_wrap_license($1)'
                         }
                     ].map(s => createItem(s, vscode.CompletionItemKind.Method));
-                    results.push(...GtkAboutDialog, ...GtkContainer, ...GtkBin, ...GtkWindow, ...GtkDialog);
+                    results.push(...GtkAboutDialog, ...GtkDialog, ...GtkWindow, ...GtkBin, ...GtkContainer, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkWidget);
                 }
 
-                // bind_property
-                if (getVarable(document, varName, 'bind_property')){
-                    const bind_propertyMethod = [
-                        
+                //AppChooserButton
+                if (getVarable(document, varName, 'AppChooserButton')){
+                    results.push(...GtkAppChooserButton, ...GtkComboBox, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkCellEditable, ...GtkCellLayout, ...GtkAppChooser);
+                }
+
+                // AppChooserDialog
+                if (getVarable(document, varName, 'AppChooserDialog')){
+                    const GtkAppChooserDialog = [
+                        {
+                            label: 'new',
+                            detail: 'new(parent, flags, file)',
+                            docs: 'DOC?',
+                            insert: 'new($1)'
+                        },
+                        {
+                            label: 'new_for_content_type',
+                            detail: 'new_for_content_type(parent, flags, content_type)',
+                            docs: 'DOC?',
+                            insert: 'new_for_content_type($1)'
+                        },
+                        {
+                            label: 'get_heading',
+                            detail: 'get_heading()',
+                            docs: 'DOC?',
+                            insert: 'get_heading()'
+                        },
+                        {
+                            label: 'get_widget',
+                            detail: 'get_widget()',
+                            docs: 'DOC?',
+                            insert: 'get_widget()'
+                        },
+                        {
+                            label: 'set_heading',
+                            detail: 'set_heading(heading)',
+                            docs: 'DOC?',
+                            insert: 'set_heading($1)'
+                        }
                     ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+                    results.push(...GtkAppChooserDialog ,...GtkDialog, ...GtkWindow, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkAppChooser);
                 }
 
-                // Object from Gobject Lib
-                // if (linePrefix.match(/Object\.\w*$/)) {
-                //     const ObjectFGObjectLib = [
-                //         {
-                //             label: '',
-                //         }
-                //     ].map(s => createItem(s, vscode.CompletionItemKind.Method));
-                //     results.push(...GObjectMethodInheartence)
-                // }
+                //GtkAssistant
+                if (getVarable(document, varName, 'Assistant')){
+                    const GtkAssistant = [
+                        {
+                            label: 'new',
+                            detail: 'new()',
+                            docs: 'DOC?',
+                            insert: 'new()'
+                        },
+                        {
+                            label: 'add_action_widget',
+                            detail: 'add_action_widget(child)',
+                            docs: 'DOC?',
+                            insert: 'add_action_widget($1)'
+                        },
+                        {
+                            label: 'append_page',
+                            detail: 'append_page(page)',
+                            docs: 'DOC?',
+                            insert: 'append_page($1)'
+                        },
+                        {
+                            label: 'commit',
+                            detail: 'commit()',
+                            docs: 'DOC?',
+                            insert: 'commit()'
+                        },
+                        {
+                            label: 'get_current_page',
+                            detail: 'get_current_page()',
+                            docs: 'DOC?',
+                            insert: 'get_current_page()'
+                        },
+                        {
+                            label: 'get_n_pages',
+                            detail: 'get_n_pages()',
+                            docs: 'DOC?',
+                            insert: 'get_n_pages()'
+                        },
+                        {
+                            label: 'get_nth_page',
+                            detail: 'get_nth_page(page_num)',
+                            docs: 'DOC?',
+                            insert: 'get_nth_page($1)'
+                        },
+                        {
+                            label: 'get_page_complete',
+                            detail: 'get_page_complete(page)',
+                            docs: 'DOC?',
+                            insert: 'get_page_complete($1)'
+                        },
+                        {
+                            label: 'get_page_has_padding',
+                            detail: 'get_page_has_padding(page)',
+                            docs: 'DOC?',
+                            insert: 'get_page_has_padding($1)'
+                        },
+                        {
+                            label: 'get_page_header_image',
+                            detail: 'get_page_header_image(page)',
+                            docs: 'DOC?',
+                            insert: 'get_page_header_image($1)'
+                        },
+                        {
+                            label: 'get_page_side_image',
+                            detail: 'get_page_side_image(page)',
+                            docs: 'DOC?',
+                            insert: 'get_page_side_image($1)'
+                        },
+                        {
+                            label: 'get_page_title',
+                            detail: 'get_page_title(page)',
+                            docs: 'DOC?',
+                            insert: 'get_page_title($1)'
+                        },
+                        {
+                            label: 'get_page_type',
+                            detail: 'get_page_type(page)',
+                            docs: 'DOC?',
+                            insert: 'get_page_type($1)'
+                        },
+                        {
+                            label: 'insert_page',
+                            detail: 'insert_page(page, position)',
+                            docs: 'DOC?',
+                            insert: 'insert_page($1)'
+                        },
+                        {
+                            label: 'next_page',
+                            detail: 'next_page()',
+                            docs: 'DOC?',
+                            insert: 'next_page()'
+                        },
+                        {
+                            label: 'prepend_page',
+                            detail: 'prepend_page(page)',
+                            docs: 'DOC?',
+                            insert: 'prepend_page($1)'
+                        },
+                        {
+                            label: 'previous_page',
+                            detail: 'previous_page()',
+                            docs: 'DOC?',
+                            insert: 'previous_page()'
+                        },
+                        {
+                            label: 'remove_action_widget',
+                            detail: 'remove_action_widget(child)',
+                            docs: 'DOC?',
+                            insert: 'remove_action_widget($1)'
+                        },
+                        {
+                            label: 'remove_page',
+                            detail: 'remove_page(page_num)',
+                            docs: 'DOC?',
+                            insert: 'remove_page($1)'
+                        },
+                        {
+                            label: 'set_current_page',
+                            detail: 'set_current_page(page_num)',
+                            docs: 'DOC?',
+                            insert: 'set_current_page($1)'
+                        },
+                        {
+                            label: 'set_forward_page_func',
+                            detail: 'set_forward_page_func(page_func, *data)',
+                            docs: 'DOC?',
+                            insert: 'set_forward_page_func($1)'
+                        },
+                        {
+                            label: 'set_page_complete',
+                            detail: 'set_page_complete(page, complete)',
+                            docs: 'DOC?',
+                            insert: 'set_page_complete($1)'
+                        },
+                        {
+                            label: 'set_page_has_padding',
+                            detail: 'set_page_has_padding(page, has_padding)',
+                            docs: 'DOC?',
+                            insert: 'set_page_has_padding($1)'
+                        },
+                        {
+                            label: 'set_page_header_image',
+                            detail: 'set_page_header_image(page, pixbuf)',
+                            docs: 'DOC?',
+                            insert: 'set_page_header_image($1)'
+                        },
+                        {
+                            label: 'set_page_side_image',
+                            detail: 'set_page_side_image(page, pixbuf)',
+                            docs: 'DOC?',
+                            insert: 'set_page_side_image($1)'
+                        },
+                        {
+                            label: 'set_page_title',
+                            detail: 'set_page_title(page, title)',
+                            docs: 'DOC?',
+                            insert: 'set_page_title($1)'
+                        },
+                        {
+                            label: 'set_page_type',
+                            detail: 'set_page_type(page, type)',
+                            docs: 'DOC?',
+                            insert: 'set_page_type($1)'
+                        },
+                        {
+                            label: 'update_buttons_state',
+                            detail: 'update_buttons_state()',
+                            docs: 'DOC?',
+                            insert: 'update_buttons_state()'
+                        }
+                    ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+                    results.push(...GtkAssistant ,...GtkWindow, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence);
+                }
+
+                // CheckButton
+                if (getVarable(document, varName, 'CheckButton')){
+                    results.push(...GtkCheckButton, ...GtkToggleButton, ...GtkButton, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkActionable, ...GtkActivatable);
+                }
 
                 // All Suggests
                 if (results.length > 0) {
@@ -4030,6 +4934,47 @@ function activate(context) {
                         insert: 'Property($1)'
                     }
                 ].map(s => createItem(s, vscode.CompletionItemKind.Method))
+            }
+
+            if (linePrefix.match(/AssistantPageType\.\w*$/)){
+                return [
+                    {
+                        label: 'INTRO',
+                        detail: 'INTRO',
+                        docs: 'DOC?',
+                        insert: 'INTRO'
+                    },
+                    {
+                        label: 'CONFIRM',
+                        detail: 'CONFIRM',
+                        docs: 'DOC?',
+                        insert: 'CONFIRM'
+                    },
+                    {
+                        label: 'SUMMARY',
+                        detail: 'SUMMARY',
+                        docs: 'DOC?',
+                        insert: 'SUMMARY'
+                    },
+                    {
+                        label: 'CONTENT',
+                        detail: 'CONTENT',
+                        docs: 'DOC?',
+                        insert: 'CONTENT'
+                    },
+                    {
+                        label: 'PROGRESS',
+                        detail: 'PROGRESS',
+                        docs: 'DOC?',
+                        insert: 'PROGRESS'
+                    },
+                    {
+                        label: 'CUSTOM',
+                        detail: 'CUSTOM',
+                        docs: 'DOC?',
+                        insert: 'CUSTOM'
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.EnumMember))
             }
 
             if (linePrefix.match(/Property\(\w*$/)){
@@ -4171,6 +5116,18 @@ function activate(context) {
                         insert: 'CENTER_ON_PARENT'
                     }
                 ].map(s => createItem(s, vscode.CompletionItemKind.EnumMember))
+            }
+
+            // CheckButton args
+            if (linePrefix.match(/CheckButton\s*\(\s*\w*$/)) {
+                return [
+                    {
+                        label: 'label',
+                        detail: 'label="[str]"',
+                        docs: 'DOC?',
+                        insert: 'label="$1"'
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Property))
             }
 
             // Orientation Props
