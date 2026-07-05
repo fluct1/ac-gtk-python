@@ -1,3 +1,10 @@
+# [1.2.7]
+## Added:
+- Add `ColorButton` & `ColorChooser` & `ColorChooserDialog` & `ComboBox` Widgets.
+- Add `Gtk.ListStore()` Widget Tree.
+## Fixed:
+- Nothing.
+
 # [1.1.7]
 ## Added:
 - Add `Gtk.AppChooserButton` & `Gtk.AppChooserDialog` & `Gtk.Assistant` & `Gtk.CheckButton` New Widgets.

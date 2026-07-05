@@ -4254,8 +4254,466 @@ function activate(context) {
                 }
             ].map(s => createItem(s, vscode.CompletionItemKind.Method));
 
-            // -----------*-----------
+            const GtkColorChooser = [
+                {
+                    label: 'add_palette',
+                    detail: 'add_palette(orientation, colors_per_line, colors)',
+                    docs: 'DOC?',
+                    insert: 'add_palette($1)'
+                },
+                {
+                    label: 'get_rgba',
+                    detail: 'get_rgba()',
+                    docs: 'DOC?',
+                    insert: 'get_rgba()'
+                },
+                {
+                    label: 'get_use_alpha',
+                    detail: 'get_use_alpha()',
+                    docs: 'DOC?',
+                    insert: 'get_use_alpha()'
+                },
+                {
+                    label: 'set_rgba',
+                    detail: 'set_rgba(color)',
+                    docs: 'DOC?',
+                    insert: 'set_rgba($1)'
+                },
+                {
+                    label: 'set_use_alpha',
+                    detail: 'set_use_alpha(use_alpha)',
+                    docs: 'DOC?',
+                    insert: 'set_use_alpha($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
 
+            const GtkColorButton = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'new_with_color',
+                    detail: 'new_with_color(color)',
+                    docs: 'DOC?',
+                    insert: 'new_with_color($1)'
+                },
+                {
+                    label: 'new_with_rgba',
+                    detail: 'new_with_rgba(rgba)',
+                    docs: 'DOC?',
+                    insert: 'new_with_rgba($1)'
+                },
+                {
+                    label: 'get_alpha',
+                    detail: 'get_alpha()',
+                    docs: 'DOC?',
+                    insert: 'get_alpha()'
+                },
+                {
+                    label: 'get_color',
+                    detail: 'get_color()',
+                    docs: 'DOC?',
+                    insert: 'get_color()'
+                },
+                {
+                    label: 'get_title',
+                    detail: 'get_title()',
+                    docs: 'DOC?',
+                    insert: 'get_title()'
+                },
+                {
+                    label: 'get_use_alpha',
+                    detail: 'get_use_alpha()',
+                    docs: 'DOC?',
+                    insert: 'get_use_alpha()'
+                },
+                {
+                    label: 'set_alpha',
+                    detail: 'set_alpha(alpha)',
+                    docs: 'DOC?',
+                    insert: 'set_alpha($1)'
+                },
+                {
+                    label: 'set_color',
+                    detail: 'set_color(color)',
+                    docs: 'DOC?',
+                    insert: 'set_color($1)'
+                },
+                {
+                    label: 'set_title',
+                    detail: 'set_title(title)',
+                    docs: 'DOC?',
+                    insert: 'set_title($1)'
+                },
+                {
+                    label: 'set_use_alpha',
+                    detail: 'set_use_alpha(use_alpha)',
+                    docs: 'DOC?',
+                    insert: 'set_use_alpha($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkTreeDragDest = [
+                {
+                    label: 'drag_data_received',
+                    detail: 'drag_data_received(dest, selection_data)',
+                    docs: 'DOC?',
+                    insert: 'drag_data_received($1)'
+                },
+                {
+                    label: 'row_drop_possible',
+                    detail: 'row_drop_possible(dest_path, selection_data)',
+                    docs: 'DOC?',
+                    insert: 'row_drop_possible($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkTreeDragSource = [
+                {
+                    label: 'drag_data_delete',
+                    detail: 'drag_data_delete(path)',
+                    docs: 'DOC?',
+                    insert: 'drag_data_delete($1)'
+                },
+                {
+                    label: 'drag_data_get',
+                    detail: 'drag_data_get(path, selection_data)',
+                    docs: 'DOC?',
+                    insert: 'drag_data_get($1)'
+                },
+                {
+                    label: 'row_draggable',
+                    detail: 'row_draggable(path)',
+                    docs: 'DOC?',
+                    insert: 'row_draggable($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkTreeModel = [
+                {
+                    label: 'filter_new',
+                    detail: 'filter_new(root)',
+                    docs: 'DOC?',
+                    insert: 'filter_new($1)'
+                },
+                {
+                    label: 'foreach',
+                    detail: 'foreach(func, *user_data)',
+                    docs: 'DOC?',
+                    insert: 'foreach($1)'
+                },
+                {
+                    label: 'get',
+                    detail: 'get(treeiter, *columns)',
+                    docs: 'DOC?',
+                    insert: 'get($1)'
+                },
+                {
+                    label: 'get_column_type',
+                    detail: 'get_column_type(index_)',
+                    docs: 'DOC?',
+                    insert: 'get_column_type($1)'
+                },
+                {
+                    label: 'get_flags',
+                    detail: 'get_flags()',
+                    docs: 'DOC?',
+                    insert: 'get_flags()'
+                },
+                {
+                    label: 'get_iter',
+                    detail: 'get_iter(path)',
+                    docs: 'DOC?',
+                    insert: 'get_iter($1)'
+                },
+                {
+                    label: 'get_iter_first',
+                    detail: 'get_iter_first()',
+                    docs: 'DOC?',
+                    insert: 'get_iter_first()'
+                },
+                {
+                    label: 'get_iter_from_string',
+                    detail: 'get_iter_from_string(path_string)',
+                    docs: 'DOC?',
+                    insert: 'get_iter_from_string($1)'
+                },
+                {
+                    label: 'get_n_columns',
+                    detail: 'get_n_columns()',
+                    docs: 'DOC?',
+                    insert: 'get_n_columns()'
+                },
+                {
+                    label: 'get_path',
+                    detail: 'get_path(iter)',
+                    docs: 'DOC?',
+                    insert: 'get_path($1)'
+                },
+                {
+                    label: 'get_string_from_iter',
+                    detail: 'get_string_from_iter(iter)',
+                    docs: 'DOC?',
+                    insert: 'get_string_from_iter($1)'
+                },
+                {
+                    label: 'get_value',
+                    detail: 'get_value(iter, column)',
+                    docs: 'DOC?',
+                    insert: 'get_value($1)'
+                },
+                {
+                    label: 'iter_children',
+                    detail: 'iter_children(parent)',
+                    docs: 'DOC?',
+                    insert: 'iter_children($1)'
+                },
+                {
+                    label: 'iter_has_child',
+                    detail: 'iter_has_child(iter)',
+                    docs: 'DOC?',
+                    insert: 'iter_has_child($1)'
+                },
+                {
+                    label: 'iter_n_children',
+                    detail: 'iter_n_children(iter)',
+                    docs: 'DOC?',
+                    insert: 'iter_n_children($1)'
+                },
+                {
+                    label: 'iter_next',
+                    detail: 'iter_next(aiter)',
+                    docs: 'DOC?',
+                    insert: 'iter_next($1)'
+                },
+                {
+                    label: 'iter_nth_child',
+                    detail: 'iter_nth_child(parent, n)',
+                    docs: 'DOC?',
+                    insert: 'iter_nth_child($1)'
+                },
+                {
+                    label: 'iter_parent',
+                    detail: 'iter_parent(child)',
+                    docs: 'DOC?',
+                    insert: 'iter_parent($1)'
+                },
+                {
+                    label: 'iter_previous',
+                    detail: 'iter_previous(aiter)',
+                    docs: 'DOC?',
+                    insert: 'iter_previous($1)'
+                },
+                {
+                    label: 'ref_node',
+                    detail: 'ref_node(iter)',
+                    docs: 'DOC?',
+                    insert: 'ref_node($1)'
+                },
+                {
+                    label: 'row_changed',
+                    detail: 'row_changed(path, iter)',
+                    docs: 'DOC?',
+                    insert: 'row_changed($1)'
+                },
+                {
+                    label: 'row_deleted',
+                    detail: 'row_deleted(path)',
+                    docs: 'DOC?',
+                    insert: 'row_deleted($1)'
+                },
+                {
+                    label: 'row_has_child_toggled',
+                    detail: 'row_has_child_toggled(path, iter)',
+                    docs: 'DOC?',
+                    insert: 'row_has_child_toggled($1)'
+                },
+                {
+                    label: 'row_inserted',
+                    detail: 'row_inserted(path, iter)',
+                    docs: 'DOC?',
+                    insert: 'row_inserted($1)'
+                },
+                {
+                    label: 'rows_reordered',
+                    detail: 'rows_reordered(path, iter, new_order)',
+                    docs: 'DOC?',
+                    insert: 'rows_reordered($1)'
+                },
+                {
+                    label: 'set_row',
+                    detail: 'set_row(treeiter, row)',
+                    docs: 'DOC?',
+                    insert: 'set_row($1)'
+                },
+                {
+                    label: 'sort_new_with_model',
+                    detail: 'sort_new_with_model()',
+                    docs: 'DOC?',
+                    insert: 'sort_new_with_model()'
+                },
+                {
+                    label: 'unref_node',
+                    detail: 'unref_node(iter)',
+                    docs: 'DOC?',
+                    insert: 'unref_node($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkTreeSortable = [
+                {
+                    label: 'get_sort_column_id',
+                    detail: 'get_sort_column_id()',
+                    docs: 'DOC?',
+                    insert: 'get_sort_column_id()'
+                },
+                {
+                    label: 'has_default_sort_func',
+                    detail: 'has_default_sort_func()',
+                    docs: 'DOC?',
+                    insert: 'has_default_sort_func()'
+                },
+                {
+                    label: 'set_default_sort_func',
+                    detail: 'set_default_sort_func(sort_func, *user_data)',
+                    docs: 'DOC?',
+                    insert: 'set_default_sort_func($1)'
+                },
+                {
+                    label: 'set_sort_column_id',
+                    detail: 'set_sort_column_id(sort_column_id, order)',
+                    docs: 'DOC?',
+                    insert: 'set_sort_column_id($1)'
+                },
+                {
+                    label: 'set_sort_func',
+                    detail: 'set_sort_func(sort_column_id, sort_func, *user_data)',
+                    docs: 'DOC?',
+                    insert: 'set_sort_func($1)'
+                },
+                {
+                    label: 'sort_column_changed',
+                    detail: 'sort_column_changed()',
+                    docs: 'DOC?',
+                    insert: 'sort_column_changed()'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkListStore = [
+                {
+                    label: 'new',
+                    detail: 'new(types)',
+                    docs: 'DOC?',
+                    insert: 'new($1)'
+                },
+                {
+                    label: 'append',
+                    detail: 'append(row=None)',
+                    docs: 'DOC?',
+                    insert: 'append($1)'
+                },
+                {
+                    label: 'clear',
+                    detail: 'clear()',
+                    docs: 'DOC?',
+                    insert: 'clear()'
+                },
+                {
+                    label: 'insert',
+                    detail: 'insert(position, row=None)',
+                    docs: 'DOC?',
+                    insert: 'insert($1)'
+                },
+                {
+                    label: 'insert_after',
+                    detail: 'insert_after(sibling, row=None)',
+                    docs: 'DOC?',
+                    insert: 'insert_after($1)'
+                },
+                {
+                    label: 'insert_before',
+                    detail: 'insert_before(sibling, row=None)',
+                    docs: 'DOC?',
+                    insert: 'insert_before($1)'
+                },
+                {
+                    label: 'insert_with_values',
+                    detail: 'insert_with_values(position, columns, values)',
+                    docs: 'DOC?',
+                    insert: 'insert_with_values($1)'
+                },
+                {
+                    label: 'insert_with_valuesv',
+                    detail: 'insert_with_valuesv(position, columns, values)',
+                    docs: 'DOC?',
+                    insert: 'insert_with_valuesv($1)'
+                },
+                {
+                    label: 'iter_is_valid',
+                    detail: 'iter_is_valid(iter)',
+                    docs: 'DOC?',
+                    insert: 'iter_is_valid($1)'
+                },
+                {
+                    label: 'move_after',
+                    detail: 'move_after(iter, position)',
+                    docs: 'DOC?',
+                    insert: 'move_after($1)'
+                },
+                {
+                    label: 'move_before',
+                    detail: 'move_before(iter, position)',
+                    docs: 'DOC?',
+                    insert: 'move_before($1)'
+                },
+                {
+                    label: 'prepend',
+                    detail: 'prepend(row=None)',
+                    docs: 'DOC?',
+                    insert: 'prepend($1)'
+                },
+                {
+                    label: 'remove',
+                    detail: 'remove(iter)',
+                    docs: 'DOC?',
+                    insert: 'remove($1)'
+                },
+                {
+                    label: 'reorder',
+                    detail: 'reorder(new_order)',
+                    docs: 'DOC?',
+                    insert: 'reorder($1)'
+                },
+                {
+                    label: 'set',
+                    detail: 'set(iter, columns, values)',
+                    docs: 'DOC?',
+                    insert: 'set($1)'
+                },
+                {
+                    label: 'set_column_types',
+                    detail: 'set_column_types(types)',
+                    docs: 'DOC?',
+                    insert: 'set_column_types($1)'
+                },
+                {
+                    label: 'set_value',
+                    detail: 'set_value(treeiter, column, value)',
+                    docs: 'DOC?',
+                    insert: 'set_value($1)'
+                },
+                {
+                    label: 'swap',
+                    detail: 'swap(a, b)',
+                    docs: 'DOC?',
+                    insert: 'swap($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            // -----------*-----------
 
             // All Main Methods
             if (linePrefix.match(/Gtk\.\w*$/i)) {
@@ -4380,6 +4838,54 @@ function activate(context) {
                         detail: 'AssistantPageType',
                         docs: 'DOC?',
                         insert: 'AssistantPageType'
+                    },
+                    {
+                        label: 'ColorChooserWidget',
+                        detail: 'ColorChooserWidget()',
+                        docs: 'DOC?',
+                        insert: 'ColorChooserWidget()'
+                    },
+                    {
+                        label: 'ColorButton',
+                        detail: 'ColorButton()',
+                        docs: 'DOC?',
+                        insert: 'ColorButton()'
+                    },
+                    {
+                        label: 'ColorChooserDialog',
+                        detail: 'ColorChooserDialog()',
+                        docs: 'DOC?',
+                        insert: 'ColorChooserDialog($1)'
+                    },
+                    {
+                        label: 'ResponseType',
+                        detail: 'ResponseType',
+                        docs: 'DOC?',
+                        insert: 'ResponseType'
+                    },
+                    {
+                        label: 'ListStore',
+                        detail: 'ListStore()',
+                        docs: 'DOC?',
+                        insert: 'ListStore($1)'
+                    },
+                    {
+                        label: 'CellRendererText',
+                        detail: 'CellRendererText()',
+                        docs: 'DOC?',
+                        insert: 'CellRendererText()'
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Class));
+            }
+
+            if (linePrefix.match(/Gdk\.\w*$/i)) {
+				// --- Autocomplate Section ---
+                return [
+                    {
+                        label: 'RGBA',
+                        detail: 'RGBA()',
+                        docs: 'DOC?',
+                        insert: 'RGBA($1)'
                     }
                 ].map(s => createItem(s, vscode.CompletionItemKind.Class));
             }
@@ -4890,6 +5396,39 @@ function activate(context) {
                     results.push(...GtkCheckButton, ...GtkToggleButton, ...GtkButton, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkActionable, ...GtkActivatable);
                 }
 
+                // ColorButton
+                if (getVarable(document, varName, 'ColorButton')){
+                    results.push(...GtkColorButton, ...GtkButton, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkActionable, ...GtkActivatable, ...GtkColorChooser);
+                }
+
+                // ColorChooserWidget
+                if (getVarable(document, varName, 'ColorChooserWidget')){
+                    results.push(...GtkColorChooser);
+                }
+
+                // ColorChooserDialog
+                if (getVarable(document, varName, 'ColorChooserDialog')){
+                    const GtkColorChooserDialog = [
+                        {
+                            label: 'new',
+                            detail: 'new()',
+                            docs: 'DOC?',
+                            insert: 'new()'
+                        }
+                    ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+                    results.push(...GtkColorChooserDialog, ...GtkDialog, ...GtkWindow, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkColorChooser);
+                }
+
+                // ComboBox
+                if (getVarable(document, varName, 'ComboBox')){
+                    results.push(...GtkComboBox, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkCellEditable, ...GtkCellLayout);
+                }
+
+                // ListStore
+                if (getVarable(document, varName, 'ListStore')){
+                    results.push(...GtkListStore, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkTreeDragDest, ...GtkTreeDragSource, ...GtkTreeModel, ...GtkTreeSortable);
+                }
+
                 // All Suggests
                 if (results.length > 0) {
                     return results;
@@ -4973,6 +5512,23 @@ function activate(context) {
                         detail: 'CUSTOM',
                         docs: 'DOC?',
                         insert: 'CUSTOM'
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.EnumMember))
+            }
+
+            if (linePrefix.match(/ResponseType\.\w*$/)){
+                return [
+                    {
+                        label: 'OK',
+                        detail: 'OK',
+                        docs: 'DOC?',
+                        insert: 'OK'
+                    },
+                    {
+                        label: 'CANCEL',
+                        detail: 'CANCEL',
+                        docs: 'DOC?',
+                        insert: 'CANCEL'
                     }
                 ].map(s => createItem(s, vscode.CompletionItemKind.EnumMember))
             }
@@ -5441,6 +5997,24 @@ function activate(context) {
                         detail: '"delete-event"',
                         docs: 'DOC?',
                         insert: '"delete-event"'
+                    },
+                    {
+                        label: '"color-set"',
+                        detail: '"color-set"',
+                        docs: 'DOC?',
+                        insert: '"color-set"'
+                    },
+                    {
+                        label: '"notify::rgba"',
+                        detail: '"notify::rgba"',
+                        docs: 'DOC?',
+                        insert: '"notify::rgba"'
+                    },
+                    {
+                        label: '"changed"',
+                        detail: '"changed"',
+                        docs: 'DOC?',
+                        insert: '"changed"'
                     }
                 ].map(s => {
                     let item = createItem(s, vscode.CompletionItemKind.Enum);
