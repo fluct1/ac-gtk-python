@@ -1,3 +1,9 @@
+# [1.3.8]
+## Added:
+- Nothing
+## Fixed:
+- HotFix: Extension Broken.
+
 # [1.3.7]
 ## Added:
 - Add all `Entry` Widget Methods.
