@@ -1,3 +1,53 @@
+# [1.3.7]
+## Added:
+- Add all `Entry` Widget Methods.
+- Add all `Box` Widget Methods.
+- Add `FileChooserButton` Widget.
+- Add `FileChooserDialog` Method.
+- Add `FlowBox` Widget.
+- Add `FontButton` widget.
+- Add `FontChooserDialog` widget.
+- Add `Frame` widget.
+- Add `GLArea` widget.
+- Add `Grid` widget.
+- Add `HeaderBar` widget.
+- Add `IconView` widget.
+- Add `Image` widget.
+- Add `InfoBar` widget.
+- Add `LevelBar` widget.
+- Add `LinkButton` widget.
+- Add `ListBox` widget.
+- Add `LockButton` widget.
+- Add `MenuBar` widget.
+- Add `MenuButton` widget.
+- Add `MessageDialog` widget.
+- Add `Notebook` widget.
+- Add `Paned` widget.
+- Add `PlacesSidebar` widget.
+- Add `ProgressBar` widget.
+- Add `RadioButton` widget.
+- Add `RecentChooserDialog` widget.
+- Add `Scale` widget.
+- Add `Scrollbar` widget.
+- Add `ScrolledWindow` widget.
+- Add `SearchBar` widget.
+- Add `SearchEntry` widget.
+- Add `Separator` widget.
+- Add `SpinButton` widget.
+- Add `Spinner` widget.
+- Add `Stack` widget.
+- Add `StackSwitcher` widget.
+- Add `Statusbar` widget.
+- Add `Switch` widget.
+- Add `TextView` widget.
+- Add `ToggleButton` widget.
+- Add `ToolPalette` widget.
+- Add `Toolbar` widget.
+- Add `TreeView` widget.
+- Add `VolumeButton` widget.
+## Fixed:
+- Nothing
+
 # [1.2.7]
 ## Added:
 - Add `ColorButton` & `ColorChooser` & `ColorChooserDialog` & `ComboBox` Widgets.

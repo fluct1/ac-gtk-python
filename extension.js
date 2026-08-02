@@ -4713,7 +4713,6382 @@ function activate(context) {
                 }
             ].map(s => createItem(s, vscode.CompletionItemKind.Method));
 
-            // -----------*-----------
+            const GtkEntry = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'new_with_buffer',
+                    detail: 'new_with_buffer(buffer)',
+                    docs: 'DOC?',
+                    insert: 'new_with_buffer($1)'
+                },
+                {
+                    label: 'get_activates_default',
+                    detail: 'get_activates_default()',
+                    docs: 'DOC?',
+                    insert: 'get_activates_default()'
+                },
+                {
+                    label: 'get_alignment',
+                    detail: 'get_alignment()',
+                    docs: 'DOC?',
+                    insert: 'get_alignment()'
+                },
+                {
+                    label: 'get_attributes',
+                    detail: 'get_attributes()',
+                    docs: 'DOC?',
+                    insert: 'get_attributes()'
+                },
+                {
+                    label: 'get_buffer',
+                    detail: 'get_buffer()',
+                    docs: 'DOC?',
+                    insert: 'get_buffer()'
+                },
+                {
+                    label: 'get_completion',
+                    detail: 'get_completion()',
+                    docs: 'DOC?',
+                    insert: 'get_completion()'
+                },
+                {
+                    label: 'get_current_icon_drag_source',
+                    detail: 'get_current_icon_drag_source()',
+                    docs: 'DOC?',
+                    insert: 'get_current_icon_drag_source()'
+                },
+                {
+                    label: 'get_cursor_hadjustment',
+                    detail: 'get_cursor_hadjustment()',
+                    docs: 'DOC?',
+                    insert: 'get_cursor_hadjustment()'
+                },
+                {
+                    label: 'get_has_frame',
+                    detail: 'get_has_frame()',
+                    docs: 'DOC?',
+                    insert: 'get_has_frame()'
+                },
+                {
+                    label: 'get_icon_activatable',
+                    detail: 'get_icon_activatable(icon_pos)',
+                    docs: 'DOC?',
+                    insert: 'get_icon_activatable($1)'
+                },
+                {
+                    label: 'get_icon_area',
+                    detail: 'get_icon_area(icon_pos)',
+                    docs: 'DOC?',
+                    insert: 'get_icon_area($1)'
+                },
+                {
+                    label: 'get_icon_at_pos',
+                    detail: 'get_icon_at_pos(x, y)',
+                    docs: 'DOC?',
+                    insert: 'get_icon_at_pos($1)'
+                },
+                {
+                    label: 'get_icon_gicon',
+                    detail: 'get_icon_gicon(icon_pos)',
+                    docs: 'DOC?',
+                    insert: 'get_icon_gicon($1)'
+                },
+                {
+                    label: 'get_icon_name',
+                    detail: 'get_icon_name(icon_pos)',
+                    docs: 'DOC?',
+                    insert: 'get_icon_name($1)'
+                },
+                {
+                    label: 'get_icon_pixbuf',
+                    detail: 'get_icon_pixbuf(icon_pos)',
+                    docs: 'DOC?',
+                    insert: 'get_icon_pixbuf($1)'
+                },
+                {
+                    label: 'get_icon_sensitive',
+                    detail: 'get_icon_sensitive(icon_pos)',
+                    docs: 'DOC?',
+                    insert: 'get_icon_sensitive($1)'
+                },
+                {
+                    label: 'get_icon_stock',
+                    detail: 'get_icon_stock(icon_pos)',
+                    docs: 'DOC?',
+                    insert: 'get_icon_stock($1)'
+                },
+                {
+                    label: 'get_icon_storage_type',
+                    detail: 'get_icon_storage_type(icon_pos)',
+                    docs: 'DOC?',
+                    insert: 'get_icon_storage_type($1)'
+                },
+                {
+                    label: 'get_icon_tooltip_markup',
+                    detail: 'get_icon_tooltip_markup(icon_pos)',
+                    docs: 'DOC?',
+                    insert: 'get_icon_tooltip_markup($1)'
+                },
+                {
+                    label: 'get_icon_tooltip_text',
+                    detail: 'get_icon_tooltip_text(icon_pos)',
+                    docs: 'DOC?',
+                    insert: 'get_icon_tooltip_text($1)'
+                },
+                {
+                    label: 'get_inner_border',
+                    detail: 'get_inner_border()',
+                    docs: 'DOC?',
+                    insert: 'get_inner_border()'
+                },
+                {
+                    label: 'get_input_hints',
+                    detail: 'get_input_hints()',
+                    docs: 'DOC?',
+                    insert: 'get_input_hints()'
+                },
+                {
+                    label: 'get_input_purpose',
+                    detail: 'get_input_purpose()',
+                    docs: 'DOC?',
+                    insert: 'get_input_purpose()'
+                },
+                {
+                    label: 'get_invisible_char',
+                    detail: 'get_invisible_char()',
+                    docs: 'DOC?',
+                    insert: 'get_invisible_char()'
+                },
+                {
+                    label: 'get_layout',
+                    detail: 'get_layout()',
+                    docs: 'DOC?',
+                    insert: 'get_layout()'
+                },
+                {
+                    label: 'get_layout_offsets',
+                    detail: 'get_layout_offsets()',
+                    docs: 'DOC?',
+                    insert: 'get_layout_offsets()'
+                },
+                {
+                    label: 'get_max_length',
+                    detail: 'get_max_length()',
+                    docs: 'DOC?',
+                    insert: 'get_max_length()'
+                },
+                {
+                    label: 'get_max_width_chars',
+                    detail: 'get_max_width_chars()',
+                    docs: 'DOC?',
+                    insert: 'get_max_width_chars()'
+                },
+                {
+                    label: 'get_overwrite_mode',
+                    detail: 'get_overwrite_mode()',
+                    docs: 'DOC?',
+                    insert: 'get_overwrite_mode()'
+                },
+                {
+                    label: 'get_placeholder_text',
+                    detail: 'get_placeholder_text()',
+                    docs: 'DOC?',
+                    insert: 'get_placeholder_text()'
+                },
+                {
+                    label: 'get_progress_fraction',
+                    detail: 'get_progress_fraction()',
+                    docs: 'DOC?',
+                    insert: 'get_progress_fraction()'
+                },
+                {
+                    label: 'get_progress_pulse_step',
+                    detail: 'get_progress_pulse_step()',
+                    docs: 'DOC?',
+                    insert: 'get_progress_pulse_step()'
+                },
+                {
+                    label: 'get_tabs',
+                    detail: 'get_tabs()',
+                    docs: 'DOC?',
+                    insert: 'get_tabs()'
+                },
+                {
+                    label: 'get_text',
+                    detail: 'get_text()',
+                    docs: 'DOC?',
+                    insert: 'get_text()'
+                },
+                {
+                    label: 'get_text_area',
+                    detail: 'get_text_area()',
+                    docs: 'DOC?',
+                    insert: 'get_text_area()'
+                },
+                {
+                    label: 'get_text_length',
+                    detail: 'get_text_length()',
+                    docs: 'DOC?',
+                    insert: 'get_text_length()'
+                },
+                {
+                    label: 'get_visibility',
+                    detail: 'get_visibility()',
+                    docs: 'DOC?',
+                    insert: 'get_visibility()'
+                },
+                {
+                    label: 'get_width_chars',
+                    detail: 'get_width_chars()',
+                    docs: 'DOC?',
+                    insert: 'get_width_chars()'
+                },
+                {
+                    label: 'grab_focus_without_selecting',
+                    detail: 'grab_focus_without_selecting()',
+                    docs: 'DOC?',
+                    insert: 'grab_focus_without_selecting()'
+                },
+                {
+                    label: 'im_context_filter_keypress',
+                    detail: 'im_context_filter_keypress(event)',
+                    docs: 'DOC?',
+                    insert: 'im_context_filter_keypress($1)'
+                },
+                {
+                    label: 'layout_index_to_text_index',
+                    detail: 'layout_index_to_text_index(layout_index)',
+                    docs: 'DOC?',
+                    insert: 'layout_index_to_text_index($1)'
+                },
+                {
+                    label: 'progress_pulse',
+                    detail: 'progress_pulse()',
+                    docs: 'DOC?',
+                    insert: 'progress_pulse()'
+                },
+                {
+                    label: 'reset_im_context',
+                    detail: 'reset_im_context()',
+                    docs: 'DOC?',
+                    insert: 'reset_im_context()'
+                },
+                {
+                    label: 'set_activates_default',
+                    detail: 'set_activates_default(setting)',
+                    docs: 'DOC?',
+                    insert: 'set_activates_default($1)'
+                },
+                {
+                    label: 'set_alignment',
+                    detail: 'set_alignment(xalign)',
+                    docs: 'DOC?',
+                    insert: 'set_alignment($1)'
+                },
+                {
+                    label: 'set_attributes',
+                    detail: 'set_attributes(attrs)',
+                    docs: 'DOC?',
+                    insert: 'set_attributes($1)'
+                },
+                {
+                    label: 'set_buffer',
+                    detail: 'set_buffer(buffer)',
+                    docs: 'DOC?',
+                    insert: 'set_buffer($1)'
+                },
+                {
+                    label: 'set_completion',
+                    detail: 'set_completion(completion)',
+                    docs: 'DOC?',
+                    insert: 'set_completion($1)'
+                },
+                {
+                    label: 'set_cursor_hadjustment',
+                    detail: 'set_cursor_hadjustment(adjustment)',
+                    docs: 'DOC?',
+                    insert: 'set_cursor_hadjustment($1)'
+                },
+                {
+                    label: 'set_has_frame',
+                    detail: 'set_has_frame(setting)',
+                    docs: 'DOC?',
+                    insert: 'set_has_frame($1)'
+                },
+                {
+                    label: 'set_icon_activatable',
+                    detail: 'set_icon_activatable(icon_pos, activatable)',
+                    docs: 'DOC?',
+                    insert: 'set_icon_activatable($1)'
+                },
+                {
+                    label: 'set_icon_drag_source',
+                    detail: 'set_icon_drag_source(icon_pos, target_list, actions)',
+                    docs: 'DOC?',
+                    insert: 'set_icon_drag_source($1)'
+                },
+                {
+                    label: 'set_icon_from_gicon',
+                    detail: 'set_icon_from_gicon(icon_pos, icon)',
+                    docs: 'DOC?',
+                    insert: 'set_icon_from_gicon($1)'
+                },
+                {
+                    label: 'set_icon_from_icon_name',
+                    detail: 'set_icon_from_icon_name(icon_pos, icon_name)',
+                    docs: 'DOC?',
+                    insert: 'set_icon_from_icon_name($1)'
+                },
+                {
+                    label: 'set_icon_from_pixbuf',
+                    detail: 'set_icon_from_pixbuf(icon_pos, pixbuf)',
+                    docs: 'DOC?',
+                    insert: 'set_icon_from_pixbuf($1)'
+                },
+                {
+                    label: 'set_icon_from_stock',
+                    detail: 'set_icon_from_stock(icon_pos, stock_id)',
+                    docs: 'DOC?',
+                    insert: 'set_icon_from_stock($1)'
+                },
+                {
+                    label: 'set_icon_sensitive',
+                    detail: 'set_icon_sensitive(icon_pos, sensitive)',
+                    docs: 'DOC?',
+                    insert: 'set_icon_sensitive($1)'
+                },
+                {
+                    label: 'set_icon_tooltip_markup',
+                    detail: 'set_icon_tooltip_markup(icon_pos, tooltip)',
+                    docs: 'DOC?',
+                    insert: 'set_icon_tooltip_markup($1)'
+                },
+                {
+                    label: 'set_icon_tooltip_text',
+                    detail: 'set_icon_tooltip_text(icon_pos, tooltip)',
+                    docs: 'DOC?',
+                    insert: 'set_icon_tooltip_text($1)'
+                },
+                {
+                    label: 'set_inner_border',
+                    detail: 'set_inner_border(border)',
+                    docs: 'DOC?',
+                    insert: 'set_inner_border($1)'
+                },
+                {
+                    label: 'set_input_hints',
+                    detail: 'set_input_hints(hints)',
+                    docs: 'DOC?',
+                    insert: 'set_input_hints($1)'
+                },
+                {
+                    label: 'set_input_purpose',
+                    detail: 'set_input_purpose(purpose)',
+                    docs: 'DOC?',
+                    insert: 'set_input_purpose($1)'
+                },
+                {
+                    label: 'set_invisible_char',
+                    detail: 'set_invisible_char(ch)',
+                    docs: 'DOC?',
+                    insert: 'set_invisible_char($1)'
+                },
+                {
+                    label: 'set_max_length',
+                    detail: 'set_max_length(max)',
+                    docs: 'DOC?',
+                    insert: 'set_max_length($1)'
+                },
+                {
+                    label: 'set_max_width_chars',
+                    detail: 'set_max_width_chars(n_chars)',
+                    docs: 'DOC?',
+                    insert: 'set_max_width_chars($1)'
+                },
+                {
+                    label: 'set_overwrite_mode',
+                    detail: 'set_overwrite_mode(overwrite)',
+                    docs: 'DOC?',
+                    insert: 'set_overwrite_mode($1)'
+                },
+                {
+                    label: 'set_placeholder_text',
+                    detail: 'set_placeholder_text(text)',
+                    docs: 'DOC?',
+                    insert: 'set_placeholder_text($1)'
+                },
+                {
+                    label: 'set_progress_fraction',
+                    detail: 'set_progress_fraction(fraction)',
+                    docs: 'DOC?',
+                    insert: 'set_progress_fraction($1)'
+                },
+                {
+                    label: 'set_progress_pulse_step',
+                    detail: 'set_progress_pulse_step(fraction)',
+                    docs: 'DOC?',
+                    insert: 'set_progress_pulse_step($1)'
+                },
+                {
+                    label: 'set_tabs',
+                    detail: 'set_tabs(tabs)',
+                    docs: 'DOC?',
+                    insert: 'set_tabs($1)'
+                },
+                {
+                    label: 'set_text',
+                    detail: 'set_text(text)',
+                    docs: 'DOC?',
+                    insert: 'set_text($1)'
+                },
+                {
+                    label: 'set_visibility',
+                    detail: 'set_visibility(visible)',
+                    docs: 'DOC?',
+                    insert: 'set_visibility($1)'
+                },
+                {
+                    label: 'set_width_chars',
+                    detail: 'set_width_chars(n_chars)',
+                    docs: 'DOC?',
+                    insert: 'set_width_chars($1)'
+                },
+                {
+                    label: 'text_index_to_layout_index',
+                    detail: 'text_index_to_layout_index(text_index)',
+                    docs: 'DOC?',
+                    insert: 'text_index_to_layout_index($1)'
+                },
+                {
+                    label: 'unset_invisible_char',
+                    detail: 'unset_invisible_char()',
+                    docs: 'DOC?',
+                    insert: 'unset_invisible_char()'
+                },
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkEditable = [
+                {
+                    label: 'copy_clipboard',
+                    detail: 'copy_clipboard()',
+                    docs: 'DOC?',
+                    insert: 'copy_clipboard()'
+                },
+                {
+                    label: 'cut_clipboard',
+                    detail: 'cut_clipboard()',
+                    docs: 'DOC?',
+                    insert: 'cut_clipboard()'
+                },
+                {
+                    label: 'delete_selection',
+                    detail: 'delete_selection()',
+                    docs: 'DOC?',
+                    insert: 'delete_selection()'
+                },
+                {
+                    label: 'delete_text',
+                    detail: 'delete_text(start_pos, end_pos)',
+                    docs: 'DOC?',
+                    insert: 'delete_text($1)'
+                },
+                {
+                    label: 'get_chars',
+                    detail: 'get_chars(start_pos, end_pos)',
+                    docs: 'DOC?',
+                    insert: 'get_chars($1)'
+                },
+                {
+                    label: 'get_editable',
+                    detail: 'get_editable()',
+                    docs: 'DOC?',
+                    insert: 'get_editable()'
+                },
+                {
+                    label: 'get_position',
+                    detail: 'get_position()',
+                    docs: 'DOC?',
+                    insert: 'get_position()'
+                },
+                {
+                    label: 'get_selection_bounds',
+                    detail: 'get_selection_bounds()',
+                    docs: 'DOC?',
+                    insert: 'get_selection_bounds()'
+                },
+                {
+                    label: 'insert_text',
+                    detail: 'insert_text(self, text, position)',
+                    docs: 'DOC?',
+                    insert: 'insert_text($1)'
+                },
+                {
+                    label: 'paste_clipboard',
+                    detail: 'paste_clipboard()',
+                    docs: 'DOC?',
+                    insert: 'paste_clipboard()'
+                },
+                {
+                    label: 'select_region',
+                    detail: 'select_region(start_pos, end_pos)',
+                    docs: 'DOC?',
+                    insert: 'select_region($1)'
+                },
+                {
+                    label: 'set_editable',
+                    detail: 'set_editable(is_editable)',
+                    docs: 'DOC?',
+                    insert: 'set_editable($1)'
+                },
+                {
+                    label: 'set_position',
+                    detail: 'set_position(position)',
+                    docs: 'DOC?',
+                    insert: 'set_position($1)'
+                },
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkFileChooserButton = [
+                {
+                    label: 'new',
+                    detail: 'new(title, action)',
+                    docs: 'DOC?',
+                    insert: 'new($1)'
+                },
+                {
+                    label: 'new_with_dialog',
+                    detail: 'new_with_dialog(dialog)',
+                    docs: 'DOC?',
+                    insert: 'new_with_dialog($1)'
+                },
+                {
+                    label: 'get_focus_on_click',
+                    detail: 'get_focus_on_click()',
+                    docs: 'DOC?',
+                    insert: 'get_focus_on_click()'
+                },
+                {
+                    label: 'get_title',
+                    detail: 'get_title()',
+                    docs: 'DOC?',
+                    insert: 'get_title()'
+                },
+                {
+                    label: 'get_width_chars',
+                    detail: 'get_width_chars()',
+                    docs: 'DOC?',
+                    insert: 'get_width_chars()'
+                },
+                {
+                    label: 'set_focus_on_click',
+                    detail: 'set_focus_on_click(focus_on_click)',
+                    docs: 'DOC?',
+                    insert: 'set_focus_on_click($1)'
+                },
+                {
+                    label: 'set_title',
+                    detail: 'set_title(title)',
+                    docs: 'DOC?',
+                    insert: 'set_title($1)'
+                },
+                {
+                    label: 'set_width_chars',
+                    detail: 'set_width_chars(n_chars)',
+                    docs: 'DOC?',
+                    insert: 'set_width_chars($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkOrientable = [
+                {
+                    label: 'get_orientation',
+                    detail: 'get_orientation()',
+                    docs: 'DOC?',
+                    insert: 'get_orientation()'
+                },
+                {
+                    label: 'set_orientation',
+                    detail: 'set_orientation(orientation)',
+                    docs: 'DOC?',
+                    insert: 'set_orientation($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkFileChooser = [
+                {
+                    label: 'add_choice',
+                    detail: 'add_choice(id, label, options, option_labels)',
+                    docs: 'DOC?',
+                    insert: 'add_choice($1)'
+                },
+                {
+                    label: 'add_filter',
+                    detail: 'add_filter(filter)',
+                    docs: 'DOC?',
+                    insert: 'add_filter($1)'
+                },
+                {
+                    label: 'add_shortcut_folder',
+                    detail: 'add_shortcut_folder(folder)',
+                    docs: 'DOC?',
+                    insert: 'add_shortcut_folder($1)'
+                },
+                {
+                    label: 'add_shortcut_folder_uri',
+                    detail: 'add_shortcut_folder_uri(uri)',
+                    docs: 'DOC?',
+                    insert: 'add_shortcut_folder_uri($1)'
+                },
+                {
+                    label: 'get_action',
+                    detail: 'get_action()',
+                    docs: 'DOC?',
+                    insert: 'get_action()'
+                },
+                {
+                    label: 'get_choice',
+                    detail: 'get_choice(id)',
+                    docs: 'DOC?',
+                    insert: 'get_choice($1)'
+                },
+                {
+                    label: 'get_create_folders',
+                    detail: 'get_create_folders()',
+                    docs: 'DOC?',
+                    insert: 'get_create_folders()'
+                },
+                {
+                    label: 'get_current_folder',
+                    detail: 'get_current_folder()',
+                    docs: 'DOC?',
+                    insert: 'get_current_folder()'
+                },
+                {
+                    label: 'get_current_folder_file',
+                    detail: 'get_current_folder_file()',
+                    docs: 'DOC?',
+                    insert: 'get_current_folder_file()'
+                },
+                {
+                    label: 'get_current_folder_uri',
+                    detail: 'get_current_folder_uri()',
+                    docs: 'DOC?',
+                    insert: 'get_current_folder_uri()'
+                },
+                {
+                    label: 'get_current_name',
+                    detail: 'get_current_name()',
+                    docs: 'DOC?',
+                    insert: 'get_current_name()'
+                },
+                {
+                    label: 'get_do_overwrite_confirmation',
+                    detail: 'get_do_overwrite_confirmation()',
+                    docs: 'DOC?',
+                    insert: 'get_do_overwrite_confirmation()'
+                },
+                {
+                    label: 'get_extra_widget',
+                    detail: 'get_extra_widget()',
+                    docs: 'DOC?',
+                    insert: 'get_extra_widget()'
+                },
+                {
+                    label: 'get_file',
+                    detail: 'get_file()',
+                    docs: 'DOC?',
+                    insert: 'get_file()'
+                },
+                {
+                    label: 'get_filename',
+                    detail: 'get_filename()',
+                    docs: 'DOC?',
+                    insert: 'get_filename()'
+                },
+                {
+                    label: 'get_filenames',
+                    detail: 'get_filenames()',
+                    docs: 'DOC?',
+                    insert: 'get_filenames()'
+                },
+                {
+                    label: 'get_files',
+                    detail: 'get_files()',
+                    docs: 'DOC?',
+                    insert: 'get_files()'
+                },
+                {
+                    label: 'get_filter',
+                    detail: 'get_filter()',
+                    docs: 'DOC?',
+                    insert: 'get_filter()'
+                },
+                {
+                    label: 'get_local_only',
+                    detail: 'get_local_only()',
+                    docs: 'DOC?',
+                    insert: 'get_local_only()'
+                },
+                {
+                    label: 'get_preview_file',
+                    detail: 'get_preview_file()',
+                    docs: 'DOC?',
+                    insert: 'get_preview_file()'
+                },
+                {
+                    label: 'get_preview_filename',
+                    detail: 'get_preview_filename()',
+                    docs: 'DOC?',
+                    insert: 'get_preview_filename()'
+                },
+                {
+                    label: 'get_preview_uri',
+                    detail: 'get_preview_uri()',
+                    docs: 'DOC?',
+                    insert: 'get_preview_uri()'
+                },
+                {
+                    label: 'get_preview_widget',
+                    detail: 'get_preview_widget()',
+                    docs: 'DOC?',
+                    insert: 'get_preview_widget()'
+                },
+                {
+                    label: 'get_preview_widget_active',
+                    detail: 'get_preview_widget_active()',
+                    docs: 'DOC?',
+                    insert: 'get_preview_widget_active()'
+                },
+                {
+                    label: 'get_select_multiple',
+                    detail: 'get_select_multiple()',
+                    docs: 'DOC?',
+                    insert: 'get_select_multiple()'
+                },
+                {
+                    label: 'get_show_hidden',
+                    detail: 'get_show_hidden()',
+                    docs: 'DOC?',
+                    insert: 'get_show_hidden()'
+                },
+                {
+                    label: 'get_uri',
+                    detail: 'get_uri()',
+                    docs: 'DOC?',
+                    insert: 'get_uri()'
+                },
+                {
+                    label: 'get_uris',
+                    detail: 'get_uris()',
+                    docs: 'DOC?',
+                    insert: 'get_uris()'
+                },
+                {
+                    label: 'get_use_preview_label',
+                    detail: 'get_use_preview_label()',
+                    docs: 'DOC?',
+                    insert: 'get_use_preview_label()'
+                },
+                {
+                    label: 'list_filters',
+                    detail: 'list_filters()',
+                    docs: 'DOC?',
+                    insert: 'list_filters()'
+                },
+                {
+                    label: 'list_shortcut_folder_uris',
+                    detail: 'list_shortcut_folder_uris()',
+                    docs: 'DOC?',
+                    insert: 'list_shortcut_folder_uris()'
+                },
+                {
+                    label: 'list_shortcut_folders',
+                    detail: 'list_shortcut_folders()',
+                    docs: 'DOC?',
+                    insert: 'list_shortcut_folders()'
+                },
+                {
+                    label: 'remove_choice',
+                    detail: 'remove_choice(id)',
+                    docs: 'DOC?',
+                    insert: 'remove_choice($1)'
+                },
+                {
+                    label: 'remove_filter',
+                    detail: 'remove_filter(filter)',
+                    docs: 'DOC?',
+                    insert: 'remove_filter($1)'
+                },
+                {
+                    label: 'remove_shortcut_folder',
+                    detail: 'remove_shortcut_folder(folder)',
+                    docs: 'DOC?',
+                    insert: 'remove_shortcut_folder($1)'
+                },
+                {
+                    label: 'remove_shortcut_folder_uri',
+                    detail: 'remove_shortcut_folder_uri(uri)',
+                    docs: 'DOC?',
+                    insert: 'remove_shortcut_folder_uri($1)'
+                },
+                {
+                    label: 'select_all',
+                    detail: 'select_all()',
+                    docs: 'DOC?',
+                    insert: 'select_all()'
+                },
+                {
+                    label: 'select_file',
+                    detail: 'select_file(file)',
+                    docs: 'DOC?',
+                    insert: 'select_file($1)'
+                },
+                {
+                    label: 'select_filename',
+                    detail: 'select_filename(filename)',
+                    docs: 'DOC?',
+                    insert: 'select_filename($1)'
+                },
+                {
+                    label: 'select_uri',
+                    detail: 'select_uri(uri)',
+                    docs: 'DOC?',
+                    insert: 'select_uri($1)'
+                },
+                {
+                    label: 'set_action',
+                    detail: 'set_action(action)',
+                    docs: 'DOC?',
+                    insert: 'set_action($1)'
+                },
+                {
+                    label: 'set_choice',
+                    detail: 'set_choice(id, option)',
+                    docs: 'DOC?',
+                    insert: 'set_choice($1)'
+                },
+                {
+                    label: 'set_create_folders',
+                    detail: 'set_create_folders(create_folders)',
+                    docs: 'DOC?',
+                    insert: 'set_create_folders($1)'
+                },
+                {
+                    label: 'set_current_folder',
+                    detail: 'set_current_folder(filename)',
+                    docs: 'DOC?',
+                    insert: 'set_current_folder($1)'
+                },
+                {
+                    label: 'set_current_folder_file',
+                    detail: 'set_current_folder_file(file)',
+                    docs: 'DOC?',
+                    insert: 'set_current_folder_file($1)'
+                },
+                {
+                    label: 'set_current_folder_uri',
+                    detail: 'set_current_folder_uri(uri)',
+                    docs: 'DOC?',
+                    insert: 'set_current_folder_uri($1)'
+                },
+                {
+                    label: 'set_current_name',
+                    detail: 'set_current_name(name)',
+                    docs: 'DOC?',
+                    insert: 'set_current_name($1)'
+                },
+                {
+                    label: 'set_do_overwrite_confirmation',
+                    detail: 'set_do_overwrite_confirmation(do_overwrite_confirmation)',
+                    docs: 'DOC?',
+                    insert: 'set_do_overwrite_confirmation($1)'
+                },
+                {
+                    label: 'set_extra_widget',
+                    detail: 'set_extra_widget(extra_widget)',
+                    docs: 'DOC?',
+                    insert: 'set_extra_widget($1)'
+                },
+                {
+                    label: 'set_file',
+                    detail: 'set_file(file)',
+                    docs: 'DOC?',
+                    insert: 'set_file($1)'
+                },
+                {
+                    label: 'set_filename',
+                    detail: 'set_filename(filename)',
+                    docs: 'DOC?',
+                    insert: 'set_filename($1)'
+                },
+                {
+                    label: 'set_filter',
+                    detail: 'set_filter(filter)',
+                    docs: 'DOC?',
+                    insert: 'set_filter($1)'
+                },
+                {
+                    label: 'set_local_only',
+                    detail: 'set_local_only(local_only)',
+                    docs: 'DOC?',
+                    insert: 'set_local_only($1)'
+                },
+                {
+                    label: 'set_preview_widget',
+                    detail: 'set_preview_widget(preview_widget)',
+                    docs: 'DOC?',
+                    insert: 'set_preview_widget($1)'
+                },
+                {
+                    label: 'set_preview_widget_active',
+                    detail: 'set_preview_widget_active(active)',
+                    docs: 'DOC?',
+                    insert: 'set_preview_widget_active($1)'
+                },
+                {
+                    label: 'set_select_multiple',
+                    detail: 'set_select_multiple(select_multiple)',
+                    docs: 'DOC?',
+                    insert: 'set_select_multiple($1)'
+                },
+                {
+                    label: 'set_show_hidden',
+                    detail: 'set_show_hidden(show_hidden)',
+                    docs: 'DOC?',
+                    insert: 'set_show_hidden($1)'
+                },
+                {
+                    label: 'set_uri',
+                    detail: 'set_uri(uri)',
+                    docs: 'DOC?',
+                    insert: 'set_uri($1)'
+                },
+                {
+                    label: 'set_use_preview_label',
+                    detail: 'set_use_preview_label(use_label)',
+                    docs: 'DOC?',
+                    insert: 'set_use_preview_label($1)'
+                },
+                {
+                    label: 'unselect_all',
+                    detail: 'unselect_all()',
+                    docs: 'DOC?',
+                    insert: 'unselect_all()'
+                },
+                {
+                    label: 'unselect_file',
+                    detail: 'unselect_file(file)',
+                    docs: 'DOC?',
+                    insert: 'unselect_file($1)'
+                },
+                {
+                    label: 'unselect_filename',
+                    detail: 'unselect_filename(filename)',
+                    docs: 'DOC?',
+                    insert: 'unselect_filename($1)'
+                },
+                {
+                    label: 'unselect_uri',
+                    detail: 'unselect_uri(uri)',
+                    docs: 'DOC?',
+                    insert: 'unselect_uri($1)'
+                },
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkBox = [
+                {
+                    label: 'new',
+                    detail: 'new(orientation, spacing)',
+                    docs: 'DOC?',
+                    insert: 'new($1)'
+                },
+                {
+                    label: 'get_baseline_position',
+                    detail: 'get_baseline_position()',
+                    docs: 'DOC?',
+                    insert: 'get_baseline_position()'
+                },
+                {
+                    label: 'get_center_widget',
+                    detail: 'get_center_widget()',
+                    docs: 'DOC?',
+                    insert: 'get_center_widget()'
+                },
+                {
+                    label: 'get_homogeneous',
+                    detail: 'get_homogeneous()',
+                    docs: 'DOC?',
+                    insert: 'get_homogeneous()'
+                },
+                {
+                    label: 'get_spacing',
+                    detail: 'get_spacing()',
+                    docs: 'DOC?',
+                    insert: 'get_spacing()'
+                },
+                {
+                    label: 'pack_end',
+                    detail: 'pack_end(child, expand, fill, padding)',
+                    docs: 'DOC?',
+                    insert: 'pack_end($1)'
+                },
+                {
+                    label: 'pack_start',
+                    detail: 'pack_start(child, expand, fill, padding)',
+                    docs: 'DOC?',
+                    insert: 'pack_start($1)'
+                },
+                {
+                    label: 'query_child_packing',
+                    detail: 'query_child_packing(child)',
+                    docs: 'DOC?',
+                    insert: 'query_child_packing($1)'
+                },
+                {
+                    label: 'reorder_child',
+                    detail: 'reorder_child(child, position)',
+                    docs: 'DOC?',
+                    insert: 'reorder_child($1)'
+                },
+                {
+                    label: 'set_baseline_position',
+                    detail: 'set_baseline_position(position)',
+                    docs: 'DOC?',
+                    insert: 'set_baseline_position($1)'
+                },
+                {
+                    label: 'set_center_widget',
+                    detail: 'set_center_widget(widget)',
+                    docs: 'DOC?',
+                    insert: 'set_center_widget($1)'
+                },
+                {
+                    label: 'set_child_packing',
+                    detail: 'set_child_packing(child, expand, fill, padding, pack_type)',
+                    docs: 'DOC?',
+                    insert: 'set_child_packing($1)'
+                },
+                {
+                    label: 'set_homogeneous',
+                    detail: 'set_homogeneous(homogeneous)',
+                    docs: 'DOC?',
+                    insert: 'set_homogeneous($1)'
+                },
+                {
+                    label: 'set_spacing',
+                    detail: 'set_spacing(spacing)',
+                    docs: 'DOC?',
+                    insert: 'set_spacing($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkFlowBox = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'bind_model',
+                    detail: 'bind_model(model, create_widget_func, *user_data)',
+                    docs: 'DOC?',
+                    insert: 'bind_model($1)'
+                },
+                {
+                    label: 'get_activate_on_single_click',
+                    detail: 'get_activate_on_single_click()',
+                    docs: 'DOC?',
+                    insert: 'get_activate_on_single_click()'
+                },
+                {
+                    label: 'get_child_at_index',
+                    detail: 'get_child_at_index(idx)',
+                    docs: 'DOC?',
+                    insert: 'get_child_at_index($1)'
+                },
+                {
+                    label: 'get_child_at_pos',
+                    detail: 'get_child_at_pos(x, y)',
+                    docs: 'DOC?',
+                    insert: 'get_child_at_pos($1)'
+                },
+                {
+                    label: 'get_column_spacing',
+                    detail: 'get_column_spacing()',
+                    docs: 'DOC?',
+                    insert: 'get_column_spacing()'
+                },
+                {
+                    label: 'get_homogeneous',
+                    detail: 'get_homogeneous()',
+                    docs: 'DOC?',
+                    insert: 'get_homogeneous()'
+                },
+                {
+                    label: 'get_max_children_per_line',
+                    detail: 'get_max_children_per_line()',
+                    docs: 'DOC?',
+                    insert: 'get_max_children_per_line()'
+                },
+                {
+                    label: 'get_min_children_per_line',
+                    detail: 'get_min_children_per_line()',
+                    docs: 'DOC?',
+                    insert: 'get_min_children_per_line()'
+                },
+                {
+                    label: 'get_row_spacing',
+                    detail: 'get_row_spacing()',
+                    docs: 'DOC?',
+                    insert: 'get_row_spacing()'
+                },
+                {
+                    label: 'get_selected_children',
+                    detail: 'get_selected_children()',
+                    docs: 'DOC?',
+                    insert: 'get_selected_children()'
+                },
+                {
+                    label: 'get_selection_mode',
+                    detail: 'get_selection_mode()',
+                    docs: 'DOC?',
+                    insert: 'get_selection_mode()'
+                },
+                {
+                    label: 'insert',
+                    detail: 'insert(widget, position)',
+                    docs: 'DOC?',
+                    insert: 'insert($1)'
+                },
+                {
+                    label: 'invalidate_filter',
+                    detail: 'invalidate_filter()',
+                    docs: 'DOC?',
+                    insert: 'invalidate_filter()'
+                },
+                {
+                    label: 'invalidate_sort',
+                    detail: 'invalidate_sort()',
+                    docs: 'DOC?',
+                    insert: 'invalidate_sort()'
+                },
+                {
+                    label: 'select_all',
+                    detail: 'select_all()',
+                    docs: 'DOC?',
+                    insert: 'select_all()'
+                },
+                {
+                    label: 'select_child',
+                    detail: 'select_child(child)',
+                    docs: 'DOC?',
+                    insert: 'select_child($1)'
+                },
+                {
+                    label: 'selected_foreach',
+                    detail: 'selected_foreach(func, *data)',
+                    docs: 'DOC?',
+                    insert: 'selected_foreach($1)'
+                },
+                {
+                    label: 'set_activate_on_single_click',
+                    detail: 'set_activate_on_single_click(single)',
+                    docs: 'DOC?',
+                    insert: 'set_activate_on_single_click($1)'
+                },
+                {
+                    label: 'set_column_spacing',
+                    detail: 'set_column_spacing(spacing)',
+                    docs: 'DOC?',
+                    insert: 'set_column_spacing($1)'
+                },
+                {
+                    label: 'set_filter_func',
+                    detail: 'set_filter_func(filter_func, *user_data)',
+                    docs: 'DOC?',
+                    insert: 'set_filter_func($1)'
+                },
+                {
+                    label: 'set_hadjustment',
+                    detail: 'set_hadjustment(adjustment)',
+                    docs: 'DOC?',
+                    insert: 'set_hadjustment($1)'
+                },
+                {
+                    label: 'set_homogeneous',
+                    detail: 'set_homogeneous(homogeneous)',
+                    docs: 'DOC?',
+                    insert: 'set_homogeneous($1)'
+                },
+                {
+                    label: 'set_max_children_per_line',
+                    detail: 'set_max_children_per_line(n_children)',
+                    docs: 'DOC?',
+                    insert: 'set_max_children_per_line($1)'
+                },
+                {
+                    label: 'set_min_children_per_line',
+                    detail: 'set_min_children_per_line(n_children)',
+                    docs: 'DOC?',
+                    insert: 'set_min_children_per_line($1)'
+                },
+                {
+                    label: 'set_row_spacing',
+                    detail: 'set_row_spacing(spacing)',
+                    docs: 'DOC?',
+                    insert: 'set_row_spacing($1)'
+                },
+                {
+                    label: 'set_selection_mode',
+                    detail: 'set_selection_mode(mode)',
+                    docs: 'DOC?',
+                    insert: 'set_selection_mode($1)'
+                },
+                {
+                    label: 'set_sort_func',
+                    detail: 'set_sort_func(sort_func, *user_data)',
+                    docs: 'DOC?',
+                    insert: 'set_sort_func($1)'
+                },
+                {
+                    label: 'set_vadjustment',
+                    detail: 'set_vadjustment(adjustment)',
+                    docs: 'DOC?',
+                    insert: 'set_vadjustment($1)'
+                },
+                {
+                    label: 'unselect_all',
+                    detail: 'unselect_all()',
+                    docs: 'DOC?',
+                    insert: 'unselect_all()'
+                },
+                {
+                    label: 'unselect_child',
+                    detail: 'unselect_child(child)',
+                    docs: 'DOC?',
+                    insert: 'unselect_child($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkFontButton = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'new_with_font',
+                    detail: 'new_with_font(fontname)',
+                    docs: 'DOC?',
+                    insert: 'new_with_font($1)'
+                },
+                {
+                    label: 'get_font_name',
+                    detail: 'get_font_name()',
+                    docs: 'DOC?',
+                    insert: 'get_font_name()'
+                },
+                {
+                    label: 'get_show_size',
+                    detail: 'get_show_size()',
+                    docs: 'DOC?',
+                    insert: 'get_show_size()'
+                },
+                {
+                    label: 'get_show_style',
+                    detail: 'get_show_style()',
+                    docs: 'DOC?',
+                    insert: 'get_show_style()'
+                },
+                {
+                    label: 'get_title',
+                    detail: 'get_title()',
+                    docs: 'DOC?',
+                    insert: 'get_title()'
+                },
+                {
+                    label: 'get_use_font',
+                    detail: 'get_use_font()',
+                    docs: 'DOC?',
+                    insert: 'get_use_font()'
+                },
+                {
+                    label: 'get_use_size',
+                    detail: 'get_use_size()',
+                    docs: 'DOC?',
+                    insert: 'get_use_size()'
+                },
+                {
+                    label: 'set_font_name',
+                    detail: 'set_font_name(fontname)',
+                    docs: 'DOC?',
+                    insert: 'set_font_name($1)'
+                },
+                {
+                    label: 'set_show_size',
+                    detail: 'set_show_size(show_size)',
+                    docs: 'DOC?',
+                    insert: 'set_show_size($1)'
+                },
+                {
+                    label: 'set_show_style',
+                    detail: 'set_show_style(show_style)',
+                    docs: 'DOC?',
+                    insert: 'set_show_style($1)'
+                },
+                {
+                    label: 'set_title',
+                    detail: 'set_title(title)',
+                    docs: 'DOC?',
+                    insert: 'set_title($1)'
+                },
+                {
+                    label: 'set_use_font',
+                    detail: 'set_use_font(use_font)',
+                    docs: 'DOC?',
+                    insert: 'set_use_font($1)'
+                },
+                {
+                    label: 'set_use_size',
+                    detail: 'set_use_size(use_size)',
+                    docs: 'DOC?',
+                    insert: 'set_use_size($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkFontChooser = [
+                {
+                    label: 'get_font',
+                    detail: 'get_font()',
+                    docs: 'DOC?',
+                    insert: 'get_font()'
+                },
+                {
+                    label: 'get_font_desc',
+                    detail: 'get_font_desc()',
+                    docs: 'DOC?',
+                    insert: 'get_font_desc()'
+                },
+                {
+                    label: 'get_font_face',
+                    detail: 'get_font_face()',
+                    docs: 'DOC?',
+                    insert: 'get_font_face()'
+                },
+                {
+                    label: 'get_font_family',
+                    detail: 'get_font_family()',
+                    docs: 'DOC?',
+                    insert: 'get_font_family()'
+                },
+                {
+                    label: 'get_font_features',
+                    detail: 'get_font_features()',
+                    docs: 'DOC?',
+                    insert: 'get_font_features()'
+                },
+                {
+                    label: 'get_font_map',
+                    detail: 'get_font_map()',
+                    docs: 'DOC?',
+                    insert: 'get_font_map()'
+                },
+                {
+                    label: 'get_font_size',
+                    detail: 'get_font_size()',
+                    docs: 'DOC?',
+                    insert: 'get_font_size()'
+                },
+                {
+                    label: 'get_language',
+                    detail: 'get_language()',
+                    docs: 'DOC?',
+                    insert: 'get_language()'
+                },
+                {
+                    label: 'get_level',
+                    detail: 'get_level()',
+                    docs: 'DOC?',
+                    insert: 'get_level()'
+                },
+                {
+                    label: 'get_preview_text',
+                    detail: 'get_preview_text()',
+                    docs: 'DOC?',
+                    insert: 'get_preview_text()'
+                },
+                {
+                    label: 'get_show_preview_entry',
+                    detail: 'get_show_preview_entry()',
+                    docs: 'DOC?',
+                    insert: 'get_show_preview_entry()'
+                },
+                {
+                    label: 'set_filter_func',
+                    detail: 'set_filter_func(filter, *user_data)',
+                    docs: 'DOC?',
+                    insert: 'set_filter_func($1)'
+                },
+                {
+                    label: 'set_font',
+                    detail: 'set_font(fontname)',
+                    docs: 'DOC?',
+                    insert: 'set_font($1)'
+                },
+                {
+                    label: 'set_font_desc',
+                    detail: 'set_font_desc(font_desc)',
+                    docs: 'DOC?',
+                    insert: 'set_font_desc($1)'
+                },
+                {
+                    label: 'set_font_map',
+                    detail: 'set_font_map(fontmap)',
+                    docs: 'DOC?',
+                    insert: 'set_font_map($1)'
+                },
+                {
+                    label: 'set_language',
+                    detail: 'set_language(language)',
+                    docs: 'DOC?',
+                    insert: 'set_language($1)'
+                },
+                {
+                    label: 'set_level',
+                    detail: 'set_level(level)',
+                    docs: 'DOC?',
+                    insert: 'set_level($1)'
+                },
+                {
+                    label: 'set_preview_text',
+                    detail: 'set_preview_text(text)',
+                    docs: 'DOC?',
+                    insert: 'set_preview_text($1)'
+                },
+                {
+                    label: 'set_show_preview_entry',
+                    detail: 'set_show_preview_entry(show_preview_entry)',
+                    docs: 'DOC?',
+                    insert: 'set_show_preview_entry($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkFrame = [
+                {
+                    label: 'new',
+                    detail: 'new(label)',
+                    docs: 'DOC?',
+                    insert: 'new($1)'
+                },
+                {
+                    label: 'get_label',
+                    detail: 'get_label()',
+                    docs: 'DOC?',
+                    insert: 'get_label()'
+                },
+                {
+                    label: 'get_label_align',
+                    detail: 'get_label_align()',
+                    docs: 'DOC?',
+                    insert: 'get_label_align()'
+                },
+                {
+                    label: 'get_label_widget',
+                    detail: 'get_label_widget()',
+                    docs: 'DOC?',
+                    insert: 'get_label_widget()'
+                },
+                {
+                    label: 'get_shadow_type',
+                    detail: 'get_shadow_type()',
+                    docs: 'DOC?',
+                    insert: 'get_shadow_type()'
+                },
+                {
+                    label: 'set_label',
+                    detail: 'set_label(label)',
+                    docs: 'DOC?',
+                    insert: 'set_label($1)'
+                },
+                {
+                    label: 'set_label_align',
+                    detail: 'set_label_align(xalign, yalign)',
+                    docs: 'DOC?',
+                    insert: 'set_label_align($1)'
+                },
+                {
+                    label: 'set_label_widget',
+                    detail: 'set_label_widget(label_widget)',
+                    docs: 'DOC?',
+                    insert: 'set_label_widget($1)'
+                },
+                {
+                    label: 'set_shadow_type',
+                    detail: 'set_shadow_type(type)',
+                    docs: 'DOC?',
+                    insert: 'set_shadow_type($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkGLArea = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'attach_buffers',
+                    detail: 'attach_buffers()',
+                    docs: 'DOC?',
+                    insert: 'attach_buffers()'
+                },
+                {
+                    label: 'get_auto_render',
+                    detail: 'get_auto_render()',
+                    docs: 'DOC?',
+                    insert: 'get_auto_render()'
+                },
+                {
+                    label: 'get_context',
+                    detail: 'get_context()',
+                    docs: 'DOC?',
+                    insert: 'get_context()'
+                },
+                {
+                    label: 'get_error',
+                    detail: 'get_error()',
+                    docs: 'DOC?',
+                    insert: 'get_error()'
+                },
+                {
+                    label: 'get_has_alpha',
+                    detail: 'get_has_alpha()',
+                    docs: 'DOC?',
+                    insert: 'get_has_alpha()'
+                },
+                {
+                    label: 'get_has_depth_buffer',
+                    detail: 'get_has_depth_buffer()',
+                    docs: 'DOC?',
+                    insert: 'get_has_depth_buffer()'
+                },
+                {
+                    label: 'get_has_stencil_buffer',
+                    detail: 'get_has_stencil_buffer()',
+                    docs: 'DOC?',
+                    insert: 'get_has_stencil_buffer()'
+                },
+                {
+                    label: 'get_required_version',
+                    detail: 'get_required_version()',
+                    docs: 'DOC?',
+                    insert: 'get_required_version()'
+                },
+                {
+                    label: 'get_use_es',
+                    detail: 'get_use_es()',
+                    docs: 'DOC?',
+                    insert: 'get_use_es()'
+                },
+                {
+                    label: 'make_current',
+                    detail: 'make_current()',
+                    docs: 'DOC?',
+                    insert: 'make_current()'
+                },
+                {
+                    label: 'queue_render',
+                    detail: 'queue_render()',
+                    docs: 'DOC?',
+                    insert: 'queue_render()'
+                },
+                {
+                    label: 'set_auto_render',
+                    detail: 'set_auto_render(auto_render)',
+                    docs: 'DOC?',
+                    insert: 'set_auto_render($1)'
+                },
+                {
+                    label: 'set_error',
+                    detail: 'set_error(error)',
+                    docs: 'DOC?',
+                    insert: 'set_error($1)'
+                },
+                {
+                    label: 'set_has_alpha',
+                    detail: 'set_has_alpha(has_alpha)',
+                    docs: 'DOC?',
+                    insert: 'set_has_alpha($1)'
+                },
+                {
+                    label: 'set_has_depth_buffer',
+                    detail: 'set_has_depth_buffer(has_depth_buffer)',
+                    docs: 'DOC?',
+                    insert: 'set_has_depth_buffer($1)'
+                },
+                {
+                    label: 'set_has_stencil_buffer',
+                    detail: 'set_has_stencil_buffer(has_stencil_buffer)',
+                    docs: 'DOC?',
+                    insert: 'set_has_stencil_buffer($1)'
+                },
+                {
+                    label: 'set_required_version',
+                    detail: 'set_required_version(major, minor)',
+                    docs: 'DOC?',
+                    insert: 'set_required_version($1)'
+                },
+                {
+                    label: 'set_use_es',
+                    detail: 'set_use_es(use_es)',
+                    docs: 'DOC?',
+                    insert: 'set_use_es($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkGrid = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'attach',
+                    detail: 'attach(child, left, top, width, height)',
+                    docs: 'DOC?',
+                    insert: 'attach($1)'
+                },
+                {
+                    label: 'attach_next_to',
+                    detail: 'attach_next_to(child, sibling, side, width, height)',
+                    docs: 'DOC?',
+                    insert: 'attach_next_to($1)'
+                },
+                {
+                    label: 'get_baseline_row',
+                    detail: 'get_baseline_row()',
+                    docs: 'DOC?',
+                    insert: 'get_baseline_row()'
+                },
+                {
+                    label: 'get_child_at',
+                    detail: 'get_child_at(left, top)',
+                    docs: 'DOC?',
+                    insert: 'get_child_at($1)'
+                },
+                {
+                    label: 'get_column_homogeneous',
+                    detail: 'get_column_homogeneous()',
+                    docs: 'DOC?',
+                    insert: 'get_column_homogeneous()'
+                },
+                {
+                    label: 'get_column_spacing',
+                    detail: 'get_column_spacing()',
+                    docs: 'DOC?',
+                    insert: 'get_column_spacing()'
+                },
+                {
+                    label: 'get_row_baseline_position',
+                    detail: 'get_row_baseline_position(row)',
+                    docs: 'DOC?',
+                    insert: 'get_row_baseline_position($1)'
+                },
+                {
+                    label: 'get_row_homogeneous',
+                    detail: 'get_row_homogeneous()',
+                    docs: 'DOC?',
+                    insert: 'get_row_homogeneous()'
+                },
+                {
+                    label: 'get_row_spacing',
+                    detail: 'get_row_spacing()',
+                    docs: 'DOC?',
+                    insert: 'get_row_spacing()'
+                },
+                {
+                    label: 'insert_column',
+                    detail: 'insert_column(position)',
+                    docs: 'DOC?',
+                    insert: 'insert_column($1)'
+                },
+                {
+                    label: 'insert_next_to',
+                    detail: 'insert_next_to(sibling, side)',
+                    docs: 'DOC?',
+                    insert: 'insert_next_to($1)'
+                },
+                {
+                    label: 'insert_row',
+                    detail: 'insert_row(position)',
+                    docs: 'DOC?',
+                    insert: 'insert_row($1)'
+                },
+                {
+                    label: 'remove_column',
+                    detail: 'remove_column(position)',
+                    docs: 'DOC?',
+                    insert: 'remove_column($1)'
+                },
+                {
+                    label: 'remove_row',
+                    detail: 'remove_row(position)',
+                    docs: 'DOC?',
+                    insert: 'remove_row($1)'
+                },
+                {
+                    label: 'set_baseline_row',
+                    detail: 'set_baseline_row(row)',
+                    docs: 'DOC?',
+                    insert: 'set_baseline_row($1)'
+                },
+                {
+                    label: 'set_column_homogeneous',
+                    detail: 'set_column_homogeneous(homogeneous)',
+                    docs: 'DOC?',
+                    insert: 'set_column_homogeneous($1)'
+                },
+                {
+                    label: 'set_column_spacing',
+                    detail: 'set_column_spacing(spacing)',
+                    docs: 'DOC?',
+                    insert: 'set_column_spacing($1)'
+                },
+                {
+                    label: 'set_row_baseline_position',
+                    detail: 'set_row_baseline_position(row, pos)',
+                    docs: 'DOC?',
+                    insert: 'set_row_baseline_position($1)'
+                },
+                {
+                    label: 'set_row_homogeneous',
+                    detail: 'set_row_homogeneous(homogeneous)',
+                    docs: 'DOC?',
+                    insert: 'set_row_homogeneous($1)'
+                },
+                {
+                    label: 'set_row_spacing',
+                    detail: 'set_row_spacing(spacing)',
+                    docs: 'DOC?',
+                    insert: 'set_row_spacing($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkHeaderBar = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'get_custom_title',
+                    detail: 'get_custom_title()',
+                    docs: 'DOC?',
+                    insert: 'get_custom_title()'
+                },
+                {
+                    label: 'get_decoration_layout',
+                    detail: 'get_decoration_layout()',
+                    docs: 'DOC?',
+                    insert: 'get_decoration_layout()'
+                },
+                {
+                    label: 'get_has_subtitle',
+                    detail: 'get_has_subtitle()',
+                    docs: 'DOC?',
+                    insert: 'get_has_subtitle()'
+                },
+                {
+                    label: 'get_show_close_button',
+                    detail: 'get_show_close_button()',
+                    docs: 'DOC?',
+                    insert: 'get_show_close_button()'
+                },
+                {
+                    label: 'get_subtitle',
+                    detail: 'get_subtitle()',
+                    docs: 'DOC?',
+                    insert: 'get_subtitle()'
+                },
+                {
+                    label: 'get_title',
+                    detail: 'get_title()',
+                    docs: 'DOC?',
+                    insert: 'get_title()'
+                },
+                {
+                    label: 'pack_end',
+                    detail: 'pack_end(child)',
+                    docs: 'DOC?',
+                    insert: 'pack_end($1)'
+                },
+                {
+                    label: 'pack_start',
+                    detail: 'pack_start(child)',
+                    docs: 'DOC?',
+                    insert: 'pack_start($1)'
+                },
+                {
+                    label: 'set_custom_title',
+                    detail: 'set_custom_title(title_widget)',
+                    docs: 'DOC?',
+                    insert: 'set_custom_title($1)'
+                },
+                {
+                    label: 'set_decoration_layout',
+                    detail: 'set_decoration_layout(layout)',
+                    docs: 'DOC?',
+                    insert: 'set_decoration_layout($1)'
+                },
+                {
+                    label: 'set_has_subtitle',
+                    detail: 'set_has_subtitle(setting)',
+                    docs: 'DOC?',
+                    insert: 'set_has_subtitle($1)'
+                },
+                {
+                    label: 'set_show_close_button',
+                    detail: 'set_show_close_button(setting)',
+                    docs: 'DOC?',
+                    insert: 'set_show_close_button($1)'
+                },
+                {
+                    label: 'set_subtitle',
+                    detail: 'set_subtitle(subtitle)',
+                    docs: 'DOC?',
+                    insert: 'set_subtitle($1)'
+                },
+                {
+                    label: 'set_title',
+                    detail: 'set_title(title)',
+                    docs: 'DOC?',
+                    insert: 'set_title($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkIconView = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'new_with_area',
+                    detail: 'new_with_area(area)',
+                    docs: 'DOC?',
+                    insert: 'new_with_area($1)'
+                },
+                {
+                    label: 'new_with_model',
+                    detail: 'new_with_model(model)',
+                    docs: 'DOC?',
+                    insert: 'new_with_model($1)'
+                },
+                {
+                    label: 'convert_widget_to_bin_window_coords',
+                    detail: 'convert_widget_to_bin_window_coords(wx, wy)',
+                    docs: 'DOC?',
+                    insert: 'convert_widget_to_bin_window_coords($1)'
+                },
+                {
+                    label: 'create_drag_icon',
+                    detail: 'create_drag_icon(path)',
+                    docs: 'DOC?',
+                    insert: 'create_drag_icon($1)'
+                },
+                {
+                    label: 'enable_model_drag_dest',
+                    detail: 'enable_model_drag_dest(targets, actions)',
+                    docs: 'DOC?',
+                    insert: 'enable_model_drag_dest($1)'
+                },
+                {
+                    label: 'enable_model_drag_source',
+                    detail: 'enable_model_drag_source(start_button_mask, targets, actions)',
+                    docs: 'DOC?',
+                    insert: 'enable_model_drag_source($1)'
+                },
+                {
+                    label: 'get_activate_on_single_click',
+                    detail: 'get_activate_on_single_click()',
+                    docs: 'DOC?',
+                    insert: 'get_activate_on_single_click()'
+                },
+                {
+                    label: 'get_cell_rect',
+                    detail: 'get_cell_rect(path, cell)',
+                    docs: 'DOC?',
+                    insert: 'get_cell_rect($1)'
+                },
+                {
+                    label: 'get_column_spacing',
+                    detail: 'get_column_spacing()',
+                    docs: 'DOC?',
+                    insert: 'get_column_spacing()'
+                },
+                {
+                    label: 'get_columns',
+                    detail: 'get_columns()',
+                    docs: 'DOC?',
+                    insert: 'get_columns()'
+                },
+                {
+                    label: 'get_cursor',
+                    detail: 'get_cursor()',
+                    docs: 'DOC?',
+                    insert: 'get_cursor()'
+                },
+                {
+                    label: 'get_dest_item_at_pos',
+                    detail: 'get_dest_item_at_pos(drag_x, drag_y)',
+                    docs: 'DOC?',
+                    insert: 'get_dest_item_at_pos($1)'
+                },
+                {
+                    label: 'get_drag_dest_item',
+                    detail: 'get_drag_dest_item()',
+                    docs: 'DOC?',
+                    insert: 'get_drag_dest_item()'
+                },
+                {
+                    label: 'get_item_at_pos',
+                    detail: 'get_item_at_pos(x, y)',
+                    docs: 'DOC?',
+                    insert: 'get_item_at_pos($1)'
+                },
+                {
+                    label: 'get_item_column',
+                    detail: 'get_item_column(path)',
+                    docs: 'DOC?',
+                    insert: 'get_item_column($1)'
+                },
+                {
+                    label: 'get_item_orientation',
+                    detail: 'get_item_orientation()',
+                    docs: 'DOC?',
+                    insert: 'get_item_orientation()'
+                },
+                {
+                    label: 'get_item_padding',
+                    detail: 'get_item_padding()',
+                    docs: 'DOC?',
+                    insert: 'get_item_padding()'
+                },
+                {
+                    label: 'get_item_row',
+                    detail: 'get_item_row(path)',
+                    docs: 'DOC?',
+                    insert: 'get_item_row($1)'
+                },
+                {
+                    label: 'get_item_width',
+                    detail: 'get_item_width()',
+                    docs: 'DOC?',
+                    insert: 'get_item_width()'
+                },
+                {
+                    label: 'get_margin',
+                    detail: 'get_margin()',
+                    docs: 'DOC?',
+                    insert: 'get_margin()'
+                },
+                {
+                    label: 'get_markup_column',
+                    detail: 'get_markup_column()',
+                    docs: 'DOC?',
+                    insert: 'get_markup_column()'
+                },
+                {
+                    label: 'get_model',
+                    detail: 'get_model()',
+                    docs: 'DOC?',
+                    insert: 'get_model()'
+                },
+                {
+                    label: 'get_path_at_pos',
+                    detail: 'get_path_at_pos(x, y)',
+                    docs: 'DOC?',
+                    insert: 'get_path_at_pos($1)'
+                },
+                {
+                    label: 'get_pixbuf_column',
+                    detail: 'get_pixbuf_column()',
+                    docs: 'DOC?',
+                    insert: 'get_pixbuf_column()'
+                },
+                {
+                    label: 'get_reorderable',
+                    detail: 'get_reorderable()',
+                    docs: 'DOC?',
+                    insert: 'get_reorderable()'
+                },
+                {
+                    label: 'get_row_spacing',
+                    detail: 'get_row_spacing()',
+                    docs: 'DOC?',
+                    insert: 'get_row_spacing()'
+                },
+                {
+                    label: 'get_selected_items',
+                    detail: 'get_selected_items()',
+                    docs: 'DOC?',
+                    insert: 'get_selected_items()'
+                },
+                {
+                    label: 'get_selection_mode',
+                    detail: 'get_selection_mode()',
+                    docs: 'DOC?',
+                    insert: 'get_selection_mode()'
+                },
+                {
+                    label: 'get_spacing',
+                    detail: 'get_spacing()',
+                    docs: 'DOC?',
+                    insert: 'get_spacing()'
+                },
+                {
+                    label: 'get_text_column',
+                    detail: 'get_text_column()',
+                    docs: 'DOC?',
+                    insert: 'get_text_column()'
+                },
+                {
+                    label: 'get_tooltip_column',
+                    detail: 'get_tooltip_column()',
+                    docs: 'DOC?',
+                    insert: 'get_tooltip_column()'
+                },
+                {
+                    label: 'get_tooltip_context',
+                    detail: 'get_tooltip_context(x, y, keyboard_tip)',
+                    docs: 'DOC?',
+                    insert: 'get_tooltip_context($1)'
+                },
+                {
+                    label: 'get_visible_range',
+                    detail: 'get_visible_range()',
+                    docs: 'DOC?',
+                    insert: 'get_visible_range()'
+                },
+                {
+                    label: 'item_activated',
+                    detail: 'item_activated(path)',
+                    docs: 'DOC?',
+                    insert: 'item_activated($1)'
+                },
+                {
+                    label: 'path_is_selected',
+                    detail: 'path_is_selected(path)',
+                    docs: 'DOC?',
+                    insert: 'path_is_selected($1)'
+                },
+                {
+                    label: 'scroll_to_path',
+                    detail: 'scroll_to_path(path, use_align, row_align, col_align)',
+                    docs: 'DOC?',
+                    insert: 'scroll_to_path($1)'
+                },
+                {
+                    label: 'select_all',
+                    detail: 'select_all()',
+                    docs: 'DOC?',
+                    insert: 'select_all()'
+                },
+                {
+                    label: 'select_path',
+                    detail: 'select_path(path)',
+                    docs: 'DOC?',
+                    insert: 'select_path($1)'
+                },
+                {
+                    label: 'selected_foreach',
+                    detail: 'selected_foreach(func, *data)',
+                    docs: 'DOC?',
+                    insert: 'selected_foreach($1)'
+                },
+                {
+                    label: 'set_activate_on_single_click',
+                    detail: 'set_activate_on_single_click(single)',
+                    docs: 'DOC?',
+                    insert: 'set_activate_on_single_click($1)'
+                },
+                {
+                    label: 'set_column_spacing',
+                    detail: 'set_column_spacing(column_spacing)',
+                    docs: 'DOC?',
+                    insert: 'set_column_spacing($1)'
+                },
+                {
+                    label: 'set_columns',
+                    detail: 'set_columns(columns)',
+                    docs: 'DOC?',
+                    insert: 'set_columns($1)'
+                },
+                {
+                    label: 'set_cursor',
+                    detail: 'set_cursor(path, cell, start_editing)',
+                    docs: 'DOC?',
+                    insert: 'set_cursor($1)'
+                },
+                {
+                    label: 'set_drag_dest_item',
+                    detail: 'set_drag_dest_item(path, pos)',
+                    docs: 'DOC?',
+                    insert: 'set_drag_dest_item($1)'
+                },
+                {
+                    label: 'set_item_orientation',
+                    detail: 'set_item_orientation(orientation)',
+                    docs: 'DOC?',
+                    insert: 'set_item_orientation($1)'
+                },
+                {
+                    label: 'set_item_padding',
+                    detail: 'set_item_padding(item_padding)',
+                    docs: 'DOC?',
+                    insert: 'set_item_padding($1)'
+                },
+                {
+                    label: 'set_item_width',
+                    detail: 'set_item_width(item_width)',
+                    docs: 'DOC?',
+                    insert: 'set_item_width($1)'
+                },
+                {
+                    label: 'set_margin',
+                    detail: 'set_margin(margin)',
+                    docs: 'DOC?',
+                    insert: 'set_margin($1)'
+                },
+                {
+                    label: 'set_markup_column',
+                    detail: 'set_markup_column(column)',
+                    docs: 'DOC?',
+                    insert: 'set_markup_column($1)'
+                },
+                {
+                    label: 'set_model',
+                    detail: 'set_model(model)',
+                    docs: 'DOC?',
+                    insert: 'set_model($1)'
+                },
+                {
+                    label: 'set_pixbuf_column',
+                    detail: 'set_pixbuf_column(column)',
+                    docs: 'DOC?',
+                    insert: 'set_pixbuf_column($1)'
+                },
+                {
+                    label: 'set_reorderable',
+                    detail: 'set_reorderable(reorderable)',
+                    docs: 'DOC?',
+                    insert: 'set_reorderable($1)'
+                },
+                {
+                    label: 'set_row_spacing',
+                    detail: 'set_row_spacing(row_spacing)',
+                    docs: 'DOC?',
+                    insert: 'set_row_spacing($1)'
+                },
+                {
+                    label: 'set_selection_mode',
+                    detail: 'set_selection_mode(mode)',
+                    docs: 'DOC?',
+                    insert: 'set_selection_mode($1)'
+                },
+                {
+                    label: 'set_spacing',
+                    detail: 'set_spacing(spacing)',
+                    docs: 'DOC?',
+                    insert: 'set_spacing($1)'
+                },
+                {
+                    label: 'set_text_column',
+                    detail: 'set_text_column(column)',
+                    docs: 'DOC?',
+                    insert: 'set_text_column($1)'
+                },
+                {
+                    label: 'set_tooltip_cell',
+                    detail: 'set_tooltip_cell(tooltip, path, cell)',
+                    docs: 'DOC?',
+                    insert: 'set_tooltip_cell($1)'
+                },
+                {
+                    label: 'set_tooltip_column',
+                    detail: 'set_tooltip_column(column)',
+                    docs: 'DOC?',
+                    insert: 'set_tooltip_column($1)'
+                },
+                {
+                    label: 'set_tooltip_item',
+                    detail: 'set_tooltip_item(tooltip, path)',
+                    docs: 'DOC?',
+                    insert: 'set_tooltip_item($1)'
+                },
+                {
+                    label: 'unselect_all',
+                    detail: 'unselect_all()',
+                    docs: 'DOC?',
+                    insert: 'unselect_all()'
+                },
+                {
+                    label: 'unselect_path',
+                    detail: 'unselect_path(path)',
+                    docs: 'DOC?',
+                    insert: 'unselect_path($1)'
+                },
+                {
+                    label: 'unset_model_drag_dest',
+                    detail: 'unset_model_drag_dest()',
+                    docs: 'DOC?',
+                    insert: 'unset_model_drag_dest()'
+                },
+                {
+                    label: 'unset_model_drag_source',
+                    detail: 'unset_model_drag_source()',
+                    docs: 'DOC?',
+                    insert: 'unset_model_drag_source()'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkScrollable = [
+                {
+                    label: 'get_border',
+                    detail: 'get_border()',
+                    docs: 'DOC?',
+                    insert: 'get_border()'
+                },
+                {
+                    label: 'get_hadjustment',
+                    detail: 'get_hadjustment()',
+                    docs: 'DOC?',
+                    insert: 'get_hadjustment()'
+                },
+                {
+                    label: 'get_hscroll_policy',
+                    detail: 'get_hscroll_policy()',
+                    docs: 'DOC?',
+                    insert: 'get_hscroll_policy()'
+                },
+                {
+                    label: 'get_vadjustment',
+                    detail: 'get_vadjustment()',
+                    docs: 'DOC?',
+                    insert: 'get_vadjustment()'
+                },
+                {
+                    label: 'get_vscroll_policy',
+                    detail: 'get_vscroll_policy()',
+                    docs: 'DOC?',
+                    insert: 'get_vscroll_policy()'
+                },
+                {
+                    label: 'set_hadjustment',
+                    detail: 'set_hadjustment(hadjustment)',
+                    docs: 'DOC?',
+                    insert: 'set_hadjustment($1)'
+                },
+                {
+                    label: 'set_hscroll_policy',
+                    detail: 'set_hscroll_policy(policy)',
+                    docs: 'DOC?',
+                    insert: 'set_hscroll_policy($1)'
+                },
+                {
+                    label: 'set_vadjustment',
+                    detail: 'set_vadjustment(vadjustment)',
+                    docs: 'DOC?',
+                    insert: 'set_vadjustment($1)'
+                },
+                {
+                    label: 'set_vscroll_policy',
+                    detail: 'set_vscroll_policy(policy)',
+                    docs: 'DOC?',
+                    insert: 'set_vscroll_policy($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkImage = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'new_from_animation',
+                    detail: 'new_from_animation(animation)',
+                    docs: 'DOC?',
+                    insert: 'new_from_animation($1)'
+                },
+                {
+                    label: 'new_from_file',
+                    detail: 'new_from_file(filename)',
+                    docs: 'DOC?',
+                    insert: 'new_from_file($1)'
+                },
+                {
+                    label: 'new_from_gicon',
+                    detail: 'new_from_gicon(icon, size)',
+                    docs: 'DOC?',
+                    insert: 'new_from_gicon($1)'
+                },
+                {
+                    label: 'new_from_icon_name',
+                    detail: 'new_from_icon_name(icon_name, size)',
+                    docs: 'DOC?',
+                    insert: 'new_from_icon_name($1)'
+                },
+                {
+                    label: 'new_from_icon_set',
+                    detail: 'new_from_icon_set(icon_set, size)',
+                    docs: 'DOC?',
+                    insert: 'new_from_icon_set($1)'
+                },
+                {
+                    label: 'new_from_pixbuf',
+                    detail: 'new_from_pixbuf(pixbuf)',
+                    docs: 'DOC?',
+                    insert: 'new_from_pixbuf($1)'
+                },
+                {
+                    label: 'new_from_resource',
+                    detail: 'new_from_resource(resource_path)',
+                    docs: 'DOC?',
+                    insert: 'new_from_resource($1)'
+                },
+                {
+                    label: 'new_from_stock',
+                    detail: 'new_from_stock(stock_id, size)',
+                    docs: 'DOC?',
+                    insert: 'new_from_stock($1)'
+                },
+                {
+                    label: 'new_from_surface',
+                    detail: 'new_from_surface(surface)',
+                    docs: 'DOC?',
+                    insert: 'new_from_surface($1)'
+                },
+                {
+                    label: 'clear',
+                    detail: 'clear()',
+                    docs: 'DOC?',
+                    insert: 'clear()'
+                },
+                {
+                    label: 'get_animation',
+                    detail: 'get_animation()',
+                    docs: 'DOC?',
+                    insert: 'get_animation()'
+                },
+                {
+                    label: 'get_gicon',
+                    detail: 'get_gicon()',
+                    docs: 'DOC?',
+                    insert: 'get_gicon()'
+                },
+                {
+                    label: 'get_icon_name',
+                    detail: 'get_icon_name()',
+                    docs: 'DOC?',
+                    insert: 'get_icon_name()'
+                },
+                {
+                    label: 'get_icon_set',
+                    detail: 'get_icon_set()',
+                    docs: 'DOC?',
+                    insert: 'get_icon_set()'
+                },
+                {
+                    label: 'get_pixbuf',
+                    detail: 'get_pixbuf()',
+                    docs: 'DOC?',
+                    insert: 'get_pixbuf()'
+                },
+                {
+                    label: 'get_pixel_size',
+                    detail: 'get_pixel_size()',
+                    docs: 'DOC?',
+                    insert: 'get_pixel_size()'
+                },
+                {
+                    label: 'get_stock',
+                    detail: 'get_stock()',
+                    docs: 'DOC?',
+                    insert: 'get_stock()'
+                },
+                {
+                    label: 'get_storage_type',
+                    detail: 'get_storage_type()',
+                    docs: 'DOC?',
+                    insert: 'get_storage_type()'
+                },
+                {
+                    label: 'set_from_animation',
+                    detail: 'set_from_animation(animation)',
+                    docs: 'DOC?',
+                    insert: 'set_from_animation($1)'
+                },
+                {
+                    label: 'set_from_file',
+                    detail: 'set_from_file(filename)',
+                    docs: 'DOC?',
+                    insert: 'set_from_file($1)'
+                },
+                {
+                    label: 'set_from_gicon',
+                    detail: 'set_from_gicon(icon, size)',
+                    docs: 'DOC?',
+                    insert: 'set_from_gicon($1)'
+                },
+                {
+                    label: 'set_from_icon_name',
+                    detail: 'set_from_icon_name(icon_name, size)',
+                    docs: 'DOC?',
+                    insert: 'set_from_icon_name($1)'
+                },
+                {
+                    label: 'set_from_icon_set',
+                    detail: 'set_from_icon_set(icon_set, size)',
+                    docs: 'DOC?',
+                    insert: 'set_from_icon_set($1)'
+                },
+                {
+                    label: 'set_from_pixbuf',
+                    detail: 'set_from_pixbuf(pixbuf)',
+                    docs: 'DOC?',
+                    insert: 'set_from_pixbuf($1)'
+                },
+                {
+                    label: 'set_from_resource',
+                    detail: 'set_from_resource(resource_path)',
+                    docs: 'DOC?',
+                    insert: 'set_from_resource($1)'
+                },
+                {
+                    label: 'set_from_stock',
+                    detail: 'set_from_stock(stock_id, size)',
+                    docs: 'DOC?',
+                    insert: 'set_from_stock($1)'
+                },
+                {
+                    label: 'set_from_surface',
+                    detail: 'set_from_surface(surface)',
+                    docs: 'DOC?',
+                    insert: 'set_from_surface($1)'
+                },
+                {
+                    label: 'set_pixel_size',
+                    detail: 'set_pixel_size(pixel_size)',
+                    docs: 'DOC?',
+                    insert: 'set_pixel_size($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkInfoBar = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'add_action_widget',
+                    detail: 'add_action_widget(child, response_id)',
+                    docs: 'DOC?',
+                    insert: 'add_action_widget($1)'
+                },
+                {
+                    label: 'add_button',
+                    detail: 'add_button(button_text, response_id)',
+                    docs: 'DOC?',
+                    insert: 'add_button($1)'
+                },
+                {
+                    label: 'get_action_area',
+                    detail: 'get_action_area()',
+                    docs: 'DOC?',
+                    insert: 'get_action_area()'
+                },
+                {
+                    label: 'get_content_area',
+                    detail: 'get_content_area()',
+                    docs: 'DOC?',
+                    insert: 'get_content_area()'
+                },
+                {
+                    label: 'get_message_type',
+                    detail: 'get_message_type()',
+                    docs: 'DOC?',
+                    insert: 'get_message_type()'
+                },
+                {
+                    label: 'get_revealed',
+                    detail: 'get_revealed()',
+                    docs: 'DOC?',
+                    insert: 'get_revealed()'
+                },
+                {
+                    label: 'get_show_close_button',
+                    detail: 'get_show_close_button()',
+                    docs: 'DOC?',
+                    insert: 'get_show_close_button()'
+                },
+                {
+                    label: 'response',
+                    detail: 'response(response_id)',
+                    docs: 'DOC?',
+                    insert: 'response($1)'
+                },
+                {
+                    label: 'set_default_response',
+                    detail: 'set_default_response(response_id)',
+                    docs: 'DOC?',
+                    insert: 'set_default_response($1)'
+                },
+                {
+                    label: 'set_message_type',
+                    detail: 'set_message_type(message_type)',
+                    docs: 'DOC?',
+                    insert: 'set_message_type($1)'
+                },
+                {
+                    label: 'set_response_sensitive',
+                    detail: 'set_response_sensitive(response_id, setting)',
+                    docs: 'DOC?',
+                    insert: 'set_response_sensitive($1)'
+                },
+                {
+                    label: 'set_revealed',
+                    detail: 'set_revealed(revealed)',
+                    docs: 'DOC?',
+                    insert: 'set_revealed($1)'
+                },
+                {
+                    label: 'set_show_close_button',
+                    detail: 'set_show_close_button(setting)',
+                    docs: 'DOC?',
+                    insert: 'set_show_close_button($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkLevelBar = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'new_for_interval',
+                    detail: 'new_for_interval(min_value, max_value)',
+                    docs: 'DOC?',
+                    insert: 'new_for_interval($1)'
+                },
+                {
+                    label: 'add_offset_value',
+                    detail: 'add_offset_value(name, value)',
+                    docs: 'DOC?',
+                    insert: 'add_offset_value($1)'
+                },
+                {
+                    label: 'get_inverted',
+                    detail: 'get_inverted()',
+                    docs: 'DOC?',
+                    insert: 'get_inverted()'
+                },
+                {
+                    label: 'get_max_value',
+                    detail: 'get_max_value()',
+                    docs: 'DOC?',
+                    insert: 'get_max_value()'
+                },
+                {
+                    label: 'get_min_value',
+                    detail: 'get_min_value()',
+                    docs: 'DOC?',
+                    insert: 'get_min_value()'
+                },
+                {
+                    label: 'get_mode',
+                    detail: 'get_mode()',
+                    docs: 'DOC?',
+                    insert: 'get_mode()'
+                },
+                {
+                    label: 'get_offset_value',
+                    detail: 'get_offset_value(name)',
+                    docs: 'DOC?',
+                    insert: 'get_offset_value($1)'
+                },
+                {
+                    label: 'get_value',
+                    detail: 'get_value()',
+                    docs: 'DOC?',
+                    insert: 'get_value()'
+                },
+                {
+                    label: 'remove_offset_value',
+                    detail: 'remove_offset_value(name)',
+                    docs: 'DOC?',
+                    insert: 'remove_offset_value($1)'
+                },
+                {
+                    label: 'set_inverted',
+                    detail: 'set_inverted(inverted)',
+                    docs: 'DOC?',
+                    insert: 'set_inverted($1)'
+                },
+                {
+                    label: 'set_max_value',
+                    detail: 'set_max_value(value)',
+                    docs: 'DOC?',
+                    insert: 'set_max_value($1)'
+                },
+                {
+                    label: 'set_min_value',
+                    detail: 'set_min_value(value)',
+                    docs: 'DOC?',
+                    insert: 'set_min_value($1)'
+                },
+                {
+                    label: 'set_mode',
+                    detail: 'set_mode(mode)',
+                    docs: 'DOC?',
+                    insert: 'set_mode($1)'
+                },
+                {
+                    label: 'set_value',
+                    detail: 'set_value(value)',
+                    docs: 'DOC?',
+                    insert: 'set_value($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkLinkButton = [
+                {
+                    label: 'new',
+                    detail: 'new(uri)',
+                    docs: 'DOC?',
+                    insert: 'new($1)'
+                },
+                {
+                    label: 'new_with_label',
+                    detail: 'new_with_label(uri, label)',
+                    docs: 'DOC?',
+                    insert: 'new_with_label($1)'
+                },
+                {
+                    label: 'get_uri',
+                    detail: 'get_uri()',
+                    docs: 'DOC?',
+                    insert: 'get_uri()'
+                },
+                {
+                    label: 'get_visited',
+                    detail: 'get_visited()',
+                    docs: 'DOC?',
+                    insert: 'get_visited()'
+                },
+                {
+                    label: 'set_uri',
+                    detail: 'set_uri(uri)',
+                    docs: 'DOC?',
+                    insert: 'set_uri($1)'
+                },
+                {
+                    label: 'set_visited',
+                    detail: 'set_visited(visited)',
+                    docs: 'DOC?',
+                    insert: 'set_visited($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkListBox = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'bind_model',
+                    detail: 'bind_model(model, create_widget_func, *user_data)',
+                    docs: 'DOC?',
+                    insert: 'bind_model($1)'
+                },
+                {
+                    label: 'drag_highlight_row',
+                    detail: 'drag_highlight_row(row)',
+                    docs: 'DOC?',
+                    insert: 'drag_highlight_row($1)'
+                },
+                {
+                    label: 'drag_unhighlight_row',
+                    detail: 'drag_unhighlight_row()',
+                    docs: 'DOC?',
+                    insert: 'drag_unhighlight_row()'
+                },
+                {
+                    label: 'get_activate_on_single_click',
+                    detail: 'get_activate_on_single_click()',
+                    docs: 'DOC?',
+                    insert: 'get_activate_on_single_click()'
+                },
+                {
+                    label: 'get_adjustment',
+                    detail: 'get_adjustment()',
+                    docs: 'DOC?',
+                    insert: 'get_adjustment()'
+                },
+                {
+                    label: 'get_row_at_index',
+                    detail: 'get_row_at_index(index_)',
+                    docs: 'DOC?',
+                    insert: 'get_row_at_index($1)'
+                },
+                {
+                    label: 'get_row_at_y',
+                    detail: 'get_row_at_y(y)',
+                    docs: 'DOC?',
+                    insert: 'get_row_at_y($1)'
+                },
+                {
+                    label: 'get_selected_row',
+                    detail: 'get_selected_row()',
+                    docs: 'DOC?',
+                    insert: 'get_selected_row()'
+                },
+                {
+                    label: 'get_selected_rows',
+                    detail: 'get_selected_rows()',
+                    docs: 'DOC?',
+                    insert: 'get_selected_rows()'
+                },
+                {
+                    label: 'get_selection_mode',
+                    detail: 'get_selection_mode()',
+                    docs: 'DOC?',
+                    insert: 'get_selection_mode()'
+                },
+                {
+                    label: 'insert',
+                    detail: 'insert(child, position)',
+                    docs: 'DOC?',
+                    insert: 'insert($1)'
+                },
+                {
+                    label: 'invalidate_filter',
+                    detail: 'invalidate_filter()',
+                    docs: 'DOC?',
+                    insert: 'invalidate_filter()'
+                },
+                {
+                    label: 'invalidate_headers',
+                    detail: 'invalidate_headers()',
+                    docs: 'DOC?',
+                    insert: 'invalidate_headers()'
+                },
+                {
+                    label: 'invalidate_sort',
+                    detail: 'invalidate_sort()',
+                    docs: 'DOC?',
+                    insert: 'invalidate_sort()'
+                },
+                {
+                    label: 'prepend',
+                    detail: 'prepend(child)',
+                    docs: 'DOC?',
+                    insert: 'prepend($1)'
+                },
+                {
+                    label: 'select_all',
+                    detail: 'select_all()',
+                    docs: 'DOC?',
+                    insert: 'select_all()'
+                },
+                {
+                    label: 'select_row',
+                    detail: 'select_row(row)',
+                    docs: 'DOC?',
+                    insert: 'select_row($1)'
+                },
+                {
+                    label: 'selected_foreach',
+                    detail: 'selected_foreach(func, *data)',
+                    docs: 'DOC?',
+                    insert: 'selected_foreach($1)'
+                },
+                {
+                    label: 'set_activate_on_single_click',
+                    detail: 'set_activate_on_single_click(single)',
+                    docs: 'DOC?',
+                    insert: 'set_activate_on_single_click($1)'
+                },
+                {
+                    label: 'set_adjustment',
+                    detail: 'set_adjustment(adjustment)',
+                    docs: 'DOC?',
+                    insert: 'set_adjustment($1)'
+                },
+                {
+                    label: 'set_filter_func',
+                    detail: 'set_filter_func(filter_func, *user_data)',
+                    docs: 'DOC?',
+                    insert: 'set_filter_func($1)'
+                },
+                {
+                    label: 'set_header_func',
+                    detail: 'set_header_func(update_header, *user_data)',
+                    docs: 'DOC?',
+                    insert: 'set_header_func($1)'
+                },
+                {
+                    label: 'set_placeholder',
+                    detail: 'set_placeholder(placeholder)',
+                    docs: 'DOC?',
+                    insert: 'set_placeholder($1)'
+                },
+                {
+                    label: 'set_selection_mode',
+                    detail: 'set_selection_mode(mode)',
+                    docs: 'DOC?',
+                    insert: 'set_selection_mode($1)'
+                },
+                {
+                    label: 'set_sort_func',
+                    detail: 'set_sort_func(sort_func, *user_data)',
+                    docs: 'DOC?',
+                    insert: 'set_sort_func($1)'
+                },
+                {
+                    label: 'unselect_all',
+                    detail: 'unselect_all()',
+                    docs: 'DOC?',
+                    insert: 'unselect_all()'
+                },
+                {
+                    label: 'unselect_row',
+                    detail: 'unselect_row(row)',
+                    docs: 'DOC?',
+                    insert: 'unselect_row($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkLockButton = [
+                {
+                    label: 'new',
+                    detail: 'new(permission)',
+                    docs: 'DOC?',
+                    insert: 'new($1)'
+                },
+                {
+                    label: 'get_permission',
+                    detail: 'get_permission()',
+                    docs: 'DOC?',
+                    insert: 'get_permission()'
+                },
+                {
+                    label: 'set_permission',
+                    detail: 'set_permission(permission)',
+                    docs: 'DOC?',
+                    insert: 'set_permission($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkMenuBar = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'new_from_model',
+                    detail: 'new_from_model(model)',
+                    docs: 'DOC?',
+                    insert: 'new_from_model($1)'
+                },
+                {
+                    label: 'get_child_pack_direction',
+                    detail: 'get_child_pack_direction()',
+                    docs: 'DOC?',
+                    insert: 'get_child_pack_direction()'
+                },
+                {
+                    label: 'get_pack_direction',
+                    detail: 'get_pack_direction()',
+                    docs: 'DOC?',
+                    insert: 'get_pack_direction()'
+                },
+                {
+                    label: 'set_child_pack_direction',
+                    detail: 'set_child_pack_direction(child_pack_dir)',
+                    docs: 'DOC?',
+                    insert: 'set_child_pack_direction($1)'
+                },
+                {
+                    label: 'set_pack_direction',
+                    detail: 'set_pack_direction(pack_dir)',
+                    docs: 'DOC?',
+                    insert: 'set_pack_direction($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkMenuShell = [
+                {
+                    label: 'activate_item',
+                    detail: 'activate_item(menu_item, force_deactivate)',
+                    docs: 'DOC?',
+                    insert: 'activate_item($1)'
+                },
+                {
+                    label: 'append',
+                    detail: 'append(child)',
+                    docs: 'DOC?',
+                    insert: 'append($1)'
+                },
+                {
+                    label: 'bind_model',
+                    detail: 'bind_model(model, action_namespace, with_separators)',
+                    docs: 'DOC?',
+                    insert: 'bind_model($1)'
+                },
+                {
+                    label: 'cancel',
+                    detail: 'cancel()',
+                    docs: 'DOC?',
+                    insert: 'cancel()'
+                },
+                {
+                    label: 'deactivate',
+                    detail: 'deactivate()',
+                    docs: 'DOC?',
+                    insert: 'deactivate()'
+                },
+                {
+                    label: 'deselect',
+                    detail: 'deselect()',
+                    docs: 'DOC?',
+                    insert: 'deselect()'
+                },
+                {
+                    label: 'get_parent_shell',
+                    detail: 'get_parent_shell()',
+                    docs: 'DOC?',
+                    insert: 'get_parent_shell()'
+                },
+                {
+                    label: 'get_selected_item',
+                    detail: 'get_selected_item()',
+                    docs: 'DOC?',
+                    insert: 'get_selected_item()'
+                },
+                {
+                    label: 'get_take_focus',
+                    detail: 'get_take_focus()',
+                    docs: 'DOC?',
+                    insert: 'get_take_focus()'
+                },
+                {
+                    label: 'insert',
+                    detail: 'insert(child, position)',
+                    docs: 'DOC?',
+                    insert: 'insert($1)'
+                },
+                {
+                    label: 'prepend',
+                    detail: 'prepend(child)',
+                    docs: 'DOC?',
+                    insert: 'prepend($1)'
+                },
+                {
+                    label: 'select_first',
+                    detail: 'select_first(search_sensitive)',
+                    docs: 'DOC?',
+                    insert: 'select_first($1)'
+                },
+                {
+                    label: 'select_item',
+                    detail: 'select_item(menu_item)',
+                    docs: 'DOC?',
+                    insert: 'select_item($1)'
+                },
+                {
+                    label: 'set_take_focus',
+                    detail: 'set_take_focus(take_focus)',
+                    docs: 'DOC?',
+                    insert: 'set_take_focus($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkMenuButton = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'get_align_widget',
+                    detail: 'get_align_widget()',
+                    docs: 'DOC?',
+                    insert: 'get_align_widget()'
+                },
+                {
+                    label: 'get_direction',
+                    detail: 'get_direction()',
+                    docs: 'DOC?',
+                    insert: 'get_direction()'
+                },
+                {
+                    label: 'get_menu_model',
+                    detail: 'get_menu_model()',
+                    docs: 'DOC?',
+                    insert: 'get_menu_model()'
+                },
+                {
+                    label: 'get_popover',
+                    detail: 'get_popover()',
+                    docs: 'DOC?',
+                    insert: 'get_popover()'
+                },
+                {
+                    label: 'get_popup',
+                    detail: 'get_popup()',
+                    docs: 'DOC?',
+                    insert: 'get_popup()'
+                },
+                {
+                    label: 'get_use_popover',
+                    detail: 'get_use_popover()',
+                    docs: 'DOC?',
+                    insert: 'get_use_popover()'
+                },
+                {
+                    label: 'set_align_widget',
+                    detail: 'set_align_widget(align_widget)',
+                    docs: 'DOC?',
+                    insert: 'set_align_widget($1)'
+                },
+                {
+                    label: 'set_direction',
+                    detail: 'set_direction(direction)',
+                    docs: 'DOC?',
+                    insert: 'set_direction($1)'
+                },
+                {
+                    label: 'set_menu_model',
+                    detail: 'set_menu_model(menu_model)',
+                    docs: 'DOC?',
+                    insert: 'set_menu_model($1)'
+                },
+                {
+                    label: 'set_popover',
+                    detail: 'set_popover(popover)',
+                    docs: 'DOC?',
+                    insert: 'set_popover($1)'
+                },
+                {
+                    label: 'set_popup',
+                    detail: 'set_popup(menu)',
+                    docs: 'DOC?',
+                    insert: 'set_popup($1)'
+                },
+                {
+                    label: 'set_use_popover',
+                    detail: 'set_use_popover(use_popover)',
+                    docs: 'DOC?',
+                    insert: 'set_use_popover($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkToggleButton = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'new_with_label',
+                    detail: 'new_with_label(label)',
+                    docs: 'DOC?',
+                    insert: 'new_with_label($1)'
+                },
+                {
+                    label: 'new_with_mnemonic',
+                    detail: 'new_with_mnemonic(label)',
+                    docs: 'DOC?',
+                    insert: 'new_with_mnemonic($1)'
+                },
+                {
+                    label: 'get_active',
+                    detail: 'get_active()',
+                    docs: 'DOC?',
+                    insert: 'get_active()'
+                },
+                {
+                    label: 'get_inconsistent',
+                    detail: 'get_inconsistent()',
+                    docs: 'DOC?',
+                    insert: 'get_inconsistent()'
+                },
+                {
+                    label: 'get_mode',
+                    detail: 'get_mode()',
+                    docs: 'DOC?',
+                    insert: 'get_mode()'
+                },
+                {
+                    label: 'set_active',
+                    detail: 'set_active(is_active)',
+                    docs: 'DOC?',
+                    insert: 'set_active($1)'
+                },
+                {
+                    label: 'set_inconsistent',
+                    detail: 'set_inconsistent(setting)',
+                    docs: 'DOC?',
+                    insert: 'set_inconsistent($1)'
+                },
+                {
+                    label: 'set_mode',
+                    detail: 'set_mode(draw_indicator)',
+                    docs: 'DOC?',
+                    insert: 'set_mode($1)'
+                },
+                {
+                    label: 'toggled',
+                    detail: 'toggled()',
+                    docs: 'DOC?',
+                    insert: 'toggled()'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkMessageDialog = [
+                {
+                    label: 'format_secondary_markup',
+                    detail: 'format_secondary_markup(message_format)',
+                    docs: 'DOC?',
+                    insert: 'format_secondary_markup($1)'
+                },
+                {
+                    label: 'format_secondary_text',
+                    detail: 'format_secondary_text(message_format)',
+                    docs: 'DOC?',
+                    insert: 'format_secondary_text($1)'
+                },
+                {
+                    label: 'get_image',
+                    detail: 'get_image()',
+                    docs: 'DOC?',
+                    insert: 'get_image()'
+                },
+                {
+                    label: 'get_message_area',
+                    detail: 'get_message_area()',
+                    docs: 'DOC?',
+                    insert: 'get_message_area()'
+                },
+                {
+                    label: 'set_image',
+                    detail: 'set_image(image)',
+                    docs: 'DOC?',
+                    insert: 'set_image($1)'
+                },
+                {
+                    label: 'set_markup',
+                    detail: 'set_markup(str)',
+                    docs: 'DOC?',
+                    insert: 'set_markup($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkNotebook = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'append_page',
+                    detail: 'append_page(child, tab_label)',
+                    docs: 'DOC?',
+                    insert: 'append_page($1)'
+                },
+                {
+                    label: 'append_page_menu',
+                    detail: 'append_page_menu(child, tab_label, menu_label)',
+                    docs: 'DOC?',
+                    insert: 'append_page_menu($1)'
+                },
+                {
+                    label: 'detach_tab',
+                    detail: 'detach_tab(child)',
+                    docs: 'DOC?',
+                    insert: 'detach_tab($1)'
+                },
+                {
+                    label: 'get_action_widget',
+                    detail: 'get_action_widget(pack_type)',
+                    docs: 'DOC?',
+                    insert: 'get_action_widget($1)'
+                },
+                {
+                    label: 'get_current_page',
+                    detail: 'get_current_page()',
+                    docs: 'DOC?',
+                    insert: 'get_current_page()'
+                },
+                {
+                    label: 'get_group_name',
+                    detail: 'get_group_name()',
+                    docs: 'DOC?',
+                    insert: 'get_group_name()'
+                },
+                {
+                    label: 'get_menu_label',
+                    detail: 'get_menu_label(child)',
+                    docs: 'DOC?',
+                    insert: 'get_menu_label($1)'
+                },
+                {
+                    label: 'get_menu_label_text',
+                    detail: 'get_menu_label_text(child)',
+                    docs: 'DOC?',
+                    insert: 'get_menu_label_text($1)'
+                },
+                {
+                    label: 'get_n_pages',
+                    detail: 'get_n_pages()',
+                    docs: 'DOC?',
+                    insert: 'get_n_pages()'
+                },
+                {
+                    label: 'get_nth_page',
+                    detail: 'get_nth_page(page_num)',
+                    docs: 'DOC?',
+                    insert: 'get_nth_page($1)'
+                },
+                {
+                    label: 'get_scrollable',
+                    detail: 'get_scrollable()',
+                    docs: 'DOC?',
+                    insert: 'get_scrollable()'
+                },
+                {
+                    label: 'get_show_border',
+                    detail: 'get_show_border()',
+                    docs: 'DOC?',
+                    insert: 'get_show_border()'
+                },
+                {
+                    label: 'get_show_tabs',
+                    detail: 'get_show_tabs()',
+                    docs: 'DOC?',
+                    insert: 'get_show_tabs()'
+                },
+                {
+                    label: 'get_tab_detachable',
+                    detail: 'get_tab_detachable(child)',
+                    docs: 'DOC?',
+                    insert: 'get_tab_detachable($1)'
+                },
+                {
+                    label: 'get_tab_hborder',
+                    detail: 'get_tab_hborder()',
+                    docs: 'DOC?',
+                    insert: 'get_tab_hborder()'
+                },
+                {
+                    label: 'get_tab_label',
+                    detail: 'get_tab_label(child)',
+                    docs: 'DOC?',
+                    insert: 'get_tab_label($1)'
+                },
+                {
+                    label: 'get_tab_label_text',
+                    detail: 'get_tab_label_text(child)',
+                    docs: 'DOC?',
+                    insert: 'get_tab_label_text($1)'
+                },
+                {
+                    label: 'get_tab_pos',
+                    detail: 'get_tab_pos()',
+                    docs: 'DOC?',
+                    insert: 'get_tab_pos()'
+                },
+                {
+                    label: 'get_tab_reorderable',
+                    detail: 'get_tab_reorderable(child)',
+                    docs: 'DOC?',
+                    insert: 'get_tab_reorderable($1)'
+                },
+                {
+                    label: 'get_tab_vborder',
+                    detail: 'get_tab_vborder()',
+                    docs: 'DOC?',
+                    insert: 'get_tab_vborder()'
+                },
+                {
+                    label: 'insert_page',
+                    detail: 'insert_page(child, tab_label, position)',
+                    docs: 'DOC?',
+                    insert: 'insert_page($1)'
+                },
+                {
+                    label: 'insert_page_menu',
+                    detail: 'insert_page_menu(child, tab_label, menu_label, position)',
+                    docs: 'DOC?',
+                    insert: 'insert_page_menu($1)'
+                },
+                {
+                    label: 'next_page',
+                    detail: 'next_page()',
+                    docs: 'DOC?',
+                    insert: 'next_page()'
+                },
+                {
+                    label: 'page_num',
+                    detail: 'page_num(child)',
+                    docs: 'DOC?',
+                    insert: 'page_num($1)'
+                },
+                {
+                    label: 'popup_disable',
+                    detail: 'popup_disable()',
+                    docs: 'DOC?',
+                    insert: 'popup_disable()'
+                },
+                {
+                    label: 'popup_enable',
+                    detail: 'popup_enable()',
+                    docs: 'DOC?',
+                    insert: 'popup_enable()'
+                },
+                {
+                    label: 'prepend_page',
+                    detail: 'prepend_page(child, tab_label)',
+                    docs: 'DOC?',
+                    insert: 'prepend_page($1)'
+                },
+                {
+                    label: 'prepend_page_menu',
+                    detail: 'prepend_page_menu(child, tab_label, menu_label)',
+                    docs: 'DOC?',
+                    insert: 'prepend_page_menu($1)'
+                },
+                {
+                    label: 'prev_page',
+                    detail: 'prev_page()',
+                    docs: 'DOC?',
+                    insert: 'prev_page()'
+                },
+                {
+                    label: 'remove_page',
+                    detail: 'remove_page(page_num)',
+                    docs: 'DOC?',
+                    insert: 'remove_page($1)'
+                },
+                {
+                    label: 'reorder_child',
+                    detail: 'reorder_child(child, position)',
+                    docs: 'DOC?',
+                    insert: 'reorder_child($1)'
+                },
+                {
+                    label: 'set_action_widget',
+                    detail: 'set_action_widget(widget, pack_type)',
+                    docs: 'DOC?',
+                    insert: 'set_action_widget($1)'
+                },
+                {
+                    label: 'set_current_page',
+                    detail: 'set_current_page(page_num)',
+                    docs: 'DOC?',
+                    insert: 'set_current_page($1)'
+                },
+                {
+                    label: 'set_group_name',
+                    detail: 'set_group_name(group_name)',
+                    docs: 'DOC?',
+                    insert: 'set_group_name($1)'
+                },
+                {
+                    label: 'set_menu_label',
+                    detail: 'set_menu_label(child, menu_label)',
+                    docs: 'DOC?',
+                    insert: 'set_menu_label($1)'
+                },
+                {
+                    label: 'set_menu_label_text',
+                    detail: 'set_menu_label_text(child, menu_text)',
+                    docs: 'DOC?',
+                    insert: 'set_menu_label_text($1)'
+                },
+                {
+                    label: 'set_scrollable',
+                    detail: 'set_scrollable(scrollable)',
+                    docs: 'DOC?',
+                    insert: 'set_scrollable($1)'
+                },
+                {
+                    label: 'set_show_border',
+                    detail: 'set_show_border(show_border)',
+                    docs: 'DOC?',
+                    insert: 'set_show_border($1)'
+                },
+                {
+                    label: 'set_show_tabs',
+                    detail: 'set_show_tabs(show_tabs)',
+                    docs: 'DOC?',
+                    insert: 'set_show_tabs($1)'
+                },
+                {
+                    label: 'set_tab_detachable',
+                    detail: 'set_tab_detachable(child, detachable)',
+                    docs: 'DOC?',
+                    insert: 'set_tab_detachable($1)'
+                },
+                {
+                    label: 'set_tab_label',
+                    detail: 'set_tab_label(child, tab_label)',
+                    docs: 'DOC?',
+                    insert: 'set_tab_label($1)'
+                },
+                {
+                    label: 'set_tab_label_text',
+                    detail: 'set_tab_label_text(child, tab_text)',
+                    docs: 'DOC?',
+                    insert: 'set_tab_label_text($1)'
+                },
+                {
+                    label: 'set_tab_pos',
+                    detail: 'set_tab_pos(pos)',
+                    docs: 'DOC?',
+                    insert: 'set_tab_pos($1)'
+                },
+                {
+                    label: 'set_tab_reorderable',
+                    detail: 'set_tab_reorderable(child, reorderable)',
+                    docs: 'DOC?',
+                    insert: 'set_tab_reorderable($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkPaned = [
+                {
+                    label: 'new',
+                    detail: 'new(orientation)',
+                    docs: 'DOC?',
+                    insert: 'new($1)'
+                },
+                {
+                    label: 'add1',
+                    detail: 'add1(child)',
+                    docs: 'DOC?',
+                    insert: 'add1($1)'
+                },
+                {
+                    label: 'add2',
+                    detail: 'add2(child)',
+                    docs: 'DOC?',
+                    insert: 'add2($1)'
+                },
+                {
+                    label: 'get_child1',
+                    detail: 'get_child1()',
+                    docs: 'DOC?',
+                    insert: 'get_child1()'
+                },
+                {
+                    label: 'get_child2',
+                    detail: 'get_child2()',
+                    docs: 'DOC?',
+                    insert: 'get_child2()'
+                },
+                {
+                    label: 'get_handle_window',
+                    detail: 'get_handle_window()',
+                    docs: 'DOC?',
+                    insert: 'get_handle_window()'
+                },
+                {
+                    label: 'get_position',
+                    detail: 'get_position()',
+                    docs: 'DOC?',
+                    insert: 'get_position()'
+                },
+                {
+                    label: 'get_wide_handle',
+                    detail: 'get_wide_handle()',
+                    docs: 'DOC?',
+                    insert: 'get_wide_handle()'
+                },
+                {
+                    label: 'pack1',
+                    detail: 'pack1(child, resize, shrink)',
+                    docs: 'DOC?',
+                    insert: 'pack1($1)'
+                },
+                {
+                    label: 'pack2',
+                    detail: 'pack2(child, resize, shrink)',
+                    docs: 'DOC?',
+                    insert: 'pack2($1)'
+                },
+                {
+                    label: 'set_position',
+                    detail: 'set_position(position)',
+                    docs: 'DOC?',
+                    insert: 'set_position($1)'
+                },
+                {
+                    label: 'set_wide_handle',
+                    detail: 'set_wide_handle(wide)',
+                    docs: 'DOC?',
+                    insert: 'set_wide_handle($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkPlacesSidebar = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'add_shortcut',
+                    detail: 'add_shortcut(location)',
+                    docs: 'DOC?',
+                    insert: 'add_shortcut($1)'
+                },
+                {
+                    label: 'get_local_only',
+                    detail: 'get_local_only()',
+                    docs: 'DOC?',
+                    insert: 'get_local_only()'
+                },
+                {
+                    label: 'get_location',
+                    detail: 'get_location()',
+                    docs: 'DOC?',
+                    insert: 'get_location()'
+                },
+                {
+                    label: 'get_nth_bookmark',
+                    detail: 'get_nth_bookmark(n)',
+                    docs: 'DOC?',
+                    insert: 'get_nth_bookmark($1)'
+                },
+                {
+                    label: 'get_open_flags',
+                    detail: 'get_open_flags()',
+                    docs: 'DOC?',
+                    insert: 'get_open_flags()'
+                },
+                {
+                    label: 'get_show_connect_to_server',
+                    detail: 'get_show_connect_to_server()',
+                    docs: 'DOC?',
+                    insert: 'get_show_connect_to_server()'
+                },
+                {
+                    label: 'get_show_desktop',
+                    detail: 'get_show_desktop()',
+                    docs: 'DOC?',
+                    insert: 'get_show_desktop()'
+                },
+                {
+                    label: 'get_show_enter_location',
+                    detail: 'get_show_enter_location()',
+                    docs: 'DOC?',
+                    insert: 'get_show_enter_location()'
+                },
+                {
+                    label: 'get_show_other_locations',
+                    detail: 'get_show_other_locations()',
+                    docs: 'DOC?',
+                    insert: 'get_show_other_locations()'
+                },
+                {
+                    label: 'get_show_recent',
+                    detail: 'get_show_recent()',
+                    docs: 'DOC?',
+                    insert: 'get_show_recent()'
+                },
+                {
+                    label: 'get_show_starred_location',
+                    detail: 'get_show_starred_location()',
+                    docs: 'DOC?',
+                    insert: 'get_show_starred_location()'
+                },
+                {
+                    label: 'get_show_trash',
+                    detail: 'get_show_trash()',
+                    docs: 'DOC?',
+                    insert: 'get_show_trash()'
+                },
+                {
+                    label: 'list_shortcuts',
+                    detail: 'list_shortcuts()',
+                    docs: 'DOC?',
+                    insert: 'list_shortcuts()'
+                },
+                {
+                    label: 'remove_shortcut',
+                    detail: 'remove_shortcut(location)',
+                    docs: 'DOC?',
+                    insert: 'remove_shortcut($1)'
+                },
+                {
+                    label: 'set_drop_targets_visible',
+                    detail: 'set_drop_targets_visible(visible, context)',
+                    docs: 'DOC?',
+                    insert: 'set_drop_targets_visible($1)'
+                },
+                {
+                    label: 'set_local_only',
+                    detail: 'set_local_only(local_only)',
+                    docs: 'DOC?',
+                    insert: 'set_local_only($1)'
+                },
+                {
+                    label: 'set_location',
+                    detail: 'set_location(location)',
+                    docs: 'DOC?',
+                    insert: 'set_location($1)'
+                },
+                {
+                    label: 'set_open_flags',
+                    detail: 'set_open_flags(flags)',
+                    docs: 'DOC?',
+                    insert: 'set_open_flags($1)'
+                },
+                {
+                    label: 'set_show_connect_to_server',
+                    detail: 'set_show_connect_to_server(show_connect_to_server)',
+                    docs: 'DOC?',
+                    insert: 'set_show_connect_to_server($1)'
+                },
+                {
+                    label: 'set_show_desktop',
+                    detail: 'set_show_desktop(show_desktop)',
+                    docs: 'DOC?',
+                    insert: 'set_show_desktop($1)'
+                },
+                {
+                    label: 'set_show_enter_location',
+                    detail: 'set_show_enter_location(show_enter_location)',
+                    docs: 'DOC?',
+                    insert: 'set_show_enter_location($1)'
+                },
+                {
+                    label: 'set_show_other_locations',
+                    detail: 'set_show_other_locations(show_other_locations)',
+                    docs: 'DOC?',
+                    insert: 'set_show_other_locations($1)'
+                },
+                {
+                    label: 'set_show_recent',
+                    detail: 'set_show_recent(show_recent)',
+                    docs: 'DOC?',
+                    insert: 'set_show_recent($1)'
+                },
+                {
+                    label: 'set_show_starred_location',
+                    detail: 'set_show_starred_location(show_starred_location)',
+                    docs: 'DOC?',
+                    insert: 'set_show_starred_location($1)'
+                },
+                {
+                    label: 'set_show_trash',
+                    detail: 'set_show_trash(show_trash)',
+                    docs: 'DOC?',
+                    insert: 'set_show_trash($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkScrolledWindow = [
+                {
+                    label: 'new',
+                    detail: 'new(hadjustment, vadjustment)',
+                    docs: 'DOC?',
+                    insert: 'new($1)'
+                },
+                {
+                    label: 'add_with_viewport',
+                    detail: 'add_with_viewport(child)',
+                    docs: 'DOC?',
+                    insert: 'add_with_viewport($1)'
+                },
+                {
+                    label: 'get_capture_button_press',
+                    detail: 'get_capture_button_press()',
+                    docs: 'DOC?',
+                    insert: 'get_capture_button_press()'
+                },
+                {
+                    label: 'get_hadjustment',
+                    detail: 'get_hadjustment()',
+                    docs: 'DOC?',
+                    insert: 'get_hadjustment()'
+                },
+                {
+                    label: 'get_hscrollbar',
+                    detail: 'get_hscrollbar()',
+                    docs: 'DOC?',
+                    insert: 'get_hscrollbar()'
+                },
+                {
+                    label: 'get_kinetic_scrolling',
+                    detail: 'get_kinetic_scrolling()',
+                    docs: 'DOC?',
+                    insert: 'get_kinetic_scrolling()'
+                },
+                {
+                    label: 'get_max_content_height',
+                    detail: 'get_max_content_height()',
+                    docs: 'DOC?',
+                    insert: 'get_max_content_height()'
+                },
+                {
+                    label: 'get_max_content_width',
+                    detail: 'get_max_content_width()',
+                    docs: 'DOC?',
+                    insert: 'get_max_content_width()'
+                },
+                {
+                    label: 'get_min_content_height',
+                    detail: 'get_min_content_height()',
+                    docs: 'DOC?',
+                    insert: 'get_min_content_height()'
+                },
+                {
+                    label: 'get_min_content_width',
+                    detail: 'get_min_content_width()',
+                    docs: 'DOC?',
+                    insert: 'get_min_content_width()'
+                },
+                {
+                    label: 'get_overlay_scrolling',
+                    detail: 'get_overlay_scrolling()',
+                    docs: 'DOC?',
+                    insert: 'get_overlay_scrolling()'
+                },
+                {
+                    label: 'get_placement',
+                    detail: 'get_placement()',
+                    docs: 'DOC?',
+                    insert: 'get_placement()'
+                },
+                {
+                    label: 'get_policy',
+                    detail: 'get_policy()',
+                    docs: 'DOC?',
+                    insert: 'get_policy()'
+                },
+                {
+                    label: 'get_propagate_natural_height',
+                    detail: 'get_propagate_natural_height()',
+                    docs: 'DOC?',
+                    insert: 'get_propagate_natural_height()'
+                },
+                {
+                    label: 'get_propagate_natural_width',
+                    detail: 'get_propagate_natural_width()',
+                    docs: 'DOC?',
+                    insert: 'get_propagate_natural_width()'
+                },
+                {
+                    label: 'get_shadow_type',
+                    detail: 'get_shadow_type()',
+                    docs: 'DOC?',
+                    insert: 'get_shadow_type()'
+                },
+                {
+                    label: 'get_vadjustment',
+                    detail: 'get_vadjustment()',
+                    docs: 'DOC?',
+                    insert: 'get_vadjustment()'
+                },
+                {
+                    label: 'get_vscrollbar',
+                    detail: 'get_vscrollbar()',
+                    docs: 'DOC?',
+                    insert: 'get_vscrollbar()'
+                },
+                {
+                    label: 'set_capture_button_press',
+                    detail: 'set_capture_button_press(capture_button_press)',
+                    docs: 'DOC?',
+                    insert: 'set_capture_button_press($1)'
+                },
+                {
+                    label: 'set_hadjustment',
+                    detail: 'set_hadjustment(hadjustment)',
+                    docs: 'DOC?',
+                    insert: 'set_hadjustment($1)'
+                },
+                {
+                    label: 'set_kinetic_scrolling',
+                    detail: 'set_kinetic_scrolling(kinetic_scrolling)',
+                    docs: 'DOC?',
+                    insert: 'set_kinetic_scrolling($1)'
+                },
+                {
+                    label: 'set_max_content_height',
+                    detail: 'set_max_content_height(height)',
+                    docs: 'DOC?',
+                    insert: 'set_max_content_height($1)'
+                },
+                {
+                    label: 'set_max_content_width',
+                    detail: 'set_max_content_width(width)',
+                    docs: 'DOC?',
+                    insert: 'set_max_content_width($1)'
+                },
+                {
+                    label: 'set_min_content_height',
+                    detail: 'set_min_content_height(height)',
+                    docs: 'DOC?',
+                    insert: 'set_min_content_height($1)'
+                },
+                {
+                    label: 'set_min_content_width',
+                    detail: 'set_min_content_width(width)',
+                    docs: 'DOC?',
+                    insert: 'set_min_content_width($1)'
+                },
+                {
+                    label: 'set_overlay_scrolling',
+                    detail: 'set_overlay_scrolling(overlay_scrolling)',
+                    docs: 'DOC?',
+                    insert: 'set_overlay_scrolling($1)'
+                },
+                {
+                    label: 'set_placement',
+                    detail: 'set_placement(window_placement)',
+                    docs: 'DOC?',
+                    insert: 'set_placement($1)'
+                },
+                {
+                    label: 'set_policy',
+                    detail: 'set_policy(hscrollbar_policy, vscrollbar_policy)',
+                    docs: 'DOC?',
+                    insert: 'set_policy($1)'
+                },
+                {
+                    label: 'set_propagate_natural_height',
+                    detail: 'set_propagate_natural_height(propagate)',
+                    docs: 'DOC?',
+                    insert: 'set_propagate_natural_height($1)'
+                },
+                {
+                    label: 'set_propagate_natural_width',
+                    detail: 'set_propagate_natural_width(propagate)',
+                    docs: 'DOC?',
+                    insert: 'set_propagate_natural_width($1)'
+                },
+                {
+                    label: 'set_shadow_type',
+                    detail: 'set_shadow_type(type)',
+                    docs: 'DOC?',
+                    insert: 'set_shadow_type($1)'
+                },
+                {
+                    label: 'set_vadjustment',
+                    detail: 'set_vadjustment(vadjustment)',
+                    docs: 'DOC?',
+                    insert: 'set_vadjustment($1)'
+                },
+                {
+                    label: 'unset_placement',
+                    detail: 'unset_placement()',
+                    docs: 'DOC?',
+                    insert: 'unset_placement()'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkProgressBar = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'get_ellipsize',
+                    detail: 'get_ellipsize()',
+                    docs: 'DOC?',
+                    insert: 'get_ellipsize()'
+                },
+                {
+                    label: 'get_fraction',
+                    detail: 'get_fraction()',
+                    docs: 'DOC?',
+                    insert: 'get_fraction()'
+                },
+                {
+                    label: 'get_inverted',
+                    detail: 'get_inverted()',
+                    docs: 'DOC?',
+                    insert: 'get_inverted()'
+                },
+                {
+                    label: 'get_pulse_step',
+                    detail: 'get_pulse_step()',
+                    docs: 'DOC?',
+                    insert: 'get_pulse_step()'
+                },
+                {
+                    label: 'get_show_text',
+                    detail: 'get_show_text()',
+                    docs: 'DOC?',
+                    insert: 'get_show_text()'
+                },
+                {
+                    label: 'get_text',
+                    detail: 'get_text()',
+                    docs: 'DOC?',
+                    insert: 'get_text()'
+                },
+                {
+                    label: 'pulse',
+                    detail: 'pulse()',
+                    docs: 'DOC?',
+                    insert: 'pulse()'
+                },
+                {
+                    label: 'set_ellipsize',
+                    detail: 'set_ellipsize(mode)',
+                    docs: 'DOC?',
+                    insert: 'set_ellipsize($1)'
+                },
+                {
+                    label: 'set_fraction',
+                    detail: 'set_fraction(fraction)',
+                    docs: 'DOC?',
+                    insert: 'set_fraction($1)'
+                },
+                {
+                    label: 'set_inverted',
+                    detail: 'set_inverted(inverted)',
+                    docs: 'DOC?',
+                    insert: 'set_inverted($1)'
+                },
+                {
+                    label: 'set_pulse_step',
+                    detail: 'set_pulse_step(fraction)',
+                    docs: 'DOC?',
+                    insert: 'set_pulse_step($1)'
+                },
+                {
+                    label: 'set_show_text',
+                    detail: 'set_show_text(show_text)',
+                    docs: 'DOC?',
+                    insert: 'set_show_text($1)'
+                },
+                {
+                    label: 'set_text',
+                    detail: 'set_text(text)',
+                    docs: 'DOC?',
+                    insert: 'set_text($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkRadioButton = [
+                {
+                    label: 'new',
+                    detail: 'new(group)',
+                    docs: 'DOC?',
+                    insert: 'new($1)'
+                },
+                {
+                    label: 'new_from_widget',
+                    detail: 'new_from_widget(radio_group_member)',
+                    docs: 'DOC?',
+                    insert: 'new_from_widget($1)'
+                },
+                {
+                    label: 'new_with_label',
+                    detail: 'new_with_label(group, label)',
+                    docs: 'DOC?',
+                    insert: 'new_with_label($1)'
+                },
+                {
+                    label: 'new_with_label_from_widget',
+                    detail: 'new_with_label_from_widget(radio_group_member, label)',
+                    docs: 'DOC?',
+                    insert: 'new_with_label_from_widget($1)'
+                },
+                {
+                    label: 'new_with_mnemonic',
+                    detail: 'new_with_mnemonic(group, label)',
+                    docs: 'DOC?',
+                    insert: 'new_with_mnemonic($1)'
+                },
+                {
+                    label: 'new_with_mnemonic_from_widget',
+                    detail: 'new_with_mnemonic_from_widget(radio_group_member, label)',
+                    docs: 'DOC?',
+                    insert: 'new_with_mnemonic_from_widget($1)'
+                },
+                {
+                    label: 'get_group',
+                    detail: 'get_group()',
+                    docs: 'DOC?',
+                    insert: 'get_group()'
+                },
+                {
+                    label: 'join_group',
+                    detail: 'join_group(group_source)',
+                    docs: 'DOC?',
+                    insert: 'join_group($1)'
+                },
+                {
+                    label: 'set_group',
+                    detail: 'set_group(group)',
+                    docs: 'DOC?',
+                    insert: 'set_group($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkRecentChooser = [
+                {
+                    label: 'add_filter',
+                    detail: 'add_filter(filter)',
+                    docs: 'DOC?',
+                    insert: 'add_filter($1)'
+                },
+                {
+                    label: 'get_current_item',
+                    detail: 'get_current_item()',
+                    docs: 'DOC?',
+                    insert: 'get_current_item()'
+                },
+                {
+                    label: 'get_current_uri',
+                    detail: 'get_current_uri()',
+                    docs: 'DOC?',
+                    insert: 'get_current_uri()'
+                },
+                {
+                    label: 'get_filter',
+                    detail: 'get_filter()',
+                    docs: 'DOC?',
+                    insert: 'get_filter()'
+                },
+                {
+                    label: 'get_items',
+                    detail: 'get_items()',
+                    docs: 'DOC?',
+                    insert: 'get_items()'
+                },
+                {
+                    label: 'get_limit',
+                    detail: 'get_limit()',
+                    docs: 'DOC?',
+                    insert: 'get_limit()'
+                },
+                {
+                    label: 'get_local_only',
+                    detail: 'get_local_only()',
+                    docs: 'DOC?',
+                    insert: 'get_local_only()'
+                },
+                {
+                    label: 'get_select_multiple',
+                    detail: 'get_select_multiple()',
+                    docs: 'DOC?',
+                    insert: 'get_select_multiple()'
+                },
+                {
+                    label: 'get_show_icons',
+                    detail: 'get_show_icons()',
+                    docs: 'DOC?',
+                    insert: 'get_show_icons()'
+                },
+                {
+                    label: 'get_show_not_found',
+                    detail: 'get_show_not_found()',
+                    docs: 'DOC?',
+                    insert: 'get_show_not_found()'
+                },
+                {
+                    label: 'get_show_private',
+                    detail: 'get_show_private()',
+                    docs: 'DOC?',
+                    insert: 'get_show_private()'
+                },
+                {
+                    label: 'get_show_tips',
+                    detail: 'get_show_tips()',
+                    docs: 'DOC?',
+                    insert: 'get_show_tips()'
+                },
+                {
+                    label: 'get_sort_type',
+                    detail: 'get_sort_type()',
+                    docs: 'DOC?',
+                    insert: 'get_sort_type()'
+                },
+                {
+                    label: 'get_uris',
+                    detail: 'get_uris()',
+                    docs: 'DOC?',
+                    insert: 'get_uris()'
+                },
+                {
+                    label: 'list_filters',
+                    detail: 'list_filters()',
+                    docs: 'DOC?',
+                    insert: 'list_filters()'
+                },
+                {
+                    label: 'remove_filter',
+                    detail: 'remove_filter(filter)',
+                    docs: 'DOC?',
+                    insert: 'remove_filter($1)'
+                },
+                {
+                    label: 'select_all',
+                    detail: 'select_all()',
+                    docs: 'DOC?',
+                    insert: 'select_all()'
+                },
+                {
+                    label: 'select_uri',
+                    detail: 'select_uri(uri)',
+                    docs: 'DOC?',
+                    insert: 'select_uri($1)'
+                },
+                {
+                    label: 'set_current_uri',
+                    detail: 'set_current_uri(uri)',
+                    docs: 'DOC?',
+                    insert: 'set_current_uri($1)'
+                },
+                {
+                    label: 'set_filter',
+                    detail: 'set_filter(filter)',
+                    docs: 'DOC?',
+                    insert: 'set_filter($1)'
+                },
+                {
+                    label: 'set_limit',
+                    detail: 'set_limit(limit)',
+                    docs: 'DOC?',
+                    insert: 'set_limit($1)'
+                },
+                {
+                    label: 'set_local_only',
+                    detail: 'set_local_only(local_only)',
+                    docs: 'DOC?',
+                    insert: 'set_local_only($1)'
+                },
+                {
+                    label: 'set_select_multiple',
+                    detail: 'set_select_multiple(select_multiple)',
+                    docs: 'DOC?',
+                    insert: 'set_select_multiple($1)'
+                },
+                {
+                    label: 'set_show_icons',
+                    detail: 'set_show_icons(show_icons)',
+                    docs: 'DOC?',
+                    insert: 'set_show_icons($1)'
+                },
+                {
+                    label: 'set_show_not_found',
+                    detail: 'set_show_not_found(show_not_found)',
+                    docs: 'DOC?',
+                    insert: 'set_show_not_found($1)'
+                },
+                {
+                    label: 'set_show_private',
+                    detail: 'set_show_private(show_private)',
+                    docs: 'DOC?',
+                    insert: 'set_show_private($1)'
+                },
+                {
+                    label: 'set_show_tips',
+                    detail: 'set_show_tips(show_tips)',
+                    docs: 'DOC?',
+                    insert: 'set_show_tips($1)'
+                },
+                {
+                    label: 'set_sort_func',
+                    detail: 'set_sort_func(sort_func, *sort_data)',
+                    docs: 'DOC?',
+                    insert: 'set_sort_func($1)'
+                },
+                {
+                    label: 'set_sort_type',
+                    detail: 'set_sort_type(sort_type)',
+                    docs: 'DOC?',
+                    insert: 'set_sort_type($1)'
+                },
+                {
+                    label: 'unselect_all',
+                    detail: 'unselect_all()',
+                    docs: 'DOC?',
+                    insert: 'unselect_all()'
+                },
+                {
+                    label: 'unselect_uri',
+                    detail: 'unselect_uri(uri)',
+                    docs: 'DOC?',
+                    insert: 'unselect_uri($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkScale = [
+                {
+                    label: 'new',
+                    detail: 'new(orientation, adjustment)',
+                    docs: 'DOC?',
+                    insert: 'new($1)'
+                },
+                {
+                    label: 'new_with_range',
+                    detail: 'new_with_range(orientation, min, max, step)',
+                    docs: 'DOC?',
+                    insert: 'new_with_range($1)'
+                },
+                {
+                    label: 'add_mark',
+                    detail: 'add_mark(value, position, markup)',
+                    docs: 'DOC?',
+                    insert: 'add_mark($1)'
+                },
+                {
+                    label: 'clear_marks',
+                    detail: 'clear_marks()',
+                    docs: 'DOC?',
+                    insert: 'clear_marks()'
+                },
+                {
+                    label: 'get_digits',
+                    detail: 'get_digits()',
+                    docs: 'DOC?',
+                    insert: 'get_digits()'
+                },
+                {
+                    label: 'get_draw_value',
+                    detail: 'get_draw_value()',
+                    docs: 'DOC?',
+                    insert: 'get_draw_value()'
+                },
+                {
+                    label: 'get_has_origin',
+                    detail: 'get_has_origin()',
+                    docs: 'DOC?',
+                    insert: 'get_has_origin()'
+                },
+                {
+                    label: 'get_layout',
+                    detail: 'get_layout()',
+                    docs: 'DOC?',
+                    insert: 'get_layout()'
+                },
+                {
+                    label: 'get_layout_offsets',
+                    detail: 'get_layout_offsets()',
+                    docs: 'DOC?',
+                    insert: 'get_layout_offsets()'
+                },
+                {
+                    label: 'get_value_pos',
+                    detail: 'get_value_pos()',
+                    docs: 'DOC?',
+                    insert: 'get_value_pos()'
+                },
+                {
+                    label: 'set_digits',
+                    detail: 'set_digits(digits)',
+                    docs: 'DOC?',
+                    insert: 'set_digits($1)'
+                },
+                {
+                    label: 'set_draw_value',
+                    detail: 'set_draw_value(draw_value)',
+                    docs: 'DOC?',
+                    insert: 'set_draw_value($1)'
+                },
+                {
+                    label: 'set_has_origin',
+                    detail: 'set_has_origin(has_origin)',
+                    docs: 'DOC?',
+                    insert: 'set_has_origin($1)'
+                },
+                {
+                    label: 'set_value_pos',
+                    detail: 'set_value_pos(pos)',
+                    docs: 'DOC?',
+                    insert: 'set_value_pos($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkRange = [
+                {
+                    label: 'get_adjustment',
+                    detail: 'get_adjustment()',
+                    docs: 'DOC?',
+                    insert: 'get_adjustment()'
+                },
+                {
+                    label: 'get_fill_level',
+                    detail: 'get_fill_level()',
+                    docs: 'DOC?',
+                    insert: 'get_fill_level()'
+                },
+                {
+                    label: 'get_flippable',
+                    detail: 'get_flippable()',
+                    docs: 'DOC?',
+                    insert: 'get_flippable()'
+                },
+                {
+                    label: 'get_inverted',
+                    detail: 'get_inverted()',
+                    docs: 'DOC?',
+                    insert: 'get_inverted()'
+                },
+                {
+                    label: 'get_lower_stepper_sensitivity',
+                    detail: 'get_lower_stepper_sensitivity()',
+                    docs: 'DOC?',
+                    insert: 'get_lower_stepper_sensitivity()'
+                },
+                {
+                    label: 'get_min_slider_size',
+                    detail: 'get_min_slider_size()',
+                    docs: 'DOC?',
+                    insert: 'get_min_slider_size()'
+                },
+                {
+                    label: 'get_range_rect',
+                    detail: 'get_range_rect()',
+                    docs: 'DOC?',
+                    insert: 'get_range_rect()'
+                },
+                {
+                    label: 'get_restrict_to_fill_level',
+                    detail: 'get_restrict_to_fill_level()',
+                    docs: 'DOC?',
+                    insert: 'get_restrict_to_fill_level()'
+                },
+                {
+                    label: 'get_round_digits',
+                    detail: 'get_round_digits()',
+                    docs: 'DOC?',
+                    insert: 'get_round_digits()'
+                },
+                {
+                    label: 'get_show_fill_level',
+                    detail: 'get_show_fill_level()',
+                    docs: 'DOC?',
+                    insert: 'get_show_fill_level()'
+                },
+                {
+                    label: 'get_slider_range',
+                    detail: 'get_slider_range()',
+                    docs: 'DOC?',
+                    insert: 'get_slider_range()'
+                },
+                {
+                    label: 'get_slider_size_fixed',
+                    detail: 'get_slider_size_fixed()',
+                    docs: 'DOC?',
+                    insert: 'get_slider_size_fixed()'
+                },
+                {
+                    label: 'get_upper_stepper_sensitivity',
+                    detail: 'get_upper_stepper_sensitivity()',
+                    docs: 'DOC?',
+                    insert: 'get_upper_stepper_sensitivity()'
+                },
+                {
+                    label: 'get_value',
+                    detail: 'get_value()',
+                    docs: 'DOC?',
+                    insert: 'get_value()'
+                },
+                {
+                    label: 'set_adjustment',
+                    detail: 'set_adjustment(adjustment)',
+                    docs: 'DOC?',
+                    insert: 'set_adjustment($1)'
+                },
+                {
+                    label: 'set_fill_level',
+                    detail: 'set_fill_level(fill_level)',
+                    docs: 'DOC?',
+                    insert: 'set_fill_level($1)'
+                },
+                {
+                    label: 'set_flippable',
+                    detail: 'set_flippable(flippable)',
+                    docs: 'DOC?',
+                    insert: 'set_flippable($1)'
+                },
+                {
+                    label: 'set_increments',
+                    detail: 'set_increments(step, page)',
+                    docs: 'DOC?',
+                    insert: 'set_increments($1)'
+                },
+                {
+                    label: 'set_inverted',
+                    detail: 'set_inverted(setting)',
+                    docs: 'DOC?',
+                    insert: 'set_inverted($1)'
+                },
+                {
+                    label: 'set_lower_stepper_sensitivity',
+                    detail: 'set_lower_stepper_sensitivity(sensitivity)',
+                    docs: 'DOC?',
+                    insert: 'set_lower_stepper_sensitivity($1)'
+                },
+                {
+                    label: 'set_min_slider_size',
+                    detail: 'set_min_slider_size(min_size)',
+                    docs: 'DOC?',
+                    insert: 'set_min_slider_size($1)'
+                },
+                {
+                    label: 'set_range',
+                    detail: 'set_range(min, max)',
+                    docs: 'DOC?',
+                    insert: 'set_range($1)'
+                },
+                {
+                    label: 'set_restrict_to_fill_level',
+                    detail: 'set_restrict_to_fill_level(restrict_to_fill_level)',
+                    docs: 'DOC?',
+                    insert: 'set_restrict_to_fill_level($1)'
+                },
+                {
+                    label: 'set_round_digits',
+                    detail: 'set_round_digits(round_digits)',
+                    docs: 'DOC?',
+                    insert: 'set_round_digits($1)'
+                },
+                {
+                    label: 'set_show_fill_level',
+                    detail: 'set_show_fill_level(show_fill_level)',
+                    docs: 'DOC?',
+                    insert: 'set_show_fill_level($1)'
+                },
+                {
+                    label: 'set_slider_size_fixed',
+                    detail: 'set_slider_size_fixed(size_fixed)',
+                    docs: 'DOC?',
+                    insert: 'set_slider_size_fixed($1)'
+                },
+                {
+                    label: 'set_upper_stepper_sensitivity',
+                    detail: 'set_upper_stepper_sensitivity(sensitivity)',
+                    docs: 'DOC?',
+                    insert: 'set_upper_stepper_sensitivity($1)'
+                },
+                {
+                    label: 'set_value',
+                    detail: 'set_value(value)',
+                    docs: 'DOC?',
+                    insert: 'set_value($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkSearchBar = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'connect_entry',
+                    detail: 'connect_entry(entry)',
+                    docs: 'DOC?',
+                    insert: 'connect_entry($1)'
+                },
+                {
+                    label: 'get_search_mode',
+                    detail: 'get_search_mode()',
+                    docs: 'DOC?',
+                    insert: 'get_search_mode()'
+                },
+                {
+                    label: 'get_show_close_button',
+                    detail: 'get_show_close_button()',
+                    docs: 'DOC?',
+                    insert: 'get_show_close_button()'
+                },
+                {
+                    label: 'handle_event',
+                    detail: 'handle_event(event)',
+                    docs: 'DOC?',
+                    insert: 'handle_event($1)'
+                },
+                {
+                    label: 'set_search_mode',
+                    detail: 'set_search_mode(search_mode)',
+                    docs: 'DOC?',
+                    insert: 'set_search_mode($1)'
+                },
+                {
+                    label: 'set_show_close_button',
+                    detail: 'set_show_close_button(visible)',
+                    docs: 'DOC?',
+                    insert: 'set_show_close_button($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkSearchEntry = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'handle_event',
+                    detail: 'handle_event(event)',
+                    docs: 'DOC?',
+                    insert: 'handle_event($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkSpinButton = [
+                {
+                    label: 'new',
+                    detail: 'new(adjustment, climb_rate, digits)',
+                    docs: 'DOC?',
+                    insert: 'new($1)'
+                },
+                {
+                    label: 'new_with_range',
+                    detail: 'new_with_range(min, max, step)',
+                    docs: 'DOC?',
+                    insert: 'new_with_range($1)'
+                },
+                {
+                    label: 'configure',
+                    detail: 'configure(adjustment, climb_rate, digits)',
+                    docs: 'DOC?',
+                    insert: 'configure($1)'
+                },
+                {
+                    label: 'get_adjustment',
+                    detail: 'get_adjustment()',
+                    docs: 'DOC?',
+                    insert: 'get_adjustment()'
+                },
+                {
+                    label: 'get_digits',
+                    detail: 'get_digits()',
+                    docs: 'DOC?',
+                    insert: 'get_digits()'
+                },
+                {
+                    label: 'get_increments',
+                    detail: 'get_increments()',
+                    docs: 'DOC?',
+                    insert: 'get_increments()'
+                },
+                {
+                    label: 'get_numeric',
+                    detail: 'get_numeric()',
+                    docs: 'DOC?',
+                    insert: 'get_numeric()'
+                },
+                {
+                    label: 'get_range',
+                    detail: 'get_range()',
+                    docs: 'DOC?',
+                    insert: 'get_range()'
+                },
+                {
+                    label: 'get_snap_to_ticks',
+                    detail: 'get_snap_to_ticks()',
+                    docs: 'DOC?',
+                    insert: 'get_snap_to_ticks()'
+                },
+                {
+                    label: 'get_update_policy',
+                    detail: 'get_update_policy()',
+                    docs: 'DOC?',
+                    insert: 'get_update_policy()'
+                },
+                {
+                    label: 'get_value',
+                    detail: 'get_value()',
+                    docs: 'DOC?',
+                    insert: 'get_value()'
+                },
+                {
+                    label: 'get_value_as_int',
+                    detail: 'get_value_as_int()',
+                    docs: 'DOC?',
+                    insert: 'get_value_as_int()'
+                },
+                {
+                    label: 'get_wrap',
+                    detail: 'get_wrap()',
+                    docs: 'DOC?',
+                    insert: 'get_wrap()'
+                },
+                {
+                    label: 'set_adjustment',
+                    detail: 'set_adjustment(adjustment)',
+                    docs: 'DOC?',
+                    insert: 'set_adjustment($1)'
+                },
+                {
+                    label: 'set_digits',
+                    detail: 'set_digits(digits)',
+                    docs: 'DOC?',
+                    insert: 'set_digits($1)'
+                },
+                {
+                    label: 'set_increments',
+                    detail: 'set_increments(step, page)',
+                    docs: 'DOC?',
+                    insert: 'set_increments($1)'
+                },
+                {
+                    label: 'set_numeric',
+                    detail: 'set_numeric(numeric)',
+                    docs: 'DOC?',
+                    insert: 'set_numeric($1)'
+                },
+                {
+                    label: 'set_range',
+                    detail: 'set_range(min, max)',
+                    docs: 'DOC?',
+                    insert: 'set_range($1)'
+                },
+                {
+                    label: 'set_snap_to_ticks',
+                    detail: 'set_snap_to_ticks(snap_to_ticks)',
+                    docs: 'DOC?',
+                    insert: 'set_snap_to_ticks($1)'
+                },
+                {
+                    label: 'set_update_policy',
+                    detail: 'set_update_policy(policy)',
+                    docs: 'DOC?',
+                    insert: 'set_update_policy($1)'
+                },
+                {
+                    label: 'set_value',
+                    detail: 'set_value(value)',
+                    docs: 'DOC?',
+                    insert: 'set_value($1)'
+                },
+                {
+                    label: 'set_wrap',
+                    detail: 'set_wrap(wrap)',
+                    docs: 'DOC?',
+                    insert: 'set_wrap($1)'
+                },
+                {
+                    label: 'spin',
+                    detail: 'spin(direction, increment)',
+                    docs: 'DOC?',
+                    insert: 'spin($1)'
+                },
+                {
+                    label: 'update',
+                    detail: 'update()',
+                    docs: 'DOC?',
+                    insert: 'update()'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkStack = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'add_named',
+                    detail: 'add_named(child, name)',
+                    docs: 'DOC?',
+                    insert: 'add_named($1)'
+                },
+                {
+                    label: 'add_titled',
+                    detail: 'add_titled(child, name, title)',
+                    docs: 'DOC?',
+                    insert: 'add_titled($1)'
+                },
+                {
+                    label: 'get_child_by_name',
+                    detail: 'get_child_by_name(name)',
+                    docs: 'DOC?',
+                    insert: 'get_child_by_name($1)'
+                },
+                {
+                    label: 'get_hhomogeneous',
+                    detail: 'get_hhomogeneous()',
+                    docs: 'DOC?',
+                    insert: 'get_hhomogeneous()'
+                },
+                {
+                    label: 'get_homogeneous',
+                    detail: 'get_homogeneous()',
+                    docs: 'DOC?',
+                    insert: 'get_homogeneous()'
+                },
+                {
+                    label: 'get_interpolate_size',
+                    detail: 'get_interpolate_size()',
+                    docs: 'DOC?',
+                    insert: 'get_interpolate_size()'
+                },
+                {
+                    label: 'get_transition_duration',
+                    detail: 'get_transition_duration()',
+                    docs: 'DOC?',
+                    insert: 'get_transition_duration()'
+                },
+                {
+                    label: 'get_transition_running',
+                    detail: 'get_transition_running()',
+                    docs: 'DOC?',
+                    insert: 'get_transition_running()'
+                },
+                {
+                    label: 'get_transition_type',
+                    detail: 'get_transition_type()',
+                    docs: 'DOC?',
+                    insert: 'get_transition_type()'
+                },
+                {
+                    label: 'get_vhomogeneous',
+                    detail: 'get_vhomogeneous()',
+                    docs: 'DOC?',
+                    insert: 'get_vhomogeneous()'
+                },
+                {
+                    label: 'get_visible_child',
+                    detail: 'get_visible_child()',
+                    docs: 'DOC?',
+                    insert: 'get_visible_child()'
+                },
+                {
+                    label: 'get_visible_child_name',
+                    detail: 'get_visible_child_name()',
+                    docs: 'DOC?',
+                    insert: 'get_visible_child_name()'
+                },
+                {
+                    label: 'set_hhomogeneous',
+                    detail: 'set_hhomogeneous(hhomogeneous)',
+                    docs: 'DOC?',
+                    insert: 'set_hhomogeneous($1)'
+                },
+                {
+                    label: 'set_homogeneous',
+                    detail: 'set_homogeneous(homogeneous)',
+                    docs: 'DOC?',
+                    insert: 'set_homogeneous($1)'
+                },
+                {
+                    label: 'set_interpolate_size',
+                    detail: 'set_interpolate_size(interpolate_size)',
+                    docs: 'DOC?',
+                    insert: 'set_interpolate_size($1)'
+                },
+                {
+                    label: 'set_transition_duration',
+                    detail: 'set_transition_duration(duration)',
+                    docs: 'DOC?',
+                    insert: 'set_transition_duration($1)'
+                },
+                {
+                    label: 'set_transition_type',
+                    detail: 'set_transition_type(transition)',
+                    docs: 'DOC?',
+                    insert: 'set_transition_type($1)'
+                },
+                {
+                    label: 'set_vhomogeneous',
+                    detail: 'set_vhomogeneous(vhomogeneous)',
+                    docs: 'DOC?',
+                    insert: 'set_vhomogeneous($1)'
+                },
+                {
+                    label: 'set_visible_child',
+                    detail: 'set_visible_child(child)',
+                    docs: 'DOC?',
+                    insert: 'set_visible_child($1)'
+                },
+                {
+                    label: 'set_visible_child_full',
+                    detail: 'set_visible_child_full(name, transition)',
+                    docs: 'DOC?',
+                    insert: 'set_visible_child_full($1)'
+                },
+                {
+                    label: 'set_visible_child_name',
+                    detail: 'set_visible_child_name(name)',
+                    docs: 'DOC?',
+                    insert: 'set_visible_child_name($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkStatusbar = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'get_context_id',
+                    detail: 'get_context_id(context_description)',
+                    docs: 'DOC?',
+                    insert: 'get_context_id($1)'
+                },
+                {
+                    label: 'get_message_area',
+                    detail: 'get_message_area()',
+                    docs: 'DOC?',
+                    insert: 'get_message_area()'
+                },
+                {
+                    label: 'pop',
+                    detail: 'pop(context_id)',
+                    docs: 'DOC?',
+                    insert: 'pop($1)'
+                },
+                {
+                    label: 'push',
+                    detail: 'push(context_id, text)',
+                    docs: 'DOC?',
+                    insert: 'push($1)'
+                },
+                {
+                    label: 'remove',
+                    detail: 'remove(context_id, message_id)',
+                    docs: 'DOC?',
+                    insert: 'remove($1)'
+                },
+                {
+                    label: 'remove_all',
+                    detail: 'remove_all(context_id)',
+                    docs: 'DOC?',
+                    insert: 'remove_all($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkTextView = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'new_with_buffer',
+                    detail: 'new_with_buffer(buffer)',
+                    docs: 'DOC?',
+                    insert: 'new_with_buffer($1)'
+                },
+                {
+                    label: 'add_child_at_anchor',
+                    detail: 'add_child_at_anchor(child, anchor)',
+                    docs: 'DOC?',
+                    insert: 'add_child_at_anchor($1)'
+                },
+                {
+                    label: 'add_child_in_window',
+                    detail: 'add_child_in_window(child, which_window, xpos, ypos)',
+                    docs: 'DOC?',
+                    insert: 'add_child_in_window($1)'
+                },
+                {
+                    label: 'backward_display_line',
+                    detail: 'backward_display_line(iter)',
+                    docs: 'DOC?',
+                    insert: 'backward_display_line($1)'
+                },
+                {
+                    label: 'backward_display_line_start',
+                    detail: 'backward_display_line_start(iter)',
+                    docs: 'DOC?',
+                    insert: 'backward_display_line_start($1)'
+                },
+                {
+                    label: 'buffer_to_window_coords',
+                    detail: 'buffer_to_window_coords(win, buffer_x, buffer_y)',
+                    docs: 'DOC?',
+                    insert: 'buffer_to_window_coords($1)'
+                },
+                {
+                    label: 'forward_display_line',
+                    detail: 'forward_display_line(iter)',
+                    docs: 'DOC?',
+                    insert: 'forward_display_line($1)'
+                },
+                {
+                    label: 'forward_display_line_end',
+                    detail: 'forward_display_line_end(iter)',
+                    docs: 'DOC?',
+                    insert: 'forward_display_line_end($1)'
+                },
+                {
+                    label: 'get_accepts_tab',
+                    detail: 'get_accepts_tab()',
+                    docs: 'DOC?',
+                    insert: 'get_accepts_tab()'
+                },
+                {
+                    label: 'get_border_window_size',
+                    detail: 'get_border_window_size(type)',
+                    docs: 'DOC?',
+                    insert: 'get_border_window_size($1)'
+                },
+                {
+                    label: 'get_bottom_margin',
+                    detail: 'get_bottom_margin()',
+                    docs: 'DOC?',
+                    insert: 'get_bottom_margin()'
+                },
+                {
+                    label: 'get_buffer',
+                    detail: 'get_buffer()',
+                    docs: 'DOC?',
+                    insert: 'get_buffer()'
+                },
+                {
+                    label: 'get_cursor_locations',
+                    detail: 'get_cursor_locations(iter)',
+                    docs: 'DOC?',
+                    insert: 'get_cursor_locations($1)'
+                },
+                {
+                    label: 'get_cursor_visible',
+                    detail: 'get_cursor_visible()',
+                    docs: 'DOC?',
+                    insert: 'get_cursor_visible()'
+                },
+                {
+                    label: 'get_default_attributes',
+                    detail: 'get_default_attributes()',
+                    docs: 'DOC?',
+                    insert: 'get_default_attributes()'
+                },
+                {
+                    label: 'get_editable',
+                    detail: 'get_editable()',
+                    docs: 'DOC?',
+                    insert: 'get_editable()'
+                },
+                {
+                    label: 'get_hadjustment',
+                    detail: 'get_hadjustment()',
+                    docs: 'DOC?',
+                    insert: 'get_hadjustment()'
+                },
+                {
+                    label: 'get_indent',
+                    detail: 'get_indent()',
+                    docs: 'DOC?',
+                    insert: 'get_indent()'
+                },
+                {
+                    label: 'get_input_hints',
+                    detail: 'get_input_hints()',
+                    docs: 'DOC?',
+                    insert: 'get_input_hints()'
+                },
+                {
+                    label: 'get_input_purpose',
+                    detail: 'get_input_purpose()',
+                    docs: 'DOC?',
+                    insert: 'get_input_purpose()'
+                },
+                {
+                    label: 'get_iter_at_location',
+                    detail: 'get_iter_at_location(x, y)',
+                    docs: 'DOC?',
+                    insert: 'get_iter_at_location($1)'
+                },
+                {
+                    label: 'get_iter_at_position',
+                    detail: 'get_iter_at_position(x, y)',
+                    docs: 'DOC?',
+                    insert: 'get_iter_at_position($1)'
+                },
+                {
+                    label: 'get_iter_location',
+                    detail: 'get_iter_location(iter)',
+                    docs: 'DOC?',
+                    insert: 'get_iter_location($1)'
+                },
+                {
+                    label: 'get_justification',
+                    detail: 'get_justification()',
+                    docs: 'DOC?',
+                    insert: 'get_justification()'
+                },
+                {
+                    label: 'get_left_margin',
+                    detail: 'get_left_margin()',
+                    docs: 'DOC?',
+                    insert: 'get_left_margin()'
+                },
+                {
+                    label: 'get_line_at_y',
+                    detail: 'get_line_at_y(y)',
+                    docs: 'DOC?',
+                    insert: 'get_line_at_y($1)'
+                },
+                {
+                    label: 'get_line_yrange',
+                    detail: 'get_line_yrange(iter)',
+                    docs: 'DOC?',
+                    insert: 'get_line_yrange($1)'
+                },
+                {
+                    label: 'get_monospace',
+                    detail: 'get_monospace()',
+                    docs: 'DOC?',
+                    insert: 'get_monospace()'
+                },
+                {
+                    label: 'get_overwrite',
+                    detail: 'get_overwrite()',
+                    docs: 'DOC?',
+                    insert: 'get_overwrite()'
+                },
+                {
+                    label: 'get_pixels_above_lines',
+                    detail: 'get_pixels_above_lines()',
+                    docs: 'DOC?',
+                    insert: 'get_pixels_above_lines()'
+                },
+                {
+                    label: 'get_pixels_below_lines',
+                    detail: 'get_pixels_below_lines()',
+                    docs: 'DOC?',
+                    insert: 'get_pixels_below_lines()'
+                },
+                {
+                    label: 'get_pixels_inside_wrap',
+                    detail: 'get_pixels_inside_wrap()',
+                    docs: 'DOC?',
+                    insert: 'get_pixels_inside_wrap()'
+                },
+                {
+                    label: 'get_right_margin',
+                    detail: 'get_right_margin()',
+                    docs: 'DOC?',
+                    insert: 'get_right_margin()'
+                },
+                {
+                    label: 'get_tabs',
+                    detail: 'get_tabs()',
+                    docs: 'DOC?',
+                    insert: 'get_tabs()'
+                },
+                {
+                    label: 'get_top_margin',
+                    detail: 'get_top_margin()',
+                    docs: 'DOC?',
+                    insert: 'get_top_margin()'
+                },
+                {
+                    label: 'get_vadjustment',
+                    detail: 'get_vadjustment()',
+                    docs: 'DOC?',
+                    insert: 'get_vadjustment()'
+                },
+                {
+                    label: 'get_visible_rect',
+                    detail: 'get_visible_rect()',
+                    docs: 'DOC?',
+                    insert: 'get_visible_rect()'
+                },
+                {
+                    label: 'get_window',
+                    detail: 'get_window(win)',
+                    docs: 'DOC?',
+                    insert: 'get_window($1)'
+                },
+                {
+                    label: 'get_window_type',
+                    detail: 'get_window_type(window)',
+                    docs: 'DOC?',
+                    insert: 'get_window_type($1)'
+                },
+                {
+                    label: 'get_wrap_mode',
+                    detail: 'get_wrap_mode()',
+                    docs: 'DOC?',
+                    insert: 'get_wrap_mode()'
+                },
+                {
+                    label: 'im_context_filter_keypress',
+                    detail: 'im_context_filter_keypress(event)',
+                    docs: 'DOC?',
+                    insert: 'im_context_filter_keypress($1)'
+                },
+                {
+                    label: 'move_child',
+                    detail: 'move_child(child, xpos, ypos)',
+                    docs: 'DOC?',
+                    insert: 'move_child($1)'
+                },
+                {
+                    label: 'move_mark_onscreen',
+                    detail: 'move_mark_onscreen(mark)',
+                    docs: 'DOC?',
+                    insert: 'move_mark_onscreen($1)'
+                },
+                {
+                    label: 'move_visually',
+                    detail: 'move_visually(iter, count)',
+                    docs: 'DOC?',
+                    insert: 'move_visually($1)'
+                },
+                {
+                    label: 'place_cursor_onscreen',
+                    detail: 'place_cursor_onscreen()',
+                    docs: 'DOC?',
+                    insert: 'place_cursor_onscreen()'
+                },
+                {
+                    label: 'reset_cursor_blink',
+                    detail: 'reset_cursor_blink()',
+                    docs: 'DOC?',
+                    insert: 'reset_cursor_blink()'
+                },
+                {
+                    label: 'reset_im_context',
+                    detail: 'reset_im_context()',
+                    docs: 'DOC?',
+                    insert: 'reset_im_context()'
+                },
+                {
+                    label: 'scroll_mark_onscreen',
+                    detail: 'scroll_mark_onscreen(mark)',
+                    docs: 'DOC?',
+                    insert: 'scroll_mark_onscreen($1)'
+                },
+                {
+                    label: 'scroll_to_iter',
+                    detail: 'scroll_to_iter(iter, within_margin, use_align, xalign, yalign)',
+                    docs: 'DOC?',
+                    insert: 'scroll_to_iter($1)'
+                },
+                {
+                    label: 'scroll_to_mark',
+                    detail: 'scroll_to_mark(mark, within_margin, use_align, xalign, yalign)',
+                    docs: 'DOC?',
+                    insert: 'scroll_to_mark($1)'
+                },
+                {
+                    label: 'set_accepts_tab',
+                    detail: 'set_accepts_tab(accepts_tab)',
+                    docs: 'DOC?',
+                    insert: 'set_accepts_tab($1)'
+                },
+                {
+                    label: 'set_border_window_size',
+                    detail: 'set_border_window_size(type, size)',
+                    docs: 'DOC?',
+                    insert: 'set_border_window_size($1)'
+                },
+                {
+                    label: 'set_bottom_margin',
+                    detail: 'set_bottom_margin(bottom_margin)',
+                    docs: 'DOC?',
+                    insert: 'set_bottom_margin($1)'
+                },
+                {
+                    label: 'set_buffer',
+                    detail: 'set_buffer(buffer)',
+                    docs: 'DOC?',
+                    insert: 'set_buffer($1)'
+                },
+                {
+                    label: 'set_cursor_visible',
+                    detail: 'set_cursor_visible(setting)',
+                    docs: 'DOC?',
+                    insert: 'set_cursor_visible($1)'
+                },
+                {
+                    label: 'set_editable',
+                    detail: 'set_editable(setting)',
+                    docs: 'DOC?',
+                    insert: 'set_editable($1)'
+                },
+                {
+                    label: 'set_indent',
+                    detail: 'set_indent(indent)',
+                    docs: 'DOC?',
+                    insert: 'set_indent($1)'
+                },
+                {
+                    label: 'set_input_hints',
+                    detail: 'set_input_hints(hints)',
+                    docs: 'DOC?',
+                    insert: 'set_input_hints($1)'
+                },
+                {
+                    label: 'set_input_purpose',
+                    detail: 'set_input_purpose(purpose)',
+                    docs: 'DOC?',
+                    insert: 'set_input_purpose($1)'
+                },
+                {
+                    label: 'set_justification',
+                    detail: 'set_justification(justification)',
+                    docs: 'DOC?',
+                    insert: 'set_justification($1)'
+                },
+                {
+                    label: 'set_left_margin',
+                    detail: 'set_left_margin(left_margin)',
+                    docs: 'DOC?',
+                    insert: 'set_left_margin($1)'
+                },
+                {
+                    label: 'set_monospace',
+                    detail: 'set_monospace(monospace)',
+                    docs: 'DOC?',
+                    insert: 'set_monospace($1)'
+                },
+                {
+                    label: 'set_overwrite',
+                    detail: 'set_overwrite(overwrite)',
+                    docs: 'DOC?',
+                    insert: 'set_overwrite($1)'
+                },
+                {
+                    label: 'set_pixels_above_lines',
+                    detail: 'set_pixels_above_lines(pixels_above_lines)',
+                    docs: 'DOC?',
+                    insert: 'set_pixels_above_lines($1)'
+                },
+                {
+                    label: 'set_pixels_below_lines',
+                    detail: 'set_pixels_below_lines(pixels_below_lines)',
+                    docs: 'DOC?',
+                    insert: 'set_pixels_below_lines($1)'
+                },
+                {
+                    label: 'set_pixels_inside_wrap',
+                    detail: 'set_pixels_inside_wrap(pixels_inside_wrap)',
+                    docs: 'DOC?',
+                    insert: 'set_pixels_inside_wrap($1)'
+                },
+                {
+                    label: 'set_right_margin',
+                    detail: 'set_right_margin(right_margin)',
+                    docs: 'DOC?',
+                    insert: 'set_right_margin($1)'
+                },
+                {
+                    label: 'set_tabs',
+                    detail: 'set_tabs(tabs)',
+                    docs: 'DOC?',
+                    insert: 'set_tabs($1)'
+                },
+                {
+                    label: 'set_top_margin',
+                    detail: 'set_top_margin(top_margin)',
+                    docs: 'DOC?',
+                    insert: 'set_top_margin($1)'
+                },
+                {
+                    label: 'set_wrap_mode',
+                    detail: 'set_wrap_mode(wrap_mode)',
+                    docs: 'DOC?',
+                    insert: 'set_wrap_mode($1)'
+                },
+                {
+                    label: 'starts_display_line',
+                    detail: 'starts_display_line(iter)',
+                    docs: 'DOC?',
+                    insert: 'starts_display_line($1)'
+                },
+                {
+                    label: 'window_to_buffer_coords',
+                    detail: 'window_to_buffer_coords(win, window_x, window_y)',
+                    docs: 'DOC?',
+                    insert: 'window_to_buffer_coords($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkToolPalette = [
+                {
+                    label: 'get_drag_target_group',
+                    detail: 'get_drag_target_group()',
+                    docs: 'DOC?',
+                    insert: 'get_drag_target_group()'
+                },
+                {
+                    label: 'get_drag_target_item',
+                    detail: 'get_drag_target_item()',
+                    docs: 'DOC?',
+                    insert: 'get_drag_target_item()'
+                },
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'add_drag_dest',
+                    detail: 'add_drag_dest(widget, flags, targets, actions)',
+                    docs: 'DOC?',
+                    insert: 'add_drag_dest($1)'
+                },
+                {
+                    label: 'get_drag_item',
+                    detail: 'get_drag_item(selection)',
+                    docs: 'DOC?',
+                    insert: 'get_drag_item($1)'
+                },
+                {
+                    label: 'get_drop_group',
+                    detail: 'get_drop_group(x, y)',
+                    docs: 'DOC?',
+                    insert: 'get_drop_group($1)'
+                },
+                {
+                    label: 'get_drop_item',
+                    detail: 'get_drop_item(x, y)',
+                    docs: 'DOC?',
+                    insert: 'get_drop_item($1)'
+                },
+                {
+                    label: 'get_exclusive',
+                    detail: 'get_exclusive(group)',
+                    docs: 'DOC?',
+                    insert: 'get_exclusive($1)'
+                },
+                {
+                    label: 'get_expand',
+                    detail: 'get_expand(group)',
+                    docs: 'DOC?',
+                    insert: 'get_expand($1)'
+                },
+                {
+                    label: 'get_group_position',
+                    detail: 'get_group_position(group)',
+                    docs: 'DOC?',
+                    insert: 'get_group_position($1)'
+                },
+                {
+                    label: 'get_hadjustment',
+                    detail: 'get_hadjustment()',
+                    docs: 'DOC?',
+                    insert: 'get_hadjustment()'
+                },
+                {
+                    label: 'get_icon_size',
+                    detail: 'get_icon_size()',
+                    docs: 'DOC?',
+                    insert: 'get_icon_size()'
+                },
+                {
+                    label: 'get_style',
+                    detail: 'get_style()',
+                    docs: 'DOC?',
+                    insert: 'get_style()'
+                },
+                {
+                    label: 'get_vadjustment',
+                    detail: 'get_vadjustment()',
+                    docs: 'DOC?',
+                    insert: 'get_vadjustment()'
+                },
+                {
+                    label: 'set_drag_source',
+                    detail: 'set_drag_source(targets)',
+                    docs: 'DOC?',
+                    insert: 'set_drag_source($1)'
+                },
+                {
+                    label: 'set_exclusive',
+                    detail: 'set_exclusive(group, exclusive)',
+                    docs: 'DOC?',
+                    insert: 'set_exclusive($1)'
+                },
+                {
+                    label: 'set_expand',
+                    detail: 'set_expand(group, expand)',
+                    docs: 'DOC?',
+                    insert: 'set_expand($1)'
+                },
+                {
+                    label: 'set_group_position',
+                    detail: 'set_group_position(group, position)',
+                    docs: 'DOC?',
+                    insert: 'set_group_position($1)'
+                },
+                {
+                    label: 'set_icon_size',
+                    detail: 'set_icon_size(icon_size)',
+                    docs: 'DOC?',
+                    insert: 'set_icon_size($1)'
+                },
+                {
+                    label: 'set_style',
+                    detail: 'set_style(style)',
+                    docs: 'DOC?',
+                    insert: 'set_style($1)'
+                },
+                {
+                    label: 'unset_icon_size',
+                    detail: 'unset_icon_size()',
+                    docs: 'DOC?',
+                    insert: 'unset_icon_size()'
+                },
+                {
+                    label: 'unset_style',
+                    detail: 'unset_style()',
+                    docs: 'DOC?',
+                    insert: 'unset_style()'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkToolItemGroup = [
+                {
+                    label: 'new',
+                    detail: 'new(label)',
+                    docs: 'DOC?',
+                    insert: 'new($1)'
+                },
+                {
+                    label: 'get_collapsed',
+                    detail: 'get_collapsed()',
+                    docs: 'DOC?',
+                    insert: 'get_collapsed()'
+                },
+                {
+                    label: 'get_drop_item',
+                    detail: 'get_drop_item(x, y)',
+                    docs: 'DOC?',
+                    insert: 'get_drop_item($1)'
+                },
+                {
+                    label: 'get_ellipsize',
+                    detail: 'get_ellipsize()',
+                    docs: 'DOC?',
+                    insert: 'get_ellipsize()'
+                },
+                {
+                    label: 'get_header_relief',
+                    detail: 'get_header_relief()',
+                    docs: 'DOC?',
+                    insert: 'get_header_relief()'
+                },
+                {
+                    label: 'get_item_position',
+                    detail: 'get_item_position(item)',
+                    docs: 'DOC?',
+                    insert: 'get_item_position($1)'
+                },
+                {
+                    label: 'get_label',
+                    detail: 'get_label()',
+                    docs: 'DOC?',
+                    insert: 'get_label()'
+                },
+                {
+                    label: 'get_label_widget',
+                    detail: 'get_label_widget()',
+                    docs: 'DOC?',
+                    insert: 'get_label_widget()'
+                },
+                {
+                    label: 'get_n_items',
+                    detail: 'get_n_items()',
+                    docs: 'DOC?',
+                    insert: 'get_n_items()'
+                },
+                {
+                    label: 'get_nth_item',
+                    detail: 'get_nth_item(index)',
+                    docs: 'DOC?',
+                    insert: 'get_nth_item($1)'
+                },
+                {
+                    label: 'insert',
+                    detail: 'insert(item, position)',
+                    docs: 'DOC?',
+                    insert: 'insert($1)'
+                },
+                {
+                    label: 'set_collapsed',
+                    detail: 'set_collapsed(collapsed)',
+                    docs: 'DOC?',
+                    insert: 'set_collapsed($1)'
+                },
+                {
+                    label: 'set_ellipsize',
+                    detail: 'set_ellipsize(ellipsize)',
+                    docs: 'DOC?',
+                    insert: 'set_ellipsize($1)'
+                },
+                {
+                    label: 'set_header_relief',
+                    detail: 'set_header_relief(style)',
+                    docs: 'DOC?',
+                    insert: 'set_header_relief($1)'
+                },
+                {
+                    label: 'set_item_position',
+                    detail: 'set_item_position(item, position)',
+                    docs: 'DOC?',
+                    insert: 'set_item_position($1)'
+                },
+                {
+                    label: 'set_label',
+                    detail: 'set_label(label)',
+                    docs: 'DOC?',
+                    insert: 'set_label($1)'
+                },
+                {
+                    label: 'set_label_widget',
+                    detail: 'set_label_widget(label_widget)',
+                    docs: 'DOC?',
+                    insert: 'set_label_widget($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkToolShell = [
+                {
+                    label: 'get_ellipsize_mode',
+                    detail: 'get_ellipsize_mode()',
+                    docs: 'DOC?',
+                    insert: 'get_ellipsize_mode()'
+                },
+                {
+                    label: 'get_icon_size',
+                    detail: 'get_icon_size()',
+                    docs: 'DOC?',
+                    insert: 'get_icon_size()'
+                },
+                {
+                    label: 'get_orientation',
+                    detail: 'get_orientation()',
+                    docs: 'DOC?',
+                    insert: 'get_orientation()'
+                },
+                {
+                    label: 'get_relief_style',
+                    detail: 'get_relief_style()',
+                    docs: 'DOC?',
+                    insert: 'get_relief_style()'
+                },
+                {
+                    label: 'get_style',
+                    detail: 'get_style()',
+                    docs: 'DOC?',
+                    insert: 'get_style()'
+                },
+                {
+                    label: 'get_text_alignment',
+                    detail: 'get_text_alignment()',
+                    docs: 'DOC?',
+                    insert: 'get_text_alignment()'
+                },
+                {
+                    label: 'get_text_orientation',
+                    detail: 'get_text_orientation()',
+                    docs: 'DOC?',
+                    insert: 'get_text_orientation()'
+                },
+                {
+                    label: 'get_text_size_group',
+                    detail: 'get_text_size_group()',
+                    docs: 'DOC?',
+                    insert: 'get_text_size_group()'
+                },
+                {
+                    label: 'rebuild_menu',
+                    detail: 'rebuild_menu()',
+                    docs: 'DOC?',
+                    insert: 'rebuild_menu()'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkToolbar = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'get_drop_index',
+                    detail: 'get_drop_index(x, y)',
+                    docs: 'DOC?',
+                    insert: 'get_drop_index($1)'
+                },
+                {
+                    label: 'get_icon_size',
+                    detail: 'get_icon_size()',
+                    docs: 'DOC?',
+                    insert: 'get_icon_size()'
+                },
+                {
+                    label: 'get_item_index',
+                    detail: 'get_item_index(item)',
+                    docs: 'DOC?',
+                    insert: 'get_item_index($1)'
+                },
+                {
+                    label: 'get_n_items',
+                    detail: 'get_n_items()',
+                    docs: 'DOC?',
+                    insert: 'get_n_items()'
+                },
+                {
+                    label: 'get_nth_item',
+                    detail: 'get_nth_item(n)',
+                    docs: 'DOC?',
+                    insert: 'get_nth_item($1)'
+                },
+                {
+                    label: 'get_relief_style',
+                    detail: 'get_relief_style()',
+                    docs: 'DOC?',
+                    insert: 'get_relief_style()'
+                },
+                {
+                    label: 'get_show_arrow',
+                    detail: 'get_show_arrow()',
+                    docs: 'DOC?',
+                    insert: 'get_show_arrow()'
+                },
+                {
+                    label: 'get_style',
+                    detail: 'get_style()',
+                    docs: 'DOC?',
+                    insert: 'get_style()'
+                },
+                {
+                    label: 'insert',
+                    detail: 'insert(item, pos)',
+                    docs: 'DOC?',
+                    insert: 'insert($1)'
+                },
+                {
+                    label: 'set_drop_highlight_item',
+                    detail: 'set_drop_highlight_item(tool_item, index_)',
+                    docs: 'DOC?',
+                    insert: 'set_drop_highlight_item($1)'
+                },
+                {
+                    label: 'set_icon_size',
+                    detail: 'set_icon_size(icon_size)',
+                    docs: 'DOC?',
+                    insert: 'set_icon_size($1)'
+                },
+                {
+                    label: 'set_show_arrow',
+                    detail: 'set_show_arrow(show_arrow)',
+                    docs: 'DOC?',
+                    insert: 'set_show_arrow($1)'
+                },
+                {
+                    label: 'set_style',
+                    detail: 'set_style(style)',
+                    docs: 'DOC?',
+                    insert: 'set_style($1)'
+                },
+                {
+                    label: 'unset_icon_size',
+                    detail: 'unset_icon_size()',
+                    docs: 'DOC?',
+                    insert: 'unset_icon_size()'
+                },
+                {
+                    label: 'unset_style',
+                    detail: 'unset_style()',
+                    docs: 'DOC?',
+                    insert: 'unset_style()'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkTreeView = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'new_with_model',
+                    detail: 'new_with_model(model)',
+                    docs: 'DOC?',
+                    insert: 'new_with_model($1)'
+                },
+                {
+                    label: 'append_column',
+                    detail: 'append_column(column)',
+                    docs: 'DOC?',
+                    insert: 'append_column($1)'
+                },
+                {
+                    label: 'collapse_all',
+                    detail: 'collapse_all()',
+                    docs: 'DOC?',
+                    insert: 'collapse_all()'
+                },
+                {
+                    label: 'collapse_row',
+                    detail: 'collapse_row(path)',
+                    docs: 'DOC?',
+                    insert: 'collapse_row($1)'
+                },
+                {
+                    label: 'columns_autosize',
+                    detail: 'columns_autosize()',
+                    docs: 'DOC?',
+                    insert: 'columns_autosize()'
+                },
+                {
+                    label: 'convert_bin_window_to_tree_coords',
+                    detail: 'convert_bin_window_to_tree_coords(bx, by)',
+                    docs: 'DOC?',
+                    insert: 'convert_bin_window_to_tree_coords($1)'
+                },
+                {
+                    label: 'convert_bin_window_to_widget_coords',
+                    detail: 'convert_bin_window_to_widget_coords(bx, by)',
+                    docs: 'DOC?',
+                    insert: 'convert_bin_window_to_widget_coords($1)'
+                },
+                {
+                    label: 'convert_tree_to_bin_window_coords',
+                    detail: 'convert_tree_to_bin_window_coords(tx, ty)',
+                    docs: 'DOC?',
+                    insert: 'convert_tree_to_bin_window_coords($1)'
+                },
+                {
+                    label: 'convert_tree_to_widget_coords',
+                    detail: 'convert_tree_to_widget_coords(tx, ty)',
+                    docs: 'DOC?',
+                    insert: 'convert_tree_to_widget_coords($1)'
+                },
+                {
+                    label: 'convert_widget_to_bin_window_coords',
+                    detail: 'convert_widget_to_bin_window_coords(wx, wy)',
+                    docs: 'DOC?',
+                    insert: 'convert_widget_to_bin_window_coords($1)'
+                },
+                {
+                    label: 'convert_widget_to_tree_coords',
+                    detail: 'convert_widget_to_tree_coords(wx, wy)',
+                    docs: 'DOC?',
+                    insert: 'convert_widget_to_tree_coords($1)'
+                },
+                {
+                    label: 'create_row_drag_icon',
+                    detail: 'create_row_drag_icon(path)',
+                    docs: 'DOC?',
+                    insert: 'create_row_drag_icon($1)'
+                },
+                {
+                    label: 'enable_model_drag_dest',
+                    detail: 'enable_model_drag_dest(targets, actions)',
+                    docs: 'DOC?',
+                    insert: 'enable_model_drag_dest($1)'
+                },
+                {
+                    label: 'enable_model_drag_source',
+                    detail: 'enable_model_drag_source(start_button_mask, targets, actions)',
+                    docs: 'DOC?',
+                    insert: 'enable_model_drag_source($1)'
+                },
+                {
+                    label: 'expand_all',
+                    detail: 'expand_all()',
+                    docs: 'DOC?',
+                    insert: 'expand_all()'
+                },
+                {
+                    label: 'expand_row',
+                    detail: 'expand_row(path, open_all)',
+                    docs: 'DOC?',
+                    insert: 'expand_row($1)'
+                },
+                {
+                    label: 'expand_to_path',
+                    detail: 'expand_to_path(path)',
+                    docs: 'DOC?',
+                    insert: 'expand_to_path($1)'
+                },
+                {
+                    label: 'get_activate_on_single_click',
+                    detail: 'get_activate_on_single_click()',
+                    docs: 'DOC?',
+                    insert: 'get_activate_on_single_click()'
+                },
+                {
+                    label: 'get_background_area',
+                    detail: 'get_background_area(path, column)',
+                    docs: 'DOC?',
+                    insert: 'get_background_area($1)'
+                },
+                {
+                    label: 'get_bin_window',
+                    detail: 'get_bin_window()',
+                    docs: 'DOC?',
+                    insert: 'get_bin_window()'
+                },
+                {
+                    label: 'get_cell_area',
+                    detail: 'get_cell_area(path, column)',
+                    docs: 'DOC?',
+                    insert: 'get_cell_area($1)'
+                },
+                {
+                    label: 'get_column',
+                    detail: 'get_column(n)',
+                    docs: 'DOC?',
+                    insert: 'get_column($1)'
+                },
+                {
+                    label: 'get_columns',
+                    detail: 'get_columns()',
+                    docs: 'DOC?',
+                    insert: 'get_columns()'
+                },
+                {
+                    label: 'get_cursor',
+                    detail: 'get_cursor()',
+                    docs: 'DOC?',
+                    insert: 'get_cursor()'
+                },
+                {
+                    label: 'get_dest_row_at_pos',
+                    detail: 'get_dest_row_at_pos(drag_x, drag_y)',
+                    docs: 'DOC?',
+                    insert: 'get_dest_row_at_pos($1)'
+                },
+                {
+                    label: 'get_drag_dest_row',
+                    detail: 'get_drag_dest_row()',
+                    docs: 'DOC?',
+                    insert: 'get_drag_dest_row()'
+                },
+                {
+                    label: 'get_enable_search',
+                    detail: 'get_enable_search()',
+                    docs: 'DOC?',
+                    insert: 'get_enable_search()'
+                },
+                {
+                    label: 'get_enable_tree_lines',
+                    detail: 'get_enable_tree_lines()',
+                    docs: 'DOC?',
+                    insert: 'get_enable_tree_lines()'
+                },
+                {
+                    label: 'get_expander_column',
+                    detail: 'get_expander_column()',
+                    docs: 'DOC?',
+                    insert: 'get_expander_column()'
+                },
+                {
+                    label: 'get_fixed_height_mode',
+                    detail: 'get_fixed_height_mode()',
+                    docs: 'DOC?',
+                    insert: 'get_fixed_height_mode()'
+                },
+                {
+                    label: 'get_grid_lines',
+                    detail: 'get_grid_lines()',
+                    docs: 'DOC?',
+                    insert: 'get_grid_lines()'
+                },
+                {
+                    label: 'get_hadjustment',
+                    detail: 'get_hadjustment()',
+                    docs: 'DOC?',
+                    insert: 'get_hadjustment()'
+                },
+                {
+                    label: 'get_headers_clickable',
+                    detail: 'get_headers_clickable()',
+                    docs: 'DOC?',
+                    insert: 'get_headers_clickable()'
+                },
+                {
+                    label: 'get_headers_visible',
+                    detail: 'get_headers_visible()',
+                    docs: 'DOC?',
+                    insert: 'get_headers_visible()'
+                },
+                {
+                    label: 'get_hover_expand',
+                    detail: 'get_hover_expand()',
+                    docs: 'DOC?',
+                    insert: 'get_hover_expand()'
+                },
+                {
+                    label: 'get_hover_selection',
+                    detail: 'get_hover_selection()',
+                    docs: 'DOC?',
+                    insert: 'get_hover_selection()'
+                },
+                {
+                    label: 'get_level_indentation',
+                    detail: 'get_level_indentation()',
+                    docs: 'DOC?',
+                    insert: 'get_level_indentation()'
+                },
+                {
+                    label: 'get_model',
+                    detail: 'get_model()',
+                    docs: 'DOC?',
+                    insert: 'get_model()'
+                },
+                {
+                    label: 'get_n_columns',
+                    detail: 'get_n_columns()',
+                    docs: 'DOC?',
+                    insert: 'get_n_columns()'
+                },
+                {
+                    label: 'get_path_at_pos',
+                    detail: 'get_path_at_pos(x, y)',
+                    docs: 'DOC?',
+                    insert: 'get_path_at_pos($1)'
+                },
+                {
+                    label: 'get_reorderable',
+                    detail: 'get_reorderable()',
+                    docs: 'DOC?',
+                    insert: 'get_reorderable()'
+                },
+                {
+                    label: 'get_rubber_banding',
+                    detail: 'get_rubber_banding()',
+                    docs: 'DOC?',
+                    insert: 'get_rubber_banding()'
+                },
+                {
+                    label: 'get_rules_hint',
+                    detail: 'get_rules_hint()',
+                    docs: 'DOC?',
+                    insert: 'get_rules_hint()'
+                },
+                {
+                    label: 'get_search_column',
+                    detail: 'get_search_column()',
+                    docs: 'DOC?',
+                    insert: 'get_search_column()'
+                },
+                {
+                    label: 'get_search_entry',
+                    detail: 'get_search_entry()',
+                    docs: 'DOC?',
+                    insert: 'get_search_entry()'
+                },
+                {
+                    label: 'get_selection',
+                    detail: 'get_selection()',
+                    docs: 'DOC?',
+                    insert: 'get_selection()'
+                },
+                {
+                    label: 'get_show_expanders',
+                    detail: 'get_show_expanders()',
+                    docs: 'DOC?',
+                    insert: 'get_show_expanders()'
+                },
+                {
+                    label: 'get_tooltip_column',
+                    detail: 'get_tooltip_column()',
+                    docs: 'DOC?',
+                    insert: 'get_tooltip_column()'
+                },
+                {
+                    label: 'get_tooltip_context',
+                    detail: 'get_tooltip_context(x, y, keyboard_tip)',
+                    docs: 'DOC?',
+                    insert: 'get_tooltip_context($1)'
+                },
+                {
+                    label: 'get_vadjustment',
+                    detail: 'get_vadjustment()',
+                    docs: 'DOC?',
+                    insert: 'get_vadjustment()'
+                },
+                {
+                    label: 'get_visible_range',
+                    detail: 'get_visible_range()',
+                    docs: 'DOC?',
+                    insert: 'get_visible_range()'
+                },
+                {
+                    label: 'get_visible_rect',
+                    detail: 'get_visible_rect()',
+                    docs: 'DOC?',
+                    insert: 'get_visible_rect()'
+                },
+                {
+                    label: 'insert_column',
+                    detail: 'insert_column(column, position)',
+                    docs: 'DOC?',
+                    insert: 'insert_column($1)'
+                },
+                {
+                    label: 'insert_column_with_attributes',
+                    detail: 'insert_column_with_attributes(position, title, cell, **kwargs)',
+                    docs: 'DOC?',
+                    insert: 'insert_column_with_attributes($1)'
+                },
+                {
+                    label: 'insert_column_with_data_func',
+                    detail: 'insert_column_with_data_func(position, title, cell, func, *data)',
+                    docs: 'DOC?',
+                    insert: 'insert_column_with_data_func($1)'
+                },
+                {
+                    label: 'is_blank_at_pos',
+                    detail: 'is_blank_at_pos(x, y)',
+                    docs: 'DOC?',
+                    insert: 'is_blank_at_pos($1)'
+                },
+                {
+                    label: 'is_rubber_banding_active',
+                    detail: 'is_rubber_banding_active()',
+                    docs: 'DOC?',
+                    insert: 'is_rubber_banding_active()'
+                },
+                {
+                    label: 'map_expanded_rows',
+                    detail: 'map_expanded_rows(func, *data)',
+                    docs: 'DOC?',
+                    insert: 'map_expanded_rows($1)'
+                },
+                {
+                    label: 'move_column_after',
+                    detail: 'move_column_after(column, base_column)',
+                    docs: 'DOC?',
+                    insert: 'move_column_after($1)'
+                },
+                {
+                    label: 'remove_column',
+                    detail: 'remove_column(column)',
+                    docs: 'DOC?',
+                    insert: 'remove_column($1)'
+                },
+                {
+                    label: 'row_activated',
+                    detail: 'row_activated(path, column)',
+                    docs: 'DOC?',
+                    insert: 'row_activated($1)'
+                },
+                {
+                    label: 'row_expanded',
+                    detail: 'row_expanded(path)',
+                    docs: 'DOC?',
+                    insert: 'row_expanded($1)'
+                },
+                {
+                    label: 'scroll_to_cell',
+                    detail: 'scroll_to_cell(path, column, use_align, row_align, col_align)',
+                    docs: 'DOC?',
+                    insert: 'scroll_to_cell($1)'
+                },
+                {
+                    label: 'scroll_to_point',
+                    detail: 'scroll_to_point(tree_x, tree_y)',
+                    docs: 'DOC?',
+                    insert: 'scroll_to_point($1)'
+                },
+                {
+                    label: 'set_activate_on_single_click',
+                    detail: 'set_activate_on_single_click(single)',
+                    docs: 'DOC?',
+                    insert: 'set_activate_on_single_click($1)'
+                },
+                {
+                    label: 'set_column_drag_function',
+                    detail: 'set_column_drag_function(func, *user_data)',
+                    docs: 'DOC?',
+                    insert: 'set_column_drag_function($1)'
+                },
+                {
+                    label: 'set_cursor',
+                    detail: 'set_cursor(path, focus_column, start_editing)',
+                    docs: 'DOC?',
+                    insert: 'set_cursor($1)'
+                },
+                {
+                    label: 'set_cursor_on_cell',
+                    detail: 'set_cursor_on_cell(path, focus_column, focus_cell, start_editing)',
+                    docs: 'DOC?',
+                    insert: 'set_cursor_on_cell($1)'
+                },
+                {
+                    label: 'set_destroy_count_func',
+                    detail: 'set_destroy_count_func(func, *data)',
+                    docs: 'DOC?',
+                    insert: 'set_destroy_count_func($1)'
+                },
+                {
+                    label: 'set_drag_dest_row',
+                    detail: 'set_drag_dest_row(path, pos)',
+                    docs: 'DOC?',
+                    insert: 'set_drag_dest_row($1)'
+                },
+                {
+                    label: 'set_enable_search',
+                    detail: 'set_enable_search(enable_search)',
+                    docs: 'DOC?',
+                    insert: 'set_enable_search($1)'
+                },
+                {
+                    label: 'set_enable_tree_lines',
+                    detail: 'set_enable_tree_lines(enabled)',
+                    docs: 'DOC?',
+                    insert: 'set_enable_tree_lines($1)'
+                },
+                {
+                    label: 'set_expander_column',
+                    detail: 'set_expander_column(column)',
+                    docs: 'DOC?',
+                    insert: 'set_expander_column($1)'
+                },
+                {
+                    label: 'set_fixed_height_mode',
+                    detail: 'set_fixed_height_mode(enable)',
+                    docs: 'DOC?',
+                    insert: 'set_fixed_height_mode($1)'
+                },
+                {
+                    label: 'set_grid_lines',
+                    detail: 'set_grid_lines(grid_lines)',
+                    docs: 'DOC?',
+                    insert: 'set_grid_lines($1)'
+                },
+                {
+                    label: 'set_hadjustment',
+                    detail: 'set_hadjustment(adjustment)',
+                    docs: 'DOC?',
+                    insert: 'set_hadjustment($1)'
+                },
+                {
+                    label: 'set_headers_clickable',
+                    detail: 'set_headers_clickable(setting)',
+                    docs: 'DOC?',
+                    insert: 'set_headers_clickable($1)'
+                },
+                {
+                    label: 'set_headers_visible',
+                    detail: 'set_headers_visible(headers_visible)',
+                    docs: 'DOC?',
+                    insert: 'set_headers_visible($1)'
+                },
+                {
+                    label: 'set_hover_expand',
+                    detail: 'set_hover_expand(expand)',
+                    docs: 'DOC?',
+                    insert: 'set_hover_expand($1)'
+                },
+                {
+                    label: 'set_hover_selection',
+                    detail: 'set_hover_selection(hover)',
+                    docs: 'DOC?',
+                    insert: 'set_hover_selection($1)'
+                },
+                {
+                    label: 'set_level_indentation',
+                    detail: 'set_level_indentation(indentation)',
+                    docs: 'DOC?',
+                    insert: 'set_level_indentation($1)'
+                },
+                {
+                    label: 'set_model',
+                    detail: 'set_model(model)',
+                    docs: 'DOC?',
+                    insert: 'set_model($1)'
+                },
+                {
+                    label: 'set_reorderable',
+                    detail: 'set_reorderable(reorderable)',
+                    docs: 'DOC?',
+                    insert: 'set_reorderable($1)'
+                },
+                {
+                    label: 'set_row_separator_func',
+                    detail: 'set_row_separator_func(func, *data)',
+                    docs: 'DOC?',
+                    insert: 'set_row_separator_func($1)'
+                },
+                {
+                    label: 'set_rubber_banding',
+                    detail: 'set_rubber_banding(enable)',
+                    docs: 'DOC?',
+                    insert: 'set_rubber_banding($1)'
+                },
+                {
+                    label: 'set_rules_hint',
+                    detail: 'set_rules_hint(setting)',
+                    docs: 'DOC?',
+                    insert: 'set_rules_hint($1)'
+                },
+                {
+                    label: 'set_search_column',
+                    detail: 'set_search_column(column)',
+                    docs: 'DOC?',
+                    insert: 'set_search_column($1)'
+                },
+                {
+                    label: 'set_search_entry',
+                    detail: 'set_search_entry(entry)',
+                    docs: 'DOC?',
+                    insert: 'set_search_entry($1)'
+                },
+                {
+                    label: 'set_search_equal_func',
+                    detail: 'set_search_equal_func(search_equal_func, *search_user_data)',
+                    docs: 'DOC?',
+                    insert: 'set_search_equal_func($1)'
+                },
+                {
+                    label: 'set_search_position_func',
+                    detail: 'set_search_position_func(func, *data)',
+                    docs: 'DOC?',
+                    insert: 'set_search_position_func($1)'
+                },
+                {
+                    label: 'set_show_expanders',
+                    detail: 'set_show_expanders(enabled)',
+                    docs: 'DOC?',
+                    insert: 'set_show_expanders($1)'
+                },
+                {
+                    label: 'set_tooltip_cell',
+                    detail: 'set_tooltip_cell(tooltip, path, column, cell)',
+                    docs: 'DOC?',
+                    insert: 'set_tooltip_cell($1)'
+                },
+                {
+                    label: 'set_tooltip_column',
+                    detail: 'set_tooltip_column(column)',
+                    docs: 'DOC?',
+                    insert: 'set_tooltip_column($1)'
+                },
+                {
+                    label: 'set_tooltip_row',
+                    detail: 'set_tooltip_row(tooltip, path)',
+                    docs: 'DOC?',
+                    insert: 'set_tooltip_row($1)'
+                },
+                {
+                    label: 'set_vadjustment',
+                    detail: 'set_vadjustment(adjustment)',
+                    docs: 'DOC?',
+                    insert: 'set_vadjustment($1)'
+                },
+                {
+                    label: 'unset_rows_drag_dest',
+                    detail: 'unset_rows_drag_dest()',
+                    docs: 'DOC?',
+                    insert: 'unset_rows_drag_dest()'
+                },
+                {
+                    label: 'unset_rows_drag_source',
+                    detail: 'unset_rows_drag_source()',
+                    docs: 'DOC?',
+                    insert: 'unset_rows_drag_source()'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkScaleButton = [
+                {
+                    label: 'new',
+                    detail: 'new(size, min, max, step, icons)',
+                    docs: 'DOC?',
+                    insert: 'new($1)'
+                },
+                {
+                    label: 'get_adjustment',
+                    detail: 'get_adjustment()',
+                    docs: 'DOC?',
+                    insert: 'get_adjustment()'
+                },
+                {
+                    label: 'get_minus_button',
+                    detail: 'get_minus_button()',
+                    docs: 'DOC?',
+                    insert: 'get_minus_button()'
+                },
+                {
+                    label: 'get_plus_button',
+                    detail: 'get_plus_button()',
+                    docs: 'DOC?',
+                    insert: 'get_plus_button()'
+                },
+                {
+                    label: 'get_popup',
+                    detail: 'get_popup()',
+                    docs: 'DOC?',
+                    insert: 'get_popup()'
+                },
+                {
+                    label: 'get_value',
+                    detail: 'get_value()',
+                    docs: 'DOC?',
+                    insert: 'get_value()'
+                },
+                {
+                    label: 'set_adjustment',
+                    detail: 'set_adjustment(adjustment)',
+                    docs: 'DOC?',
+                    insert: 'set_adjustment($1)'
+                },
+                {
+                    label: 'set_icons',
+                    detail: 'set_icons(icons)',
+                    docs: 'DOC?',
+                    insert: 'set_icons($1)'
+                },
+                {
+                    label: 'set_value',
+                    detail: 'set_value(value)',
+                    docs: 'DOC?',
+                    insert: 'set_value($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            // ----- End Inheartence Tree -----------*-----------
 
             // All Main Methods
             if (linePrefix.match(/Gtk\.\w*$/i)) {
@@ -4874,6 +11249,288 @@ function activate(context) {
                         detail: 'CellRendererText()',
                         docs: 'DOC?',
                         insert: 'CellRendererText()'
+                    },
+                    {
+                        label: 'FileChooserButton',
+                        detail: 'FileChooserButton()',
+                        docs: 'DOC?',
+                        insert: 'FileChooserButton'
+                    },
+                    {
+                        label: 'FileChooserDialog',
+                        detail: 'FileChooserDialog()',
+                        docs: 'DOC?',
+                        insert: 'FileChooserDialog($1)'
+                    },
+                    {
+                        label: 'FileChooserAction',
+                        detail: 'FileChooserAction()',
+                        docs: 'DOC?',
+                        insert: 'FileChooserAction'
+                    },
+                    {
+                        label: 'ResponseType',
+                        detail: 'ResponseType()',
+                        docs: 'DOC?',
+                        insert: 'ResponseType'
+                    },
+                    {
+                        label: 'FlowBox',
+                        detail: 'FlowBox()',
+                        docs: 'DOC?',
+                        insert: 'FlowBox()'
+                    },
+                    {
+                        label: 'FontButton',
+                        detail: 'FontButton()',
+                        docs: 'DOC?',
+                        insert: 'FontButton()'
+                    },
+                    {
+                        label: 'Dialog',
+                        detail: 'Dialog()',
+                        docs: 'DOC?',
+                        insert: 'Dialog()'
+                    },
+                    {
+                        label: 'FontChooserDialog',
+                        detail: 'FontChooserDialog()',
+                        docs: 'DOC?',
+                        insert: 'FontChooserDialog()'
+                    },
+                    {
+                        label: 'Frame',
+                        detail: 'Frame()',
+                        docs: 'DOC?',
+                        insert: 'Frame()'
+                    },
+                    {
+                        label: 'GLArea',
+                        detail: 'GLArea()',
+                        docs: 'DOC?',
+                        insert: 'GLArea()'
+                    },
+                    {
+                        label: 'Grid',
+                        detail: 'Grid()',
+                        docs: 'DOC?',
+                        insert: 'Grid()'
+                    },
+                    {
+                        label: 'HeaderBar',
+                        detail: 'HeaderBar()',
+                        docs: 'DOC?',
+                        insert: 'HeaderBar()'
+                    },
+                    {
+                        label: 'IconView',
+                        detail: 'IconView()',
+                        docs: 'DOC?',
+                        insert: 'IconView()'
+                    },
+                    {
+                        label: 'Image',
+                        detail: 'Image()',
+                        docs: 'DOC?',
+                        insert: 'Image()'
+                    },
+                    {
+                        label: 'InfoBar',
+                        detail: 'InfoBar()',
+                        docs: 'DOC?',
+                        insert: 'InfoBar()'
+                    },
+                    {
+                        label: 'LevelBar',
+                        detail: 'LevelBar()',
+                        docs: 'DOC?',
+                        insert: 'LevelBar()'
+                    },
+                    {
+                        label: 'LinkButton',
+                        detail: 'LinkButton()',
+                        docs: 'DOC?',
+                        insert: 'LinkButton()'
+                    },
+                    {
+                        label: 'ListBox',
+                        detail: 'ListBox()',
+                        docs: 'DOC?',
+                        insert: 'ListBox()'
+                    },
+                    {
+                        label: 'LockButton',
+                        detail: 'LockButton()',
+                        docs: 'DOC?',
+                        insert: 'LockButton()'
+                    },
+                    {
+                        label: 'MenuBar',
+                        detail: 'MenuBar()',
+                        docs: 'DOC?',
+                        insert: 'MenuBar()'
+                    },
+                    {
+                        label: 'MenuButton',
+                        detail: 'MenuButton()',
+                        docs: 'DOC?',
+                        insert: 'MenuButton()'
+                    },
+                    {
+                        label: 'MessageDialog',
+                        detail: 'MessageDialog()',
+                        docs: 'DOC?',
+                        insert: 'MessageDialog()'
+                    },
+                    {
+                        label: 'Notebook',
+                        detail: 'Notebook()',
+                        docs: 'DOC?',
+                        insert: 'Notebook()'
+                    },
+                    {
+                        label: 'Paned',
+                        detail: 'Paned()',
+                        docs: 'DOC?',
+                        insert: 'Paned()'
+                    },
+                    {
+                        label: 'PlacesSidebar',
+                        detail: 'PlacesSidebar()',
+                        docs: 'DOC?',
+                        insert: 'PlacesSidebar()'
+                    },
+                    {
+                        label: 'ProgressBar',
+                        detail: 'ProgressBar()',
+                        docs: 'DOC?',
+                        insert: 'ProgressBar()'
+                    },
+                    {
+                        label: 'RadioButton',
+                        detail: 'RadioButton()',
+                        docs: 'DOC?',
+                        insert: 'RadioButton()'
+                    },
+                    {
+                        label: 'RecentChooserDialog',
+                        detail: 'RecentChooserDialog()',
+                        docs: 'DOC?',
+                        insert: 'RecentChooserDialog()'
+                    },
+                    {
+                        label: 'Scale',
+                        detail: 'Scale()',
+                        docs: 'DOC?',
+                        insert: 'Scale()'
+                    },
+                    {
+                        label: 'Scrollbar',
+                        detail: 'Scrollbar()',
+                        docs: 'DOC?',
+                        insert: 'Scrollbar()'
+                    },
+                    {
+                        label: 'ScrolledWindow',
+                        detail: 'ScrolledWindow()',
+                        docs: 'DOC?',
+                        insert: 'ScrolledWindow()'
+                    },
+                    {
+                        label: 'SearchBar',
+                        detail: 'SearchBar()',
+                        docs: 'DOC?',
+                        insert: 'SearchBar()'
+                    },
+                    {
+                        label: 'SearchEntry',
+                        detail: 'SearchEntry()',
+                        docs: 'DOC?',
+                        insert: 'SearchEntry()'
+                    },
+                    {
+                        label: 'Separator',
+                        detail: 'Separator()',
+                        docs: 'DOC?',
+                        insert: 'Separator()'
+                    },
+                    {
+                        label: 'SpinButton',
+                        detail: 'SpinButton()',
+                        docs: 'DOC?',
+                        insert: 'SpinButton()'
+                    },
+                    {
+                        label: 'Spinner',
+                        detail: 'Spinner()',
+                        docs: 'DOC?',
+                        insert: 'Spinner()'
+                    },
+                    {
+                        label: 'Stack',
+                        detail: 'Stack()',
+                        docs: 'DOC?',
+                        insert: 'Stack()'
+                    },
+                    {
+                        label: 'StackSwitcher',
+                        detail: 'StackSwitcher()',
+                        docs: 'DOC?',
+                        insert: 'StackSwitcher()'
+                    },
+                    {
+                        label: 'Statusbar',
+                        detail: 'Statusbar()',
+                        docs: 'DOC?',
+                        insert: 'Statusbar()'
+                    },
+                    {
+                        label: 'Switch',
+                        detail: 'Switch()',
+                        docs: 'DOC?',
+                        insert: 'Switch()'
+                    },
+                    {
+                        label: 'TextView',
+                        detail: 'TextView()',
+                        docs: 'DOC?',
+                        insert: 'TextView()'
+                    },
+                    {
+                        label: 'ToggleButton',
+                        detail: 'ToggleButton()',
+                        docs: 'DOC?',
+                        insert: 'ToggleButton()'
+                    },
+                    {
+                        label: 'ToolPalette',
+                        detail: 'ToolPalette()',
+                        docs: 'DOC?',
+                        insert: 'ToolPalette()'
+                    },
+                    {
+                        label: 'Toolbar',
+                        detail: 'Toolbar()',
+                        docs: 'DOC?',
+                        insert: 'Toolbar()'
+                    },
+                    {
+                        label: 'TreeView',
+                        detail: 'TreeView()',
+                        docs: 'DOC?',
+                        insert: 'TreeView()'
+                    },
+                    {
+                        label: 'VolumeButton',
+                        detail: 'VolumeButton()',
+                        docs: 'DOC?',
+                        insert: 'VolumeButton()'
+                    },
+                    {
+                        label: 'ToolItemGroup',
+                        detail: 'ToolItemGroup()',
+                        docs: 'DOC?',
+                        insert: 'ToolItemGroup()'
                     }
                 ].map(s => createItem(s, vscode.CompletionItemKind.Class));
             }
@@ -4903,7 +11560,7 @@ function activate(context) {
 
                 // Label
                 if (getVarable(document, varName, 'Label')) {
-                    results.push(...GtkLabel, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkWidget);
+                    results.push(...GtkLabel, ...GtkMisk, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence);
                 }
 
                 // AccelLabel
@@ -4913,17 +11570,17 @@ function activate(context) {
 
                 // self
                 if (linePrefix.match(/self\.\w*$/)) {
-                    results.push(...GtkWindow, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkWidget, ...GtkContainer, ...GtkBin)
+                    results.push(...GtkWindow, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkWidget, ...GtkContainer, ...GtkBin);
                 }
 
                 // Window
                 if (getVarable(document, varName, 'Window')) {
-                    results.push(...GtkWindow, ...GtkBin, ...GtkContainer, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkWidget)
+                    results.push(...GtkWindow, ...GtkBin, ...GtkContainer, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkWidget);
                 }
 
                 // ActionBar
                 if (getVarable(document, varName, 'ActionBar')) {
-                    results.push(...GtkActionBar ,...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence)
+                    results.push(...GtkActionBar ,...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence);
                 }
 
                 // Button
@@ -4933,46 +11590,328 @@ function activate(context) {
 
                 // Box
                 if (getVarable(document, varName, 'Box')) {
-                    const boxGtk = [
-                        {
-                            label: 'pack_start',
-                            detail: 'pack_start(widget:Object, expand:Bool, fill:Bool, padding:int)',
-                            docs: 'DOC?',
-                            insert: 'pack_start($1)'
-                        }
-                    ].map(s => createItem(s, vscode.CompletionItemKind.Method));
-                    results.push(...boxGtk);
+                    results.push(...GtkBox, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkOrientable);
                 }
 
                 // Entry
                 if (getVarable(document, varName, 'Entry')) {
-                    const entryGtk = [
+                    results.push(...GtkEntry, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkCellEditable, ...GtkEditable);
+                }
+
+                // FileChooserButton
+                if (getVarable(document, varName, 'FileChooserButton')) {
+                    results.push(...GtkFileChooserButton, ...GtkBox, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkOrientable, ...GtkFileChooser);
+                }
+
+                // FileChooserDialog
+                if (getVarable(document, varName, 'FileChooserDialog')) {
+                    results.push(...GtkDialog, ...GtkWindow, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkFileChooser);
+                }
+
+                // FlowBox
+                if (getVarable(document, varName, 'FlowBox')) {
+                    results.push(...GtkFlowBox, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkOrientable);
+                }
+
+                // FontButton
+                if (getVarable(document, varName, 'FontButton')) {
+                    results.push(...GtkFontButton, ...GtkButton, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkActionable, ...GtkActivatable, ...GtkFontChooser);
+                }
+
+                // FontChooserDialog
+                if (getVarable(document, varName, 'FontChooserDialog')) {
+                    results.push(...GtkDialog, ...GtkWindow, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkFontChooser);
+                }
+
+                // Frame
+                if (getVarable(document, varName, 'Frame')) {
+                    results.push(...GtkFrame, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence);
+                }
+
+                // GLArea
+                if (getVarable(document, varName, 'GLArea')) {
+                    results.push(...GtkGLArea, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence);
+                }
+
+                // Grid
+                if (getVarable(document, varName, 'Grid')) {
+                    results.push(...GtkGrid, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkOrientable);
+                }
+
+                // HeaderBar
+                if (getVarable(document, varName, 'HeaderBar')) {
+                    results.push(...GtkHeaderBar, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence);
+                }
+
+                // IconView
+                if (getVarable(document, varName, 'IconView')) {
+                    results.push(...GtkIconView, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkCellLayout, ...GtkScrollable);
+                }
+
+                // Image
+                if (getVarable(document, varName, 'Image')) {
+                    results.push(...GtkImage, ...GtkMisk, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence);
+                }
+
+                // InfoBar
+                if (getVarable(document, varName, 'InfoBar')) {
+                    results.push(...GtkInfoBar, ...GtkBox, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkOrientable);
+                }
+
+                // LevelBar
+                if (getVarable(document, varName, 'LevelBar')) {
+                    results.push(...GtkLevelBar, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkOrientable);
+                }
+
+                // LinkButton
+                if (getVarable(document, varName, 'LinkButton')) {
+                    results.push(...GtkLinkButton, ...GtkButton, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkActionable, ...GtkActivatable);
+                }
+
+                // ListBox
+                if (getVarable(document, varName, 'ListBox')) {
+                    results.push(...GtkListBox, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence);
+                }
+
+                // LockButton
+                if (getVarable(document, varName, 'LockButton')) {
+                    results.push(...GtkLockButton, ...GtkButton, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkActionable, ...GtkActivatable);
+                }
+
+                // MenuBar
+                if (getVarable(document, varName, 'MenuBar')) {
+                    results.push(...GtkMenuBar, ...GtkMenuShell, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence);
+                }
+
+                // MenuButton
+                if (getVarable(document, varName, 'MenuButton')) {
+                    results.push(...GtkMenuButton, ...GtkToggleButton, ...GtkButton, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkActionable, ...GtkActivatable);
+                }
+
+                // MessageDialog
+                if (getVarable(document, varName, 'MessageDialog')) {
+                    results.push(...GtkMessageDialog, ...GtkDialog, ...GtkWindow, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence);
+                }
+
+                // Notebook
+                if (getVarable(document, varName, 'Notebook')) {
+                    results.push(...GtkNotebook, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence);
+                }
+
+                // Paned
+                if (getVarable(document, varName, 'Paned')) {
+                    results.push(...GtkPaned, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkOrientable);
+                }
+
+                // PlacesSidebar
+                if (getVarable(document, varName, 'PlacesSidebar')) {
+                    results.push(...GtkPlacesSidebar, ...GtkScrolledWindow, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence);
+                }
+
+                // ProgressBar
+                if (getVarable(document, varName, 'ProgressBar')) {
+                    results.push(...GtkProgressBar, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkOrientable);
+                }
+
+                // RadioButton
+                if (getVarable(document, varName, 'RadioButton')) {
+                    results.push(...GtkRadioButton, ...GtkCheckButton, ...GtkToggleButton, ...GtkButton, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkActionable, ...GtkActivatable);
+                }
+
+                // RecentChooserDialog
+                if (getVarable(document, varName, 'RecentChooserDialog')) {
+                    results.push(...GtkDialog, ...GtkWindow, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkRecentChooser);
+                }
+
+                // Scale
+                if (getVarable(document, varName, 'Scale')) {
+                    results.push(...GtkScale, ...GtkRange, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkOrientable);
+                }
+
+                // Scrollbar
+                if (getVarable(document, varName, 'Scrollbar')) {
+                    const GtkScrollbar = [
                         {
-                            label: 'set_placeholder_text',
-                            detail: 'set_placeholder_text(str)',
+                            label: 'new',
+                            detail: 'new(orientation, adjustment)',
                             docs: 'DOC?',
-                            insert: 'set_placeholder_text("$1")'
-                        },
-                        {
-                            label: 'set_visibility',
-                            detail: 'set_visibility(bool)',
-                            docs: 'DOC?',
-                            insert: 'set_visibility($1)'
-                        },
-                        {
-                            label: 'set_text',
-                            detail: 'set_text({varable_text_name})',
-                            docs: 'DOC?',
-                            insert: 'set_text($1)'
-                        },
-                        {
-                            label: 'get_text',
-                            detail: 'get_text()',
-                            docs: 'DOC?',
-                            insert: 'get_text()'
+                            insert: 'new($1)'
                         }
                     ].map(s => createItem(s, vscode.CompletionItemKind.Method));
-                    results.push(...entryGtk);
+                    results.push(...GtkScrollbar, ...GtkRange, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkOrientable);
+                }
+
+                // ScrolledWindow
+                if (getVarable(document, varName, 'ScrolledWindow')) {
+                    results.push(...GtkScrolledWindow, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence);
+                }
+
+                // SearchBar
+                if (getVarable(document, varName, 'SearchBar')) {
+                    results.push(...GtkSearchBar, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence);
+                }
+
+                // SearchEntry
+                if (getVarable(document, varName, 'SearchEntry')) {
+                    results.push(...GtkSearchEntry, ...GtkEntry, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkCellEditable, ...GtkEditable);
+                }
+
+                // Separator
+                if (getVarable(document, varName, 'Separator')) {
+                    const GtkSeparator = [
+                        {
+                            label: 'new',
+                            detail: 'new(orientation)',
+                            docs: 'DOC?',
+                            insert: 'new($1)'
+                        }
+                    ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+                    results.push(...GtkSeparator, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkOrientable);
+                }
+
+                // SpinButton
+                if (getVarable(document, varName, 'SpinButton')) {
+                    results.push(...GtkSpinButton, ...GtkEntry, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkCellEditable, ...GtkEditable, ...GtkOrientable);
+                }
+                
+                // Spinner
+                if (getVarable(document, varName, 'Spinner')) {
+                    const GtkSpinner = [
+                        {
+                            label: 'new',
+                            detail: 'new()',
+                            docs: 'DOC?',
+                            insert: 'new()'
+                        },
+                        {
+                            label: 'start',
+                            detail: 'start()',
+                            docs: 'DOC?',
+                            insert: 'start()'
+                        },
+                        {
+                            label: 'stop',
+                            detail: 'stop()',
+                            docs: 'DOC?',
+                            insert: 'stop()'
+                        }
+                    ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+                    results.push(...GtkSpinner, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence);
+                }
+
+                // Stack
+                if (getVarable(document, varName, 'Stack')) {
+                    results.push(...GtkStack, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence);
+                }
+
+                // StackSwitcher
+                if (getVarable(document, varName, 'StackSwitcher')) {
+                    const GtkStackSwitcher = [
+                        {
+                            label: 'new',
+                            detail: 'new()',
+                            docs: 'DOC?',
+                            insert: 'new()'
+                        },
+                        {
+                            label: 'get_stack',
+                            detail: 'get_stack()',
+                            docs: 'DOC?',
+                            insert: 'get_stack()'
+                        },
+                        {
+                            label: 'set_stack',
+                            detail: 'set_stack(stack)',
+                            docs: 'DOC?',
+                            insert: 'set_stack($1)'
+                        }
+                    ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+                    results.push(...GtkStackSwitcher, ...GtkBox, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkOrientable);
+                }
+
+                // Statusbar
+                if (getVarable(document, varName, 'Statusbar')) {
+                    results.push(...GtkStatusbar, ...GtkBox, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkOrientable);
+                }
+
+                // Switch
+                if (getVarable(document, varName, 'Switch')) {
+                    const GtkSwitch = [
+                        {
+                            label: 'new',
+                            detail: 'new()',
+                            docs: 'DOC?',
+                            insert: 'new()'
+                        },
+                        {
+                            label: 'get_active',
+                            detail: 'get_active()',
+                            docs: 'DOC?',
+                            insert: 'get_active()'
+                        },
+                        {
+                            label: 'get_state',
+                            detail: 'get_state()',
+                            docs: 'DOC?',
+                            insert: 'get_state()'
+                        },
+                        {
+                            label: 'set_active',
+                            detail: 'set_active(is_active)',
+                            docs: 'DOC?',
+                            insert: 'set_active($1)'
+                        },
+                        {
+                            label: 'set_state',
+                            detail: 'set_state(state)',
+                            docs: 'DOC?',
+                            insert: 'set_state($1)'
+                        }
+                    ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+                    results.push(...GtkSwitch, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkActionable, ...GtkActivatable);
+                }
+
+                // TextView
+                if (getVarable(document, varName, 'TextView')) {
+                    results.push(...GtkTextView, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkScrollable);
+                }
+
+                // ToggleButton
+                if (getVarable(document, varName, 'ToggleButton')) {
+                    results.push(...GtkToggleButton, GtkButton, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkActionable, ...GtkActivatable);
+                }
+
+                // ToolPalette
+                if (getVarable(document, varName, 'ToolPalette')) {
+                    results.push(...GtkToolPalette, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkOrientable, ...GtkScrollable);
+                }
+
+                // Toolbar
+                if (getVarable(document, varName, 'Toolbar')) {
+                    results.push(...GtkToolbar, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkOrientable, ...GtkToolShell);
+                }
+
+                // ToolItemGroup
+                if (getVarable(document, varName, 'ToolItemGroup')) {
+                    results.push(...GtkToolItemGroup, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkToolShell);
+                }
+
+                // TreeView
+                if (getVarable(document, varName, 'TreeView')) {
+                    results.push(...GtkTreeView, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkScrollable);
+                }
+
+                // VolumeButton
+                if (getVarable(document, varName, 'VolumeButton')) {
+                    const GtkVolumeButton = [
+                        {
+                            label: 'new',
+                            detail: 'new()',
+                            docs: 'DOC?',
+                            insert: 'new()'
+                        }
+                    ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+                    results.push(...GtkVolumeButton, ...GtkScaleButton, ...GtkButton, ...GtkBin, ...GtkContainer, ...GtkWidget, ...GObjectMethodInheartence, ...GtkBuildableInheartence, ...GtkActionable, ...GtkActivatable, ...GtkOrientable);
                 }
 
                 // AboutDialog
@@ -6015,6 +12954,12 @@ function activate(context) {
                         detail: '"changed"',
                         docs: 'DOC?',
                         insert: '"changed"'
+                    },
+                    {
+                        label: '"file-set"',
+                        detail: '"file-set"',
+                        docs: 'DOC?',
+                        insert: '"file-set"'
                     }
                 ].map(s => {
                     let item = createItem(s, vscode.CompletionItemKind.Enum);
