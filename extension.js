@@ -7815,69 +7815,6 @@ function activate(context) {
                 }
             ].map(s => createItem(s, vscode.CompletionItemKind.Method));
 
-            const GtkToggleButton = [
-                {
-                    label: 'new',
-                    detail: 'new()',
-                    docs: 'DOC?',
-                    insert: 'new()'
-                },
-                {
-                    label: 'new_with_label',
-                    detail: 'new_with_label(label)',
-                    docs: 'DOC?',
-                    insert: 'new_with_label($1)'
-                },
-                {
-                    label: 'new_with_mnemonic',
-                    detail: 'new_with_mnemonic(label)',
-                    docs: 'DOC?',
-                    insert: 'new_with_mnemonic($1)'
-                },
-                {
-                    label: 'get_active',
-                    detail: 'get_active()',
-                    docs: 'DOC?',
-                    insert: 'get_active()'
-                },
-                {
-                    label: 'get_inconsistent',
-                    detail: 'get_inconsistent()',
-                    docs: 'DOC?',
-                    insert: 'get_inconsistent()'
-                },
-                {
-                    label: 'get_mode',
-                    detail: 'get_mode()',
-                    docs: 'DOC?',
-                    insert: 'get_mode()'
-                },
-                {
-                    label: 'set_active',
-                    detail: 'set_active(is_active)',
-                    docs: 'DOC?',
-                    insert: 'set_active($1)'
-                },
-                {
-                    label: 'set_inconsistent',
-                    detail: 'set_inconsistent(setting)',
-                    docs: 'DOC?',
-                    insert: 'set_inconsistent($1)'
-                },
-                {
-                    label: 'set_mode',
-                    detail: 'set_mode(draw_indicator)',
-                    docs: 'DOC?',
-                    insert: 'set_mode($1)'
-                },
-                {
-                    label: 'toggled',
-                    detail: 'toggled()',
-                    docs: 'DOC?',
-                    insert: 'toggled()'
-                }
-            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
-
             const GtkMessageDialog = [
                 {
                     label: 'format_secondary_markup',
