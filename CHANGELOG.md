@@ -1,3 +1,10 @@
+# [1.3.9]
+## Added:
+- Add Css Connect File Auto completion.
+- Add `Gdk.Screen`.
+## Fixed:
+- Nothing
+
 # [1.3.8]
 ## Added:
 - Nothing

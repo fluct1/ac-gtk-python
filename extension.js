@@ -11025,6 +11025,618 @@ function activate(context) {
                 }
             ].map(s => createItem(s, vscode.CompletionItemKind.Method));
 
+            const GtkCssProvider = [
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'load_from_bytes',
+                    detail: 'load_from_bytes(data)',
+                    docs: 'DOC?',
+                    insert: 'load_from_bytes($1)'
+                },
+                {
+                    label: 'load_from_data',
+                    detail: 'load_from_data(data, length)',
+                    docs: 'DOC?',
+                    insert: 'load_from_data($1)'
+                },
+                {
+                    label: 'load_from_file',
+                    detail: 'load_from_file(file)',
+                    docs: 'DOC?',
+                    insert: 'load_from_file($1)'
+                },
+                {
+                    label: 'load_from_path',
+                    detail: 'load_from_path(path)',
+                    docs: 'DOC?',
+                    insert: 'load_from_path($1)'
+                },
+                {
+                    label: 'load_from_resource',
+                    detail: 'load_from_resource(resource_path)',
+                    docs: 'DOC?',
+                    insert: 'load_from_resource($1)'
+                },
+                {
+                    label: 'load_from_string',
+                    detail: 'load_from_string(string)',
+                    docs: 'DOC?',
+                    insert: 'load_from_string($1)'
+                },
+                {
+                    label: 'load_named',
+                    detail: 'load_named(name, variant)',
+                    docs: 'DOC?',
+                    insert: 'load_named($1)'
+                },
+                {
+                    label: 'to_string',
+                    detail: 'to_string()',
+                    docs: 'DOC?',
+                    insert: 'to_string()'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GdkScreen = [
+                {
+                    label: 'get_default',
+                    detail: 'get_default()',
+                    docs: 'DOC?',
+                    insert: 'get_default()'
+                },
+                {
+                    label: 'height',
+                    detail: 'height()',
+                    docs: 'DOC?',
+                    insert: 'height()'
+                },
+                {
+                    label: 'height_mm',
+                    detail: 'height_mm()',
+                    docs: 'DOC?',
+                    insert: 'height_mm()'
+                },
+                {
+                    label: 'width',
+                    detail: 'width()',
+                    docs: 'DOC?',
+                    insert: 'width()'
+                },
+                {
+                    label: 'width_mm',
+                    detail: 'width_mm()',
+                    docs: 'DOC?',
+                    insert: 'width_mm()'
+                },
+                {
+                    label: 'get_active_window',
+                    detail: 'get_active_window()',
+                    docs: 'DOC?',
+                    insert: 'get_active_window()'
+                },
+                {
+                    label: 'get_display',
+                    detail: 'get_display()',
+                    docs: 'DOC?',
+                    insert: 'get_display()'
+                },
+                {
+                    label: 'get_font_options',
+                    detail: 'get_font_options()',
+                    docs: 'DOC?',
+                    insert: 'get_font_options()'
+                },
+                {
+                    label: 'get_height',
+                    detail: 'get_height()',
+                    docs: 'DOC?',
+                    insert: 'get_height()'
+                },
+                {
+                    label: 'get_height_mm',
+                    detail: 'get_height_mm()',
+                    docs: 'DOC?',
+                    insert: 'get_height_mm()'
+                },
+                {
+                    label: 'get_monitor_at_point',
+                    detail: 'get_monitor_at_point(x, y)',
+                    docs: 'DOC?',
+                    insert: 'get_monitor_at_point($1)'
+                },
+                {
+                    label: 'get_monitor_at_window',
+                    detail: 'get_monitor_at_window(window)',
+                    docs: 'DOC?',
+                    insert: 'get_monitor_at_window($1)'
+                },
+                {
+                    label: 'get_monitor_geometry',
+                    detail: 'get_monitor_geometry(monitor_num)',
+                    docs: 'DOC?',
+                    insert: 'get_monitor_geometry($1)'
+                },
+                {
+                    label: 'get_monitor_height_mm',
+                    detail: 'get_monitor_height_mm(monitor_num)',
+                    docs: 'DOC?',
+                    insert: 'get_monitor_height_mm($1)'
+                },
+                {
+                    label: 'get_monitor_plug_name',
+                    detail: 'get_monitor_plug_name(monitor_num)',
+                    docs: 'DOC?',
+                    insert: 'get_monitor_plug_name($1)'
+                },
+                {
+                    label: 'get_monitor_scale_factor',
+                    detail: 'get_monitor_scale_factor(monitor_num)',
+                    docs: 'DOC?',
+                    insert: 'get_monitor_scale_factor($1)'
+                },
+                {
+                    label: 'get_monitor_width_mm',
+                    detail: 'get_monitor_width_mm(monitor_num)',
+                    docs: 'DOC?',
+                    insert: 'get_monitor_width_mm($1)'
+                },
+                {
+                    label: 'get_monitor_workarea',
+                    detail: 'get_monitor_workarea(monitor_num)',
+                    docs: 'DOC?',
+                    insert: 'get_monitor_workarea($1)'
+                },
+                {
+                    label: 'get_n_monitors',
+                    detail: 'get_n_monitors()',
+                    docs: 'DOC?',
+                    insert: 'get_n_monitors()'
+                },
+                {
+                    label: 'get_number',
+                    detail: 'get_number()',
+                    docs: 'DOC?',
+                    insert: 'get_number()'
+                },
+                {
+                    label: 'get_primary_monitor',
+                    detail: 'get_primary_monitor()',
+                    docs: 'DOC?',
+                    insert: 'get_primary_monitor()'
+                },
+                {
+                    label: 'get_resolution',
+                    detail: 'get_resolution()',
+                    docs: 'DOC?',
+                    insert: 'get_resolution()'
+                },
+                {
+                    label: 'get_rgba_visual',
+                    detail: 'get_rgba_visual()',
+                    docs: 'DOC?',
+                    insert: 'get_rgba_visual()'
+                },
+                {
+                    label: 'get_root_window',
+                    detail: 'get_root_window()',
+                    docs: 'DOC?',
+                    insert: 'get_root_window()'
+                },
+                {
+                    label: 'get_setting',
+                    detail: 'get_setting(name, value)',
+                    docs: 'DOC?',
+                    insert: 'get_setting($1)'
+                },
+                {
+                    label: 'get_system_visual',
+                    detail: 'get_system_visual()',
+                    docs: 'DOC?',
+                    insert: 'get_system_visual()'
+                },
+                {
+                    label: 'get_toplevel_windows',
+                    detail: 'get_toplevel_windows()',
+                    docs: 'DOC?',
+                    insert: 'get_toplevel_windows()'
+                },
+                {
+                    label: 'get_width',
+                    detail: 'get_width()',
+                    docs: 'DOC?',
+                    insert: 'get_width()'
+                },
+                {
+                    label: 'get_width_mm',
+                    detail: 'get_width_mm()',
+                    docs: 'DOC?',
+                    insert: 'get_width_mm()'
+                },
+                {
+                    label: 'get_window_stack',
+                    detail: 'get_window_stack()',
+                    docs: 'DOC?',
+                    insert: 'get_window_stack()'
+                },
+                {
+                    label: 'is_composited',
+                    detail: 'is_composited()',
+                    docs: 'DOC?',
+                    insert: 'is_composited()'
+                },
+                {
+                    label: 'list_visuals',
+                    detail: 'list_visuals()',
+                    docs: 'DOC?',
+                    insert: 'list_visuals()'
+                },
+                {
+                    label: 'make_display_name',
+                    detail: 'make_display_name()',
+                    docs: 'DOC?',
+                    insert: 'make_display_name()'
+                },
+                {
+                    label: 'set_font_options',
+                    detail: 'set_font_options(options)',
+                    docs: 'DOC?',
+                    insert: 'set_font_options($1)'
+                },
+                {
+                    label: 'set_resolution',
+                    detail: 'set_resolution(dpi)',
+                    docs: 'DOC?',
+                    insert: 'set_resolution($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkStyleProvider = [
+                {
+                    label: 'get_icon_factory',
+                    detail: 'get_icon_factory(path)',
+                    docs: 'DOC?',
+                    insert: 'get_icon_factory($1)'
+                },
+                {
+                    label: 'get_style',
+                    detail: 'get_style(path)',
+                    docs: 'DOC?',
+                    insert: 'get_style($1)'
+                },
+                {
+                    label: 'get_style_property',
+                    detail: 'get_style_property(path, state, pspec)',
+                    docs: 'DOC?',
+                    insert: 'get_style_property($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkStyleContext = [
+                {
+                    label: 'add_provider_for_screen',
+                    detail: 'add_provider_for_screen(screen, provider, priority)',
+                    docs: 'DOC?',
+                    insert: 'add_provider_for_screen($1)'
+                },
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'remove_provider_for_screen',
+                    detail: 'remove_provider_for_screen(screen, provider)',
+                    docs: 'DOC?',
+                    insert: 'remove_provider_for_screen($1)'
+                },
+                {
+                    label: 'reset_widgets',
+                    detail: 'reset_widgets(screen)',
+                    docs: 'DOC?',
+                    insert: 'reset_widgets($1)'
+                },
+                {
+                    label: 'add_class',
+                    detail: 'add_class(class_name)',
+                    docs: 'DOC?',
+                    insert: 'add_class($1)'
+                },
+                {
+                    label: 'add_provider',
+                    detail: 'add_provider(provider, priority)',
+                    docs: 'DOC?',
+                    insert: 'add_provider($1)'
+                },
+                {
+                    label: 'add_region',
+                    detail: 'add_region(region_name, flags)',
+                    docs: 'DOC?',
+                    insert: 'add_region($1)'
+                },
+                {
+                    label: 'cancel_animations',
+                    detail: 'cancel_animations(region_id)',
+                    docs: 'DOC?',
+                    insert: 'cancel_animations($1)'
+                },
+                {
+                    label: 'get_background_color',
+                    detail: 'get_background_color(state)',
+                    docs: 'DOC?',
+                    insert: 'get_background_color($1)'
+                },
+                {
+                    label: 'get_border',
+                    detail: 'get_border(state)',
+                    docs: 'DOC?',
+                    insert: 'get_border($1)'
+                },
+                {
+                    label: 'get_border_color',
+                    detail: 'get_border_color(state)',
+                    docs: 'DOC?',
+                    insert: 'get_border_color($1)'
+                },
+                {
+                    label: 'get_color',
+                    detail: 'get_color(state)',
+                    docs: 'DOC?',
+                    insert: 'get_color($1)'
+                },
+                {
+                    label: 'get_direction',
+                    detail: 'get_direction()',
+                    docs: 'DOC?',
+                    insert: 'get_direction()'
+                },
+                {
+                    label: 'get_font',
+                    detail: 'get_font(state)',
+                    docs: 'DOC?',
+                    insert: 'get_font($1)'
+                },
+                {
+                    label: 'get_frame_clock',
+                    detail: 'get_frame_clock()',
+                    docs: 'DOC?',
+                    insert: 'get_frame_clock()'
+                },
+                {
+                    label: 'get_junction_sides',
+                    detail: 'get_junction_sides()',
+                    docs: 'DOC?',
+                    insert: 'get_junction_sides()'
+                },
+                {
+                    label: 'get_margin',
+                    detail: 'get_margin(state)',
+                    docs: 'DOC?',
+                    insert: 'get_margin($1)'
+                },
+                {
+                    label: 'get_padding',
+                    detail: 'get_padding(state)',
+                    docs: 'DOC?',
+                    insert: 'get_padding($1)'
+                },
+                {
+                    label: 'get_parent',
+                    detail: 'get_parent()',
+                    docs: 'DOC?',
+                    insert: 'get_parent()'
+                },
+                {
+                    label: 'get_path',
+                    detail: 'get_path()',
+                    docs: 'DOC?',
+                    insert: 'get_path()'
+                },
+                {
+                    label: 'get_property',
+                    detail: 'get_property(property, state)',
+                    docs: 'DOC?',
+                    insert: 'get_property($1)'
+                },
+                {
+                    label: 'get_scale',
+                    detail: 'get_scale()',
+                    docs: 'DOC?',
+                    insert: 'get_scale()'
+                },
+                {
+                    label: 'get_screen',
+                    detail: 'get_screen()',
+                    docs: 'DOC?',
+                    insert: 'get_screen()'
+                },
+                {
+                    label: 'get_section',
+                    detail: 'get_section(property)',
+                    docs: 'DOC?',
+                    insert: 'get_section($1)'
+                },
+                {
+                    label: 'get_state',
+                    detail: 'get_state()',
+                    docs: 'DOC?',
+                    insert: 'get_state()'
+                },
+                {
+                    label: 'get_style_property',
+                    detail: 'get_style_property(property_name, value)',
+                    docs: 'DOC?',
+                    insert: 'get_style_property($1)'
+                },
+                {
+                    label: 'has_class',
+                    detail: 'has_class(class_name)',
+                    docs: 'DOC?',
+                    insert: 'has_class($1)'
+                },
+                {
+                    label: 'has_region',
+                    detail: 'has_region(region_name)',
+                    docs: 'DOC?',
+                    insert: 'has_region($1)'
+                },
+                {
+                    label: 'invalidate',
+                    detail: 'invalidate()',
+                    docs: 'DOC?',
+                    insert: 'invalidate()'
+                },
+                {
+                    label: 'list_classes',
+                    detail: 'list_classes()',
+                    docs: 'DOC?',
+                    insert: 'list_classes()'
+                },
+                {
+                    label: 'list_regions',
+                    detail: 'list_regions()',
+                    docs: 'DOC?',
+                    insert: 'list_regions()'
+                },
+                {
+                    label: 'lookup_color',
+                    detail: 'lookup_color(color_name)',
+                    docs: 'DOC?',
+                    insert: 'lookup_color($1)'
+                },
+                {
+                    label: 'lookup_icon_set',
+                    detail: 'lookup_icon_set(stock_id)',
+                    docs: 'DOC?',
+                    insert: 'lookup_icon_set($1)'
+                },
+                {
+                    label: 'notify_state_change',
+                    detail: 'notify_state_change(window, region_id, state, state_value)',
+                    docs: 'DOC?',
+                    insert: 'notify_state_change($1)'
+                },
+                {
+                    label: 'pop_animatable_region',
+                    detail: 'pop_animatable_region()',
+                    docs: 'DOC?',
+                    insert: 'pop_animatable_region()'
+                },
+                {
+                    label: 'push_animatable_region',
+                    detail: 'push_animatable_region(region_id)',
+                    docs: 'DOC?',
+                    insert: 'push_animatable_region($1)'
+                },
+                {
+                    label: 'remove_class',
+                    detail: 'remove_class(class_name)',
+                    docs: 'DOC?',
+                    insert: 'remove_class($1)'
+                },
+                {
+                    label: 'remove_provider',
+                    detail: 'remove_provider(provider)',
+                    docs: 'DOC?',
+                    insert: 'remove_provider($1)'
+                },
+                {
+                    label: 'remove_region',
+                    detail: 'remove_region(region_name)',
+                    docs: 'DOC?',
+                    insert: 'remove_region($1)'
+                },
+                {
+                    label: 'restore',
+                    detail: 'restore()',
+                    docs: 'DOC?',
+                    insert: 'restore()'
+                },
+                {
+                    label: 'save',
+                    detail: 'save()',
+                    docs: 'DOC?',
+                    insert: 'save()'
+                },
+                {
+                    label: 'scroll_animations',
+                    detail: 'scroll_animations(window, dx, dy)',
+                    docs: 'DOC?',
+                    insert: 'scroll_animations($1)'
+                },
+                {
+                    label: 'set_background',
+                    detail: 'set_background(window)',
+                    docs: 'DOC?',
+                    insert: 'set_background($1)'
+                },
+                {
+                    label: 'set_direction',
+                    detail: 'set_direction(direction)',
+                    docs: 'DOC?',
+                    insert: 'set_direction($1)'
+                },
+                {
+                    label: 'set_frame_clock',
+                    detail: 'set_frame_clock(frame_clock)',
+                    docs: 'DOC?',
+                    insert: 'set_frame_clock($1)'
+                },
+                {
+                    label: 'set_junction_sides',
+                    detail: 'set_junction_sides(sides)',
+                    docs: 'DOC?',
+                    insert: 'set_junction_sides($1)'
+                },
+                {
+                    label: 'set_parent',
+                    detail: 'set_parent(parent)',
+                    docs: 'DOC?',
+                    insert: 'set_parent($1)'
+                },
+                {
+                    label: 'set_path',
+                    detail: 'set_path(path)',
+                    docs: 'DOC?',
+                    insert: 'set_path($1)'
+                },
+                {
+                    label: 'set_scale',
+                    detail: 'set_scale(scale)',
+                    docs: 'DOC?',
+                    insert: 'set_scale($1)'
+                },
+                {
+                    label: 'set_screen',
+                    detail: 'set_screen(screen)',
+                    docs: 'DOC?',
+                    insert: 'set_screen($1)'
+                },
+                {
+                    label: 'set_state',
+                    detail: 'set_state(flags)',
+                    docs: 'DOC?',
+                    insert: 'set_state($1)'
+                },
+                {
+                    label: 'state_is_running',
+                    detail: 'state_is_running(state)',
+                    docs: 'DOC?',
+                    insert: 'state_is_running($1)'
+                },
+                {
+                    label: 'to_string',
+                    detail: 'to_string(flags)',
+                    docs: 'DOC?',
+                    insert: 'to_string($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
             // ----- End Inheartence Tree -----------*-----------
 
             // All Main Methods
@@ -11468,6 +12080,24 @@ function activate(context) {
                         detail: 'ToolItemGroup()',
                         docs: 'DOC?',
                         insert: 'ToolItemGroup()'
+                    },
+                    {
+                        label: 'CssProvider',
+                        detail: 'CssProvider()',
+                        docs: 'DOC?',
+                        insert: 'CssProvider()'
+                    },
+                    {
+                        label: 'STYLE_PROVIDER_PRIORITY_APPLICATION',
+                        detail: 'STYLE_PROVIDER_PRIORITY_APPLICATION',
+                        docs: 'DOC?',
+                        insert: 'STYLE_PROVIDER_PRIORITY_APPLICATION'
+                    },
+                    {
+                        label: 'StyleContext',
+                        detail: 'StyleContext',
+                        docs: 'DOC?',
+                        insert: 'StyleContext'
                     }
                 ].map(s => createItem(s, vscode.CompletionItemKind.Class));
             }
@@ -11480,6 +12110,12 @@ function activate(context) {
                         detail: 'RGBA()',
                         docs: 'DOC?',
                         insert: 'RGBA($1)'
+                    },
+                    {
+                        label: 'Screen',
+                        detail: 'Screen()',
+                        docs: 'DOC?',
+                        insert: 'Screen'
                     }
                 ].map(s => createItem(s, vscode.CompletionItemKind.Class));
             }
@@ -11492,8 +12128,20 @@ function activate(context) {
                 const varName = VarMatchs[1];
                 let results = []; // Array for all
 
-                const gtkTypes = ['Window', 'Button', 'Box', 'Label', 'Entry'];
-                const isGtk = gtkTypes.some(type => getVarable(document, varName, type));
+                // CssProvider
+                if (getVarable(document, varName, 'CssProvider')) {
+                    results.push(...GtkCssProvider, ...GObjectMethodInheartence, ...GtkStyleProvider);
+                }
+
+                // CssStyleContext
+                if (getVarable(document, varName, 'StyleContext')) {
+                    results.push(...GtkStyleContext, ...GObjectMethodInheartence);
+                }
+
+                // GdkScreen
+                if (getVarableGDK(document, varName, 'Screen')) {
+                    results.push(...GdkScreen, ...GObjectMethodInheartence);
+                }
 
                 // Label
                 if (getVarable(document, varName, 'Label')) {
@@ -12351,6 +12999,15 @@ function activate(context) {
                 ].map(s => createItem(s, vscode.CompletionItemKind.Method))
             }
 
+            // suggest after any Widget.get_style_context()
+            const get_style_context_result = [];
+            if (linePrefix.match(/get_style_context\(\)\.\w*$/)) {
+                get_style_context_result.push(...GtkStyleContext, ...GObjectMethodInheartence);
+            }
+            if (get_style_context_result.length > 0) {
+                return get_style_context_result;
+            }
+
             if (linePrefix.match(/AssistantPageType\.\w*$/)){
                 return [
                     {
@@ -13049,6 +13706,21 @@ function getVarable(document, varName, gtkType) {
         return isInherited || isDirect;
     }
     return new RegExp(`(?:self\\.)?${varName}\\s*=\\s*Gtk\\.${gtkType}`, 'g').test(fullText);
+}
+
+//get varaible and confirm it, for example 'Gtk.Window' to auto connect.
+function getVarableGDK(document, varName, gtkType) {
+    const fullText = document.getText();
+    const classMatch = new RegExp(`(?:self\\.)?${varName}\\s*=\\s*(\\w+)`, 'g').exec(fullText);
+
+    if (classMatch) {
+        const className = classMatch[1];
+        const isInherited = new RegExp(`class\\s+${className}\\s*\\(\\s*Gdk\\.${gtkType}\\s*\\)`, 'g').test(fullText);
+        const isDirect = new RegExp(`(?:self\\.)?${varName}\\s*=\\s*Gdk\\.${gtkType}`, 'g').test(fullText);
+        
+        return isInherited || isDirect;
+    }
+    return new RegExp(`(?:self\\.)?${varName}\\s*=\\s*Gdk\\.${gtkType}`, 'g').test(fullText);
 }
 
 // any variable can auto connect
