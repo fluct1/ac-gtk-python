@@ -74,9 +74,81 @@ function activate(context) {
                     },
                     {
                         label: 'GObject',
-                        detail: 'GObject',
+                        detail: 'Lib',
                         docs: 'DOC?',
                         insert: 'GObject'
+                    },
+                    {
+                        label: 'GLib',
+                        detail: 'Lib',
+                        docs: 'DOC?',
+                        insert: 'GLib'
+                    },
+                    {
+                        label: 'Gio',
+                        detail: 'Lib',
+                        docs: 'DOC?',
+                        insert: 'Gio'
+                    },
+                    {
+                        label: 'Pango',
+                        detail: 'Lib',
+                        docs: 'DOC?',
+                        insert: 'Pango'
+                    },
+                    {
+                        label: 'cairo',
+                        detail: 'Lib',
+                        docs: 'DOC?',
+                        insert: 'cairo'
+                    },
+                    {
+                        label: 'Handy',
+                        detail: 'Lib',
+                        docs: 'DOC?',
+                        insert: 'Handy'
+                    },
+                    {
+                        label: 'GtkSource',
+                        detail: 'Lib',
+                        docs: 'DOC?',
+                        insert: 'GtkSource'
+                    },
+                    {
+                        label: 'WebKit2',
+                        detail: 'Lib',
+                        docs: 'DOC?',
+                        insert: 'WebKit2'
+                    },
+                    {
+                        label: 'AppIndicator3',
+                        detail: 'Lib',
+                        docs: 'DOC?',
+                        insert: 'AppIndicator3'
+                    },
+                    {
+                        label: 'Notify',
+                        detail: 'Lib',
+                        docs: 'DOC?',
+                        insert: 'Notify'
+                    },
+                    {
+                        label: 'Gst',
+                        detail: 'Lib',
+                        docs: 'DOC?',
+                        insert: 'Gst'
+                    },
+                    {
+                        label: 'Secret',
+                        detail: 'Lib',
+                        docs: 'DOC?',
+                        insert: 'Secret'
+                    },
+                    {
+                        label: 'Polkit',
+                        detail: 'Lib',
+                        docs: 'DOC?',
+                        insert: 'Polkit'
                     }
                 ];
                 allLib.forEach(lib => {
@@ -88,6 +160,309 @@ function activate(context) {
                 });
                 return importRes;
             }
+
+            if (linePrefix.match(/gi\.require_version\(\w*$/)) {
+                return [
+                    {
+                        label: 'Gtk',
+                        detail: 'VLib',
+                        docs: 'DOC?',
+                        insert: "'Gtk'"
+                    },
+                    {
+                        label: 'Gdk',
+                        detail: 'VLib',
+                        docs: 'DOC?',
+                        insert: "'Gdk'"
+                    },
+                    {
+                        label: 'GdkPixbuf',
+                        detail: 'VLib',
+                        docs: 'DOC?',
+                        insert: "'GdkPixbuf'"
+                    },
+                    {
+                        label: 'GObject',
+                        detail: 'VLib',
+                        docs: 'DOC?',
+                        insert: "'GObject'"
+                    },
+                    {
+                        label: 'GLib',
+                        detail: 'VLib',
+                        docs: 'DOC?',
+                        insert: "'GLib'"
+                    },
+                    {
+                        label: 'Gio',
+                        detail: 'VLib',
+                        docs: 'DOC?',
+                        insert: "'Gio'"
+                    },
+                    {
+                        label: 'Pango',
+                        detail: 'VLib',
+                        docs: 'DOC?',
+                        insert: "'Pango'"
+                    },
+                    {
+                        label: 'Handy',
+                        detail: 'VLib',
+                        docs: 'DOC?',
+                        insert: "'Handy'"
+                    },
+                    {
+                        label: 'GtkSource',
+                        detail: 'VLib',
+                        docs: 'DOC?',
+                        insert: "'GtkSource'"
+                    },
+                    {
+                        label: 'WebKit2',
+                        detail: 'VLib',
+                        docs: 'DOC?',
+                        insert: "'WebKit2'"
+                    },
+                    {
+                        label: 'AppIndicator3',
+                        detail: 'VLib',
+                        docs: 'DOC?',
+                        insert: "'AppIndicator3'"
+                    },
+                    {
+                        label: 'Notify',
+                        detail: 'VLib',
+                        docs: 'DOC?',
+                        insert: "'Notify'"
+                    },
+                    {
+                        label: 'Gst',
+                        detail: 'VLib',
+                        docs: 'DOC?',
+                        insert: "'Gst'"
+                    },
+                    {
+                        label: 'Secret',
+                        detail: 'VLib',
+                        docs: 'DOC?',
+                        insert: "'Secret'"
+                    },
+                    {
+                        label: 'Polkit',
+                        detail: 'VLib',
+                        docs: 'DOC?',
+                        insert: "'Polkit'"
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Module));
+            }
+
+            if (GetVLib('Gtk', linePrefix)) {
+                return [
+                    {
+                        label: '1.0',
+                        detail: 'Gtk - VLib',
+                        docs: 'DOC?',
+                        insert: "'1.0'"
+                    },
+                    {
+                        label: '2.0',
+                        detail: 'Gtk - VLib',
+                        docs: 'DOC?',
+                        insert: "'2.0'"
+                    },
+                    {
+                        label: '3.0',
+                        detail: '*Default | Gtk - VLib',
+                        docs: 'DOC?',
+                        insert: "'3.0'"
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Module));
+            }
+
+            if (GetVLib('Gdk', linePrefix)) {
+                return [
+                    {
+                        label: '1.0',
+                        detail: 'Gdk - VLib',
+                        docs: 'DOC?',
+                        insert: "'1.0'"
+                    },
+                    {
+                        label: '2.0',
+                        detail: 'Gdk - VLib',
+                        docs: 'DOC?',
+                        insert: "'2.0'"
+                    },
+                    {
+                        label: '3.0',
+                        detail: '*Default | Gdk - VLib',
+                        docs: 'DOC?',
+                        insert: "'3.0'"
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Module));
+            }
+
+            if (GetVLib('GdkPixbuf', linePrefix)) {
+                return [
+                    {
+                        label: '2.0',
+                        detail: '*Default | GdkPixbuf - VLib',
+                        docs: 'DOC?',
+                        insert: "'2.0'"
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Module));
+            }
+
+            if (GetVLib('GObject', linePrefix)) {
+                return [
+                    {
+                        label: '2.0',
+                        detail: '*Default | GObject - VLib',
+                        docs: 'DOC?',
+                        insert: "'2.0'"
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Module));
+            }
+
+            if (GetVLib('GLib', linePrefix)) {
+                return [
+                    {
+                        label: '2.0',
+                        detail: '*Default | GLib - VLib',
+                        docs: 'DOC?',
+                        insert: "'2.0'"
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Module));
+            }
+
+            if (GetVLib('Gio', linePrefix)) {
+                return [
+                    {
+                        label: '2.0',
+                        detail: '*Default | Gio - VLib',
+                        docs: 'DOC?',
+                        insert: "'2.0'"
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Module));
+            }
+
+            if (GetVLib('Pango', linePrefix)) {
+                return [
+                    {
+                        label: '1.0',
+                        detail: '*Default | Pango - VLib',
+                        docs: 'DOC?',
+                        insert: "'1.0'"
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Module));
+            }
+
+            if (GetVLib('Handy', linePrefix)) {
+                return [
+                    {
+                        label: '1.0',
+                        detail: '*Default | Handy - VLib',
+                        docs: 'DOC?',
+                        insert: "'1.0'"
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Module));
+            }
+
+            if (GetVLib('GtkSource', linePrefix)) {
+                return [
+                    {
+                        label: '3.0',
+                        detail: '*Default | GtkSource - VLib',
+                        docs: 'DOC?',
+                        insert: "'3.0'"
+                    },
+                    {
+                        label: '4.0',
+                        detail: 'GtkSource - VLib',
+                        docs: 'DOC?',
+                        insert: "'4.0'"
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Module));
+            }
+
+            if (GetVLib('WebKit2', linePrefix)) {
+                return [
+                    {
+                        label: '4.0',
+                        detail: '*Default | WebKit2 - VLib',
+                        docs: 'DOC?',
+                        insert: "'4.0'"
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Module));
+            }
+
+            if (GetVLib('AppIndicator3', linePrefix)) {
+                return [
+                    {
+                        label: '0.1',
+                        detail: '*Default | AppIndicator3 - VLib',
+                        docs: 'DOC?',
+                        insert: "'0.1'"
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Module));
+            }
+
+            if (GetVLib('Notify', linePrefix)) {
+                return [
+                    {
+                        label: '0.6',
+                        detail: 'Notify - VLib',
+                        docs: 'DOC?',
+                        insert: "'0.6'"
+                    },
+                    {
+                        label: '0.7',
+                        detail: '*Default | Notify - VLib',
+                        docs: 'DOC?',
+                        insert: "'0.7'"
+                    },
+                    {
+                        label: '0.8',
+                        detail: 'Notify - VLib',
+                        docs: 'DOC?',
+                        insert: "'0.8'"
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Module));
+            }
+
+            if (GetVLib('Gst', linePrefix)) {
+                return [
+                    {
+                        label: '1.0',
+                        detail: '*Default | Gst - VLib',
+                        docs: 'DOC?',
+                        insert: "'1.0'"
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Module));
+            }
+
+            if (GetVLib('Secret', linePrefix)) {
+                return [
+                    {
+                        label: '1.0',
+                        detail: '*Default | Secret - VLib',
+                        docs: 'DOC?',
+                        insert: "'1.0'"
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Module));
+            }
+
+            if (GetVLib('Polkit', linePrefix)) {
+                return [
+                    {
+                        label: '1.0',
+                        detail: '*Default | Polkit - VLib',
+                        docs: 'DOC?',
+                        insert: "'1.0'"
+                    }
+                ].map(s => createItem(s, vscode.CompletionItemKind.Module));
+            }
+            
             // ----------------------------------------------------------------------- |
 
             // ===================================================
@@ -11637,468 +12012,1960 @@ function activate(context) {
                 }
             ].map(s => createItem(s, vscode.CompletionItemKind.Method));
 
+            const GtkAccelGroup = [
+                {
+                    label: 'from_accel_closure',
+                    detail: 'from_accel_closure(closure)',
+                    docs: 'DOC?',
+                    insert: 'from_accel_closure($1)'
+                },
+                {
+                    label: 'new',
+                    detail: 'new()',
+                    docs: 'DOC?',
+                    insert: 'new()'
+                },
+                {
+                    label: 'activate',
+                    detail: 'activate(accel_quark, acceleratable, accel_key, accel_mods)',
+                    docs: 'DOC?',
+                    insert: 'activate($1)'
+                },
+                {
+                    label: 'connect',
+                    detail: 'connect(accel_key, accel_mods, accel_flags, closure)',
+                    docs: 'DOC?',
+                    insert: 'connect($1)'
+                },
+                {
+                    label: 'connect_by_path',
+                    detail: 'connect_by_path(accel_path, closure)',
+                    docs: 'DOC?',
+                    insert: 'connect_by_path($1)'
+                },
+                {
+                    label: 'disconnect',
+                    detail: 'disconnect(closure)',
+                    docs: 'DOC?',
+                    insert: 'disconnect($1)'
+                },
+                {
+                    label: 'disconnect_key',
+                    detail: 'disconnect_key(accel_key, accel_mods)',
+                    docs: 'DOC?',
+                    insert: 'disconnect_key($1)'
+                },
+                {
+                    label: 'find',
+                    detail: 'find(find_func, *data)',
+                    docs: 'DOC?',
+                    insert: 'find($1)'
+                },
+                {
+                    label: 'get_is_locked',
+                    detail: 'get_is_locked()',
+                    docs: 'DOC?',
+                    insert: 'get_is_locked()'
+                },
+                {
+                    label: 'get_modifier_mask',
+                    detail: 'get_modifier_mask()',
+                    docs: 'DOC?',
+                    insert: 'get_modifier_mask()'
+                },
+                {
+                    label: 'lock',
+                    detail: 'lock()',
+                    docs: 'DOC?',
+                    insert: 'lock()'
+                },
+                {
+                    label: 'query',
+                    detail: 'query(accel_key, accel_mods)',
+                    docs: 'DOC?',
+                    insert: 'query($1)'
+                },
+                {
+                    label: 'unlock',
+                    detail: 'unlock()',
+                    docs: 'DOC?',
+                    insert: 'unlock()'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkCellAccessibleParent = [
+                {
+                    label: 'activate',
+                    detail: 'activate(cell)',
+                    docs: 'DOC?',
+                    insert: 'activate($1)'
+                },
+                {
+                    label: 'edit',
+                    detail: 'edit(cell)',
+                    docs: 'DOC?',
+                    insert: 'edit($1)'
+                },
+                {
+                    label: 'expand_collapse',
+                    detail: 'expand_collapse(cell)',
+                    docs: 'DOC?',
+                    insert: 'expand_collapse($1)'
+                },
+                {
+                    label: 'get_cell_area',
+                    detail: 'get_cell_area(cell)',
+                    docs: 'DOC?',
+                    insert: 'get_cell_area($1)'
+                },
+                {
+                    label: 'get_cell_extents',
+                    detail: 'get_cell_extents(cell, coord_type)',
+                    docs: 'DOC?',
+                    insert: 'get_cell_extents($1)'
+                },
+                {
+                    label: 'get_cell_position',
+                    detail: 'get_cell_position(cell)',
+                    docs: 'DOC?',
+                    insert: 'get_cell_position($1)'
+                },
+                {
+                    label: 'get_child_index',
+                    detail: 'get_child_index(cell)',
+                    docs: 'DOC?',
+                    insert: 'get_child_index($1)'
+                },
+                {
+                    label: 'get_column_header_cells',
+                    detail: 'get_column_header_cells(cell)',
+                    docs: 'DOC?',
+                    insert: 'get_column_header_cells($1)'
+                },
+                {
+                    label: 'get_renderer_state',
+                    detail: 'get_renderer_state(cell)',
+                    docs: 'DOC?',
+                    insert: 'get_renderer_state($1)'
+                },
+                {
+                    label: 'get_row_header_cells',
+                    detail: 'get_row_header_cells(cell)',
+                    docs: 'DOC?',
+                    insert: 'get_row_header_cells($1)'
+                },
+                {
+                    label: 'grab_focus',
+                    detail: 'grab_focus(cell)',
+                    docs: 'DOC?',
+                    insert: 'grab_focus($1)'
+                },
+                {
+                    label: 'update_relationset',
+                    detail: 'update_relationset(cell, relationset)',
+                    docs: 'DOC?',
+                    insert: 'update_relationset($1)'
+                }
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
+            const GtkPrintOperationPreview = [
+
+            ].map(s => createItem(s, vscode.CompletionItemKind.Method));
+
             // ----- End Inheartence Tree -----------*-----------
 
             // All Main Methods
             if (linePrefix.match(/Gtk\.\w*$/i)) {
 				// --- Autocomplate Section ---
                 return [
-					{
-						label: 'Box',
-						detail: 'Gtk.Box()',
-						docs: 'A box in which you can arrange things in a grid pattern.',
-						insert: 'Box($1)'
-					},
+                    // Interfaces --- *
                     {
-                        label: 'Button',
-                        detail: 'Gtk.Button(label="")',
-                        docs: 'Interactive button - can be pressed.',
-                        insert: 'Button(label="$1")'
-                    },
-                    {
-                        label: 'Window',
-                        detail: 'Gtk.Window',
-                        docs: 'This is the main window that contains all the elements.',
-                        insert: 'Window'
-                    },
-                    {
-                        label: 'main',
-                        detail: 'Gtk.main()',
+                        label: 'Actionable',
+                        detail: 'Actionable()',
                         docs: 'DOC?',
-                        insert: 'main()'                        
+                        insert: 'Actionable',
                     },
                     {
-                        label: 'main_quit',
-                        detail: 'Gtk.main_quit',
+                        label: 'Activatable',
+                        detail: 'Activatable()',
                         docs: 'DOC?',
-                        insert: 'main_quit'
+                        insert: 'Activatable',
                     },
                     {
-                        label: 'Orientation',
-                        detail: 'Gtk.Orientation',
+                        label: 'AppChooser',
+                        detail: 'AppChooser()',
                         docs: 'DOC?',
-                        insert: 'Orientation'
+                        insert: 'AppChooser',
                     },
                     {
-                        label: 'Label',
-                        detail: 'Gtk.Label()',
+                        label: 'Buildable',
+                        detail: 'Buildable()',
                         docs: 'DOC?',
-                        insert: 'Label($1)'
+                        insert: 'Buildable',
                     },
                     {
-                        label: 'Align',
-                        detail: 'AC-GTK',
+                        label: 'CellAccessibleParent',
+                        detail: 'CellAccessibleParent()',
                         docs: 'DOC?',
-                        insert: 'Align'
+                        insert: 'CellAccessibleParent',
                     },
                     {
-                        label: 'Entry',
-                        detail: 'AC-GTK',
+                        label: 'CellEditable',
+                        detail: 'CellEditable()',
                         docs: 'DOC?',
-                        insert: 'Entry()'
+                        insert: 'CellEditable',
                     },
+                    {
+                        label: 'CellLayout',
+                        detail: 'CellLayout()',
+                        docs: 'DOC?',
+                        insert: 'CellLayout',
+                    },
+                    {
+                        label: 'ColorChooser',
+                        detail: 'ColorChooser()',
+                        docs: 'DOC?',
+                        insert: 'ColorChooser',
+                    },
+                    {
+                        label: 'Editable',
+                        detail: 'Editable()',
+                        docs: 'DOC?',
+                        insert: 'Editable',
+                    },
+                    {
+                        label: 'FileChooser',
+                        detail: 'FileChooser()',
+                        docs: 'DOC?',
+                        insert: 'FileChooser',
+                    },
+                    {
+                        label: 'FontChooser',
+                        detail: 'FontChooser()',
+                        docs: 'DOC?',
+                        insert: 'FontChooser',
+                    },
+                    {
+                        label: 'Orientable',
+                        detail: 'Orientable()',
+                        docs: 'DOC?',
+                        insert: 'Orientable',
+                    },
+                    {
+                        label: 'PrintOperationPreview',
+                        detail: 'PrintOperationPreview()',
+                        docs: 'DOC?',
+                        insert: 'PrintOperationPreview',
+                    },
+                    {
+                        label: 'RecentChooser',
+                        detail: 'RecentChooser()',
+                        docs: 'DOC?',
+                        insert: 'RecentChooser',
+                    },
+                    {
+                        label: 'Scrollable',
+                        detail: 'Scrollable()',
+                        docs: 'DOC?',
+                        insert: 'Scrollable',
+                    },
+                    {
+                        label: 'StyleProvider',
+                        detail: 'StyleProvider()',
+                        docs: 'DOC?',
+                        insert: 'StyleProvider',
+                    },
+                    {
+                        label: 'ToolShell',
+                        detail: 'ToolShell()',
+                        docs: 'DOC?',
+                        insert: 'ToolShell',
+                    },
+                    {
+                        label: 'TreeDragDest',
+                        detail: 'TreeDragDest()',
+                        docs: 'DOC?',
+                        insert: 'TreeDragDest',
+                    },
+                    {
+                        label: 'TreeDragSource',
+                        detail: 'TreeDragSource()',
+                        docs: 'DOC?',
+                        insert: 'TreeDragSource',
+                    },
+                    {
+                        label: 'TreeModel',
+                        detail: 'TreeModel()',
+                        docs: 'DOC?',
+                        insert: 'TreeModel',
+                    },
+                    {
+                        label: 'TreeSortable',
+                        detail: 'TreeSortable()',
+                        docs: 'DOC?',
+                        insert: 'TreeSortable',
+                    },
+                    // ---------------------
+                    // Classes --- *
                     {
                         label: 'AboutDialog',
-                        detail: 'AC-GTK',
+                        detail: 'AboutDialog()',
                         docs: 'DOC?',
-                        insert: 'AboutDialog()'
-                    },
-                    {
-                        label: 'WindowPosition',
-                        detail: 'Gtk.WindowPosition.[Align]',
-                        docs: 'DOC?',
-                        insert: 'WindowPosition'
-                    },
-                    {
-                        label: 'AccelLabel',
-                        detail: 'AccelLabel(*args, **kwargs)',
-                        docs: 'DOC?',
-                        insert: 'AccelLabel($1)'
-                    },
-                    {
-                        label: 'ActionBar',
-                        detail: 'ActionBar(**kwargs)',
-                        docs: 'DOC?',
-                        insert: 'ActionBar()'
+                        insert: 'AboutDialog',
                     },
                     {
                         label: 'AccelGroup',
                         detail: 'AccelGroup()',
                         docs: 'DOC?',
-                        insert: 'AccelGroup()'
+                        insert: 'AccelGroup',
+                    },
+                    {
+                        label: 'AccelLabel',
+                        detail: 'AccelLabel()',
+                        docs: 'DOC?',
+                        insert: 'AccelLabel',
+                    },
+                    {
+                        label: 'AccelMap',
+                        detail: 'AccelMap()',
+                        docs: 'DOC?',
+                        insert: 'AccelMap',
+                    },
+                    {
+                        label: 'Accessible',
+                        detail: 'Accessible()',
+                        docs: 'DOC?',
+                        insert: 'Accessible',
+                    },
+                    {
+                        label: 'Action',
+                        detail: 'Action()',
+                        docs: 'DOC?',
+                        insert: 'Action',
+                    },
+                    {
+                        label: 'ActionBar',
+                        detail: 'ActionBar()',
+                        docs: 'DOC?',
+                        insert: 'ActionBar',
+                    },
+                    {
+                        label: 'ActionGroup',
+                        detail: 'ActionGroup()',
+                        docs: 'DOC?',
+                        insert: 'ActionGroup',
+                    },
+                    {
+                        label: 'Adjustment',
+                        detail: 'Adjustment()',
+                        docs: 'DOC?',
+                        insert: 'Adjustment',
+                    },
+                    {
+                        label: 'Alignment',
+                        detail: 'Alignment()',
+                        docs: 'DOC?',
+                        insert: 'Alignment',
                     },
                     {
                         label: 'AppChooserButton',
                         detail: 'AppChooserButton()',
                         docs: 'DOC?',
-                        insert: 'AppChooserButton($1)'
-                    },
-                    {
-                        label: 'ComboBox',
-                        detail: 'ComboBox()',
-                        docs: 'DOC?',
-                        insert: 'ComboBox()'
+                        insert: 'AppChooserButton',
                     },
                     {
                         label: 'AppChooserDialog',
                         detail: 'AppChooserDialog()',
                         docs: 'DOC?',
-                        insert: 'AppChooserDialog()'
+                        insert: 'AppChooserDialog',
+                    },
+                    {
+                        label: 'AppChooserWidget',
+                        detail: 'AppChooserWidget()',
+                        docs: 'DOC?',
+                        insert: 'AppChooserWidget',
+                    },
+                    {
+                        label: 'Application',
+                        detail: 'Application()',
+                        docs: 'DOC?',
+                        insert: 'Application',
+                    },
+                    {
+                        label: 'ApplicationWindow',
+                        detail: 'ApplicationWindow()',
+                        docs: 'DOC?',
+                        insert: 'ApplicationWindow',
+                    },
+                    {
+                        label: 'Arrow',
+                        detail: 'Arrow()',
+                        docs: 'DOC?',
+                        insert: 'Arrow',
+                    },
+                    {
+                        label: 'ArrowAccessible',
+                        detail: 'ArrowAccessible()',
+                        docs: 'DOC?',
+                        insert: 'ArrowAccessible',
+                    },
+                    {
+                        label: 'AspectFrame',
+                        detail: 'AspectFrame()',
+                        docs: 'DOC?',
+                        insert: 'AspectFrame',
                     },
                     {
                         label: 'Assistant',
                         detail: 'Assistant()',
                         docs: 'DOC?',
-                        insert: 'Assistant()'
+                        insert: 'Assistant',
                     },
                     {
-                        label: 'CheckButton',
-                        detail: 'CheckButton()',
+                        label: 'Bin',
+                        detail: 'Bin()',
                         docs: 'DOC?',
-                        insert: 'CheckButton($1)'
+                        insert: 'Bin',
                     },
                     {
-                        label: 'AssistantPageType',
-                        detail: 'AssistantPageType',
+                        label: 'BooleanCellAccessible',
+                        detail: 'BooleanCellAccessible()',
                         docs: 'DOC?',
-                        insert: 'AssistantPageType'
+                        insert: 'BooleanCellAccessible',
                     },
                     {
-                        label: 'ColorChooserWidget',
-                        detail: 'ColorChooserWidget()',
+                        label: 'Box',
+                        detail: 'Box()',
                         docs: 'DOC?',
-                        insert: 'ColorChooserWidget()'
+                        insert: 'Box',
                     },
                     {
-                        label: 'ColorButton',
-                        detail: 'ColorButton()',
+                        label: 'Builder',
+                        detail: 'Builder()',
                         docs: 'DOC?',
-                        insert: 'ColorButton()'
+                        insert: 'Builder',
                     },
                     {
-                        label: 'ColorChooserDialog',
-                        detail: 'ColorChooserDialog()',
+                        label: 'Button',
+                        detail: 'Button()',
                         docs: 'DOC?',
-                        insert: 'ColorChooserDialog($1)'
+                        insert: 'Button',
                     },
                     {
-                        label: 'ResponseType',
-                        detail: 'ResponseType',
+                        label: 'ButtonAccessible',
+                        detail: 'ButtonAccessible()',
                         docs: 'DOC?',
-                        insert: 'ResponseType'
+                        insert: 'ButtonAccessible',
                     },
                     {
-                        label: 'ListStore',
-                        detail: 'ListStore()',
+                        label: 'ButtonBox',
+                        detail: 'ButtonBox()',
                         docs: 'DOC?',
-                        insert: 'ListStore($1)'
+                        insert: 'ButtonBox',
+                    },
+                    {
+                        label: 'Calendar',
+                        detail: 'Calendar()',
+                        docs: 'DOC?',
+                        insert: 'Calendar',
+                    },
+                    {
+                        label: 'CellAccessible',
+                        detail: 'CellAccessible()',
+                        docs: 'DOC?',
+                        insert: 'CellAccessible',
+                    },
+                    {
+                        label: 'CellArea',
+                        detail: 'CellArea()',
+                        docs: 'DOC?',
+                        insert: 'CellArea',
+                    },
+                    {
+                        label: 'CellAreaBox',
+                        detail: 'CellAreaBox()',
+                        docs: 'DOC?',
+                        insert: 'CellAreaBox',
+                    },
+                    {
+                        label: 'CellAreaContext',
+                        detail: 'CellAreaContext()',
+                        docs: 'DOC?',
+                        insert: 'CellAreaContext',
+                    },
+                    {
+                        label: 'CellRenderer',
+                        detail: 'CellRenderer()',
+                        docs: 'DOC?',
+                        insert: 'CellRenderer',
+                    },
+                    {
+                        label: 'CellRendererAccel',
+                        detail: 'CellRendererAccel()',
+                        docs: 'DOC?',
+                        insert: 'CellRendererAccel',
+                    },
+                    {
+                        label: 'CellRendererCombo',
+                        detail: 'CellRendererCombo()',
+                        docs: 'DOC?',
+                        insert: 'CellRendererCombo',
+                    },
+                    {
+                        label: 'CellRendererPixbuf',
+                        detail: 'CellRendererPixbuf()',
+                        docs: 'DOC?',
+                        insert: 'CellRendererPixbuf',
+                    },
+                    {
+                        label: 'CellRendererProgress',
+                        detail: 'CellRendererProgress()',
+                        docs: 'DOC?',
+                        insert: 'CellRendererProgress',
+                    },
+                    {
+                        label: 'CellRendererSpin',
+                        detail: 'CellRendererSpin()',
+                        docs: 'DOC?',
+                        insert: 'CellRendererSpin',
+                    },
+                    {
+                        label: 'CellRendererSpinner',
+                        detail: 'CellRendererSpinner()',
+                        docs: 'DOC?',
+                        insert: 'CellRendererSpinner',
                     },
                     {
                         label: 'CellRendererText',
                         detail: 'CellRendererText()',
                         docs: 'DOC?',
-                        insert: 'CellRendererText()'
+                        insert: 'CellRendererText',
                     },
                     {
-                        label: 'FileChooserButton',
-                        detail: 'FileChooserButton()',
+                        label: 'CellRendererToggle',
+                        detail: 'CellRendererToggle()',
                         docs: 'DOC?',
-                        insert: 'FileChooserButton'
+                        insert: 'CellRendererToggle',
                     },
                     {
-                        label: 'FileChooserDialog',
-                        detail: 'FileChooserDialog()',
+                        label: 'CellView',
+                        detail: 'CellView()',
                         docs: 'DOC?',
-                        insert: 'FileChooserDialog($1)'
+                        insert: 'CellView',
                     },
                     {
-                        label: 'FileChooserAction',
-                        detail: 'FileChooserAction()',
+                        label: 'CheckButton',
+                        detail: 'CheckButton()',
                         docs: 'DOC?',
-                        insert: 'FileChooserAction'
+                        insert: 'CheckButton',
                     },
                     {
-                        label: 'ResponseType',
-                        detail: 'ResponseType()',
+                        label: 'CheckMenuItem',
+                        detail: 'CheckMenuItem()',
                         docs: 'DOC?',
-                        insert: 'ResponseType'
+                        insert: 'CheckMenuItem',
                     },
                     {
-                        label: 'FlowBox',
-                        detail: 'FlowBox()',
+                        label: 'CheckMenuItemAccessible',
+                        detail: 'CheckMenuItemAccessible()',
                         docs: 'DOC?',
-                        insert: 'FlowBox()'
+                        insert: 'CheckMenuItemAccessible',
                     },
                     {
-                        label: 'FontButton',
-                        detail: 'FontButton()',
+                        label: 'Clipboard',
+                        detail: 'Clipboard()',
                         docs: 'DOC?',
-                        insert: 'FontButton()'
+                        insert: 'Clipboard',
                     },
                     {
-                        label: 'Dialog',
-                        detail: 'Dialog()',
+                        label: 'ColorButton',
+                        detail: 'ColorButton()',
                         docs: 'DOC?',
-                        insert: 'Dialog()'
+                        insert: 'ColorButton',
                     },
                     {
-                        label: 'FontChooserDialog',
-                        detail: 'FontChooserDialog()',
+                        label: 'ColorChooserDialog',
+                        detail: 'ColorChooserDialog()',
                         docs: 'DOC?',
-                        insert: 'FontChooserDialog()'
+                        insert: 'ColorChooserDialog',
                     },
                     {
-                        label: 'Frame',
-                        detail: 'Frame()',
+                        label: 'ColorChooserWidget',
+                        detail: 'ColorChooserWidget()',
                         docs: 'DOC?',
-                        insert: 'Frame()'
+                        insert: 'ColorChooserWidget',
                     },
                     {
-                        label: 'GLArea',
-                        detail: 'GLArea()',
+                        label: 'ColorSelection',
+                        detail: 'ColorSelection()',
                         docs: 'DOC?',
-                        insert: 'GLArea()'
+                        insert: 'ColorSelection',
                     },
                     {
-                        label: 'Grid',
-                        detail: 'Grid()',
+                        label: 'ColorSelectionDialog',
+                        detail: 'ColorSelectionDialog()',
                         docs: 'DOC?',
-                        insert: 'Grid()'
+                        insert: 'ColorSelectionDialog',
                     },
                     {
-                        label: 'HeaderBar',
-                        detail: 'HeaderBar()',
+                        label: 'ComboBox',
+                        detail: 'ComboBox()',
                         docs: 'DOC?',
-                        insert: 'HeaderBar()'
+                        insert: 'ComboBox',
                     },
                     {
-                        label: 'IconView',
-                        detail: 'IconView()',
+                        label: 'ComboBoxAccessible',
+                        detail: 'ComboBoxAccessible()',
                         docs: 'DOC?',
-                        insert: 'IconView()'
+                        insert: 'ComboBoxAccessible',
                     },
                     {
-                        label: 'Image',
-                        detail: 'Image()',
+                        label: 'ComboBoxText',
+                        detail: 'ComboBoxText()',
                         docs: 'DOC?',
-                        insert: 'Image()'
+                        insert: 'ComboBoxText',
                     },
                     {
-                        label: 'InfoBar',
-                        detail: 'InfoBar()',
+                        label: 'Container',
+                        detail: 'Container()',
                         docs: 'DOC?',
-                        insert: 'InfoBar()'
+                        insert: 'Container',
                     },
                     {
-                        label: 'LevelBar',
-                        detail: 'LevelBar()',
+                        label: 'ContainerAccessible',
+                        detail: 'ContainerAccessible()',
                         docs: 'DOC?',
-                        insert: 'LevelBar()'
+                        insert: 'ContainerAccessible',
                     },
                     {
-                        label: 'LinkButton',
-                        detail: 'LinkButton()',
+                        label: 'ContainerCellAccessible',
+                        detail: 'ContainerCellAccessible()',
                         docs: 'DOC?',
-                        insert: 'LinkButton()'
-                    },
-                    {
-                        label: 'ListBox',
-                        detail: 'ListBox()',
-                        docs: 'DOC?',
-                        insert: 'ListBox()'
-                    },
-                    {
-                        label: 'LockButton',
-                        detail: 'LockButton()',
-                        docs: 'DOC?',
-                        insert: 'LockButton()'
-                    },
-                    {
-                        label: 'MenuBar',
-                        detail: 'MenuBar()',
-                        docs: 'DOC?',
-                        insert: 'MenuBar()'
-                    },
-                    {
-                        label: 'MenuButton',
-                        detail: 'MenuButton()',
-                        docs: 'DOC?',
-                        insert: 'MenuButton()'
-                    },
-                    {
-                        label: 'MessageDialog',
-                        detail: 'MessageDialog()',
-                        docs: 'DOC?',
-                        insert: 'MessageDialog()'
-                    },
-                    {
-                        label: 'Notebook',
-                        detail: 'Notebook()',
-                        docs: 'DOC?',
-                        insert: 'Notebook()'
-                    },
-                    {
-                        label: 'Paned',
-                        detail: 'Paned()',
-                        docs: 'DOC?',
-                        insert: 'Paned()'
-                    },
-                    {
-                        label: 'PlacesSidebar',
-                        detail: 'PlacesSidebar()',
-                        docs: 'DOC?',
-                        insert: 'PlacesSidebar()'
-                    },
-                    {
-                        label: 'ProgressBar',
-                        detail: 'ProgressBar()',
-                        docs: 'DOC?',
-                        insert: 'ProgressBar()'
-                    },
-                    {
-                        label: 'RadioButton',
-                        detail: 'RadioButton()',
-                        docs: 'DOC?',
-                        insert: 'RadioButton()'
-                    },
-                    {
-                        label: 'RecentChooserDialog',
-                        detail: 'RecentChooserDialog()',
-                        docs: 'DOC?',
-                        insert: 'RecentChooserDialog()'
-                    },
-                    {
-                        label: 'Scale',
-                        detail: 'Scale()',
-                        docs: 'DOC?',
-                        insert: 'Scale()'
-                    },
-                    {
-                        label: 'Scrollbar',
-                        detail: 'Scrollbar()',
-                        docs: 'DOC?',
-                        insert: 'Scrollbar()'
-                    },
-                    {
-                        label: 'ScrolledWindow',
-                        detail: 'ScrolledWindow()',
-                        docs: 'DOC?',
-                        insert: 'ScrolledWindow()'
-                    },
-                    {
-                        label: 'SearchBar',
-                        detail: 'SearchBar()',
-                        docs: 'DOC?',
-                        insert: 'SearchBar()'
-                    },
-                    {
-                        label: 'SearchEntry',
-                        detail: 'SearchEntry()',
-                        docs: 'DOC?',
-                        insert: 'SearchEntry()'
-                    },
-                    {
-                        label: 'Separator',
-                        detail: 'Separator()',
-                        docs: 'DOC?',
-                        insert: 'Separator()'
-                    },
-                    {
-                        label: 'SpinButton',
-                        detail: 'SpinButton()',
-                        docs: 'DOC?',
-                        insert: 'SpinButton()'
-                    },
-                    {
-                        label: 'Spinner',
-                        detail: 'Spinner()',
-                        docs: 'DOC?',
-                        insert: 'Spinner()'
-                    },
-                    {
-                        label: 'Stack',
-                        detail: 'Stack()',
-                        docs: 'DOC?',
-                        insert: 'Stack()'
-                    },
-                    {
-                        label: 'StackSwitcher',
-                        detail: 'StackSwitcher()',
-                        docs: 'DOC?',
-                        insert: 'StackSwitcher()'
-                    },
-                    {
-                        label: 'Statusbar',
-                        detail: 'Statusbar()',
-                        docs: 'DOC?',
-                        insert: 'Statusbar()'
-                    },
-                    {
-                        label: 'Switch',
-                        detail: 'Switch()',
-                        docs: 'DOC?',
-                        insert: 'Switch()'
-                    },
-                    {
-                        label: 'TextView',
-                        detail: 'TextView()',
-                        docs: 'DOC?',
-                        insert: 'TextView()'
-                    },
-                    {
-                        label: 'ToggleButton',
-                        detail: 'ToggleButton()',
-                        docs: 'DOC?',
-                        insert: 'ToggleButton()'
-                    },
-                    {
-                        label: 'ToolPalette',
-                        detail: 'ToolPalette()',
-                        docs: 'DOC?',
-                        insert: 'ToolPalette()'
-                    },
-                    {
-                        label: 'Toolbar',
-                        detail: 'Toolbar()',
-                        docs: 'DOC?',
-                        insert: 'Toolbar()'
-                    },
-                    {
-                        label: 'TreeView',
-                        detail: 'TreeView()',
-                        docs: 'DOC?',
-                        insert: 'TreeView()'
-                    },
-                    {
-                        label: 'VolumeButton',
-                        detail: 'VolumeButton()',
-                        docs: 'DOC?',
-                        insert: 'VolumeButton()'
-                    },
-                    {
-                        label: 'ToolItemGroup',
-                        detail: 'ToolItemGroup()',
-                        docs: 'DOC?',
-                        insert: 'ToolItemGroup()'
+                        insert: 'ContainerCellAccessible',
                     },
                     {
                         label: 'CssProvider',
                         detail: 'CssProvider()',
                         docs: 'DOC?',
-                        insert: 'CssProvider()'
+                        insert: 'CssProvider',
                     },
+                    {
+                        label: 'Dialog',
+                        detail: 'Dialog()',
+                        docs: 'DOC?',
+                        insert: 'Dialog',
+                    },
+                    {
+                        label: 'DrawingArea',
+                        detail: 'DrawingArea()',
+                        docs: 'DOC?',
+                        insert: 'DrawingArea',
+                    },
+                    {
+                        label: 'Entry',
+                        detail: 'Entry()',
+                        docs: 'DOC?',
+                        insert: 'Entry',
+                    },
+                    {
+                        label: 'EntryAccessible',
+                        detail: 'EntryAccessible()',
+                        docs: 'DOC?',
+                        insert: 'EntryAccessible',
+                    },
+                    {
+                        label: 'EntryBuffer',
+                        detail: 'EntryBuffer()',
+                        docs: 'DOC?',
+                        insert: 'EntryBuffer',
+                    },
+                    {
+                        label: 'EntryCompletion',
+                        detail: 'EntryCompletion()',
+                        docs: 'DOC?',
+                        insert: 'EntryCompletion',
+                    },
+                    {
+                        label: 'EntryIconAccessible',
+                        detail: 'EntryIconAccessible()',
+                        docs: 'DOC?',
+                        insert: 'EntryIconAccessible',
+                    },
+                    {
+                        label: 'EventBox',
+                        detail: 'EventBox()',
+                        docs: 'DOC?',
+                        insert: 'EventBox',
+                    },
+                    {
+                        label: 'EventController',
+                        detail: 'EventController()',
+                        docs: 'DOC?',
+                        insert: 'EventController',
+                    },
+                    {
+                        label: 'EventControllerKey',
+                        detail: 'EventControllerKey()',
+                        docs: 'DOC?',
+                        insert: 'EventControllerKey',
+                    },
+                    {
+                        label: 'EventControllerMotion',
+                        detail: 'EventControllerMotion()',
+                        docs: 'DOC?',
+                        insert: 'EventControllerMotion',
+                    },
+                    {
+                        label: 'EventControllerScroll',
+                        detail: 'EventControllerScroll()',
+                        docs: 'DOC?',
+                        insert: 'EventControllerScroll',
+                    },
+                    {
+                        label: 'Expander',
+                        detail: 'Expander()',
+                        docs: 'DOC?',
+                        insert: 'Expander',
+                    },
+                    {
+                        label: 'ExpanderAccessible',
+                        detail: 'ExpanderAccessible()',
+                        docs: 'DOC?',
+                        insert: 'ExpanderAccessible',
+                    },
+                    {
+                        label: 'FileChooserButton',
+                        detail: 'FileChooserButton()',
+                        docs: 'DOC?',
+                        insert: 'FileChooserButton',
+                    },
+                    {
+                        label: 'FileChooserDialog',
+                        detail: 'FileChooserDialog()',
+                        docs: 'DOC?',
+                        insert: 'FileChooserDialog',
+                    },
+                    {
+                        label: 'FileChooserNative',
+                        detail: 'FileChooserNative()',
+                        docs: 'DOC?',
+                        insert: 'FileChooserNative',
+                    },
+                    {
+                        label: 'FileChooserWidget',
+                        detail: 'FileChooserWidget()',
+                        docs: 'DOC?',
+                        insert: 'FileChooserWidget',
+                    },
+                    {
+                        label: 'FileChooserWidgetAccessible',
+                        detail: 'FileChooserWidgetAccessible()',
+                        docs: 'DOC?',
+                        insert: 'FileChooserWidgetAccessible',
+                    },
+                    {
+                        label: 'FileFilter',
+                        detail: 'FileFilter()',
+                        docs: 'DOC?',
+                        insert: 'FileFilter',
+                    },
+                    {
+                        label: 'Fixed',
+                        detail: 'Fixed()',
+                        docs: 'DOC?',
+                        insert: 'Fixed',
+                    },
+                    {
+                        label: 'FlowBox',
+                        detail: 'FlowBox()',
+                        docs: 'DOC?',
+                        insert: 'FlowBox',
+                    },
+                    {
+                        label: 'FlowBoxAccessible',
+                        detail: 'FlowBoxAccessible()',
+                        docs: 'DOC?',
+                        insert: 'FlowBoxAccessible',
+                    },
+                    {
+                        label: 'FlowBoxChild',
+                        detail: 'FlowBoxChild()',
+                        docs: 'DOC?',
+                        insert: 'FlowBoxChild',
+                    },
+                    {
+                        label: 'FlowBoxChildAccessible',
+                        detail: 'FlowBoxChildAccessible()',
+                        docs: 'DOC?',
+                        insert: 'FlowBoxChildAccessible',
+                    },
+                    {
+                        label: 'FontButton',
+                        detail: 'FontButton()',
+                        docs: 'DOC?',
+                        insert: 'FontButton',
+                    },
+                    {
+                        label: 'FontChooserDialog',
+                        detail: 'FontChooserDialog()',
+                        docs: 'DOC?',
+                        insert: 'FontChooserDialog',
+                    },
+                    {
+                        label: 'FontChooserWidget',
+                        detail: 'FontChooserWidget()',
+                        docs: 'DOC?',
+                        insert: 'FontChooserWidget',
+                    },
+                    {
+                        label: 'FontSelection',
+                        detail: 'FontSelection()',
+                        docs: 'DOC?',
+                        insert: 'FontSelection',
+                    },
+                    {
+                        label: 'FontSelectionDialog',
+                        detail: 'FontSelectionDialog()',
+                        docs: 'DOC?',
+                        insert: 'FontSelectionDialog',
+                    },
+                    {
+                        label: 'Frame',
+                        detail: 'Frame()',
+                        docs: 'DOC?',
+                        insert: 'Frame',
+                    },
+                    {
+                        label: 'FrameAccessible',
+                        detail: 'FrameAccessible()',
+                        docs: 'DOC?',
+                        insert: 'FrameAccessible',
+                    },
+                    {
+                        label: 'GLArea',
+                        detail: 'GLArea()',
+                        docs: 'DOC?',
+                        insert: 'GLArea',
+                    },
+                    {
+                        label: 'Gesture',
+                        detail: 'Gesture()',
+                        docs: 'DOC?',
+                        insert: 'Gesture',
+                    },
+                    {
+                        label: 'GestureDrag',
+                        detail: 'GestureDrag()',
+                        docs: 'DOC?',
+                        insert: 'GestureDrag',
+                    },
+                    {
+                        label: 'GestureLongPress',
+                        detail: 'GestureLongPress()',
+                        docs: 'DOC?',
+                        insert: 'GestureLongPress',
+                    },
+                    {
+                        label: 'GestureMultiPress',
+                        detail: 'GestureMultiPress()',
+                        docs: 'DOC?',
+                        insert: 'GestureMultiPress',
+                    },
+                    {
+                        label: 'GesturePan',
+                        detail: 'GesturePan()',
+                        docs: 'DOC?',
+                        insert: 'GesturePan',
+                    },
+                    {
+                        label: 'GestureRotate',
+                        detail: 'GestureRotate()',
+                        docs: 'DOC?',
+                        insert: 'GestureRotate',
+                    },
+                    {
+                        label: 'GestureSingle',
+                        detail: 'GestureSingle()',
+                        docs: 'DOC?',
+                        insert: 'GestureSingle',
+                    },
+                    {
+                        label: 'GestureStylus',
+                        detail: 'GestureStylus()',
+                        docs: 'DOC?',
+                        insert: 'GestureStylus',
+                    },
+                    {
+                        label: 'GestureSwipe',
+                        detail: 'GestureSwipe()',
+                        docs: 'DOC?',
+                        insert: 'GestureSwipe',
+                    },
+                    {
+                        label: 'GestureZoom',
+                        detail: 'GestureZoom()',
+                        docs: 'DOC?',
+                        insert: 'GestureZoom',
+                    },
+                    {
+                        label: 'Grid',
+                        detail: 'Grid()',
+                        docs: 'DOC?',
+                        insert: 'Grid',
+                    },
+                    {
+                        label: 'HBox',
+                        detail: 'HBox()',
+                        docs: 'DOC?',
+                        insert: 'HBox',
+                    },
+                    {
+                        label: 'HButtonBox',
+                        detail: 'HButtonBox()',
+                        docs: 'DOC?',
+                        insert: 'HButtonBox',
+                    },
+                    {
+                        label: 'HPaned',
+                        detail: 'HPaned()',
+                        docs: 'DOC?',
+                        insert: 'HPaned',
+                    },
+                    {
+                        label: 'HSV',
+                        detail: 'HSV()',
+                        docs: 'DOC?',
+                        insert: 'HSV',
+                    },
+                    {
+                        label: 'HScale',
+                        detail: 'HScale()',
+                        docs: 'DOC?',
+                        insert: 'HScale',
+                    },
+                    {
+                        label: 'HScrollbar',
+                        detail: 'HScrollbar()',
+                        docs: 'DOC?',
+                        insert: 'HScrollbar',
+                    },
+                    {
+                        label: 'HSeparator',
+                        detail: 'HSeparator()',
+                        docs: 'DOC?',
+                        insert: 'HSeparator',
+                    },
+                    {
+                        label: 'HandleBox',
+                        detail: 'HandleBox()',
+                        docs: 'DOC?',
+                        insert: 'HandleBox',
+                    },
+                    {
+                        label: 'HeaderBar',
+                        detail: 'HeaderBar()',
+                        docs: 'DOC?',
+                        insert: 'HeaderBar',
+                    },
+                    {
+                        label: 'HeaderBarAccessible',
+                        detail: 'HeaderBarAccessible()',
+                        docs: 'DOC?',
+                        insert: 'HeaderBarAccessible',
+                    },
+                    {
+                        label: 'IMContext',
+                        detail: 'IMContext()',
+                        docs: 'DOC?',
+                        insert: 'IMContext',
+                    },
+                    {
+                        label: 'IMContextSimple',
+                        detail: 'IMContextSimple()',
+                        docs: 'DOC?',
+                        insert: 'IMContextSimple',
+                    },
+                    {
+                        label: 'IMMulticontext',
+                        detail: 'IMMulticontext()',
+                        docs: 'DOC?',
+                        insert: 'IMMulticontext',
+                    },
+                    {
+                        label: 'IconFactory',
+                        detail: 'IconFactory()',
+                        docs: 'DOC?',
+                        insert: 'IconFactory',
+                    },
+                    {
+                        label: 'IconInfo',
+                        detail: 'IconInfo()',
+                        docs: 'DOC?',
+                        insert: 'IconInfo',
+                    },
+                    {
+                        label: 'IconTheme',
+                        detail: 'IconTheme()',
+                        docs: 'DOC?',
+                        insert: 'IconTheme',
+                    },
+                    {
+                        label: 'IconView',
+                        detail: 'IconView()',
+                        docs: 'DOC?',
+                        insert: 'IconView',
+                    },
+                    {
+                        label: 'IconViewAccessible',
+                        detail: 'IconViewAccessible()',
+                        docs: 'DOC?',
+                        insert: 'IconViewAccessible',
+                    },
+                    {
+                        label: 'Image',
+                        detail: 'Image()',
+                        docs: 'DOC?',
+                        insert: 'Image',
+                    },
+                    {
+                        label: 'ImageAccessible',
+                        detail: 'ImageAccessible()',
+                        docs: 'DOC?',
+                        insert: 'ImageAccessible',
+                    },
+                    {
+                        label: 'ImageCellAccessible',
+                        detail: 'ImageCellAccessible()',
+                        docs: 'DOC?',
+                        insert: 'ImageCellAccessible',
+                    },
+                    {
+                        label: 'ImageMenuItem',
+                        detail: 'ImageMenuItem()',
+                        docs: 'DOC?',
+                        insert: 'ImageMenuItem',
+                    },
+                    {
+                        label: 'InfoBar',
+                        detail: 'InfoBar()',
+                        docs: 'DOC?',
+                        insert: 'InfoBar',
+                    },
+                    {
+                        label: 'Invisible',
+                        detail: 'Invisible()',
+                        docs: 'DOC?',
+                        insert: 'Invisible',
+                    },
+                    {
+                        label: 'Label',
+                        detail: 'Label()',
+                        docs: 'DOC?',
+                        insert: 'Label',
+                    },
+                    {
+                        label: 'LabelAccessible',
+                        detail: 'LabelAccessible()',
+                        docs: 'DOC?',
+                        insert: 'LabelAccessible',
+                    },
+                    {
+                        label: 'Layout',
+                        detail: 'Layout()',
+                        docs: 'DOC?',
+                        insert: 'Layout',
+                    },
+                    {
+                        label: 'LevelBar',
+                        detail: 'LevelBar()',
+                        docs: 'DOC?',
+                        insert: 'LevelBar',
+                    },
+                    {
+                        label: 'LevelBarAccessible',
+                        detail: 'LevelBarAccessible()',
+                        docs: 'DOC?',
+                        insert: 'LevelBarAccessible',
+                    },
+                    {
+                        label: 'LinkButton',
+                        detail: 'LinkButton()',
+                        docs: 'DOC?',
+                        insert: 'LinkButton',
+                    },
+                    {
+                        label: 'LinkButtonAccessible',
+                        detail: 'LinkButtonAccessible()',
+                        docs: 'DOC?',
+                        insert: 'LinkButtonAccessible',
+                    },
+                    {
+                        label: 'ListBox',
+                        detail: 'ListBox()',
+                        docs: 'DOC?',
+                        insert: 'ListBox',
+                    },
+                    {
+                        label: 'ListBoxAccessible',
+                        detail: 'ListBoxAccessible()',
+                        docs: 'DOC?',
+                        insert: 'ListBoxAccessible',
+                    },
+                    {
+                        label: 'ListBoxRow',
+                        detail: 'ListBoxRow()',
+                        docs: 'DOC?',
+                        insert: 'ListBoxRow',
+                    },
+                    {
+                        label: 'ListBoxRowAccessible',
+                        detail: 'ListBoxRowAccessible()',
+                        docs: 'DOC?',
+                        insert: 'ListBoxRowAccessible',
+                    },
+                    {
+                        label: 'ListStore',
+                        detail: 'ListStore()',
+                        docs: 'DOC?',
+                        insert: 'ListStore',
+                    },
+                    {
+                        label: 'LockButton',
+                        detail: 'LockButton()',
+                        docs: 'DOC?',
+                        insert: 'LockButton',
+                    },
+                    {
+                        label: 'LockButtonAccessible',
+                        detail: 'LockButtonAccessible()',
+                        docs: 'DOC?',
+                        insert: 'LockButtonAccessible',
+                    },
+                    {
+                        label: 'Menu',
+                        detail: 'Menu()',
+                        docs: 'DOC?',
+                        insert: 'Menu',
+                    },
+                    {
+                        label: 'MenuAccessible',
+                        detail: 'MenuAccessible()',
+                        docs: 'DOC?',
+                        insert: 'MenuAccessible',
+                    },
+                    {
+                        label: 'MenuBar',
+                        detail: 'MenuBar()',
+                        docs: 'DOC?',
+                        insert: 'MenuBar',
+                    },
+                    {
+                        label: 'MenuButton',
+                        detail: 'MenuButton()',
+                        docs: 'DOC?',
+                        insert: 'MenuButton',
+                    },
+                    {
+                        label: 'MenuButtonAccessible',
+                        detail: 'MenuButtonAccessible()',
+                        docs: 'DOC?',
+                        insert: 'MenuButtonAccessible',
+                    },
+                    {
+                        label: 'MenuItem',
+                        detail: 'MenuItem()',
+                        docs: 'DOC?',
+                        insert: 'MenuItem',
+                    },
+                    {
+                        label: 'MenuItemAccessible',
+                        detail: 'MenuItemAccessible()',
+                        docs: 'DOC?',
+                        insert: 'MenuItemAccessible',
+                    },
+                    {
+                        label: 'MenuShell',
+                        detail: 'MenuShell()',
+                        docs: 'DOC?',
+                        insert: 'MenuShell',
+                    },
+                    {
+                        label: 'MenuShellAccessible',
+                        detail: 'MenuShellAccessible()',
+                        docs: 'DOC?',
+                        insert: 'MenuShellAccessible',
+                    },
+                    {
+                        label: 'MenuToolButton',
+                        detail: 'MenuToolButton()',
+                        docs: 'DOC?',
+                        insert: 'MenuToolButton',
+                    },
+                    {
+                        label: 'MessageDialog',
+                        detail: 'MessageDialog()',
+                        docs: 'DOC?',
+                        insert: 'MessageDialog',
+                    },
+                    {
+                        label: 'Misc',
+                        detail: 'Misc()',
+                        docs: 'DOC?',
+                        insert: 'Misc',
+                    },
+                    {
+                        label: 'ModelButton',
+                        detail: 'ModelButton()',
+                        docs: 'DOC?',
+                        insert: 'ModelButton',
+                    },
+                    {
+                        label: 'MountOperation',
+                        detail: 'MountOperation()',
+                        docs: 'DOC?',
+                        insert: 'MountOperation',
+                    },
+                    {
+                        label: 'NativeDialog',
+                        detail: 'NativeDialog()',
+                        docs: 'DOC?',
+                        insert: 'NativeDialog',
+                    },
+                    {
+                        label: 'Notebook',
+                        detail: 'Notebook()',
+                        docs: 'DOC?',
+                        insert: 'Notebook',
+                    },
+                    {
+                        label: 'NotebookAccessible',
+                        detail: 'NotebookAccessible()',
+                        docs: 'DOC?',
+                        insert: 'NotebookAccessible',
+                    },
+                    {
+                        label: 'NotebookPageAccessible',
+                        detail: 'NotebookPageAccessible()',
+                        docs: 'DOC?',
+                        insert: 'NotebookPageAccessible',
+                    },
+                    {
+                        label: 'NumerableIcon',
+                        detail: 'NumerableIcon()',
+                        docs: 'DOC?',
+                        insert: 'NumerableIcon',
+                    },
+                    {
+                        label: 'OffscreenWindow',
+                        detail: 'OffscreenWindow()',
+                        docs: 'DOC?',
+                        insert: 'OffscreenWindow',
+                    },
+                    {
+                        label: 'Overlay',
+                        detail: 'Overlay()',
+                        docs: 'DOC?',
+                        insert: 'Overlay',
+                    },
+                    {
+                        label: 'PadController',
+                        detail: 'PadController()',
+                        docs: 'DOC?',
+                        insert: 'PadController',
+                    },
+                    {
+                        label: 'PageSetup',
+                        detail: 'PageSetup()',
+                        docs: 'DOC?',
+                        insert: 'PageSetup',
+                    },
+                    {
+                        label: 'Paned',
+                        detail: 'Paned()',
+                        docs: 'DOC?',
+                        insert: 'Paned',
+                    },
+                    {
+                        label: 'PanedAccessible',
+                        detail: 'PanedAccessible()',
+                        docs: 'DOC?',
+                        insert: 'PanedAccessible',
+                    },
+                    {
+                        label: 'PlacesSidebar',
+                        detail: 'PlacesSidebar()',
+                        docs: 'DOC?',
+                        insert: 'PlacesSidebar',
+                    },
+                    {
+                        label: 'Plug',
+                        detail: 'Plug()',
+                        docs: 'DOC?',
+                        insert: 'Plug',
+                    },
+                    {
+                        label: 'PlugAccessible',
+                        detail: 'PlugAccessible()',
+                        docs: 'DOC?',
+                        insert: 'PlugAccessible',
+                    },
+                    {
+                        label: 'Popover',
+                        detail: 'Popover()',
+                        docs: 'DOC?',
+                        insert: 'Popover',
+                    },
+                    {
+                        label: 'PopoverAccessible',
+                        detail: 'PopoverAccessible()',
+                        docs: 'DOC?',
+                        insert: 'PopoverAccessible',
+                    },
+                    {
+                        label: 'PopoverMenu',
+                        detail: 'PopoverMenu()',
+                        docs: 'DOC?',
+                        insert: 'PopoverMenu',
+                    },
+                    {
+                        label: 'PrintContext',
+                        detail: 'PrintContext()',
+                        docs: 'DOC?',
+                        insert: 'PrintContext',
+                    },
+                    {
+                        label: 'PrintOperation',
+                        detail: 'PrintOperation()',
+                        docs: 'DOC?',
+                        insert: 'PrintOperation',
+                    },
+                    {
+                        label: 'PrintSettings',
+                        detail: 'PrintSettings()',
+                        docs: 'DOC?',
+                        insert: 'PrintSettings',
+                    },
+                    {
+                        label: 'ProgressBar',
+                        detail: 'ProgressBar()',
+                        docs: 'DOC?',
+                        insert: 'ProgressBar',
+                    },
+                    {
+                        label: 'ProgressBarAccessible',
+                        detail: 'ProgressBarAccessible()',
+                        docs: 'DOC?',
+                        insert: 'ProgressBarAccessible',
+                    },
+                    {
+                        label: 'PyGTKDeprecationWarning',
+                        detail: 'PyGTKDeprecationWarning()',
+                        docs: 'DOC?',
+                        insert: 'PyGTKDeprecationWarning',
+                    },
+                    {
+                        label: 'RadioAction',
+                        detail: 'RadioAction()',
+                        docs: 'DOC?',
+                        insert: 'RadioAction',
+                    },
+                    {
+                        label: 'RadioButton',
+                        detail: 'RadioButton()',
+                        docs: 'DOC?',
+                        insert: 'RadioButton',
+                    },
+                    {
+                        label: 'RadioButtonAccessible',
+                        detail: 'RadioButtonAccessible()',
+                        docs: 'DOC?',
+                        insert: 'RadioButtonAccessible',
+                    },
+                    {
+                        label: 'RadioMenuItem',
+                        detail: 'RadioMenuItem()',
+                        docs: 'DOC?',
+                        insert: 'RadioMenuItem',
+                    },
+                    {
+                        label: 'RadioMenuItemAccessible',
+                        detail: 'RadioMenuItemAccessible()',
+                        docs: 'DOC?',
+                        insert: 'RadioMenuItemAccessible',
+                    },
+                    {
+                        label: 'RadioToolButton',
+                        detail: 'RadioToolButton()',
+                        docs: 'DOC?',
+                        insert: 'RadioToolButton',
+                    },
+                    {
+                        label: 'Range',
+                        detail: 'Range()',
+                        docs: 'DOC?',
+                        insert: 'Range',
+                    },
+                    {
+                        label: 'RangeAccessible',
+                        detail: 'RangeAccessible()',
+                        docs: 'DOC?',
+                        insert: 'RangeAccessible',
+                    },
+                    {
+                        label: 'RcStyle',
+                        detail: 'RcStyle()',
+                        docs: 'DOC?',
+                        insert: 'RcStyle',
+                    },
+                    {
+                        label: 'RecentAction',
+                        detail: 'RecentAction()',
+                        docs: 'DOC?',
+                        insert: 'RecentAction',
+                    },
+                    {
+                        label: 'RecentChooserDialog',
+                        detail: 'RecentChooserDialog()',
+                        docs: 'DOC?',
+                        insert: 'RecentChooserDialog',
+                    },
+                    {
+                        label: 'RecentChooserMenu',
+                        detail: 'RecentChooserMenu()',
+                        docs: 'DOC?',
+                        insert: 'RecentChooserMenu',
+                    },
+                    {
+                        label: 'RecentChooserWidget',
+                        detail: 'RecentChooserWidget()',
+                        docs: 'DOC?',
+                        insert: 'RecentChooserWidget',
+                    },
+                    {
+                        label: 'RecentFilter',
+                        detail: 'RecentFilter()',
+                        docs: 'DOC?',
+                        insert: 'RecentFilter',
+                    },
+                    {
+                        label: 'RecentManager',
+                        detail: 'RecentManager()',
+                        docs: 'DOC?',
+                        insert: 'RecentManager',
+                    },
+                    {
+                        label: 'RendererCellAccessible',
+                        detail: 'RendererCellAccessible()',
+                        docs: 'DOC?',
+                        insert: 'RendererCellAccessible',
+                    },
+                    {
+                        label: 'Revealer',
+                        detail: 'Revealer()',
+                        docs: 'DOC?',
+                        insert: 'Revealer',
+                    },
+                    {
+                        label: 'Scale',
+                        detail: 'Scale()',
+                        docs: 'DOC?',
+                        insert: 'Scale',
+                    },
+                    {
+                        label: 'ScaleAccessible',
+                        detail: 'ScaleAccessible()',
+                        docs: 'DOC?',
+                        insert: 'ScaleAccessible',
+                    },
+                    {
+                        label: 'ScaleButton',
+                        detail: 'ScaleButton()',
+                        docs: 'DOC?',
+                        insert: 'ScaleButton',
+                    },
+                    {
+                        label: 'ScaleButtonAccessible',
+                        detail: 'ScaleButtonAccessible()',
+                        docs: 'DOC?',
+                        insert: 'ScaleButtonAccessible',
+                    },
+                    {
+                        label: 'Scrollbar',
+                        detail: 'Scrollbar()',
+                        docs: 'DOC?',
+                        insert: 'Scrollbar',
+                    },
+                    {
+                        label: 'ScrolledWindow',
+                        detail: 'ScrolledWindow()',
+                        docs: 'DOC?',
+                        insert: 'ScrolledWindow',
+                    },
+                    {
+                        label: 'ScrolledWindowAccessible',
+                        detail: 'ScrolledWindowAccessible()',
+                        docs: 'DOC?',
+                        insert: 'ScrolledWindowAccessible',
+                    },
+                    {
+                        label: 'SearchBar',
+                        detail: 'SearchBar()',
+                        docs: 'DOC?',
+                        insert: 'SearchBar',
+                    },
+                    {
+                        label: 'SearchEntry',
+                        detail: 'SearchEntry()',
+                        docs: 'DOC?',
+                        insert: 'SearchEntry',
+                    },
+                    {
+                        label: 'Separator',
+                        detail: 'Separator()',
+                        docs: 'DOC?',
+                        insert: 'Separator',
+                    },
+                    {
+                        label: 'SeparatorMenuItem',
+                        detail: 'SeparatorMenuItem()',
+                        docs: 'DOC?',
+                        insert: 'SeparatorMenuItem',
+                    },
+                    {
+                        label: 'SeparatorToolItem',
+                        detail: 'SeparatorToolItem()',
+                        docs: 'DOC?',
+                        insert: 'SeparatorToolItem',
+                    },
+                    {
+                        label: 'Settings',
+                        detail: 'Settings()',
+                        docs: 'DOC?',
+                        insert: 'Settings',
+                    },
+                    {
+                        label: 'ShortcutLabel',
+                        detail: 'ShortcutLabel()',
+                        docs: 'DOC?',
+                        insert: 'ShortcutLabel',
+                    },
+                    {
+                        label: 'ShortcutsGroup',
+                        detail: 'ShortcutsGroup()',
+                        docs: 'DOC?',
+                        insert: 'ShortcutsGroup',
+                    },
+                    {
+                        label: 'ShortcutsSection',
+                        detail: 'ShortcutsSection()',
+                        docs: 'DOC?',
+                        insert: 'ShortcutsSection',
+                    },
+                    {
+                        label: 'ShortcutsShortcut',
+                        detail: 'ShortcutsShortcut()',
+                        docs: 'DOC?',
+                        insert: 'ShortcutsShortcut',
+                    },
+                    {
+                        label: 'ShortcutsWindow',
+                        detail: 'ShortcutsWindow()',
+                        docs: 'DOC?',
+                        insert: 'ShortcutsWindow',
+                    },
+                    {
+                        label: 'SizeGroup',
+                        detail: 'SizeGroup()',
+                        docs: 'DOC?',
+                        insert: 'SizeGroup',
+                    },
+                    {
+                        label: 'Socket',
+                        detail: 'Socket()',
+                        docs: 'DOC?',
+                        insert: 'Socket',
+                    },
+                    {
+                        label: 'SocketAccessible',
+                        detail: 'SocketAccessible()',
+                        docs: 'DOC?',
+                        insert: 'SocketAccessible',
+                    },
+                    {
+                        label: 'SpinButton',
+                        detail: 'SpinButton()',
+                        docs: 'DOC?',
+                        insert: 'SpinButton',
+                    },
+                    {
+                        label: 'SpinButtonAccessible',
+                        detail: 'SpinButtonAccessible()',
+                        docs: 'DOC?',
+                        insert: 'SpinButtonAccessible',
+                    },
+                    {
+                        label: 'Spinner',
+                        detail: 'Spinner()',
+                        docs: 'DOC?',
+                        insert: 'Spinner',
+                    },
+                    {
+                        label: 'SpinnerAccessible',
+                        detail: 'SpinnerAccessible()',
+                        docs: 'DOC?',
+                        insert: 'SpinnerAccessible',
+                    },
+                    {
+                        label: 'Stack',
+                        detail: 'Stack()',
+                        docs: 'DOC?',
+                        insert: 'Stack',
+                    },
+                    {
+                        label: 'StackAccessible',
+                        detail: 'StackAccessible()',
+                        docs: 'DOC?',
+                        insert: 'StackAccessible',
+                    },
+                    {
+                        label: 'StackSidebar',
+                        detail: 'StackSidebar()',
+                        docs: 'DOC?',
+                        insert: 'StackSidebar',
+                    },
+                    {
+                        label: 'StackSwitcher',
+                        detail: 'StackSwitcher()',
+                        docs: 'DOC?',
+                        insert: 'StackSwitcher',
+                    },
+                    {
+                        label: 'StatusIcon',
+                        detail: 'StatusIcon()',
+                        docs: 'DOC?',
+                        insert: 'StatusIcon',
+                    },
+                    {
+                        label: 'Statusbar',
+                        detail: 'Statusbar()',
+                        docs: 'DOC?',
+                        insert: 'Statusbar',
+                    },
+                    {
+                        label: 'StatusbarAccessible',
+                        detail: 'StatusbarAccessible()',
+                        docs: 'DOC?',
+                        insert: 'StatusbarAccessible',
+                    },
+                    {
+                        label: 'Style',
+                        detail: 'Style()',
+                        docs: 'DOC?',
+                        insert: 'Style',
+                    },
+                    {
+                        label: 'StyleContext',
+                        detail: 'StyleContext()',
+                        docs: 'DOC?',
+                        insert: 'StyleContext',
+                    },
+                    {
+                        label: 'StyleProperties',
+                        detail: 'StyleProperties()',
+                        docs: 'DOC?',
+                        insert: 'StyleProperties',
+                    },
+                    {
+                        label: 'Switch',
+                        detail: 'Switch()',
+                        docs: 'DOC?',
+                        insert: 'Switch',
+                    },
+                    {
+                        label: 'SwitchAccessible',
+                        detail: 'SwitchAccessible()',
+                        docs: 'DOC?',
+                        insert: 'SwitchAccessible',
+                    },
+                    {
+                        label: 'Table',
+                        detail: 'Table()',
+                        docs: 'DOC?',
+                        insert: 'Table',
+                    },
+                    {
+                        label: 'TearoffMenuItem',
+                        detail: 'TearoffMenuItem()',
+                        docs: 'DOC?',
+                        insert: 'TearoffMenuItem',
+                    },
+                    {
+                        label: 'TextBuffer',
+                        detail: 'TextBuffer()',
+                        docs: 'DOC?',
+                        insert: 'TextBuffer',
+                    },
+                    {
+                        label: 'TextCellAccessible',
+                        detail: 'TextCellAccessible()',
+                        docs: 'DOC?',
+                        insert: 'TextCellAccessible',
+                    },
+                    {
+                        label: 'TextChildAnchor',
+                        detail: 'TextChildAnchor()',
+                        docs: 'DOC?',
+                        insert: 'TextChildAnchor',
+                    },
+                    {
+                        label: 'TextMark',
+                        detail: 'TextMark()',
+                        docs: 'DOC?',
+                        insert: 'TextMark',
+                    },
+                    {
+                        label: 'TextTag',
+                        detail: 'TextTag()',
+                        docs: 'DOC?',
+                        insert: 'TextTag',
+                    },
+                    {
+                        label: 'TextTagTable',
+                        detail: 'TextTagTable()',
+                        docs: 'DOC?',
+                        insert: 'TextTagTable',
+                    },
+                    {
+                        label: 'TextView',
+                        detail: 'TextView()',
+                        docs: 'DOC?',
+                        insert: 'TextView',
+                    },
+                    {
+                        label: 'TextViewAccessible',
+                        detail: 'TextViewAccessible()',
+                        docs: 'DOC?',
+                        insert: 'TextViewAccessible',
+                    },
+                    {
+                        label: 'ThemingEngine',
+                        detail: 'ThemingEngine()',
+                        docs: 'DOC?',
+                        insert: 'ThemingEngine',
+                    },
+                    {
+                        label: 'ToggleAction',
+                        detail: 'ToggleAction()',
+                        docs: 'DOC?',
+                        insert: 'ToggleAction',
+                    },
+                    {
+                        label: 'ToggleButton',
+                        detail: 'ToggleButton()',
+                        docs: 'DOC?',
+                        insert: 'ToggleButton',
+                    },
+                    {
+                        label: 'ToggleButtonAccessible',
+                        detail: 'ToggleButtonAccessible()',
+                        docs: 'DOC?',
+                        insert: 'ToggleButtonAccessible',
+                    },
+                    {
+                        label: 'ToggleToolButton',
+                        detail: 'ToggleToolButton()',
+                        docs: 'DOC?',
+                        insert: 'ToggleToolButton',
+                    },
+                    {
+                        label: 'ToolButton',
+                        detail: 'ToolButton()',
+                        docs: 'DOC?',
+                        insert: 'ToolButton',
+                    },
+                    {
+                        label: 'ToolItem',
+                        detail: 'ToolItem()',
+                        docs: 'DOC?',
+                        insert: 'ToolItem',
+                    },
+                    {
+                        label: 'ToolItemGroup',
+                        detail: 'ToolItemGroup()',
+                        docs: 'DOC?',
+                        insert: 'ToolItemGroup',
+                    },
+                    {
+                        label: 'ToolPalette',
+                        detail: 'ToolPalette()',
+                        docs: 'DOC?',
+                        insert: 'ToolPalette',
+                    },
+                    {
+                        label: 'Toolbar',
+                        detail: 'Toolbar()',
+                        docs: 'DOC?',
+                        insert: 'Toolbar',
+                    },
+                    {
+                        label: 'Tooltip',
+                        detail: 'Tooltip()',
+                        docs: 'DOC?',
+                        insert: 'Tooltip',
+                    },
+                    {
+                        label: 'ToplevelAccessible',
+                        detail: 'ToplevelAccessible()',
+                        docs: 'DOC?',
+                        insert: 'ToplevelAccessible',
+                    },
+                    {
+                        label: 'TreeModelFilter',
+                        detail: 'TreeModelFilter()',
+                        docs: 'DOC?',
+                        insert: 'TreeModelFilter',
+                    },
+                    {
+                        label: 'TreeModelRow',
+                        detail: 'TreeModelRow()',
+                        docs: 'DOC?',
+                        insert: 'TreeModelRow',
+                    },
+                    {
+                        label: 'TreeModelRowIter',
+                        detail: 'TreeModelRowIter()',
+                        docs: 'DOC?',
+                        insert: 'TreeModelRowIter',
+                    },
+                    {
+                        label: 'TreeModelSort',
+                        detail: 'TreeModelSort()',
+                        docs: 'DOC?',
+                        insert: 'TreeModelSort',
+                    },
+                    {
+                        label: 'TreeSelection',
+                        detail: 'TreeSelection()',
+                        docs: 'DOC?',
+                        insert: 'TreeSelection',
+                    },
+                    {
+                        label: 'TreeStore',
+                        detail: 'TreeStore()',
+                        docs: 'DOC?',
+                        insert: 'TreeStore',
+                    },
+                    {
+                        label: 'TreeView',
+                        detail: 'TreeView()',
+                        docs: 'DOC?',
+                        insert: 'TreeView',
+                    },
+                    {
+                        label: 'TreeViewAccessible',
+                        detail: 'TreeViewAccessible()',
+                        docs: 'DOC?',
+                        insert: 'TreeViewAccessible',
+                    },
+                    {
+                        label: 'TreeViewColumn',
+                        detail: 'TreeViewColumn()',
+                        docs: 'DOC?',
+                        insert: 'TreeViewColumn',
+                    },
+                    {
+                        label: 'UIManager',
+                        detail: 'UIManager()',
+                        docs: 'DOC?',
+                        insert: 'UIManager',
+                    },
+                    {
+                        label: 'VBox',
+                        detail: 'VBox()',
+                        docs: 'DOC?',
+                        insert: 'VBox',
+                    },
+                    {
+                        label: 'VButtonBox',
+                        detail: 'VButtonBox()',
+                        docs: 'DOC?',
+                        insert: 'VButtonBox',
+                    },
+                    {
+                        label: 'VPaned',
+                        detail: 'VPaned()',
+                        docs: 'DOC?',
+                        insert: 'VPaned',
+                    },
+                    {
+                        label: 'VScale',
+                        detail: 'VScale()',
+                        docs: 'DOC?',
+                        insert: 'VScale',
+                    },
+                    {
+                        label: 'VScrollbar',
+                        detail: 'VScrollbar()',
+                        docs: 'DOC?',
+                        insert: 'VScrollbar',
+                    },
+                    {
+                        label: 'VSeparator',
+                        detail: 'VSeparator()',
+                        docs: 'DOC?',
+                        insert: 'VSeparator',
+                    },
+                    {
+                        label: 'Viewport',
+                        detail: 'Viewport()',
+                        docs: 'DOC?',
+                        insert: 'Viewport',
+                    },
+                    {
+                        label: 'VolumeButton',
+                        detail: 'VolumeButton()',
+                        docs: 'DOC?',
+                        insert: 'VolumeButton',
+                    },
+                    {
+                        label: 'Widget',
+                        detail: 'Widget()',
+                        docs: 'DOC?',
+                        insert: 'Widget',
+                    },
+                    {
+                        label: 'WidgetAccessible',
+                        detail: 'WidgetAccessible()',
+                        docs: 'DOC?',
+                        insert: 'WidgetAccessible',
+                    },
+                    {
+                        label: 'Window',
+                        detail: 'Window()',
+                        docs: 'DOC?',
+                        insert: 'Window',
+                    },
+                    {
+                        label: 'WindowAccessible',
+                        detail: 'WindowAccessible()',
+                        docs: 'DOC?',
+                        insert: 'WindowAccessible',
+                    },
+                    {
+                        label: 'WindowGroup',
+                        detail: 'WindowGroup()',
+                        docs: 'DOC?',
+                        insert: 'WindowGroup',
+                    },
+                    // ---------------------
+                    // Enums --- *
                     {
                         label: 'STYLE_PROVIDER_PRIORITY_APPLICATION',
                         detail: 'STYLE_PROVIDER_PRIORITY_APPLICATION',
                         docs: 'DOC?',
                         insert: 'STYLE_PROVIDER_PRIORITY_APPLICATION'
-                    },
-                    {
-                        label: 'StyleContext',
-                        detail: 'StyleContext',
-                        docs: 'DOC?',
-                        insert: 'StyleContext'
                     }
+                    // --------------------
                 ].map(s => createItem(s, vscode.CompletionItemKind.Class));
             }
 
@@ -12128,6 +13995,11 @@ function activate(context) {
                 const varName = VarMatchs[1];
                 let results = []; // Array for all
 
+                // Gtk.AccelGroup
+                if (getVarable(document, varName, 'AccelGroup')) {
+                    results.push(...GtkAccelGroup, ...GObjectMethodInheartence)
+                }
+
                 // CssProvider
                 if (getVarable(document, varName, 'CssProvider')) {
                     results.push(...GtkCssProvider, ...GObjectMethodInheartence, ...GtkStyleProvider);
@@ -12141,6 +14013,10 @@ function activate(context) {
                 // GdkScreen
                 if (getVarableGDK(document, varName, 'Screen')) {
                     results.push(...GdkScreen, ...GObjectMethodInheartence);
+                }
+
+                if (getVarable(document, varName, 'CellAccessibleParent')) {
+                    results.push(...GtkCellAccessibleParent, ...GObjectMethodInheartence, ...GtkTreeViewAccessible)
                 }
 
                 // Label
@@ -13513,23 +15389,550 @@ function activate(context) {
 
             if (linePrefix.match(/connect\("?$/)) {
                 return [
+                    // GObject.Object Connection *
+                    {
+                        label: '"notify"',
+                        detail: 'notify',
+                        docs: 'DOC?',
+                        insert: '"notify"',
+                    },
+                    // *    *    *
+                    // Gtk.Widget Connection *
+                    {
+                        label: '"accel-closures-changed"',
+                        detail: 'accel-closures-changed',
+                        docs: 'DOC?',
+                        insert: '"accel-closures-changed"',
+                    },
+                    {
+                        label: '"button-press-event"',
+                        detail: 'button-press-event',
+                        docs: 'DOC?',
+                        insert: '"button-press-event"',
+                    },
+                    {
+                        label: '"button-release-event"',
+                        detail: 'button-release-event',
+                        docs: 'DOC?',
+                        insert: '"button-release-event"',
+                    },
+                    {
+                        label: '"can-activate-accel"',
+                        detail: 'can-activate-accel',
+                        docs: 'DOC?',
+                        insert: '"can-activate-accel"',
+                    },
+                    {
+                        label: '"child-notify"',
+                        detail: 'child-notify',
+                        docs: 'DOC?',
+                        insert: '"child-notify"',
+                    },
+                    {
+                        label: '"composited-changed"',
+                        detail: 'composited-changed',
+                        docs: 'DOC?',
+                        insert: '"composited-changed"',
+                    },
+                    {
+                        label: '"configure-event"',
+                        detail: 'configure-event',
+                        docs: 'DOC?',
+                        insert: '"configure-event"',
+                    },
+                    {
+                        label: '"damage-event"',
+                        detail: 'damage-event',
+                        docs: 'DOC?',
+                        insert: '"damage-event"',
+                    },
+                    {
+                        label: '"delete-event"',
+                        detail: 'delete-event',
+                        docs: 'DOC?',
+                        insert: '"delete-event"',
+                    },
                     {
                         label: '"destroy"',
-                        detail: '"destroy"',
+                        detail: 'destroy',
                         docs: 'DOC?',
-                        insert: '"destroy"'
+                        insert: '"destroy"',
                     },
+                    {
+                        label: '"destroy-event"',
+                        detail: 'destroy-event',
+                        docs: 'DOC?',
+                        insert: '"destroy-event"',
+                    },
+                    {
+                        label: '"direction-changed"',
+                        detail: 'direction-changed',
+                        docs: 'DOC?',
+                        insert: '"direction-changed"',
+                    },
+                    {
+                        label: '"drag-begin"',
+                        detail: 'drag-begin',
+                        docs: 'DOC?',
+                        insert: '"drag-begin"',
+                    },
+                    {
+                        label: '"drag-data-delete"',
+                        detail: 'drag-data-delete',
+                        docs: 'DOC?',
+                        insert: '"drag-data-delete"',
+                    },
+                    {
+                        label: '"drag-data-get"',
+                        detail: 'drag-data-get',
+                        docs: 'DOC?',
+                        insert: '"drag-data-get"',
+                    },
+                    {
+                        label: '"drag-data-received"',
+                        detail: 'drag-data-received',
+                        docs: 'DOC?',
+                        insert: '"drag-data-received"',
+                    },
+                    {
+                        label: '"drag-drop"',
+                        detail: 'drag-drop',
+                        docs: 'DOC?',
+                        insert: '"drag-drop"',
+                    },
+                    {
+                        label: '"drag-end"',
+                        detail: 'drag-end',
+                        docs: 'DOC?',
+                        insert: '"drag-end"',
+                    },
+                    {
+                        label: '"drag-failed"',
+                        detail: 'drag-failed',
+                        docs: 'DOC?',
+                        insert: '"drag-failed"',
+                    },
+                    {
+                        label: '"drag-leave"',
+                        detail: 'drag-leave',
+                        docs: 'DOC?',
+                        insert: '"drag-leave"',
+                    },
+                    {
+                        label: '"drag-motion"',
+                        detail: 'drag-motion',
+                        docs: 'DOC?',
+                        insert: '"drag-motion"',
+                    },
+                    {
+                        label: '"draw"',
+                        detail: 'draw',
+                        docs: 'DOC?',
+                        insert: '"draw"',
+                    },
+                    {
+                        label: '"enter-notify-event"',
+                        detail: 'enter-notify-event',
+                        docs: 'DOC?',
+                        insert: '"enter-notify-event"',
+                    },
+                    {
+                        label: '"event"',
+                        detail: 'event',
+                        docs: 'DOC?',
+                        insert: '"event"',
+                    },
+                    {
+                        label: '"event-after"',
+                        detail: 'event-after',
+                        docs: 'DOC?',
+                        insert: '"event-after"',
+                    },
+                    {
+                        label: '"focus"',
+                        detail: 'focus',
+                        docs: 'DOC?',
+                        insert: '"focus"',
+                    },
+                    {
+                        label: '"focus-in-event"',
+                        detail: 'focus-in-event',
+                        docs: 'DOC?',
+                        insert: '"focus-in-event"',
+                    },
+                    {
+                        label: '"focus-out-event"',
+                        detail: 'focus-out-event',
+                        docs: 'DOC?',
+                        insert: '"focus-out-event"',
+                    },
+                    {
+                        label: '"grab-broken-event"',
+                        detail: 'grab-broken-event',
+                        docs: 'DOC?',
+                        insert: '"grab-broken-event"',
+                    },
+                    {
+                        label: '"grab-focus"',
+                        detail: 'grab-focus',
+                        docs: 'DOC?',
+                        insert: '"grab-focus"',
+                    },
+                    {
+                        label: '"grab-notify"',
+                        detail: 'grab-notify',
+                        docs: 'DOC?',
+                        insert: '"grab-notify"',
+                    },
+                    {
+                        label: '"hide"',
+                        detail: 'hide',
+                        docs: 'DOC?',
+                        insert: '"hide"',
+                    },
+                    {
+                        label: '"hierarchy-changed"',
+                        detail: 'hierarchy-changed',
+                        docs: 'DOC?',
+                        insert: '"hierarchy-changed"',
+                    },
+                    {
+                        label: '"key-press-event"',
+                        detail: 'key-press-event',
+                        docs: 'DOC?',
+                        insert: '"key-press-event"',
+                    },
+                    {
+                        label: '"key-release-event"',
+                        detail: 'key-release-event',
+                        docs: 'DOC?',
+                        insert: '"key-release-event"',
+                    },
+                    {
+                        label: '"keynav-failed"',
+                        detail: 'keynav-failed',
+                        docs: 'DOC?',
+                        insert: '"keynav-failed"',
+                    },
+                    {
+                        label: '"leave-notify-event"',
+                        detail: 'leave-notify-event',
+                        docs: 'DOC?',
+                        insert: '"leave-notify-event"',
+                    },
+                    {
+                        label: '"map"',
+                        detail: 'map',
+                        docs: 'DOC?',
+                        insert: '"map"',
+                    },
+                    {
+                        label: '"map-event"',
+                        detail: 'map-event',
+                        docs: 'DOC?',
+                        insert: '"map-event"',
+                    },
+                    {
+                        label: '"mnemonic-activate"',
+                        detail: 'mnemonic-activate',
+                        docs: 'DOC?',
+                        insert: '"mnemonic-activate"',
+                    },
+                    {
+                        label: '"motion-notify-event"',
+                        detail: 'motion-notify-event',
+                        docs: 'DOC?',
+                        insert: '"motion-notify-event"',
+                    },
+                    {
+                        label: '"move-focus"',
+                        detail: 'move-focus',
+                        docs: 'DOC?',
+                        insert: '"move-focus"',
+                    },
+                    {
+                        label: '"parent-set"',
+                        detail: 'parent-set',
+                        docs: 'DOC?',
+                        insert: '"parent-set"',
+                    },
+                    {
+                        label: '"popup-menu"',
+                        detail: 'popup-menu',
+                        docs: 'DOC?',
+                        insert: '"popup-menu"',
+                    },
+                    {
+                        label: '"property-notify-event"',
+                        detail: 'property-notify-event',
+                        docs: 'DOC?',
+                        insert: '"property-notify-event"',
+                    },
+                    {
+                        label: '"proximity-in-event"',
+                        detail: 'proximity-in-event',
+                        docs: 'DOC?',
+                        insert: '"proximity-in-event"',
+                    },
+                    {
+                        label: '"proximity-out-event"',
+                        detail: 'proximity-out-event',
+                        docs: 'DOC?',
+                        insert: '"proximity-out-event"',
+                    },
+                    {
+                        label: '"query-tooltip"',
+                        detail: 'query-tooltip',
+                        docs: 'DOC?',
+                        insert: '"query-tooltip"',
+                    },
+                    {
+                        label: '"realize"',
+                        detail: 'realize',
+                        docs: 'DOC?',
+                        insert: '"realize"',
+                    },
+                    {
+                        label: '"screen-changed"',
+                        detail: 'screen-changed',
+                        docs: 'DOC?',
+                        insert: '"screen-changed"',
+                    },
+                    {
+                        label: '"scroll-event"',
+                        detail: 'scroll-event',
+                        docs: 'DOC?',
+                        insert: '"scroll-event"',
+                    },
+                    {
+                        label: '"selection-clear-event"',
+                        detail: 'selection-clear-event',
+                        docs: 'DOC?',
+                        insert: '"selection-clear-event"',
+                    },
+                    {
+                        label: '"selection-get"',
+                        detail: 'selection-get',
+                        docs: 'DOC?',
+                        insert: '"selection-get"',
+                    },
+                    {
+                        label: '"selection-notify-event"',
+                        detail: 'selection-notify-event',
+                        docs: 'DOC?',
+                        insert: '"selection-notify-event"',
+                    },
+                    {
+                        label: '"selection-received"',
+                        detail: 'selection-received',
+                        docs: 'DOC?',
+                        insert: '"selection-received"',
+                    },
+                    {
+                        label: '"selection-request-event"',
+                        detail: 'selection-request-event',
+                        docs: 'DOC?',
+                        insert: '"selection-request-event"',
+                    },
+                    {
+                        label: '"show"',
+                        detail: 'show',
+                        docs: 'DOC?',
+                        insert: '"show"',
+                    },
+                    {
+                        label: '"show-help"',
+                        detail: 'show-help',
+                        docs: 'DOC?',
+                        insert: '"show-help"',
+                    },
+                    {
+                        label: '"size-allocate"',
+                        detail: 'size-allocate',
+                        docs: 'DOC?',
+                        insert: '"size-allocate"',
+                    },
+                    {
+                        label: '"state-changed"',
+                        detail: 'state-changed',
+                        docs: 'DOC?',
+                        insert: '"state-changed"',
+                    },
+                    {
+                        label: '"state-flags-changed"',
+                        detail: 'state-flags-changed',
+                        docs: 'DOC?',
+                        insert: '"state-flags-changed"',
+                    },
+                    {
+                        label: '"style-set"',
+                        detail: 'style-set',
+                        docs: 'DOC?',
+                        insert: '"style-set"',
+                    },
+                    {
+                        label: '"style-updated"',
+                        detail: 'style-updated',
+                        docs: 'DOC?',
+                        insert: '"style-updated"',
+                    },
+                    {
+                        label: '"touch-event"',
+                        detail: 'touch-event',
+                        docs: 'DOC?',
+                        insert: '"touch-event"',
+                    },
+                    {
+                        label: '"unmap"',
+                        detail: 'unmap',
+                        docs: 'DOC?',
+                        insert: '"unmap"',
+                    },
+                    {
+                        label: '"unmap-event"',
+                        detail: 'unmap-event',
+                        docs: 'DOC?',
+                        insert: '"unmap-event"',
+                    },
+                    {
+                        label: '"unrealize"',
+                        detail: 'unrealize',
+                        docs: 'DOC?',
+                        insert: '"unrealize"',
+                    },
+                    {
+                        label: '"visibility-notify-event"',
+                        detail: 'visibility-notify-event',
+                        docs: 'DOC?',
+                        insert: '"visibility-notify-event"',
+                    },
+                    {
+                        label: '"window-state-event"',
+                        detail: 'window-state-event',
+                        docs: 'DOC?',
+                        insert: '"window-state-event"',
+                    },
+                    // *    *    *
+                    // Gtk.Window Connection
+                    {
+                        label: '"activate-default"',
+                        detail: 'activate-default',
+                        docs: 'DOC?',
+                        insert: '"activate-default"',
+                    },
+                    {
+                        label: '"activate-focus"',
+                        detail: 'activate-focus',
+                        docs: 'DOC?',
+                        insert: '"activate-focus"',
+                    },
+                    {
+                        label: '"enable-debugging"',
+                        detail: 'enable-debugging',
+                        docs: 'DOC?',
+                        insert: '"enable-debugging"',
+                    },
+                    {
+                        label: '"keys-changed"',
+                        detail: 'keys-changed',
+                        docs: 'DOC?',
+                        insert: '"keys-changed"',
+                    },
+                    {
+                        label: '"set-focus"',
+                        detail: 'set-focus',
+                        docs: 'DOC?',
+                        insert: '"set-focus"',
+                    },
+                    // *    *    *
+                    // Gtk.Container Connection
+                    {
+                        label: '"add"',
+                        detail: 'add',
+                        docs: 'DOC?',
+                        insert: '"add"',
+                    },
+                    {
+                        label: '"check-resize"',
+                        detail: 'check-resize',
+                        docs: 'DOC?',
+                        insert: '"check-resize"',
+                    },
+                    {
+                        label: '"remove"',
+                        detail: 'remove',
+                        docs: 'DOC?',
+                        insert: '"remove"',
+                    },
+                    {
+                        label: '"set-focus-child"',
+                        detail: 'set-focus-child',
+                        docs: 'DOC?',
+                        insert: '"set-focus-child"',
+                    },
+                    // *    *    *
+                    // Gtk.Dialog Connection
+                    {
+                        label: '"close"',
+                        detail: 'close',
+                        docs: 'DOC?',
+                        insert: '"close"',
+                    },
+                    {
+                        label: '"response"',
+                        detail: 'response',
+                        docs: 'DOC?',
+                        insert: '"response"',
+                    },
+                    // *    *    *
+                    // Gtk.AboutDialog Connection
+                    {
+                        label: '"activate-link"',
+                        detail: 'activate-link',
+                        docs: 'DOC?',
+                        insert: '"activate-link"',
+                    },
+                    // *    *    *
+                    // Gtk.Label Connection
+                    {
+                        label: '"activate-current-link"',
+                        detail: 'activate-current-link',
+                        docs: 'DOC?',
+                        insert: '"activate-current-link"',
+                    },
+                    {
+                        label: '"activate-link"',
+                        detail: 'activate-link',
+                        docs: 'DOC?',
+                        insert: '"activate-link"',
+                    },
+                    {
+                        label: '"copy-clipboard"',
+                        detail: 'copy-clipboard',
+                        docs: 'DOC?',
+                        insert: '"copy-clipboard"',
+                    },
+                    {
+                        label: '"move-cursor"',
+                        detail: 'move-cursor',
+                        docs: 'DOC?',
+                        insert: '"move-cursor"',
+                    },
+                    {
+                        label: '"populate-popup"',
+                        detail: 'populate-popup',
+                        docs: 'DOC?',
+                        insert: '"populate-popup"',
+                    },
+
+
+
+                    // TEMPORARY Connections
                     {
                         label: '"clicked"',
                         detail: '"clicked"',
                         docs: 'DOC?',
                         insert: '"clicked"'
-                    },
-                    {
-                        label: '"delete-event"',
-                        detail: '"delete-event"',
-                        docs: 'DOC?',
-                        insert: '"delete-event"'
                     },
                     {
                         label: '"color-set"',
@@ -13721,6 +16124,11 @@ function getVarableGDK(document, varName, gtkType) {
         return isInherited || isDirect;
     }
     return new RegExp(`(?:self\\.)?${varName}\\s*=\\s*Gdk\\.${gtkType}`, 'g').test(fullText);
+}
+
+function GetVLib(lib_name, lib_text) {
+    const regex_require_version_name = new RegExp(`gi\\.require_version\\('${lib_name}',\\s*`)
+    return regex_require_version_name.test(lib_text)
 }
 
 // any variable can auto connect

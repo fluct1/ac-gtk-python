@@ -1,3 +1,17 @@
+# [1.4.9]
+## Added:
+- Add `Gtk.AccelGroup`.
+- Add `Gtk.PrintOperationPreview`.
+- Add `Gtk.CellAccessibleParent`.
+- Add more Signals - `AccelGroup`, `AboutDialog`, `GObject.Object`, `Widget`, `Container`, `Window`, `Dialog`, `AccelLabel (Label Signals)` signals and more later.
+- Add `GLib` and `Gio` and `Pango` and `cairo` and `Handy` and `GtkSource` and `WebKit2` and `AppIndicator3` and `Notify` and `Gst` and `Secret` and `Polkit` Libs (Note: I added in Import But in Auto Complete Not now it's hard and take so many time :D).
+- Add `gi.require_version()` auto complete for `Gtk` & `Gdk` & `GLib` and more and suggests for version you want.
+- Add All Interface Widgets.
+## Fixed:
+- Fix ResponseType twice.
+## special:
+- i think i right this for me and i am only one reading it :)
+
 # [1.3.9]
 ## Added:
 - Add Css Connect File Auto completion.
